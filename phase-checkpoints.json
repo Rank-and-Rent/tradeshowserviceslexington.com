@@ -1,0 +1,97 @@
+{
+  "project": {
+    "businessName": "Trade Show Services of Des Moines",
+    "city": "Des Moines",
+    "state": "IA",
+    "domain": "tradeshowservicesdesmoines.com",
+    "referenceUrl": "https://wearesparks.com"
+  },
+  "phases": [
+    {
+      "name": "Phase 1: Reference Forensics",
+      "status": "completed",
+      "requiredArtifacts": [
+        "reference-captures/homepage-full.png",
+        "reference-captures/homepage-tablet.png",
+        "reference-captures/homepage-mobile.png",
+        "reference-captures/nav.png",
+        "reference-captures/hero.png",
+        "reference-captures/mid-page-band-*.png",
+        "reference-captures/cta-band.png",
+        "reference-captures/footer.png",
+        "reference-captures/homepage-scroll.webm",
+        "reference-captures/style-dna.json",
+        "reference-captures/asset-inventory.json"
+      ],
+      "missingArtifacts": [],
+      "blockingIssues": []
+    },
+    {
+      "name": "Phase 2: Market Research",
+      "status": "completed",
+      "requiredArtifacts": [
+        "venue-research.json",
+        "labor-research.json",
+        "market-research.json"
+      ],
+      "missingArtifacts": [],
+      "blockingIssues": []
+    },
+    {
+      "name": "Phase 3: Taxonomy Planning",
+      "status": "completed",
+      "requiredArtifacts": [
+        "taxonomy-plan.json"
+      ],
+      "missingArtifacts": [],
+      "blockingIssues": []
+    },
+    {
+      "name": "Phase 4: Homepage and Shared Chrome Lock",
+      "status": "completed",
+      "requiredArtifacts": [
+        "qa-reference-compare/homepage-desktop-local.png",
+        "qa-reference-compare/homepage-tablet-local.png",
+        "qa-reference-compare/homepage-mobile-local.png",
+        "qa-reference-compare/homepage-compare-notes.md"
+      ],
+      "missingArtifacts": [],
+      "blockingIssues": []
+    },
+    {
+      "name": "Phase 5: Content Expansion",
+      "status": "completed",
+      "requiredArtifacts": [
+        "built routes for every active taxonomy index",
+        "built routes for every active taxonomy detail page",
+        "content-summary.json"
+      ],
+      "missingArtifacts": [],
+      "blockingIssues": []
+    },
+    {
+      "name": "Phase 6: Media Plan and Hero Video",
+      "status": "completed",
+      "requiredArtifacts": [
+        "IMAGE_REQUIREMENTS.txt",
+        "IMAGE_MANIFEST.json",
+        "hero-video-sources.json or still-hero fallback"
+      ],
+      "missingArtifacts": [],
+      "blockingIssues": []
+    },
+    {
+      "name": "Phase 7: Final QA, Build, and Git",
+      "status": "completed",
+      "requiredArtifacts": [
+        "successful production build output",
+        "qa-summary.json",
+        "qa-screens/desktop/*",
+        "qa-screens/tablet/*",
+        "qa-screens/mobile/*"
+      ],
+      "missingArtifacts": [],
+      "blockingIssues": []
+    }
+  ]
+}

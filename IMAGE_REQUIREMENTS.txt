@@ -1,0 +1,35 @@
+Trade Show Services of Des Moines Image Requirements
+
+Project: Trade Show Services of Des Moines
+Domain: tradeshowservicesdesmoines.com
+City: Des Moines, IA
+
+Reference behavior: the source homepage uses hero video.
+Hero decision: no local hero video was created because the project uses a legal still-hero fallback instead of watermarked or unverifiable footage.
+Still fallback asset: public/media/hero-candidate-2.jpg
+Media policy: do not reuse any reference photography or reference video from https://wearesparks.com.
+
+Current live assets already in this project
+- public/media/hero-candidate-2.jpg is the homepage hero still fallback.
+- public/media/hero-candidate-1.jpg is the shared internal-page hero still.
+- Featured-work rail panels currently mix these stills with original CSS-based gradient surfaces.
+
+Required image direction
+- Use original stills, licensed reusable stills, or commissioned illustration only.
+- Favor convention-center, expo-hall, fairgrounds, conference-hotel, sponsor-activation, and show-floor environments relevant to Des Moines and Central Iowa.
+- Avoid visible third-party logos, readable venue branding, watermarks, low-resolution source material, and obvious AI artifacts.
+- Preserve negative space for large white title overlays and the Sparks-style black/white layout system used throughout the site.
+- Keep every taxonomy image plausibly distinct from adjacent pages, especially venue pages and nearby location pages.
+
+Active taxonomy counts
+- Services: 33 detail pages
+- Locations: 36 detail pages
+- Venues: 22 detail pages
+- Event Types: 12 detail pages
+- Booth Types: 10 detail pages
+- Industries: 10 detail pages
+
+Manifest path: /Users/jackgreenberg/Desktop/rank-and-rent/trade-shows/tradeshowservicesdesmoines.com/IMAGE_MANIFEST.json
+Hero fallback manifest: /Users/jackgreenberg/Desktop/rank-and-rent/trade-shows/tradeshowservicesdesmoines.com/hero-still-fallback.json
+Generated at: 2026-03-27T12:13:07.154Z
+Manifest sections: generatedAt, project, reference, homepage, about, contact, shared, servicesIndex, locationsIndex, venuesIndex, eventTypesIndex, boothTypesIndex, industriesIndex, servicePages, locationPages, venuePages, eventTypePages, boothTypePages, industryPages

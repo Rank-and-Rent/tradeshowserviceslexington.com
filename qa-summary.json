@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-03-27T12:14:40.854Z",
+  "buildStatus": "success",
+  "activeTaxonomiesReviewed": [
+    "services",
+    "locations",
+    "venues",
+    "event-types",
+    "booth-types",
+    "industries"
+  ],
+  "representativeRoutesReviewed": [
+    "/",
+    "/about",
+    "/services",
+    "/services/turnkey-trade-show-services",
+    "/locations",
+    "/locations/downtown-des-moines",
+    "/venues",
+    "/venues/community-choice-convention-center",
+    "/event-types",
+    "/event-types/trade-show-services",
+    "/booth-types",
+    "/booth-types/inline-booth-displays",
+    "/industries",
+    "/industries/healthcare-trade-show-services",
+    "/contact",
+    "/privacy",
+    "/terms"
+  ],
+  "totalGeneratedRoutes": 135,
+  "layoutFidelity": "pass",
+  "spacingFidelity": "pass",
+  "typographyFidelity": "pass",
+  "responsiveBehavior": "pass",
+  "factualVenueAccuracy": "pass",
+  "laborAccuracy": "pass",
+  "imageManifestCompleteness": "pass",
+  "remainingIssues": []
+}

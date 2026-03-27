@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-03-27T12:13:07.155Z",
+  "referenceUrl": "https://wearesparks.com",
+  "reason": "Reference hero video was not recreated because no clean, legally reusable, watermark-free local footage set was assembled during this build window.",
+  "selectedFallbackAsset": {
+    "filename": "hero-candidate-2.jpg",
+    "relativePath": "public/media/hero-candidate-2.jpg",
+    "usage": "Homepage hero still fallback",
+    "notes": "Approved still fallback for the Sparks-style dark hero. Reference media was not reused."
+  }
+}

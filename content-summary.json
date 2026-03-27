@@ -1,0 +1,276 @@
+{
+  "generatedAt": "2026-03-27T12:09:57.643Z",
+  "activeTaxonomies": [
+    {
+      "section": "services",
+      "label": "Services",
+      "routeBase": "/services",
+      "detailCount": 33,
+      "representativeSlugs": [
+        "turnkey-trade-show-services",
+        "trade-show-general-contracting",
+        "expo-logistics-and-shipping"
+      ],
+      "minWordCount": 1758,
+      "maxWordCount": 1870,
+      "allPagesMeet1200WordRequirement": true,
+      "sampleWordCounts": [
+        {
+          "slug": "turnkey-trade-show-services",
+          "label": "Turnkey Trade Show Services",
+          "wordCount": 1796
+        },
+        {
+          "slug": "trade-show-general-contracting",
+          "label": "Trade Show General Contracting",
+          "wordCount": 1815
+        },
+        {
+          "slug": "exhibitor-appointed-contractor-coordination",
+          "label": "Exhibitor-Appointed Contractor Coordination",
+          "wordCount": 1813
+        },
+        {
+          "slug": "trade-show-booth-design",
+          "label": "Trade Show Booth Design",
+          "wordCount": 1820
+        },
+        {
+          "slug": "custom-exhibit-fabrication",
+          "label": "Custom Exhibit Fabrication",
+          "wordCount": 1812
+        }
+      ],
+      "underTargetPages": []
+    },
+    {
+      "section": "locations",
+      "label": "Locations",
+      "routeBase": "/locations",
+      "detailCount": 36,
+      "representativeSlugs": [
+        "downtown-des-moines",
+        "west-des-moines",
+        "altoona"
+      ],
+      "minWordCount": 1779,
+      "maxWordCount": 1868,
+      "allPagesMeet1200WordRequirement": true,
+      "sampleWordCounts": [
+        {
+          "slug": "downtown-des-moines",
+          "label": "Downtown Des Moines",
+          "wordCount": 1868
+        },
+        {
+          "slug": "east-village",
+          "label": "East Village",
+          "wordCount": 1805
+        },
+        {
+          "slug": "western-gateway",
+          "label": "Western Gateway",
+          "wordCount": 1830
+        },
+        {
+          "slug": "court-avenue-district",
+          "label": "Court Avenue District",
+          "wordCount": 1857
+        },
+        {
+          "slug": "riverfront-des-moines",
+          "label": "Riverfront Des Moines",
+          "wordCount": 1856
+        }
+      ],
+      "underTargetPages": []
+    },
+    {
+      "section": "venues",
+      "label": "Venues",
+      "routeBase": "/venues",
+      "detailCount": 22,
+      "representativeSlugs": [
+        "community-choice-convention-center",
+        "ron-pearson-center",
+        "richard-o-jacobson-exhibition-center"
+      ],
+      "minWordCount": 1736,
+      "maxWordCount": 1874,
+      "allPagesMeet1200WordRequirement": true,
+      "sampleWordCounts": [
+        {
+          "slug": "community-choice-convention-center",
+          "label": "Community Choice Convention Center",
+          "wordCount": 1825
+        },
+        {
+          "slug": "emc-expo-center",
+          "label": "EMC Expo Center",
+          "wordCount": 1740
+        },
+        {
+          "slug": "caseys-center",
+          "label": "Casey's Center",
+          "wordCount": 1736
+        },
+        {
+          "slug": "hilton-des-moines-downtown",
+          "label": "Hilton Des Moines Downtown",
+          "wordCount": 1779
+        },
+        {
+          "slug": "des-moines-marriott-downtown",
+          "label": "Des Moines Marriott Downtown",
+          "wordCount": 1793
+        }
+      ],
+      "underTargetPages": []
+    },
+    {
+      "section": "event-types",
+      "label": "Event Types",
+      "routeBase": "/event-types",
+      "detailCount": 12,
+      "representativeSlugs": [
+        "trade-show-services",
+        "conference-services",
+        "brand-activation-services"
+      ],
+      "minWordCount": 1760,
+      "maxWordCount": 1837,
+      "allPagesMeet1200WordRequirement": true,
+      "sampleWordCounts": [
+        {
+          "slug": "trade-show-services",
+          "label": "Trade Show Services",
+          "wordCount": 1809
+        },
+        {
+          "slug": "conference-services",
+          "label": "Conference Services",
+          "wordCount": 1774
+        },
+        {
+          "slug": "expo-services",
+          "label": "Expo Services",
+          "wordCount": 1813
+        },
+        {
+          "slug": "convention-services",
+          "label": "Convention Services",
+          "wordCount": 1790
+        },
+        {
+          "slug": "product-launch-services",
+          "label": "Product Launch Services",
+          "wordCount": 1787
+        }
+      ],
+      "underTargetPages": []
+    },
+    {
+      "section": "booth-types",
+      "label": "Booth Types",
+      "routeBase": "/booth-types",
+      "detailCount": 10,
+      "representativeSlugs": [
+        "inline-booth-displays",
+        "double-deck-exhibits",
+        "20x20-trade-show-booths"
+      ],
+      "minWordCount": 1769,
+      "maxWordCount": 1865,
+      "allPagesMeet1200WordRequirement": true,
+      "sampleWordCounts": [
+        {
+          "slug": "inline-booth-displays",
+          "label": "Inline Booth Displays",
+          "wordCount": 1805
+        },
+        {
+          "slug": "island-exhibit-booths",
+          "label": "Island Exhibit Booths",
+          "wordCount": 1830
+        },
+        {
+          "slug": "modular-trade-show-booths",
+          "label": "Modular Trade Show Booths",
+          "wordCount": 1844
+        },
+        {
+          "slug": "portable-trade-show-displays",
+          "label": "Portable Trade Show Displays",
+          "wordCount": 1830
+        },
+        {
+          "slug": "custom-exhibit-booths",
+          "label": "Custom Exhibit Booths",
+          "wordCount": 1791
+        }
+      ],
+      "underTargetPages": []
+    },
+    {
+      "section": "industries",
+      "label": "Industries",
+      "routeBase": "/industries",
+      "detailCount": 10,
+      "representativeSlugs": [
+        "healthcare-trade-show-services",
+        "manufacturing-expo-services",
+        "agriculture-and-agtech-expo-services"
+      ],
+      "minWordCount": 1797,
+      "maxWordCount": 1883,
+      "allPagesMeet1200WordRequirement": true,
+      "sampleWordCounts": [
+        {
+          "slug": "healthcare-trade-show-services",
+          "label": "Healthcare Trade Show Services",
+          "wordCount": 1843
+        },
+        {
+          "slug": "technology-trade-show-services",
+          "label": "Technology Trade Show Services",
+          "wordCount": 1839
+        },
+        {
+          "slug": "manufacturing-expo-services",
+          "label": "Manufacturing Expo Services",
+          "wordCount": 1797
+        },
+        {
+          "slug": "food-and-beverage-trade-show-services",
+          "label": "Food and Beverage Trade Show Services",
+          "wordCount": 1883
+        },
+        {
+          "slug": "beauty-and-cosmetics-trade-show-services",
+          "label": "Beauty and Cosmetics Trade Show Services",
+          "wordCount": 1838
+        }
+      ],
+      "underTargetPages": []
+    }
+  ],
+  "finalCountsByTaxonomy": {
+    "services": 33,
+    "locations": 36,
+    "venues": 22,
+    "event-types": 12,
+    "booth-types": 10,
+    "industries": 10
+  },
+  "everyActiveDetailPageMeets1200WordRequirement": true,
+  "representativeSlugsChosenForQA": {
+    "services": "turnkey-trade-show-services",
+    "locations": "downtown-des-moines",
+    "venues": "community-choice-convention-center",
+    "event-types": "trade-show-services",
+    "booth-types": "inline-booth-displays",
+    "industries": "healthcare-trade-show-services"
+  },
+  "underTargetPages": [],
+  "totalActiveDetailPages": 123
+}
