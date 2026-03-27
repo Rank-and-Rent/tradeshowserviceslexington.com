@@ -1,0 +1,155 @@
+{
+  "capturedAt": "2026-03-27T11:21:42.354Z",
+  "referenceUrl": "https://www.wearesparks.com/",
+  "referenceUsesHeroVideo": true,
+  "stylesheets": [
+    "https://www.wearesparks.com/_nuxt/entry.BGfBI-5V.css",
+    "https://www.wearesparks.com/_nuxt/default.DvB2Xm2x.css",
+    "https://www.wearesparks.com/_nuxt/a-video-player._11zEOiP.css",
+    "https://www.wearesparks.com/_nuxt/c-newsletter-signup-content.Dq5U1qXa.css",
+    "https://www.wearesparks.com/_nuxt/c-masthead.wJ1tWKHR.css",
+    "https://www.wearesparks.com/_nuxt/c-featured-projects.9Qk2Hfcu.css",
+    "https://www.wearesparks.com/_nuxt/c-capabilities-stack.BGlDQJ0c.css",
+    "https://www.wearesparks.com/_nuxt/c-header.CdRtBfxz.css",
+    "https://www.wearesparks.com/_nuxt/m-dropdown-filter.Ba0CLQrG.css",
+    "https://www.wearesparks.com/_nuxt/c-testimonial.B9l1DKgL.css",
+    "https://www.wearesparks.com/_nuxt/c-copy-block.D-36vC3J.css",
+    "https://www.wearesparks.com/_nuxt/c-featured-articles.C2pQOvo3.css",
+    "https://www.wearesparks.com/_nuxt/c-articles.JDAfX0l5.css"
+  ],
+  "scripts": [
+    "https://cdn.bizible.com/xdc.js?_biz_u=28fd33c0c9ae49de9f74162ba503e866&_biz_h=-59412256&cdn_o=a&jsVer=4.26.03.16",
+    "https://www.youtube.com/s/player/8e54e4ea/www-widgetapi.vflset/www-widgetapi.js",
+    "https://munchkin.marketo.net/164/munchkin.js",
+    "https://consent.cookiebot.com/507f9c59-935e-4cc4-8f99-0b4f16b106c1/cc.js?renew=false&referer=www.wearesparks.com&dnt=false&init=false",
+    "https://pi.pardot.com/pd.js",
+    "https://www.google-analytics.com/analytics.js",
+    "https://www.googletagmanager.com/gtag/js?id=G-HPFBQ9NQNK&cx=c&gtm=4e63p1",
+    "https://www.googletagmanager.com/gtag/js?id=AW-838498157&cx=c&gtm=4e63p1",
+    "https://consent.cookiebot.com/uc.js?cbid=507f9c59-935e-4cc4-8f99-0b4f16b106c1&implementation=gtm&consentmode-dataredaction=dynamic",
+    "https://www.wearesparks.com/_nuxt/COfs3Slr.js",
+    "https://analytics.ahrefs.com/analytics.js",
+    "https://munchkin.marketo.net/munchkin.js",
+    "https://experience.wearesparks.com/analytics?ver=3&visitor_id=&visitor_id_sign=&pi_opt_in=&campaign_id=null&account_id=1068522&title=Sparks%20%7C%20Your%20Global%20Brand%20Experience%20Agency&url=https%3A%2F%2Fwww.wearesparks.com%2F&referrer=",
+    "https://www.googletagmanager.com/gtm.js?id=GTM-K57RMJS",
+    "https://www.youtube.com/iframe_api",
+    "https://cdn.bizible.com/scripts/bizible.js"
+  ],
+  "images": [
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/case-studies/siemens-ces-2025-immersive-experience-award.jpg?w=640&auto=compress%2Cformat&fit=crop&dm=1754923065&s=203f1f095ab60044c83ff9a1516cac83",
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/case-studies/Workday-Rising-Hero.jpg?w=640&auto=compress%2Cformat&fit=crop&dm=1749759325&s=5cd032d8805e4b27930c0721beb2331b",
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/case-studies/Dolby-SXSW-Capes-gif_2024-07-30-131448_ioir.gif?w=640&auto=compress%2Cformat&fit=crop&dm=1723143591&s=7d49fad51fd7a0e2e5fa7774ea75d759",
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/case-studies/Amazon-Upfront-Artboard-3_2025-07-02-181234_hprg.jpg?w=640&auto=compress%2Cformat&fit=crop&dm=1751479955&s=7bf76d161b87de10e5d3dcc95bc5d52f",
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/case-studies/Michelob-Ultra.gif?w=640&auto=compress%2Cformat&fit=crop&dm=1722345126&s=4459917a1f5c683ad4e793850b84f6ec",
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/Brand-Experiential-Strategy.jpg?w=1200&h=681&auto=compress%2Cformat&fit=crop&dm=1722878798&s=0166988bbe1f63edfd16f2765688682d",
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/Creative-Ideation-Design.jpg?w=1200&h=681&auto=compress%2Cformat&fit=crop&dm=1722878803&s=d0a249878a8d6706de0346fa40fdb849",
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/Fabrication-Logistics.jpg?w=1200&h=681&auto=compress%2Cformat&fit=crop&dm=1722878821&s=d78aaba5b4c2792b7ace99f68dbed54c",
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/Content-Development-Production.jpg?w=1200&h=681&auto=compress%2Cformat&fit=crop&dm=1722878844&s=35ec06c7d283274d19ce4ae642de9f74",
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/Program-Measurement-Analytics.jpg?w=1200&h=681&auto=compress%2Cformat&fit=crop&dm=1722878869&s=246bff4c7c20337b4a8ad6258a8e396f",
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/blog-articles/Attendees-Engaging-in-Racing-Simulator-Experience-at-Technology-Event.jpg?w=960&auto=compress%2Cformat&fit=crop&dm=1774032491&s=c79d226fad9787f48ea4955bd8f7628c",
+    "https://optimise2.assets-servd.host/sparks-cms/production/images/blog-articles/audience-member-asking-question.jpg?w=960&auto=compress%2Cformat&fit=crop&dm=1773670067&s=156e95d8639111f9520975e3d32dc00a",
+    "https://cdn.bizible.com/ipv?_biz_r=&_biz_h=-59412256&_biz_u=28fd33c0c9ae49de9f74162ba503e866&_biz_l=https%3A%2F%2Fwww.wearesparks.com%2F&_biz_t=1774610494497&_biz_i=Sparks%20%7C%20Your%20Global%20Brand%20Experience%20Agency&_biz_n=0&rnd=323281&cdn_o=a&_biz_z=1774610494497",
+    "https://cdn.bizibly.com/u?_biz_u=28fd33c0c9ae49de9f74162ba503e866&_biz_l=https%3A%2F%2Fwww.wearesparks.com%2F&_biz_t=1774610494498&_biz_i=Sparks%20%7C%20Your%20Global%20Brand%20Experience%20Agency&rnd=916799&cdn_o=a&_biz_z=1774610494498",
+    "https://cdn.bizible.com/u?mapType=mkto&mapValue=id%3A732-UNF-251%26token%3A_mch-wearesparks.com-f1293cbf208136323ed495e178da4adf&_biz_u=28fd33c0c9ae49de9f74162ba503e866&_biz_l=https%3A%2F%2Fwww.wearesparks.com%2F&_biz_t=1774610494498&_biz_i=Sparks%20%7C%20Your%20Global%20Brand%20Experience%20Agency&_biz_n=1&rnd=934886&cdn_o=a&_biz_z=1774610494599"
+  ],
+  "backgroundImages": [
+    "linear-gradient(rgb(21, 21, 21), rgb(21, 21, 21))",
+    "linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255))"
+  ],
+  "videos": [
+    "https://customer-qrk9elqi1twyr40y.cloudflarestream.com/d1a4fc3fbbc0bdfbc50974632c5e5bc4/manifest/video.m3u8",
+    "https://customer-qrk9elqi1twyr40y.cloudflarestream.com/c1aba85d1c5e788b2c48cac95aeb6547/manifest/video.m3u8"
+  ],
+  "fonts": [
+    "Proxima Nova"
+  ],
+  "fontFiles": [],
+  "internalLinks": [
+    "https://www.wearesparks.com/",
+    "https://www.wearesparks.com/contact/",
+    "https://www.wearesparks.com/emea/",
+    "https://www.wearesparks.com/what-we-do/sparks-healthcare/",
+    "https://www.wearesparks.com/our-work/",
+    "https://www.wearesparks.com/who-we-are/",
+    "https://www.wearesparks.com/articles/",
+    "https://www.wearesparks.com/pages/privacy-policy/",
+    "https://www.wearesparks.com/security@wearesparks.com",
+    "https://www.wearesparks.com/pages/terms-of-use/",
+    "https://www.wearesparks.com/our-work",
+    "https://www.wearesparks.com/our-work/siemens-ces-creating-innovations/",
+    "https://www.wearesparks.com/our-work/workday/",
+    "https://www.wearesparks.com/our-work/dolby-sxsw/",
+    "https://www.wearesparks.com/our-work/amazon-upfront/",
+    "https://www.wearesparks.com/our-work/michelob-ultra-art-basel/",
+    "https://www.wearesparks.com/articles/the-live-effect-why-physical-presence-is-the-ultimate-competitive-advantage",
+    "https://www.wearesparks.com/articles/beyond-the-ad-why-pharmas-marketing-future-is-live-events",
+    "https://www.wearesparks.com/articles"
+  ],
+  "mirroredStylesheets": [
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/entry.BGfBI-5V.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-entry-BGfBI-5V-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/default.DvB2Xm2x.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-default-DvB2Xm2x-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/a-video-player._11zEOiP.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-a-video-player-11zEOiP-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/c-newsletter-signup-content.Dq5U1qXa.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-c-newsletter-signup-content-Dq5U1qXa-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/c-masthead.wJ1tWKHR.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-c-masthead-wJ1tWKHR-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/c-featured-projects.9Qk2Hfcu.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-c-featured-projects-9Qk2Hfcu-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/c-capabilities-stack.BGlDQJ0c.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-c-capabilities-stack-BGlDQJ0c-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/c-header.CdRtBfxz.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-c-header-CdRtBfxz-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/m-dropdown-filter.Ba0CLQrG.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-m-dropdown-filter-Ba0CLQrG-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/c-testimonial.B9l1DKgL.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-c-testimonial-B9l1DKgL-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/c-copy-block.D-36vC3J.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-c-copy-block-D-36vC3J-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/c-featured-articles.C2pQOvo3.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-c-featured-articles-C2pQOvo3-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    },
+    {
+      "sourceUrl": "https://www.wearesparks.com/_nuxt/c-articles.JDAfX0l5.css",
+      "mirroredCssPath": "reference-captures/mirrored-assets/css/https-www-wearesparks-com-nuxt-c-articles-JDAfX0l5-css.css",
+      "mirroredFontsDir": "reference-captures/mirrored-assets/fonts"
+    }
+  ]
+}

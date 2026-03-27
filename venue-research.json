@@ -1,0 +1,522 @@
+{
+  "generatedAt": "2026-03-27T11:58:00.000Z",
+  "market": {
+    "city": "Des Moines",
+    "state": "IA",
+    "metro": "Greater Des Moines / Central Iowa"
+  },
+  "sourcePolicy": "Official venue, hotel, airport, tourism, museum, and fairgrounds sources were prioritized. Venue-specific labor language is only used where official exhibitor or policy materials support it.",
+  "venueRecords": [
+    {
+      "slug": "community-choice-convention-center",
+      "name": "Community Choice Convention Center",
+      "city": "Des Moines",
+      "region": "Downtown Des Moines Convention Core",
+      "venueType": "convention-center",
+      "address": "730 3rd Street, Des Moines, IA 50309",
+      "parentVenue": "Iowa Events Center",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.iowaeventscenter.com/convention-center",
+        "https://www.iowaeventscenter.com/book-your-event"
+      ],
+      "verifiedFacts": [
+        "The Iowa Events Center says the Community Choice Convention Center and EMC Expo Center together provide 226,000 square feet of meeting space on four levels, 40 meeting rooms, and 150,000 square feet of exhibit space.",
+        "The same official pages say the complex includes the state's largest 28,800-square-foot grand ballroom, 11 loading bays, 1,400 parking spaces on site, and indoor skywalk connectivity to hotels, restaurants, and parking.",
+        "The center is attached to the 330-room Hilton Des Moines Downtown and is marketed as suitable for conventions, meetings, trade shows, sporting, social, and entertainment events."
+      ],
+      "tradeShowFit": [
+        "Primary downtown convention anchor for citywide trade shows, expo-driven conferences, association meetings, and sponsor-heavy programs.",
+        "Best fit when the brief depends on contiguous exhibit space, ballroom infrastructure, skywalk-connected hotels, and downtown walkability."
+      ]
+    },
+    {
+      "slug": "emc-expo-center",
+      "name": "EMC Expo Center",
+      "city": "Des Moines",
+      "region": "Downtown Des Moines Convention Core",
+      "venueType": "expo-center",
+      "address": "730 3rd Street, Des Moines, IA 50309",
+      "parentVenue": "Iowa Events Center",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.iowaeventscenter.com/news/detail/hy-vee-hall-to-be-renamed-emc-expo-center-january-1-2025",
+        "https://www.iowaeventscenter.com/convention-center",
+        "https://www.iowaeventscenter.com/book-your-event"
+      ],
+      "verifiedFacts": [
+        "Iowa Events Center announced on November 18, 2024 that Hy-Vee Hall would be renamed EMC Expo Center effective January 1, 2025.",
+        "The same official announcement says EMC Expo Center is the complex's trade show and meeting venue with 100,000 square feet of exhibit space and meeting rooms.",
+        "Current convention-center materials still market the convention side of the complex with 150,000 square feet of contiguous exhibit space and direct access to loading and skywalk infrastructure."
+      ],
+      "tradeShowFit": [
+        "High-value hall for regional expos, product showcases, agricultural and industrial events, and show-floor-first programs.",
+        "Useful when buyers need downtown exhibit hall presence without leaving the Iowa Events Center ecosystem."
+      ]
+    },
+    {
+      "slug": "caseys-center",
+      "name": "Casey's Center",
+      "city": "Des Moines",
+      "region": "Downtown Des Moines Convention Core",
+      "venueType": "arena",
+      "address": "730 3rd Street, Des Moines, IA 50309",
+      "parentVenue": "Iowa Events Center",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.iowaeventscenter.com/book-your-event",
+        "https://www.iowaeventscenter.com/news/detail/hy-vee-hall-to-be-renamed-emc-expo-center-january-1-2025",
+        "https://www.iowaeventscenter.com/"
+      ],
+      "verifiedFacts": [
+        "Iowa Events Center says the arena portion of the complex was renamed Casey's Center on July 1, 2025.",
+        "Official booking pages market the arena as a 17,000-plus-capacity venue connected to the broader Iowa Events Center event platform.",
+        "The Iowa Events Center homepage positions Casey's Center alongside EMC Expo Center and the convention center for large public events and premium group experiences."
+      ],
+      "tradeShowFit": [
+        "Useful for keynote-heavy general sessions, fan-facing brand activations, sponsorship programs, and arena-scale experiences tied to the downtown convention district.",
+        "Best when the project needs spectacle, seating, or premium club hospitality rather than standard booth rows."
+      ]
+    },
+    {
+      "slug": "hilton-des-moines-downtown",
+      "name": "Hilton Des Moines Downtown",
+      "city": "Des Moines",
+      "region": "Downtown Des Moines Convention Core",
+      "venueType": "conference-hotel",
+      "address": "435 Park Street, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.hilton.com/en/hotels/dsmdihh-hilton-des-moines-downtown/"
+      ],
+      "verifiedFacts": [
+        "Hilton's official hotel page says the property has 330 guestrooms, 26 suites, and 14,000 square feet of meeting space.",
+        "The same page says the hotel connects directly to the Iowa Events Center through the Des Moines skywalk system.",
+        "Hilton also places the hotel about five miles from Des Moines International Airport and markets group travel and events support on site."
+      ],
+      "tradeShowFit": [
+        "Strong headquarters-hotel option for convention-center programs, executive meetings, sponsor receptions, and room-block-led projects.",
+        "Best fit when buyers want attached-hotel convenience, skywalk access, and on-property meeting inventory next to the expo core."
+      ]
+    },
+    {
+      "slug": "des-moines-marriott-downtown",
+      "name": "Des Moines Marriott Downtown",
+      "city": "Des Moines",
+      "region": "Downtown Des Moines",
+      "venueType": "conference-hotel",
+      "address": "700 Grand Avenue, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.marriott.com/en-us/hotels/dsmia-des-moines-marriott-downtown/events/"
+      ],
+      "verifiedFacts": [
+        "Marriott's official events page says the hotel offers 33,851 square feet of event space across 16 meeting rooms and 16 breakout rooms.",
+        "The same page highlights a 14,000-square-foot Des Moines Exhibit Hall, a 9,300-square-foot Iowa Ballroom, and the Windows on 7th event space.",
+        "Marriott positions the hotel just blocks from the convention center and capable of hosting groups up to 2,200."
+      ],
+      "tradeShowFit": [
+        "Useful for headquarters overflow, ballroom conferences, hospitality suites, and breakout-heavy downtown meetings.",
+        "Good fit when planners want large hotel inventory without leaving the central business district."
+      ]
+    },
+    {
+      "slug": "embassy-suites-des-moines-downtown",
+      "name": "Embassy Suites by Hilton Des Moines Downtown",
+      "city": "Des Moines",
+      "region": "East Village / Downtown Des Moines",
+      "venueType": "conference-hotel",
+      "address": "101 East Locust Street, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.hilton.com/en/hotels/dsmdnes-embassy-suites-des-moines-downtown/events/"
+      ],
+      "verifiedFacts": [
+        "Hilton's official events page says the hotel has 20,054 square feet of flexible meeting and event space for up to 1,200 guests.",
+        "The same page lists 17 meeting rooms, 234 guest rooms, and a largest-room setup of 10,725 square feet.",
+        "Hilton also markets AV support, catering, and expert planners for event execution."
+      ],
+      "tradeShowFit": [
+        "Strong East Village hotel option for conferences, sponsor dinners, smaller expos, and room-block-driven downtown programs.",
+        "Useful when the project benefits from direct access to the riverfront and East Village hospitality district."
+      ]
+    },
+    {
+      "slug": "renaissance-des-moines-savery-hotel",
+      "name": "Renaissance Des Moines Savery Hotel",
+      "city": "Des Moines",
+      "region": "Downtown Des Moines",
+      "venueType": "historic-conference-hotel",
+      "address": "401 Locust Street, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.marriott.com/en-us/hotels/dsmbr-renaissance-des-moines-savery-hotel/events/"
+      ],
+      "verifiedFacts": [
+        "Marriott's official events page says the hotel has seven breakout rooms and markets the property as a downtown group and conference hotel.",
+        "The same page lists the Iowa Ballroom at 3,648 square feet and a combined Iowa/Des Moines Ballroom setup of 6,496 square feet.",
+        "Renaissance positions the venue as historic downtown meeting space with modern support and ballroom inventory."
+      ],
+      "tradeShowFit": [
+        "Useful for downtown receptions, leadership meetings, boutique conferences, and sponsor entertainment with historic character.",
+        "Best when the brief needs classic hotel ambiance rather than a contemporary convention box."
+      ]
+    },
+    {
+      "slug": "hotel-fort-des-moines",
+      "name": "Hotel Fort Des Moines",
+      "city": "Des Moines",
+      "region": "Downtown Des Moines",
+      "venueType": "boutique-conference-hotel",
+      "address": "1000 Walnut Street, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.hotelfortdesmoines.com/meetings-events"
+      ],
+      "verifiedFacts": [
+        "Hotel Fort Des Moines says it offers 13,362 square feet of total event space, a 4,200-square-foot Grand Ballroom, nine venues, and 290 guestrooms.",
+        "The same official page says the hotel supports hybrid virtual meetings, small expos, and pre-function areas for vendors and check-in.",
+        "Hotel Fort Des Moines also emphasizes dedicated planning, audiovisual support, vendor recommendations, and custom catering."
+      ],
+      "tradeShowFit": [
+        "Good for upscale meetings, board sessions, receptions, and downtown conference support with boutique character.",
+        "Useful when the event calls for historic styling, walkable downtown access, and strong hospitality programming."
+      ]
+    },
+    {
+      "slug": "sheraton-west-des-moines-hotel",
+      "name": "Sheraton West Des Moines Hotel",
+      "city": "West Des Moines",
+      "region": "West Des Moines / Westown Corridor",
+      "venueType": "conference-hotel",
+      "address": "1800 50th Street, West Des Moines, IA 50266",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.marriott.com/en-us/hotels/dsmsi-sheraton-west-des-moines-hotel/events/"
+      ],
+      "verifiedFacts": [
+        "Marriott's official events page says the hotel has 16 event rooms.",
+        "The same page says the largest space is the Convention Center with capacity for 1,600 guests.",
+        "Sheraton also positions the property as a dedicated meetings and events hotel in West Des Moines."
+      ],
+      "tradeShowFit": [
+        "Primary west-corridor hotel option for suburban conferences, regional association meetings, banquet programs, and vendor-friendly gatherings.",
+        "Best fit when buyers need West Des Moines access, surface parking convenience, and a convention-hotel setup outside the downtown core."
+      ]
+    },
+    {
+      "slug": "ron-pearson-center",
+      "name": "Ron Pearson Center",
+      "city": "West Des Moines",
+      "region": "West Des Moines Corporate Corridor",
+      "venueType": "conference-center",
+      "address": "5820 Westown Parkway, West Des Moines, IA 50266",
+      "parentVenue": null,
+      "confidence": "medium-high",
+      "sourceUrls": [
+        "https://www.hy-vee.com/conference-center/",
+        "https://www.hy-vee.com/conference-center/business-corporate-events.aspx",
+        "https://www.hy-vee.com/conference-center/facility-layout-capacities.aspx"
+      ],
+      "verifiedFacts": [
+        "Hy-Vee's official site positions the Ron Pearson Center as West Des Moines' meeting and event location on Westown Parkway.",
+        "The business-events page says the center supports business meetings, holiday parties, fundraising galas, and employee recognition dinners.",
+        "Hy-Vee also says the venue provides an on-site culinary team, room-set staff, and state-of-the-art audiovisual support, with a published facility layout and capacity chart."
+      ],
+      "tradeShowFit": [
+        "Useful for corporate presentations, fundraising events, internal sales meetings, and sponsor dinners in the west suburban office corridor.",
+        "Best when the project is anchored by Hy-Vee-adjacent business geography rather than downtown convention traffic."
+      ]
+    },
+    {
+      "slug": "stoney-creek-hotel-des-moines",
+      "name": "Stoney Creek Hotel Des Moines",
+      "city": "Johnston",
+      "region": "Johnston / Northwest Metro",
+      "venueType": "conference-hotel",
+      "address": "5291 Stoney Creek Court, Johnston, IA 50131",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.stoneycreekhotels.com/meetings-events/des-moines/"
+      ],
+      "verifiedFacts": [
+        "Stoney Creek's official Des Moines meetings page says the property is a Johnston hotel and event center north of Des Moines.",
+        "The same page says the venue offers flexible meeting rooms plus breakout areas including patio and fireside spaces.",
+        "Stoney Creek also markets a local events team to help with scheduling and logistics for intimate meetings through larger conferences."
+      ],
+      "tradeShowFit": [
+        "Useful for northwest-metro conferences, trainings, room-block programs, and offsite meetings that do not need downtown exposure.",
+        "Best fit when planners want a quieter suburban hotel campus with flexible breakout behavior."
+      ]
+    },
+    {
+      "slug": "ffa-enrichment-center",
+      "name": "FFA Enrichment Center",
+      "city": "Ankeny",
+      "region": "Ankeny / North Metro",
+      "venueType": "conference-center",
+      "address": "1055 SW Prairie Trail Parkway, Ankeny, IA 50023",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.ffaenrichmentcenter.com/",
+        "https://www.ffaenrichmentcenter.com/rental-pricing.aspx"
+      ],
+      "verifiedFacts": [
+        "The FFA Enrichment Center says it is a multipurpose conference, training, and educational center adjoining the DMACC Ankeny campus.",
+        "Its official rental-pricing page says the combined large conference room measures 8,800 square feet and supports 480 classroom-style seats or 700 theater-style seats.",
+        "The same page lists a 5,000-square-foot lobby and exhibit hall plus combined small meeting rooms, showing the building can support both conference and exhibit-style programming."
+      ],
+      "tradeShowFit": [
+        "Strong north-metro option for conferences, trainings, association meetings, and tabletop-style trade events in Ankeny.",
+        "Useful when the audience is tied to agriculture, education, community organizations, or north-corridor business traffic."
+      ]
+    },
+    {
+      "slug": "meadows-events-and-conference-center",
+      "name": "The Meadows Events & Conference Center",
+      "city": "Altoona",
+      "region": "Altoona / East Metro",
+      "venueType": "conference-center",
+      "address": "1 Prairie Meadows Drive, Altoona, IA 50009",
+      "parentVenue": "Prairie Meadows",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.prairiemeadows.com/filesimages/events/BanquetMenu.pdf",
+        "https://www.prairiemeadows.com/filesimages/events/PM%20Event%20Center%20Interactive%20Capacity%20Map.pdf",
+        "https://www.prairiemeadows.com/about-us/contact-us"
+      ],
+      "verifiedFacts": [
+        "Prairie Meadows' official event materials say The Meadows Events & Conference Center supports corporate meetings, trade shows, and team-building events with a dedicated event staff.",
+        "The official interactive capacity map shows multiple rentable rooms and ballroom components including Bishop Ballroom, Skinner Ballroom, Meadows Commons pre-function space, and smaller breakout rooms.",
+        "Prairie Meadows' official materials place the venue at 1 Prairie Meadows Drive in Altoona and market in-house technology, professional services, and banquet support."
+      ],
+      "tradeShowFit": [
+        "Useful for east-metro conferences, gaming-adjacent hospitality, association events, and mid-sized expo or vendor programs.",
+        "Best fit when buyers want Altoona access, casino-hotel amenities, and a self-contained events campus."
+      ]
+    },
+    {
+      "slug": "richard-o-jacobson-exhibition-center",
+      "name": "Richard O. Jacobson Exhibition Center",
+      "city": "Des Moines",
+      "region": "Iowa State Fairgrounds",
+      "venueType": "exhibition-center",
+      "address": "3000 East Grand Avenue, Des Moines, IA 50317",
+      "parentVenue": "Iowa State Fairgrounds",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.iowastatefairgrounds.org/buildings/jacobson-exhibition-center"
+      ],
+      "verifiedFacts": [
+        "The official fairgrounds page says the Richard O. Jacobson Exhibition Center includes a 32,000-square-foot arena floor, an 18,000-square-foot indoor warm-up arena, and fixed seating for approximately 3,300.",
+        "The same page says the main floor can support 150 10-by-10 booths and, with bleachers retracted, another 10,000 square feet becomes available.",
+        "Official details also call out two first-floor meeting rooms, a loading dock, adjacent hard-surface parking, and contracted catering and concessions."
+      ],
+      "tradeShowFit": [
+        "High-value east-side venue for consumer shows, agricultural events, demonstration-heavy exhibits, and large-format trade programs.",
+        "Best when the event benefits from fairgrounds access, large open floor plates, and exhibitor-friendly loading conditions."
+      ]
+    },
+    {
+      "slug": "william-c-knapp-varied-industries-building",
+      "name": "William C. Knapp Varied Industries Building",
+      "city": "Des Moines",
+      "region": "Iowa State Fairgrounds",
+      "venueType": "exhibit-hall",
+      "address": "3000 East Grand Avenue, Des Moines, IA 50317",
+      "parentVenue": "Iowa State Fairgrounds",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.iowastatefairgrounds.org/buildings/varied-industries-building"
+      ],
+      "verifiedFacts": [
+        "The fairgrounds says the Varied Industries Building offers 110,400 square feet of exhibit space and supports more than 400 10-by-10 booths.",
+        "The same page says the conference-center component adds 16,000 square feet with seven breakout rooms and seating from 220 to 850.",
+        "Official details also list multiple service entrances, loading for up to four trucks, and customized ticketing and staffing options."
+      ],
+      "tradeShowFit": [
+        "One of the region's strongest options for large expos, trade fairs, public shows, and mixed conference-plus-booth formats.",
+        "Useful when the event needs scale, fairgrounds parking, and a hall that can absorb high booth counts."
+      ]
+    },
+    {
+      "slug": "elwell-family-food-center",
+      "name": "Elwell Family Food Center",
+      "city": "Des Moines",
+      "region": "Iowa State Fairgrounds",
+      "venueType": "event-hall",
+      "address": "3000 East Grand Avenue, Des Moines, IA 50317",
+      "parentVenue": "Iowa State Fairgrounds",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.iowastatefairgrounds.org/buildings/elwell-family-food-center"
+      ],
+      "verifiedFacts": [
+        "The official fairgrounds page says the Elwell Family Food Center was fully renovated in 2008 and is climate-controlled for year-round use.",
+        "The same page says the building offers 15,000 square feet and can support 75 10-by-10 booths.",
+        "Fairgrounds materials also market the building for meetings, fundraisers, parties, weddings, and small trade shows."
+      ],
+      "tradeShowFit": [
+        "Useful for mid-sized vendor events, food-industry programming, community expos, and fairgrounds-adjacent meetings.",
+        "Best when the event needs a flexible east-side hall but not the full scale of the largest exhibition buildings."
+      ]
+    },
+    {
+      "slug": "walnut-center",
+      "name": "Walnut Center",
+      "city": "Des Moines",
+      "region": "Iowa State Fairgrounds",
+      "venueType": "event-hall",
+      "address": "3000 East Grand Avenue, Des Moines, IA 50317",
+      "parentVenue": "Iowa State Fairgrounds",
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.iowastatefairgrounds.org/buildings/walnut-center"
+      ],
+      "verifiedFacts": [
+        "The official fairgrounds page says Walnut Center is a clear-span steel building used for parties, meetings, fundraisers, and small trade shows.",
+        "The same page lists 7,000 square feet, banquet seating for 575, theater seating for 775, and room for 35 10-by-10 booths.",
+        "Fairgrounds materials also note full heating and air conditioning and an ADA-accessible restroom."
+      ],
+      "tradeShowFit": [
+        "Good for compact expos, member events, training sessions, and sponsor programs that want fairgrounds access without taking a larger hall.",
+        "Useful as a smaller-format east-side option when load-in simplicity matters more than sheer scale."
+      ]
+    },
+    {
+      "slug": "greater-des-moines-botanical-garden",
+      "name": "Greater Des Moines Botanical Garden",
+      "city": "Des Moines",
+      "region": "Riverwalk / North of Downtown",
+      "venueType": "garden-event-venue",
+      "address": "909 Robert D. Ray Drive, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://dmbotanicalgarden.com/private-events/"
+      ],
+      "verifiedFacts": [
+        "The Botanical Garden's private-events page says the venue sits along the Principal Riverwalk just north of downtown Des Moines.",
+        "The same page markets refreshed meeting and celebration rooms for company meetings, indoor and outdoor events, and year-round use.",
+        "Official copy also lists a dedicated event coordinator, tables and chairs, setup and teardown, and base-level audiovisual equipment as included rental features."
+      ],
+      "tradeShowFit": [
+        "Useful for sponsor receptions, leadership events, client dinners, and design-forward gatherings that want a memorable downtown setting.",
+        "Best when the project prioritizes atmosphere, riverwalk access, and hospitality over booth density."
+      ]
+    },
+    {
+      "slug": "science-center-of-iowa",
+      "name": "Science Center of Iowa",
+      "city": "Des Moines",
+      "region": "Court Avenue / Downtown Des Moines",
+      "venueType": "museum-event-venue",
+      "address": "401 W Martin Luther King Jr. Parkway, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.sciowa.org/about-sci/plan-a-private-event/",
+        "https://www.sciowa.org/about-sci/plan-a-private-event/meetings-and-events/",
+        "https://www.sciowa.org/upl/downloads/library/events-and-venue-brochure-printer-friendly-version.pdf"
+      ],
+      "verifiedFacts": [
+        "The Science Center of Iowa says it is centrally located in downtown Des Moines and supports private events, meetings, receptions, and after-hours facility buyouts.",
+        "SCI's meetings materials say the venue offers small classrooms for up to 50 people, large halls for up to 300 people, tables and chairs for up to 400 people, and on-site event staff.",
+        "The official brochure also lists business-meeting use in the Board Room and Planning Room plus larger halls, exhibits, and the Star Theater Planetarium."
+      ],
+      "tradeShowFit": [
+        "Strong fit for science, technology, education, and sponsor-driven events that benefit from immersive exhibits and unusual room layouts.",
+        "Useful when the brief favors a memorable branded environment over a standard ballroom."
+      ]
+    },
+    {
+      "slug": "des-moines-art-center",
+      "name": "Des Moines Art Center",
+      "city": "Des Moines",
+      "region": "Grand Avenue / West Des Moines Edge",
+      "venueType": "museum-event-venue",
+      "address": "4700 Grand Avenue, Des Moines, IA 50312",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://desmoinesartcenter.org/wp-content/uploads/2025/01/rental-brochure_jan-2025_update.pdf"
+      ],
+      "verifiedFacts": [
+        "The Art Center's 2025 rental brochure says the venue supports corporate events in spaces that include a lobby, a contemporary cafe, a 220-seat theater, and an open-air courtyard.",
+        "The same brochure says the lobby and courtyard can host up to 200 cocktail-style guests and the Levitt Auditorium seats 220.",
+        "Official materials also position the property's architecture and sculpture grounds as a distinctive backdrop supported by preferred caterers and Art Center-selected audiovisual technicians."
+      ],
+      "tradeShowFit": [
+        "Useful for elegant receptions, design-led corporate events, speaker programs, and sponsor evenings that need a high-design cultural backdrop.",
+        "Best when the project is hospitality-forward rather than expo-floor-heavy."
+      ]
+    },
+    {
+      "slug": "holiday-inn-and-suites-des-moines-northwest",
+      "name": "Holiday Inn Hotel & Suites Des Moines-Northwest",
+      "city": "Urbandale",
+      "region": "Merle Hay / Northwest Metro",
+      "venueType": "conference-hotel",
+      "address": "4800 Merle Hay Road, Urbandale, IA 50322",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.desmoinesiowaevents.com/"
+      ],
+      "verifiedFacts": [
+        "The venue's official events site says the hotel hosts conferences, award ceremonies, networking events, corporate events, business meetings, trade shows, fundraisers, and private parties.",
+        "The same page says the event space is newly renovated with state-of-the-art audiovisual equipment and complimentary Wi-Fi.",
+        "Official copy also highlights a long-tenured events staff and banquet-driven food service from the hotel's culinary team."
+      ],
+      "tradeShowFit": [
+        "Useful for northwest-metro meetings, suburban trade events, community expos, and banquet-led programs around the Merle Hay corridor.",
+        "Best when the audience is distributed across Urbandale, Johnston, Clive, and Des Moines' northwest side."
+      ]
+    },
+    {
+      "slug": "des-moines-heritage-center",
+      "name": "Des Moines Heritage Center",
+      "city": "Des Moines",
+      "region": "Historic East Village",
+      "venueType": "historic-event-venue",
+      "address": "120 E 5th Street, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.desmoinesheritagecenter.org/"
+      ],
+      "verifiedFacts": [
+        "The Des Moines Heritage Center markets itself as a historic East Village event venue.",
+        "The same official page says events with 80 guests or more are best fit in the Event Center.",
+        "Official copy also says showers, dinners, and small corporate events with fewer than 80 guests are best fit in the Historic Depot."
+      ],
+      "tradeShowFit": [
+        "Useful for East Village receptions, nonprofit events, boutique corporate gatherings, and historic-brand storytelling events.",
+        "Best fit for smaller gatherings that want neighborhood character rather than large expo-floor scale."
+      ]
+    }
+  ],
+  "excludedVenues": [
+    {
+      "name": "Small restaurant private rooms without durable public event specs",
+      "reason": "Many downtown dining venues are useful for dinners but do not publish stable meeting, exhibit, or corporate-event inventory strong enough for venue-detail pages."
+    },
+    {
+      "name": "Wedding-first barns and rural event properties beyond the practical metro sales radius",
+      "reason": "They are real venues, but they do not materially support the trade-show, conference, expo, or sponsor-activation positioning this site needs."
+    }
+  ],
+  "notes": [
+    "The downtown inventory is anchored by the Iowa Events Center complex plus attached and nearby hotels.",
+    "The east-side and fairgrounds inventory matters in Des Moines more than in many peer metros because multiple trade-show-capable halls sit outside the downtown hotel core.",
+    "The west corridor and north metro add meaningful conference inventory even when they are less convention-centric than downtown."
+  ]
+}

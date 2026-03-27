@@ -1,0 +1,91 @@
+{
+  "generatedAt": "2026-03-27T11:59:00.000Z",
+  "market": {
+    "city": "Des Moines",
+    "state": "IA",
+    "metro": "Greater Des Moines / Central Iowa"
+  },
+  "overallAssessment": {
+    "laborModel": "mixed, venue-directed",
+    "confidence": "high",
+    "safePublicClaim": "Des Moines event labor is venue- and organizer-directed rather than governed by one metro-wide rule set. Utility orders, AV support, staffing requirements, hanging-sign rules, and exhibitor access should be confirmed against the current venue documents and show instructions for each event."
+  },
+  "verifiedFindings": [
+    {
+      "slug": "iowa-events-center-exclusive-services",
+      "venue": "Iowa Events Center",
+      "finding": "The official exhibitors page says the Iowa Events Center offers exclusive services for electric, utilities, and food and beverage, and uses Markey's as the preferred vendor for audio/visual."
+    },
+    {
+      "slug": "iowa-events-center-event-personnel",
+      "venue": "Iowa Events Center",
+      "finding": "The 2025 Event Policies and Procedures PDF says IEC requires use of its employees at prevailing rates for security guards, first aid, ticket sellers, ticket takers, ushers, and similar categories."
+    },
+    {
+      "slug": "iowa-events-center-sign-installation",
+      "venue": "Iowa Events Center",
+      "finding": "The same IEC policies PDF says 2D signs may be installed and removed by Iowa Events Center staff, while 3D signs must be installed and removed by union labor staffed by the Event Manager."
+    },
+    {
+      "slug": "iowa-events-center-exhibitor-kit-ordering",
+      "venue": "Iowa Events Center",
+      "finding": "IEC policy materials say show management should provide exhibitor kits including official service order forms for electrical, water, drain, compressed air, and telecommunications, and event personnel must use designated entrances and exits."
+    },
+    {
+      "slug": "ffa-enrichment-center-catering-controls",
+      "venue": "FFA Enrichment Center",
+      "finding": "The FFA Enrichment Center rental-pricing page says room rentals include standard A/V and Wi-Fi, while catering fees and snack-and-beverage service are administered through the venue's event department with preferred-caterer and non-preferred-caterer fee structures."
+    },
+    {
+      "slug": "science-center-preferred-vendors",
+      "venue": "Science Center of Iowa",
+      "finding": "SCI's official brochure says clients work with SCI and preferred vendors for linens and catering, and SCI provides security and event staff for evening events."
+    },
+    {
+      "slug": "iowa-state-fairgrounds-coordination",
+      "venue": "Iowa State Fairgrounds",
+      "finding": "The fairgrounds' corporate-meeting page says staff help coordinate on-site catering, AV and sound options, Wi-Fi access, and table-and-chair rental."
+    }
+  ],
+  "venueSpecificOperatingPatterns": [
+    {
+      "slug": "iowa-events-center",
+      "pattern": "Utilities, F&B, and several venue services are controlled through Iowa Events Center ordering paths, and some staffing categories are venue-required.",
+      "copyUse": "At the Iowa Events Center complex, the best operating language is order-driven and venue-specific: confirm utilities, preferred AV, sign-hanging, and required event personnel early instead of assuming the last venue's rules apply."
+    },
+    {
+      "slug": "iowa-events-center-signage",
+      "pattern": "3D hanging-sign installation is not a free-form exhibitor decision at IEC; the venue states it is staffed through union labor coordinated by the Event Manager.",
+      "copyUse": "When a Des Moines brief includes overhead branding or complex hanging elements, the venue's current sign-installation rules should drive the plan from the start."
+    },
+    {
+      "slug": "ffa-enrichment-center",
+      "pattern": "Conference-center support at FFA is venue-managed around room packages, standard AV, Wi-Fi, and controlled catering/service rules rather than generic outside-vendor assumptions.",
+      "copyUse": "At FFA, treat food, beverage, and service add-ons as venue-governed line items and scope the agenda around the actual room package."
+    },
+    {
+      "slug": "science-center-of-iowa",
+      "pattern": "SCI uses preferred vendors and venue-managed staffing in ways that matter for after-hours receptions, museum programming, and technical add-ons.",
+      "copyUse": "For museum-style events in Des Moines, fold preferred-vendor coordination and venue staffing into the early timeline instead of treating the room like a bare rental."
+    },
+    {
+      "slug": "iowa-state-fairgrounds",
+      "pattern": "Fairgrounds execution is coordination-heavy and building-specific, with staff helping arrange catering, AV, Wi-Fi, and rentals by facility.",
+      "copyUse": "On fairgrounds jobs, keep the venue-building choice and its operating details tightly linked to booth plan, service needs, and guest flow."
+    }
+  ],
+  "approvedCopyPatterns": [
+    "Des Moines labor and venue services vary by facility, organizer, and event format, so the current exhibitor kit and venue instructions should guide the final install plan.",
+    "Utility orders, AV support, catering, and staffing categories are often routed through the venue's own ordering system rather than handled as open-market assumptions.",
+    "For hanging signs, specialty rigging, or complex production elements, the venue's written policies should be reviewed before design and fabrication are locked.",
+    "Downtown convention work and fairgrounds work should not be described as if they use the same operating model, because the service path changes by building.",
+    "When the venue publishes preferred-vendor or exclusive-service rules, those rules should shape the project schedule and purchasing decisions from the beginning."
+  ],
+  "avoidClaims": [
+    "Do not claim that Des Moines is universally union or universally non-union across all venues.",
+    "Do not claim a venue allows exhibitor-appointed contractors or outside vendors in every category unless the venue states that clearly.",
+    "Do not state that hanging-sign, rigging, or install labor is unrestricted at Iowa Events Center; its policies show otherwise.",
+    "Do not promise outside catering, outside AV, or self-service utilities when the venue's official materials point to venue or preferred-vendor controls.",
+    "Do not generalize labor rules from one Des Moines venue to another."
+  ]
+}

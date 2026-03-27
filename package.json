@@ -1,0 +1,26 @@
+{
+  "name": "tradeshowservicesdesmoines.com",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "content:summary": "tsx scripts/generate-content-summary.ts",
+    "media:manifest": "tsx scripts/generate-image-manifest.ts",
+    "compare:home": "tsx scripts/capture-homepage-compare.ts",
+    "qa:capture": "tsx scripts/capture-qa.ts"
+  },
+  "dependencies": {
+    "next": "^15.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "playwright": "^1.55.1",
+    "tsx": "^4.20.5",
+    "typescript": "^5.8.2"
+  }
+}

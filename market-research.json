@@ -1,0 +1,430 @@
+{
+  "generatedAt": "2026-03-27T12:00:00.000Z",
+  "market": {
+    "city": "Des Moines",
+    "state": "IA",
+    "businessName": "Trade Show Services of Des Moines",
+    "address": "699 Walnut St, Suite 400, Des Moines, IA 50309",
+    "serviceRadiusStrategy": "Lead with the downtown Des Moines convention core, then cover the west corridor, north corridor, east-side fairgrounds and Altoona cluster, and practical day-trip satellite markets across Central Iowa."
+  },
+  "marketSignals": [
+    {
+      "label": "Downtown skywalk access",
+      "finding": "Catch Des Moines says downtown offers four miles of climate-controlled skywalks, which matters for attendee circulation between venues, hotels, restaurants, and parking in all-weather conditions.",
+      "sourceUrl": "https://www.catchdesmoines.com/plan/transportation/skywalks/"
+    },
+    {
+      "label": "Convention inventory",
+      "finding": "Iowa Events Center markets 304,000 total square feet, 226,000 square feet of meeting space, 150,000 square feet of exhibit space, and 1,900 hotel rooms within one mile of the downtown complex.",
+      "sourceUrl": "https://www.iowaeventscenter.com/book-your-event"
+    },
+    {
+      "label": "Airport growth and connectivity",
+      "finding": "DSM says the airport reached 35 nonstop destinations in 2025 and is building a new terminal targeted for early 2027, reinforcing the market's viability for regional and national attendee travel.",
+      "sourceUrl": "https://www.flydsm.com/airport-business/news/dsm-celebrates-record-breaking-growth-with-allegiants-new-nonstop-flight-to-fort-myers"
+    },
+    {
+      "label": "Expanded parking and access",
+      "finding": "DSM's LiftDSM updates added more than 1,100 new covered parking spaces in 2025, increasing garage capacity by 63 percent and improving access for airport travelers and event traffic.",
+      "sourceUrl": "https://www.flydsm.com/airport-business/news/new-garage-opening-as-part-of-liftdsm-project"
+    },
+    {
+      "label": "Corporate and institutional depth",
+      "finding": "The Greater Des Moines Partnership positions the region around financial services, insurance, government, manufacturing, trade, and service employers, giving the market year-round conference and exhibitor demand beyond one industry vertical.",
+      "sourceUrl": "https://www.desmoinesmetro.com/en/talent_development/major_employers/"
+    },
+    {
+      "label": "Off-site venue mix",
+      "finding": "Catch Des Moines tells planners the metro has 60 unique off-site venues in addition to core convention inventory, which supports sponsor events, hospitality, and multi-venue conference agendas.",
+      "sourceUrl": "https://www.catchdesmoines.com/meeting-planners/"
+    }
+  ],
+  "regionalFramework": {
+    "meetingInfrastructureNotes": [
+      "Downtown Des Moines is the primary convention engine, centered on the Iowa Events Center complex, attached Hilton, nearby hotels, and the skywalk network.",
+      "The west corridor adds meaningful suburban conference capacity through West Des Moines, Johnston, Urbandale, Clive, and Jordan Creek-adjacent properties.",
+      "East-side inventory is stronger than many similar-sized metros because the Iowa State Fairgrounds and Altoona event venues create a second event cluster outside downtown.",
+      "North-metro Ankeny contributes conference and training inventory that works well for education, agriculture, association, and community-driven events."
+    ],
+    "accessibilityNotes": [
+      "Interstates 80 and 35, plus I-235 across the metro, keep Des Moines relatively easy to route for exhibitors, freight, and day-drive attendees.",
+      "DSM's route growth and terminal investment support fly-in attendance, while the compact downtown core keeps many destination routes short once guests arrive.",
+      "Fairgrounds and suburban venues generally offer simpler parking and vehicle access than the denser downtown core, which matters for road-heavy events and public shows."
+    ],
+    "destinationSupportNotes": [
+      "Catch Des Moines actively markets venue selection, convention registration, hotel blocks, and planner support, which is useful for buyer-facing destination framing.",
+      "Downtown hospitality districts like the East Village, Court Avenue, and the Riverwalk make it easier to sell receptions, sponsor dinners, and off-site programming.",
+      "The market reads as practical and central rather than flashy, so the strongest positioning emphasizes execution, attendee convenience, and venue fluency."
+    ]
+  },
+  "demandDrivers": [
+    {
+      "slug": "financial-services-and-insurance",
+      "label": "Financial Services and Insurance",
+      "sourceUrl": "https://www.desmoinesmetro.com/en/talent_development/major_employers/",
+      "reason": "Greater Des Moines is nationally associated with insurance and financial-services employers, which supports conferences, recruiting events, customer meetings, and association work."
+    },
+    {
+      "slug": "government-and-public-sector",
+      "label": "Government and Public Sector",
+      "sourceUrl": "https://www.desmoinesmetro.com/en/talent_development/major_employers/",
+      "reason": "State and local government employment concentration creates recurring demand for training, policy, association, and civic gatherings."
+    },
+    {
+      "slug": "manufacturing-and-industrial-business",
+      "label": "Manufacturing and Industrial Business",
+      "sourceUrl": "https://www.desmoinesmetro.com/en/talent_development/major_employers/",
+      "reason": "Manufacturing and industrial employers widen the exhibitor base beyond office users, supporting vendor expos, dealer programs, and operations-focused events."
+    },
+    {
+      "slug": "agriculture-and-rural-industry",
+      "label": "Agriculture and Rural Industry",
+      "sourceUrl": "https://www.ffaenrichmentcenter.com/",
+      "reason": "The FFA Enrichment Center, Iowa State Fairgrounds, and Central Iowa's farm-and-rural economy keep agriculture-adjacent meetings and events relevant in this market."
+    },
+    {
+      "slug": "destination-conventions-and-live-events",
+      "label": "Destination Conventions and Live Events",
+      "sourceUrl": "https://www.iowaeventscenter.com/book-your-event",
+      "reason": "Downtown convention inventory, arena capacity, and attached-hotel infrastructure make Des Moines viable for multi-day conferences, expos, and sponsor-led live events."
+    }
+  ],
+  "primaryVenueClusters": [
+    {
+      "name": "Downtown Convention Core",
+      "locations": [
+        "downtown-des-moines",
+        "western-gateway",
+        "court-avenue-district",
+        "east-village",
+        "riverfront-des-moines"
+      ],
+      "notes": "This is the anchor cluster for conventions, ballroom programs, skywalk-connected events, sponsor receptions, and hotel-led meeting calendars."
+    },
+    {
+      "name": "West Corridor / West Des Moines",
+      "locations": [
+        "west-des-moines",
+        "valley-junction",
+        "jordan-creek",
+        "clive",
+        "urbandale",
+        "johnston",
+        "windsor-heights"
+      ],
+      "notes": "The west corridor is where suburban hotel meetings, corporate events, and many easy-parking regional programs naturally route."
+    },
+    {
+      "name": "East Side / Altoona / Fairgrounds",
+      "locations": [
+        "altoona",
+        "pleasant-hill",
+        "capitol-east",
+        "bondurant"
+      ],
+      "notes": "This cluster matters for fairgrounds work, Prairie Meadows programs, public shows, and east-side logistics."
+    },
+    {
+      "name": "North Corridor",
+      "locations": [
+        "ankeny",
+        "polk-city",
+        "grimes"
+      ],
+      "notes": "North-metro coverage captures conference-center demand tied to Ankeny, agriculture, education, and suburban business growth."
+    }
+  ],
+  "locationTargets": [
+    {
+      "slug": "downtown-des-moines",
+      "label": "Downtown Des Moines",
+      "region": "Convention Core",
+      "priority": "primary",
+      "reason": "The downtown core is the market's main convention and hotel district anchored by the Iowa Events Center, skywalk system, and room-block inventory."
+    },
+    {
+      "slug": "east-village",
+      "label": "East Village",
+      "region": "Downtown Des Moines",
+      "priority": "primary",
+      "reason": "East Village matters for boutique hotel programs, receptions, sponsor dinners, and walkable downtown hospitality."
+    },
+    {
+      "slug": "western-gateway",
+      "label": "Western Gateway",
+      "region": "Downtown Des Moines",
+      "priority": "primary",
+      "reason": "Western Gateway supports civic events, festival spillover, museum adjacency, and downtown business activity."
+    },
+    {
+      "slug": "court-avenue-district",
+      "label": "Court Avenue District",
+      "region": "Downtown Des Moines",
+      "priority": "primary",
+      "reason": "Court Avenue is a key downtown entertainment district that helps conference agendas and sponsor events extend beyond ballroom hours."
+    },
+    {
+      "slug": "riverfront-des-moines",
+      "label": "Riverfront Des Moines",
+      "region": "Downtown Des Moines",
+      "priority": "primary",
+      "reason": "Riverfront assets like the Botanical Garden and nearby downtown venues support hospitality, launches, and outdoor-leaning events."
+    },
+    {
+      "slug": "ingersoll-avenue",
+      "label": "Ingersoll Avenue",
+      "region": "Central Des Moines",
+      "priority": "secondary",
+      "reason": "Ingersoll extends downtown's hospitality footprint and reads well for creative off-sites and meeting-adjacent dinners."
+    },
+    {
+      "slug": "sherman-hill",
+      "label": "Sherman Hill",
+      "region": "Central Des Moines",
+      "priority": "secondary",
+      "reason": "Sherman Hill sits close to downtown and helps capture central-city intent that is adjacent to, but not the same as, the convention core."
+    },
+    {
+      "slug": "drake-neighborhood",
+      "label": "Drake Neighborhood",
+      "region": "Central Des Moines",
+      "priority": "secondary",
+      "reason": "Drake University activity supports community, education, and institutional event demand on the near west side."
+    },
+    {
+      "slug": "beaverdale",
+      "label": "Beaverdale",
+      "region": "Northwest Des Moines",
+      "priority": "secondary",
+      "reason": "Beaverdale helps cover established northwest neighborhoods that feed Johnston, Urbandale, and central Des Moines events."
+    },
+    {
+      "slug": "highland-park",
+      "label": "Highland Park",
+      "region": "North Des Moines",
+      "priority": "secondary",
+      "reason": "Highland Park widens north-side coverage and supports community-driven and neighborhood business demand."
+    },
+    {
+      "slug": "capitol-east",
+      "label": "Capitol East",
+      "region": "East Des Moines",
+      "priority": "secondary",
+      "reason": "Capitol East sits between downtown and the fairgrounds, making it relevant for government, fairgrounds, and east-side routing."
+    },
+    {
+      "slug": "south-des-moines",
+      "label": "South Des Moines",
+      "region": "South Des Moines",
+      "priority": "secondary",
+      "reason": "South Des Moines matters for airport access, fairgrounds access, and south-side community and business events."
+    },
+    {
+      "slug": "airport-corridor",
+      "label": "Airport Corridor",
+      "region": "South Des Moines",
+      "priority": "primary",
+      "reason": "The airport corridor matters for fly-in attendees, airport-adjacent lodging, and logistics-sensitive programs."
+    },
+    {
+      "slug": "pleasant-hill",
+      "label": "Pleasant Hill",
+      "region": "East Metro",
+      "priority": "secondary",
+      "reason": "Pleasant Hill captures east-side suburban demand and routes naturally into the fairgrounds and Altoona cluster."
+    },
+    {
+      "slug": "altoona",
+      "label": "Altoona",
+      "region": "East Metro",
+      "priority": "primary",
+      "reason": "Altoona is a real event node because Prairie Meadows and adjacent visitor traffic support conferences, banquets, and east-metro programs."
+    },
+    {
+      "slug": "ankeny",
+      "label": "Ankeny",
+      "region": "North Metro",
+      "priority": "primary",
+      "reason": "Ankeny adds north-corridor demand through the FFA Enrichment Center, DMACC adjacency, and rapid suburban growth."
+    },
+    {
+      "slug": "west-des-moines",
+      "label": "West Des Moines",
+      "region": "West Corridor",
+      "priority": "primary",
+      "reason": "West Des Moines is the metro's strongest suburban corporate market, with major hotels, Hy-Vee's conference center, and major office traffic."
+    },
+    {
+      "slug": "valley-junction",
+      "label": "Valley Junction",
+      "region": "West Des Moines",
+      "priority": "secondary",
+      "reason": "Valley Junction gives West Des Moines coverage a distinct historic district and event identity rather than a generic suburb page."
+    },
+    {
+      "slug": "jordan-creek",
+      "label": "Jordan Creek",
+      "region": "West Des Moines",
+      "priority": "primary",
+      "reason": "Jordan Creek is a strong west-side hospitality and retail node that supports meetings, launches, and sponsor activity."
+    },
+    {
+      "slug": "clive",
+      "label": "Clive",
+      "region": "West Corridor",
+      "priority": "secondary",
+      "reason": "Clive supports west-corridor business demand and helps bridge West Des Moines, Urbandale, and Waukee coverage."
+    },
+    {
+      "slug": "urbandale",
+      "label": "Urbandale",
+      "region": "Northwest Metro",
+      "priority": "primary",
+      "reason": "Urbandale matters because the Holiday Inn Des Moines-Northwest and Merle Hay corridor support suburban meetings and trade events."
+    },
+    {
+      "slug": "johnston",
+      "label": "Johnston",
+      "region": "Northwest Metro",
+      "priority": "primary",
+      "reason": "Johnston carries real conference demand through Stoney Creek and nearby suburban corporate and institutional traffic."
+    },
+    {
+      "slug": "waukee",
+      "label": "Waukee",
+      "region": "West Growth Corridor",
+      "priority": "secondary",
+      "reason": "Waukee is one of the metro's fastest-growing western suburbs and expands service coverage into new residential and business growth."
+    },
+    {
+      "slug": "grimes",
+      "label": "Grimes",
+      "region": "Northwest Metro",
+      "priority": "secondary",
+      "reason": "Grimes broadens northwest coverage and fits regional meetings tied to service, logistics, and suburban business traffic."
+    },
+    {
+      "slug": "bondurant",
+      "label": "Bondurant",
+      "region": "East Growth Corridor",
+      "priority": "secondary",
+      "reason": "Bondurant widens east-corridor reach beyond Altoona and Pleasant Hill into a fast-growing I-80 market."
+    },
+    {
+      "slug": "norwalk",
+      "label": "Norwalk",
+      "region": "South Metro",
+      "priority": "secondary",
+      "reason": "Norwalk adds a south-metro growth market that is close enough to downtown and the airport to be commercially relevant."
+    },
+    {
+      "slug": "indianola",
+      "label": "Indianola",
+      "region": "South Satellite",
+      "priority": "secondary",
+      "reason": "Indianola extends practical day-drive coverage south of the metro and adds college- and community-event relevance."
+    },
+    {
+      "slug": "carlisle",
+      "label": "Carlisle",
+      "region": "South Logistics Corridor",
+      "priority": "secondary",
+      "reason": "Carlisle supports south-corridor coverage where I-35 access and logistics-oriented businesses matter."
+    },
+    {
+      "slug": "windsor-heights",
+      "label": "Windsor Heights",
+      "region": "Central West Infill",
+      "priority": "secondary",
+      "reason": "Windsor Heights fills the gap between Des Moines and West Des Moines and supports hyper-local west-central search intent."
+    },
+    {
+      "slug": "polk-city",
+      "label": "Polk City",
+      "region": "North Metro",
+      "priority": "secondary",
+      "reason": "Polk City adds north-of-Ankeny coverage for outdoor, community, and lakeside-adjacent event interest."
+    },
+    {
+      "slug": "adel",
+      "label": "Adel",
+      "region": "Western Satellite",
+      "priority": "secondary",
+      "reason": "Adel extends practical westward range for regional conferences, retreats, and client events."
+    },
+    {
+      "slug": "de-soto",
+      "label": "De Soto",
+      "region": "Western Satellite",
+      "priority": "secondary",
+      "reason": "De Soto captures west-of-Waukee growth and industrial/logistics relevance in the far-west corridor."
+    },
+    {
+      "slug": "perry",
+      "label": "Perry",
+      "region": "Northwest Satellite",
+      "priority": "secondary",
+      "reason": "Perry adds northwest regional coverage for Central Iowa day-drive programs."
+    },
+    {
+      "slug": "ames",
+      "label": "Ames",
+      "region": "North Satellite",
+      "priority": "primary",
+      "reason": "Ames is a meaningful satellite market because of Iowa State University, research activity, and frequent conference/event overlap with Des Moines providers."
+    },
+    {
+      "slug": "boone",
+      "label": "Boone",
+      "region": "Northwest Satellite",
+      "priority": "secondary",
+      "reason": "Boone contributes northwestern day-drive demand and agricultural/community event relevance."
+    },
+    {
+      "slug": "newton",
+      "label": "Newton",
+      "region": "East Satellite",
+      "priority": "secondary",
+      "reason": "Newton extends eastward coverage into a real manufacturing and interstate-connected satellite market."
+    }
+  ],
+  "notes": [
+    "Des Moines is not only a downtown convention market; it sells well when the copy reflects the downtown core plus west, north, and east venue clusters.",
+    "The market rewards practical, execution-led positioning more than flashy destination language.",
+    "Day-drive coverage across Central Iowa is commercially relevant because many programs pull from regional employers, associations, and public-sector groups."
+  ],
+  "sources": [
+    {
+      "label": "Catch Des Moines - Meeting Planners",
+      "url": "https://www.catchdesmoines.com/meeting-planners/"
+    },
+    {
+      "label": "Catch Des Moines - Skywalks",
+      "url": "https://www.catchdesmoines.com/plan/transportation/skywalks/"
+    },
+    {
+      "label": "Iowa Events Center - Convention Center",
+      "url": "https://www.iowaeventscenter.com/convention-center"
+    },
+    {
+      "label": "Iowa Events Center - Book Your Event",
+      "url": "https://www.iowaeventscenter.com/book-your-event"
+    },
+    {
+      "label": "Des Moines International Airport - Route Growth",
+      "url": "https://www.flydsm.com/airport-business/news/dsm-celebrates-record-breaking-growth-with-allegiants-new-nonstop-flight-to-fort-myers"
+    },
+    {
+      "label": "Des Moines International Airport - LiftDSM",
+      "url": "https://www.flydsm.com/lift-dsm"
+    },
+    {
+      "label": "Greater Des Moines Partnership - Major Employers",
+      "url": "https://www.desmoinesmetro.com/en/talent_development/major_employers/"
+    },
+    {
+      "label": "FFA Enrichment Center",
+      "url": "https://www.ffaenrichmentcenter.com/"
+    }
+  ]
+}
