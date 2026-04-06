@@ -37,12 +37,19 @@ const root = process.cwd();
 const manifestOutputPath = path.join(root, "IMAGE_MANIFEST.json");
 const requirementsOutputPath = path.join(root, "IMAGE_REQUIREMENTS.txt");
 const fallbackOutputPath = path.join(root, "hero-still-fallback.json");
+const heroVideoSourcesPath = path.join(root, "hero-video-sources.json");
+const heroLoopMp4Path = path.join(root, "public", "media", "hero-loop.mp4");
+const heroLoopWebmPath = path.join(root, "public", "media", "hero-loop.webm");
+
+const heroVideoCreated =
+  fs.existsSync(heroVideoSourcesPath) &&
+  (fs.existsSync(heroLoopMp4Path) || fs.existsSync(heroLoopWebmPath));
 
 const reference = {
   referenceUrl: "https://wearesparks.com",
   referenceUsesHeroVideo: true,
-  heroVideoCreated: false,
-  stillHeroFallback: true,
+  heroVideoCreated,
+  stillHeroFallback: !heroVideoCreated,
   referenceMediaReused: false
 } as const;
 

@@ -407,10 +407,34 @@
       {
         "slug": "des-moines-heritage-center",
         "label": "Des Moines Heritage Center"
+      },
+      {
+        "slug": "principal-park",
+        "label": "Principal Park"
+      },
+      {
+        "slug": "iowa-state-fairgrounds",
+        "label": "Iowa State Fairgrounds"
+      },
+      {
+        "slug": "prairie-meadows-racetrack-and-casino",
+        "label": "Prairie Meadows Racetrack & Casino"
+      },
+      {
+        "slug": "temple-for-performing-arts",
+        "label": "Temple for Performing Arts"
+      },
+      {
+        "slug": "capital-square",
+        "label": "Capital Square"
+      },
+      {
+        "slug": "worldly-brewing-event-center",
+        "label": "Worldly Brewing Event Center"
       }
     ],
-    "targetCount": 22,
-    "actualGeneratedCount": 22,
+    "targetCount": 28,
+    "actualGeneratedCount": 28,
     "representativeSampleSlugs": [
       "community-choice-convention-center",
       "ron-pearson-center",
@@ -662,12 +686,12 @@
   "pageCountPlan": {
     "services": 33,
     "locations": 36,
-    "venues": 22,
+    "venues": 28,
     "eventTypes": 12,
     "boothTypes": 10,
     "industries": 10,
-    "totalDetailPages": 123,
+    "totalDetailPages": 129,
     "totalIndexPages": 6,
-    "totalSitePagesBeforeAboutContactPrivacyTerms": 129
+    "totalSitePagesBeforeAboutContactPrivacyTerms": 135
   }
 }

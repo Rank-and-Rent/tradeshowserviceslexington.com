@@ -5,6 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "capture:reference": "node scripts/capture-reference.mjs",
     "content:summary": "tsx scripts/generate-content-summary.ts",
     "media:manifest": "tsx scripts/generate-image-manifest.ts",
     "compare:home": "tsx scripts/capture-homepage-compare.ts",

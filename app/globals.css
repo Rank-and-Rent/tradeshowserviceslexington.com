@@ -41,6 +41,10 @@ body.menu-open {
   overflow: hidden;
 }
 
+body.hero-video-open {
+  overflow: hidden;
+}
+
 a,
 button,
 input,
@@ -445,8 +449,15 @@ ol {
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.08)),
     linear-gradient(180deg, rgba(8, 8, 8, 0.06), rgba(8, 8, 8, 0.48)),
-    url("/media/hero-candidate-2.jpg") center center / cover no-repeat;
+    url("/media/hero-poster.png") center center / cover no-repeat;
   transform: scale(1.02);
+}
+
+.sparks-hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
 }
 
 .sparks-hero__scrim {
@@ -513,6 +524,80 @@ ol {
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   border-left: 12px solid currentcolor;
+}
+
+.hero-video-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 1600;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.hero-video-dialog__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(12px);
+}
+
+.hero-video-dialog__frame {
+  position: relative;
+  z-index: 1;
+  width: min(1240px, calc(100vw - 48px));
+  background: #030303;
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.42);
+}
+
+.hero-video-dialog__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 22px;
+  color: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-video-dialog__toolbar p {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.hero-video-dialog__close {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+}
+
+.hero-video-dialog__close span {
+  position: absolute;
+  top: 16px;
+  left: 9px;
+  width: 14px;
+  height: 1.5px;
+  background: currentcolor;
+}
+
+.hero-video-dialog__close span:first-child {
+  transform: rotate(45deg);
+}
+
+.hero-video-dialog__close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.hero-video-dialog__video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
 }
 
 .home-centered {
@@ -1397,6 +1482,14 @@ ol {
   .page-stat-grid {
     grid-template-columns: 1fr;
   }
+
+  .hero-video-dialog {
+    padding: 16px;
+  }
+
+  .hero-video-dialog__frame {
+    width: min(100vw - 32px, 1120px);
+  }
 }
 
 @media (max-width: 640px) {
@@ -1456,5 +1549,15 @@ ol {
   .home-brief-band {
     padding-top: 40px;
     padding-bottom: 72px;
+  }
+
+  .hero-video-dialog__toolbar {
+    padding: 14px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sparks-hero__video {
+    display: none;
   }
 }

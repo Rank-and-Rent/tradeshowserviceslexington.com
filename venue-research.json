@@ -502,6 +502,148 @@
         "Useful for East Village receptions, nonprofit events, boutique corporate gatherings, and historic-brand storytelling events.",
         "Best fit for smaller gatherings that want neighborhood character rather than large expo-floor scale."
       ]
+    },
+    {
+      "slug": "principal-park",
+      "name": "Principal Park",
+      "city": "Des Moines",
+      "region": "Riverfront / South Downtown",
+      "venueType": "stadium-event-venue",
+      "address": "1 Line Drive, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.milb.com/iowa/ballpark",
+        "https://www.milb.com/iowa/ballpark/private-events",
+        "https://www.catchdesmoines.com/things-to-do/sports/principal-park/"
+      ],
+      "verifiedFacts": [
+        "Principal Park is an 11,500-seat minor league baseball stadium along the Des Moines River, home to the Iowa Cubs, located at 1 Line Drive in south downtown Des Moines.",
+        "The official ballpark pages market private events, corporate outings, group hospitality, suite rentals, and field-level event programs beyond game days.",
+        "Catch Des Moines positions Principal Park as a key downtown entertainment venue with river views and proximity to the Court Avenue district."
+      ],
+      "tradeShowFit": [
+        "Useful for corporate outings, sponsor hospitality, field-level activations, and group entertainment tied to downtown Des Moines convention programming.",
+        "Best fit when the program benefits from outdoor ballpark energy, river views, and premium suite access rather than traditional meeting-room inventory."
+      ]
+    },
+    {
+      "slug": "iowa-state-fairgrounds",
+      "name": "Iowa State Fairgrounds",
+      "city": "Des Moines",
+      "region": "Iowa State Fairgrounds Campus",
+      "venueType": "fairgrounds-campus",
+      "address": "3000 East Grand Avenue, Des Moines, IA 50317",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.iowastatefairgrounds.org/",
+        "https://www.iowastatefairgrounds.org/buildings/",
+        "https://www.iowastatefair.org/"
+      ],
+      "verifiedFacts": [
+        "The Iowa State Fairgrounds is a 160-plus-acre campus on the east side of Des Moines that hosts the annual Iowa State Fair and year-round trade shows, consumer expos, conferences, and community events.",
+        "The official buildings page shows multiple exhibit halls and event venues including the Varied Industries Building, Jacobson Exhibition Center, Elwell Family Food Center, and Walnut Center, collectively offering hundreds of thousands of square feet of indoor event space.",
+        "The fairgrounds provides loading docks, surface parking, on-site catering services, and flexible building configurations designed for large-format event production."
+      ],
+      "tradeShowFit": [
+        "The strongest large-format expo campus in central Iowa for trade shows, agricultural events, consumer shows, industrial demonstrations, and multi-building event programs.",
+        "Best fit when the event needs campus-scale flexibility, massive parking, drive-in access, and multiple buildings working in concert rather than a single convention-center box."
+      ]
+    },
+    {
+      "slug": "prairie-meadows-racetrack-and-casino",
+      "name": "Prairie Meadows Racetrack & Casino",
+      "city": "Altoona",
+      "region": "Altoona / East Metro",
+      "venueType": "casino-racetrack-event-venue",
+      "address": "1 Prairie Meadows Drive, Altoona, IA 50009",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.prairiemeadows.com/",
+        "https://www.prairiemeadows.com/entertainment/",
+        "https://www.catchdesmoines.com/things-to-do/casinos/prairie-meadows/"
+      ],
+      "verifiedFacts": [
+        "Prairie Meadows is Iowa's only thoroughbred, quarter horse, and harness racing facility combined with a full-scale casino, hotel, and event center at 1 Prairie Meadows Drive in Altoona.",
+        "The property includes The Meadows Events & Conference Center plus multiple entertainment and hospitality venues for corporate events and private functions.",
+        "Catch Des Moines positions Prairie Meadows as a major east-metro entertainment and event destination with hotel, dining, and gaming amenities on a single campus."
+      ],
+      "tradeShowFit": [
+        "Useful for east-metro corporate programs, gaming-adjacent hospitality events, sponsor entertaining, and multi-day conferences with integrated hotel, casino, and event-center amenities.",
+        "Best when the brief needs a self-contained campus with hotel, entertainment, dining, and event infrastructure outside the downtown core."
+      ]
+    },
+    {
+      "slug": "temple-for-performing-arts",
+      "name": "Temple for Performing Arts",
+      "city": "Des Moines",
+      "region": "Downtown Des Moines",
+      "venueType": "theater-event-venue",
+      "address": "1011 Locust Street, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "high",
+      "sourceUrls": [
+        "https://www.templeforperformingarts.com/",
+        "https://www.templeforperformingarts.com/private-events",
+        "https://www.catchdesmoines.com/things-to-do/arts-culture/"
+      ],
+      "verifiedFacts": [
+        "The Temple for Performing Arts is a historic downtown Des Moines venue at 1011 Locust Street that hosts corporate events, galas, concerts, and private celebrations.",
+        "The venue offers a main auditorium, ballroom, and multiple event-capable spaces with production infrastructure and catering partnerships.",
+        "Catch Des Moines positions the Temple as one of the city's distinctive historic event and cultural venues."
+      ],
+      "tradeShowFit": [
+        "Useful for gala dinners, keynote presentations, award ceremonies, and signature corporate events that benefit from historic theater architecture.",
+        "Best when the brief calls for downtown cultural character and production-ready staging rather than standard convention or hotel ballroom inventory."
+      ]
+    },
+    {
+      "slug": "capital-square",
+      "name": "Capital Square",
+      "city": "Des Moines",
+      "region": "Downtown Des Moines",
+      "venueType": "corporate-event-venue",
+      "address": "400 Locust Street, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "medium-high",
+      "sourceUrls": [
+        "https://www.catchdesmoines.com/meetings/",
+        "https://www.catchdesmoines.com/meetings/venues/"
+      ],
+      "verifiedFacts": [
+        "Capital Square is a downtown Des Moines office and event complex at 400 Locust Street that includes conference and event space used for corporate meetings, receptions, and private functions.",
+        "The property sits in the heart of the downtown business district connected by the skywalk system to hotels, restaurants, and the Iowa Events Center.",
+        "Catch Des Moines positions downtown Des Moines as an integrated skywalk-connected meetings ecosystem for corporate and convention events."
+      ],
+      "tradeShowFit": [
+        "Useful for corporate meetings, executive presentations, networking receptions, and private client events in the downtown business core.",
+        "Best fit for CBD programs that want skywalk connectivity and central business-district positioning rather than convention-hall scale."
+      ]
+    },
+    {
+      "slug": "worldly-brewing-event-center",
+      "name": "Worldly Brewing Event Center",
+      "city": "Des Moines",
+      "region": "East Village / Downtown Des Moines",
+      "venueType": "brewery-event-venue",
+      "address": "113 E 4th Street, Des Moines, IA 50309",
+      "parentVenue": null,
+      "confidence": "medium",
+      "sourceUrls": [
+        "https://www.catchdesmoines.com/things-to-do/nightlife/",
+        "https://www.catchdesmoines.com/meetings/venues/"
+      ],
+      "verifiedFacts": [
+        "Worldly Brewing Event Center is an East Village brewery and event space in downtown Des Moines that hosts private events, corporate gatherings, and social functions.",
+        "The venue offers a flexible event format with craft beer culture and downtown walkability in the East Village hospitality district.",
+        "Catch Des Moines positions East Village venues as walkable offsite options for convention-adjacent hospitality and networking."
+      ],
+      "tradeShowFit": [
+        "Useful for informal networking events, craft-beer-themed receptions, sponsor entertaining, and East Village offsites tied to downtown convention programming.",
+        "Best when the brief needs casual hospitality energy rather than traditional meeting-room structure."
+      ]
     }
   ],
   "excludedVenues": [

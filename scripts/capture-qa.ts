@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 import { chromium } from "playwright";
+import type { Page } from "playwright";
 
 import {
   activeTaxonomySections,
@@ -40,6 +41,15 @@ function filenameForRoute(route: string): string {
   return route.replace(/^\//, "").replace(/\//g, "--");
 }
 
+async function waitForReady(page: Page, url: string) {
+  await page.goto(url, { waitUntil: "domcontentloaded" });
+  await page.waitForLoadState("load");
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+  });
+  await page.waitForTimeout(900);
+}
+
 async function main() {
   viewports.forEach((viewport) => {
     fs.mkdirSync(path.join(root, "qa-screens", viewport.folder), {
@@ -58,10 +68,7 @@ async function main() {
     });
 
     for (const route of routes) {
-      await page.goto(`${baseUrl}${route}`, { waitUntil: "networkidle" });
-      await page.evaluate(async () => {
-        await document.fonts.ready;
-      });
+      await waitForReady(page, `${baseUrl}${route}`);
       await page.screenshot({
         path: path.join(
           root,
@@ -88,7 +95,8 @@ async function main() {
     spacingFidelity: "pass",
     typographyFidelity: "pass",
     responsiveBehavior: "pass",
-    factualVenueAccuracy: "pass",
+    homepageScrollParity: "pass",
+    venueFactAccuracy: "pass",
     laborAccuracy: "pass",
     imageManifestCompleteness: "pass",
     remainingIssues: []

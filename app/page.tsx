@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { HeroVideoDialog } from "@/components/HeroVideoDialog";
 import { SiteFrame } from "@/components/SiteFrame";
 import { business } from "@/lib/site-data";
 
@@ -95,7 +96,19 @@ export default function HomePage() {
     <SiteFrame>
       <div className="home-page">
         <section className="sparks-hero">
-          <div className="sparks-hero__media" />
+          <div className="sparks-hero__media" aria-hidden="true">
+            <video
+              autoPlay
+              className="sparks-hero__video"
+              loop
+              muted
+              playsInline
+              poster="/media/hero-poster.png"
+            >
+              <source src="/media/hero-loop.webm" type="video/webm" />
+              <source src="/media/hero-loop.mp4" type="video/mp4" />
+            </video>
+          </div>
           <div className="sparks-hero__scrim" />
           <div className="site-shell">
             <div className="sparks-hero__content">
@@ -105,10 +118,7 @@ export default function HomePage() {
                   field execution aligned.
                 </h1>
               </div>
-              <Link className="sparks-hero__play" href="/contact">
-                <span className="sparks-hero__play-ring" aria-hidden="true" />
-                <span>open brief</span>
-              </Link>
+              <HeroVideoDialog />
             </div>
           </div>
         </section>

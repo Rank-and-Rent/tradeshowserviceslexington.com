@@ -4,8 +4,9 @@
     "city": "Des Moines",
     "state": "IA",
     "domain": "tradeshowservicesdesmoines.com",
-    "referenceUrl": "https://wearesparks.com"
+    "referenceUrl": "https://www.wearesparks.com/"
   },
+  "lastValidatedAt": "2026-04-06T20:48:46Z",
   "phases": [
     {
       "name": "Phase 1: Reference Forensics",
@@ -16,7 +17,10 @@
         "reference-captures/homepage-mobile.png",
         "reference-captures/nav.png",
         "reference-captures/hero.png",
-        "reference-captures/mid-page-band-*.png",
+        "reference-captures/mid-page-band-01-centered-text.png",
+        "reference-captures/mid-page-band-02-featured-work.png",
+        "reference-captures/mid-page-band-03-capabilities.png",
+        "reference-captures/mid-page-band-04-related-content.png",
         "reference-captures/cta-band.png",
         "reference-captures/footer.png",
         "reference-captures/homepage-scroll.webm",
@@ -53,6 +57,7 @@
         "qa-reference-compare/homepage-desktop-local.png",
         "qa-reference-compare/homepage-tablet-local.png",
         "qa-reference-compare/homepage-mobile-local.png",
+        "qa-reference-compare/homepage-scroll-local.webm",
         "qa-reference-compare/homepage-compare-notes.md"
       ],
       "missingArtifacts": [],
@@ -75,7 +80,10 @@
       "requiredArtifacts": [
         "IMAGE_REQUIREMENTS.txt",
         "IMAGE_MANIFEST.json",
-        "hero-video-sources.json or still-hero fallback"
+        "hero-video-sources.json",
+        "public/media/hero-loop.mp4",
+        "public/media/hero-loop.webm",
+        "public/media/hero-poster.png"
       ],
       "missingArtifacts": [],
       "blockingIssues": []

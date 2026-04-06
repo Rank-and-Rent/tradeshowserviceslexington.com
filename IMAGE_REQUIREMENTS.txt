@@ -24,12 +24,12 @@ Required image direction
 Active taxonomy counts
 - Services: 33 detail pages
 - Locations: 36 detail pages
-- Venues: 22 detail pages
+- Venues: 28 detail pages
 - Event Types: 12 detail pages
 - Booth Types: 10 detail pages
 - Industries: 10 detail pages
 
 Manifest path: /Users/jackgreenberg/Desktop/rank-and-rent/trade-shows/tradeshowservicesdesmoines.com/IMAGE_MANIFEST.json
 Hero fallback manifest: /Users/jackgreenberg/Desktop/rank-and-rent/trade-shows/tradeshowservicesdesmoines.com/hero-still-fallback.json
-Generated at: 2026-03-27T12:13:07.154Z
+Generated at: 2026-04-06T20:43:19.193Z
 Manifest sections: generatedAt, project, reference, homepage, about, contact, shared, servicesIndex, locationsIndex, venuesIndex, eventTypesIndex, boothTypesIndex, industriesIndex, servicePages, locationPages, venuePages, eventTypePages, boothTypePages, industryPages
