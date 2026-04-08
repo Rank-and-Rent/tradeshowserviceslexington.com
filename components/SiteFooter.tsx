@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { business, footerLegalLinks } from "@/lib/site-data";
+import { FooterSeoLinks } from "./FooterSeoLinks";
 
 const footerActions = [
   {
@@ -100,6 +101,7 @@ const footerActions = [
 export function SiteFooter() {
   return (
     <footer className="site-footer">
+      <FooterSeoLinks />
       <div className="site-shell">
         <div className="site-footer__top">
           <Link aria-label={business.name} href="/">
