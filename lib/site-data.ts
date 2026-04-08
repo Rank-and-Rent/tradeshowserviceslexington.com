@@ -579,7 +579,7 @@ export const marketHighlights = [
 
 export const headerUtilityActions: HeaderUtilityAction[] = [
   {
-    label: "contact",
+    label: "Contact",
     href: "/contact",
     variant: "secondary"
   }
@@ -695,11 +695,11 @@ export const homepageHero = {
   lead:
     "We help exhibitors, organizers, agencies, and venue teams manage booth design, fabrication, installation and dismantle, AV, logistics, exhibitor-appointed-contractor coordination, and show-site supervision across downtown Des Moines, West Des Moines, Ankeny, Altoona, the fairgrounds, and the wider Central Iowa market.",
   primaryAction: {
-    label: "Request a Brief",
+    label: "Contact",
     href: "/contact"
   },
   secondaryAction: {
-    label: "View Venue Guides",
+    label: "Venues",
     href: "/venues"
   }
 } as const;
@@ -799,7 +799,7 @@ export const homepageSplitCallout = {
 
 export const resourceCards = [
   {
-    label: "Venue Guides",
+    label: "Venues",
     title: "Downtown, west-corridor, and fairgrounds venue playbooks",
     description:
       "Move from broad market view into venue-specific planning, exhibitor-kit review, and service-order timing.",
@@ -889,15 +889,15 @@ export const footerUtilityLinks = [
     href: `mailto:${business.email}`
   },
   {
-    label: "Map",
+    label: "Locations",
     shortLabel: "M",
     href: "/locations"
   }
 ] as const;
 
 export const footerLegalLinks = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Use", href: "/terms" },
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
   { label: "Resource Hub", href: "/blog" },
   { label: "Contact", href: "/contact" }
 ] as const;
