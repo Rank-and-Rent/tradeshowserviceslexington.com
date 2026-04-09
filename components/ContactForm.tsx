@@ -176,8 +176,8 @@ export function ContactForm({ serviceOptions }: ContactFormProps) {
           {status === "success"
             ? "Request received. We’ll follow up using the details you submitted."
             : status === "error"
-              ? "Submission could not be completed. Try again."
-              : "Use all eight fields so the request matches the production brief."}
+              ? "Submission could not be completed. Try again in a moment."
+              : "Use all eight fields so the request matches the production brief and the venue, service, and timeline stay aligned."}
         </p>
       </div>
     </form>

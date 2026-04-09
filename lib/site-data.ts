@@ -596,8 +596,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Expo Logistics and Shipping", href: "/services/expo-logistics-and-shipping" }
     ],
     panel: {
-      title: "Project-led execution for Central Iowa show calendars",
-      text: "Map the service mix across booths, labor, AV, logistics, graphics, and venue coordination before show week compresses the schedule.",
+      title: "A service stack built around the venue, not around a template",
+      text: "From booth design to labor, AV, freight, and show-site leadership, the right mix depends on the room, the calendar, and the venue rules already in play.",
       href: "/services",
       buttonLabel: "See services"
     }
@@ -612,8 +612,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Richard O. Jacobson Exhibition Center", href: "/venues/richard-o-jacobson-exhibition-center" }
     ],
     panel: {
-      title: "Venue playbooks across downtown, west, and east-side halls",
-      text: "Start with the building so utilities, labor posture, access, and room flow shape the plan early.",
+      title: "Venue guidance for downtown halls, suburban hotels, and fairgrounds buildings",
+      text: "Each Des Moines venue changes the way freight moves, labor is ordered, and guest traffic feels on the floor, so the building should shape the plan from the start.",
       href: "/venues",
       buttonLabel: "Browse venues"
     }
@@ -628,8 +628,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Altoona", href: "/locations/altoona" }
     ],
     panel: {
-      title: "Metro coverage with real submarket differences",
-      text: "Downtown, the west corridor, the fairgrounds and Altoona cluster, and the north metro do not operate like the same venue district.",
+      title: "Metro coverage that reflects real planning differences",
+      text: "Downtown, the west corridor, the fairgrounds and Altoona cluster, and the north metro each create their own routing, parking, and hotel behavior.",
       href: "/locations",
       buttonLabel: "View locations"
     }
@@ -644,8 +644,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "User Conference Services", href: "/event-types/user-conference-services" }
     ],
     panel: {
-      title: "Formats across trade shows, conferences, and activations",
-      text: "Keep exhibit, sponsor, registration, and general-session work under one readable operating model.",
+      title: "Format coverage for trade shows, conferences, and activation programs",
+      text: "Use the event-type stack when the room needs to support exhibitors, sponsors, registration, and general-session work without losing the thread.",
       href: "/event-types",
       buttonLabel: "See event types"
     }
@@ -660,8 +660,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Rental Exhibit Booths", href: "/booth-types/rental-exhibit-booths" }
     ],
     panel: {
-      title: "Exhibit formats that stay venue-ready",
-      text: "Compare booth geometry, fabrication pressure, sightlines, and install requirements without flattening every format into the same answer.",
+      title: "Booth formats with different build, sightline, and labor needs",
+      text: "Inline, island, custom, rental, and modular booths each create a different production path, so the format should match the footprint and the show objective.",
       href: "/booth-types",
       buttonLabel: "Explore booth types"
     }
@@ -676,8 +676,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Education and Association Event Services", href: "/industries/education-and-association-event-services" }
     ],
     panel: {
-      title: "Buyer-specific planning paths",
-      text: "Use the industry stack when the project needs to sound like the buyer's market instead of generic trade-show copy.",
+      title: "Buyer-specific planning paths for real industries",
+      text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic event page can offer.",
       href: "/industries",
       buttonLabel: "Browse industries"
     }
@@ -690,10 +690,10 @@ export const headerNavigation: HeaderNavItem[] = [
 
 export const homepageHero = {
   eyebrow: `${business.city} trade show, exhibit, and event execution`,
-  title: "A Des Moines trade show team that",
-  highlight: "delivers exhibit, labor, and venue execution.",
+  title: "A Des Moines trade show team that keeps planning, fabrication, and field execution aligned.",
+  highlight: "We handle exhibit production, labor, AV, logistics, and venue coordination as one delivery path.",
   lead:
-    "We help exhibitors, organizers, agencies, and venue teams manage booth design, fabrication, installation and dismantle, AV, logistics, exhibitor-appointed-contractor coordination, and show-site supervision across downtown Des Moines, West Des Moines, Ankeny, Altoona, the fairgrounds, and the wider Central Iowa market.",
+    "We help exhibitors, organizers, agencies, and venue teams turn the messy parts of a show into one readable project: booth design, fabrication, installation and dismantle, AV, freight, exhibitor-appointed-contractor coordination, labor, and show-site supervision across downtown Des Moines, West Des Moines, Ankeny, Altoona, the fairgrounds, and the wider Central Iowa market.",
   primaryAction: {
     label: "Contact",
     href: "/contact"
@@ -708,37 +708,37 @@ export const homepageServiceCards: HomepageCard[] = [
   {
     icon: "blueprint",
     title: "Venue-Ready Booth Design",
-    text: "Booth concepts and branded environments framed around venue flow, attendee movement, and the actual service path.",
+    text: "Booth concepts shaped around sightlines, aisle movement, and the production path that has to hold up once the room is live.",
     href: "/services/trade-show-booth-design"
   },
   {
     icon: "key",
     title: "General Contracting and EAC Coordination",
-    text: "General-contractor style planning and exhibitor-appointed-contractor coordination kept on one readable schedule.",
+    text: "General-contractor style planning and exhibitor-appointed-contractor coordination kept on one schedule so responsibilities stay clear.",
     href: "/services/exhibitor-appointed-contractor-coordination"
   },
   {
     icon: "sliders",
     title: "Labor and I&D Execution",
-    text: "Installation, dismantle, field leadership, and labor coordination scoped around the actual venue and event calendar.",
+    text: "Installation, dismantle, labor coordination, and field leadership planned against the venue guide and the event calendar already in motion.",
     href: "/services/trade-show-installation-and-dismantle"
   },
   {
     icon: "frame",
     title: "Fabrication and Graphic Production",
-    text: "Custom fabrication, reconfigurable builds, and graphics held together under one project-led operating path.",
+    text: "Custom fabrication, reconfigurable builds, and graphics managed together so the final booth feels deliberate instead of assembled from leftovers.",
     href: "/services/custom-exhibit-fabrication"
   },
   {
     icon: "archive",
     title: "AV and Technical Production",
-    text: "LED, general-session, lighting, and technical support planned against the room's real operating constraints.",
+    text: "LED, general-session, lighting, and technical support scoped to the room's actual power, rigging, and audio limits.",
     href: "/services/trade-show-av-production"
   },
   {
     icon: "calendar",
     title: "Show Services and Coordination",
-    text: "Labor, utilities, AV, freight, decorator timing, and venue forms translated into one readable production path.",
+    text: "Labor, utilities, AV, freight, decorator timing, and venue forms translated into one production path the team can actually run.",
     href: "/services/show-services-order-management"
   }
 ];
@@ -747,13 +747,13 @@ export const homepageBenefitCards: HomepageCard[] = [
   {
     icon: "wallet",
     title: "Venue Fluency",
-    text: "The planning path starts with the building, so labor posture, utilities, room flow, and access shape the scope early.",
+    text: "The plan starts with the building, which means labor posture, utilities, access, and room flow shape the scope early.",
     href: "/services/trade-show-strategy-and-pre-show-planning"
   },
   {
     icon: "eye",
     title: "Show-Site Control",
-    text: "Graphics, AV, logistics, install, and punch-list decisions stay tied to one field-led execution calendar.",
+    text: "Graphics, AV, logistics, install, and punch-list decisions stay tied to one field-led calendar instead of drifting into separate inboxes.",
     href: "/services/show-site-supervision"
   },
   {
@@ -767,15 +767,15 @@ export const homepageBenefitCards: HomepageCard[] = [
 export const homepageInsightCards: HomepageInsightCard[] = [
   {
     tag: "Downtown Convention Core",
-    title: "Community Choice Convention Center planning paths",
-    text: "Use the downtown venue stack when the project depends on skywalk-connected hotels, convention infrastructure, and exhibit-hall sequencing.",
+    title: "Community Choice Convention Center and the downtown convention core",
+    text: "This is the route for programs that depend on skywalk-connected hotels, loading discipline, and the exhibit-hall sequence downtown is built around.",
     href: "/venues/community-choice-convention-center",
     accent: "gold"
   },
   {
     tag: "West Corridor Corporate Work",
     title: "Ron Pearson Center and West Des Moines delivery",
-    text: "Westown Parkway programs behave differently from downtown. Parking, hotel behavior, and room flow change the operating model.",
+    text: "Westown Parkway programs behave differently from downtown, with parking, hotel behavior, and room flow changing the operating model fast.",
     href: "/venues/ron-pearson-center",
     accent: "blue"
   },
@@ -789,8 +789,8 @@ export const homepageInsightCards: HomepageInsightCard[] = [
 ];
 
 export const homepageSplitCallout = {
-  eyebrow: "Looking for a clearer planning path?",
-  title: "Build your next Des Moines event plan around the right venue guide.",
+  eyebrow: "Need a cleaner planning path?",
+  title: "Build the next Des Moines event around the venue guide that actually fits the room.",
   text:
     "Downtown convention work, west-corridor hotel meetings, fairgrounds events, Ankeny conference programs, and Altoona hospitality all need different timing, utilities, labor language, and freight assumptions. Start with the venue, service mix, and show date and we can map the cleanest path.",
   href: "/contact",
@@ -802,7 +802,7 @@ export const resourceCards = [
     label: "Venues",
     title: "Downtown, west-corridor, and fairgrounds venue playbooks",
     description:
-      "Move from broad market view into venue-specific planning, exhibitor-kit review, and service-order timing.",
+      "Move from the market view into venue-specific planning, exhibitor-kit review, and service-order timing without guessing how the building works.",
     href: "/venues",
     tone: "blue"
   },
@@ -810,7 +810,7 @@ export const resourceCards = [
     label: "Locations",
     title: "Des Moines metro and Central Iowa coverage",
     description:
-      "Use the location stack to understand how downtown, the west corridor, the north metro, and the east-side event cluster change execution.",
+      "Use the location stack to see how downtown, the west corridor, the north metro, and the east-side event cluster change execution.",
     href: "/locations",
     tone: "slate"
   },

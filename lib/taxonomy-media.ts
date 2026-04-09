@@ -13,6 +13,42 @@ const TYPE_PREFIX: Record<string, string> = {
   exhibittypes: "exhibit-types",
 };
 
+const PLACEHOLDER_TOKENS = [
+  "placeholder",
+  "blueprint",
+  "sketch",
+  "linework",
+  "wireframe",
+  "diagram",
+  "calendar",
+  "dimension",
+  "dimensions",
+  "grid",
+  "about-panel",
+  "latest-secondary",
+  "news-engagement",
+  "display-rig",
+  "pavilion-display",
+  "resource-roi",
+  "work-card",
+  "market-band",
+  "process-support",
+  "about-support",
+  "about-hero",
+  "contact-hero",
+  "hero-still",
+  "inner-hero-grid",
+  "studio-design",
+  "catalog-a",
+  "catalog-b",
+  "catalog-c",
+  "catalog-d",
+  "catalog-e",
+  "exhibit-floor",
+  "show-organizer-crowd",
+  "trade-show-hall",
+];
+
 function kebab(v: string) {
   return v.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }
@@ -40,29 +76,25 @@ function dirVariants(kind: string): string[] {
   const aliasList = KIND_ALIASES[k] || [k];
   const variants = Array.from(new Set([k, camel(k), snake(k), ...aliasList]));
   const bases = [
-    "media/generated",
     "media/recovered",
+    "images/recovered",
+    "media/generated",
+    "images/generated",
     "media/planned",
+    "images/planned",
     "media/required",
-    "media/placeholders",
+    "images/required",
     "generated",
     "images",
-    "images/generated",
-    "images/recovered",
-    "images/planned",
-    "images/required",
-    "images/placeholders",
     "art",
   ];
   const out: string[] = [];
   for (const b of bases) for (const v of variants) out.push(`${b}/${v}`);
-  // Shared/flat buckets that hold files prefixed by kind
   out.push(
-    "media/generated/shared",
     "media/recovered/shared",
+    "media/generated/shared",
     "media/planned/shared",
     "media/required/shared",
-    "placeholders",
     "images",
     "media",
   );
@@ -81,10 +113,15 @@ const TYPE_DIR_CANDIDATES: Record<string, string[]> = {
   exhibittypes: dirVariants("exhibit-types"),
 };
 
-const IMG_RE = /\.(webp|png|jpg|jpeg|svg)$/i;
+const IMG_RE = /\.(avif|webp|png|jpg|jpeg)$/i;
 
 function normalizeName(name: string): string {
-  return name.toLowerCase().replace(/\.(webp|png|jpg|jpeg|svg)$/i, "").replace(/[^a-z0-9]+/g, "-");
+  return name.toLowerCase().replace(/\.(avif|webp|png|jpg|jpeg)$/i, "").replace(/[^a-z0-9]+/g, "-");
+}
+
+function isPlaceholder(rel: string, name: string): boolean {
+  const normalized = `${rel}/${normalizeName(name)}`;
+  return PLACEHOLDER_TOKENS.some((token) => normalized.includes(token));
 }
 
 function fileContainsSlug(fileNorm: string, slug: string): boolean {
@@ -100,7 +137,6 @@ function fileContainsSlug(fileNorm: string, slug: string): boolean {
 
 function scoreMatch(fileNorm: string, slug: string, prefix: string): number {
   const s = kebab(slug);
-  // Prefer: prefix-slug-...  > slug-... > contains -slug- > ends -slug
   if (fileNorm.startsWith(`${prefix}-${s}-`) || fileNorm === `${prefix}-${s}`) return 100;
   if (fileNorm.startsWith(`${s}-`) || fileNorm === s) return 80;
   if (fileNorm.includes(`-${s}-`)) return 60;
@@ -116,7 +152,7 @@ function pickBest(
   let best: { rel: string; score: number; lenDelta: number } | null = null;
   const s = kebab(slug);
   for (const f of files) {
-    if (!IMG_RE.test(f.name)) continue;
+    if (!IMG_RE.test(f.name) || isPlaceholder(f.rel, f.name)) continue;
     const norm = normalizeName(f.name);
     if (!fileContainsSlug(norm, s)) continue;
     const score = scoreMatch(norm, slug, prefix);
@@ -156,7 +192,6 @@ export function getRecoveredTaxonomyMediaUrl(kind: string, slug: string): string
     const entries = listDirShallow(abs);
     if (!entries.length) continue;
 
-    // 1) files at top level
     const topFiles = entries
       .filter((n) => {
         try {
@@ -169,7 +204,6 @@ export function getRecoveredTaxonomyMediaUrl(kind: string, slug: string): string
     const topBest = pickBest(topFiles, slug, typePrefix);
     if (topBest) return topBest;
 
-    // 2) subdirectories: prefer exact slug-named subdir
     const subdirs = entries.filter((n) => {
       try {
         return fs.statSync(path.join(abs, n)).isDirectory();
@@ -184,21 +218,19 @@ export function getRecoveredTaxonomyMediaUrl(kind: string, slug: string): string
     if (slugDir) {
       const subAbs = path.join(abs, slugDir);
       const subFiles = listDirShallow(subAbs)
-        .filter((n) => IMG_RE.test(n))
+        .filter((n) => IMG_RE.test(n) && !isPlaceholder(`/${rel}/${slugDir}`, n))
         .map((n) => ({ rel: `/${rel}/${slugDir}/${n}`, name: n }));
       if (subFiles.length) {
         const best = pickBest(subFiles, slug, typePrefix);
         if (best) return best;
-        // fallback: any image file in the slug dir
         return subFiles[0].rel;
       }
     }
 
-    // 3) scan each subdir for files matching slug
     for (const d of subdirs) {
       const subAbs = path.join(abs, d);
       const subFiles = listDirShallow(subAbs)
-        .filter((n) => IMG_RE.test(n))
+        .filter((n) => IMG_RE.test(n) && !isPlaceholder(`/${rel}/${d}`, n))
         .map((n) => ({ rel: `/${rel}/${d}/${n}`, name: n }));
       const best = pickBest(subFiles, slug, typePrefix);
       if (best) return best;

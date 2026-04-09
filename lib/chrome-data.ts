@@ -49,8 +49,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Expo Logistics and Shipping", href: "/services/expo-logistics-and-shipping" }
     ],
     panel: {
-      title: "Project-led execution for Central Iowa show calendars",
-      text: "Map the service mix across booths, labor, AV, logistics, graphics, and venue coordination before show week compresses the schedule.",
+      title: "A service stack built around the venue, not around a template",
+      text: "From booth design to labor, AV, freight, and show-site leadership, the right mix depends on the room, the calendar, and the venue rules already in play.",
       href: "/services",
       buttonLabel: "See services"
     }
@@ -65,8 +65,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Richard O. Jacobson Exhibition Center", href: "/venues/richard-o-jacobson-exhibition-center" }
     ],
     panel: {
-      title: "Venue playbooks across downtown, west, and east-side halls",
-      text: "Start with the building so utilities, labor posture, access, and room flow shape the plan early.",
+      title: "Venue guidance for downtown halls, suburban hotels, and fairgrounds buildings",
+      text: "Each Des Moines venue changes the way freight moves, labor is ordered, and guest traffic feels on the floor, so the building should shape the plan from the start.",
       href: "/venues",
       buttonLabel: "Browse venues"
     }
@@ -81,8 +81,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Altoona", href: "/locations/altoona" }
     ],
     panel: {
-      title: "Metro coverage with real submarket differences",
-      text: "Downtown, the west corridor, the fairgrounds and Altoona cluster, and the north metro do not operate like the same venue district.",
+      title: "Metro coverage that reflects real planning differences",
+      text: "Downtown, the west corridor, the fairgrounds and Altoona cluster, and the north metro each create their own routing, parking, and hotel behavior.",
       href: "/locations",
       buttonLabel: "View locations"
     }
@@ -97,8 +97,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "User Conference Services", href: "/event-types/user-conference-services" }
     ],
     panel: {
-      title: "Formats across trade shows, conferences, and activations",
-      text: "Keep exhibit, sponsor, registration, and general-session work under one readable operating model.",
+      title: "Format coverage for trade shows, conferences, and activation programs",
+      text: "Use the event-type stack when the room needs to support exhibitors, sponsors, registration, and general-session work without losing the thread.",
       href: "/event-types",
       buttonLabel: "See event types"
     }
@@ -113,8 +113,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Rental Exhibit Booths", href: "/booth-types/rental-exhibit-booths" }
     ],
     panel: {
-      title: "Exhibit formats that stay venue-ready",
-      text: "Compare booth geometry, fabrication pressure, sightlines, and install requirements without flattening every format into the same answer.",
+      title: "Booth formats with different build, sightline, and labor needs",
+      text: "Inline, island, custom, rental, and modular booths each create a different production path, so the format should match the footprint and the show objective.",
       href: "/booth-types",
       buttonLabel: "Explore booth types"
     }
@@ -129,8 +129,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Education and Association Event Services", href: "/industries/education-and-association-event-services" }
     ],
     panel: {
-      title: "Buyer-specific planning paths",
-      text: "Use the industry stack when the project needs to sound like the buyer's market instead of generic trade-show copy.",
+      title: "Buyer-specific planning paths for real industries",
+      text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic event page can offer.",
       href: "/industries",
       buttonLabel: "Browse industries"
     }

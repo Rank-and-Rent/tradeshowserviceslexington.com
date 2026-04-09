@@ -15,7 +15,9 @@ export default function BlogPage() {
               <p className="page-hero__lead">
                 Use these routes to move from high-level planning into venue guides,
                 service stacks, location coverage, and buyer-specific detail pages
-                across the Des Moines market.
+                across the Des Moines market. The goal is to make the next decision
+                easier by showing which route explains the room, which route explains
+                the service mix, and which route explains the local market around it.
               </p>
             </div>
           </div>

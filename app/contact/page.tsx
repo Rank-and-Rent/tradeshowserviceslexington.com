@@ -13,8 +13,10 @@ export default function ContactPage() {
               <h1>Start the Des Moines project brief</h1>
               <p className="page-hero__lead">
                 Share the show date, venue, service mix, and project details using the
-                exact intake fields below. We use that information to frame schedule,
-                delivery model, and next-step coordination.
+                intake fields below. That gives the team enough context to frame the
+                schedule, identify the right delivery model, and decide what needs to
+                happen first. If you already know the venue, the likely booth format, or
+                the type of support you need onsite, include that too.
               </p>
             </div>
           </div>
@@ -34,7 +36,9 @@ export default function ContactPage() {
                 <p style={{ marginTop: "18px" }}>
                   Use the form to outline the exact show location and service scope.
                   That keeps the intake aligned with venue planning, logistics, and
-                  show-week execution rather than sending a generic note.
+                  show-week execution rather than sending a generic note. The more
+                  precise the brief, the faster the next planning conversation usually
+                  becomes.
                 </p>
               </div>
 
@@ -43,7 +47,10 @@ export default function ContactPage() {
                 <h2>Use the full eight-field intake</h2>
                 <p style={{ marginTop: "12px", marginBottom: "20px" }}>
                   The form stays intentionally specific so requests arrive with enough
-                  detail to map the right Des Moines delivery path.
+                  detail to map the right Des Moines delivery path. That is helpful for
+                  downtown convention work, west-corridor hotel programs, fairgrounds
+                  events, and any project that needs labor, AV, or logistics sorted in a
+                  single pass.
                 </p>
                 <ContactForm serviceOptions={serviceOptions} />
               </div>
