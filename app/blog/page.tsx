@@ -11,7 +11,7 @@ export default function BlogPage() {
           <div className="site-shell">
             <div className="page-hero__content">
               <p className="section-kicker section-kicker--light">Resources</p>
-              <h1>Des Moines trade show planning routes and resource paths</h1>
+              <h1>Lexington trade show planning routes and resource paths</h1>
               <p className="page-hero__lead">
                 Use these routes to move from high-level planning into venue guides,
                 service stacks, location coverage, and buyer-specific detail pages

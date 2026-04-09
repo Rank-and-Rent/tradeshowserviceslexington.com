@@ -32,8 +32,8 @@ const FOOTER_SEO_COLUMNS: FooterColumn[] = [
         "label": "Trade Show Installation and Dismantle"
       },
       {
-        "href": "/services/trade-show-labor-coordination",
-        "label": "Trade Show Labor Coordination"
+        "href": "/services/show-services-order-management",
+        "label": "Show Services Order Management"
       },
       {
         "href": "/services/show-site-supervision",
@@ -45,36 +45,36 @@ const FOOTER_SEO_COLUMNS: FooterColumn[] = [
     "title": "Locations",
     "links": [
       {
-        "href": "/locations/downtown-des-moines",
-        "label": "Downtown Des Moines"
+        "href": "/locations/downtown-lexington",
+        "label": "Downtown Lexington"
       },
       {
-        "href": "/locations/east-village",
-        "label": "East Village"
+        "href": "/locations/newtown-pike-corridor",
+        "label": "Newtown Pike Corridor"
       },
       {
-        "href": "/locations/western-gateway",
-        "label": "Western Gateway"
+        "href": "/locations/hamburg",
+        "label": "Hamburg"
       },
       {
-        "href": "/locations/court-avenue-district",
-        "label": "Court Avenue District"
+        "href": "/locations/beaumont",
+        "label": "Beaumont"
       },
       {
-        "href": "/locations/riverfront-des-moines",
-        "label": "Riverfront Des Moines"
+        "href": "/locations/south-lexington",
+        "label": "South Lexington"
       },
       {
-        "href": "/locations/ingersoll-avenue",
-        "label": "Ingersoll Avenue"
+        "href": "/locations/nicholasville",
+        "label": "Nicholasville"
       },
       {
-        "href": "/locations/sherman-hill",
-        "label": "Sherman Hill"
+        "href": "/locations/georgetown",
+        "label": "Georgetown"
       },
       {
-        "href": "/locations/drake-neighborhood",
-        "label": "Drake Neighborhood"
+        "href": "/locations/versailles",
+        "label": "Versailles"
       }
     ]
   },
@@ -82,36 +82,32 @@ const FOOTER_SEO_COLUMNS: FooterColumn[] = [
     "title": "Venues",
     "links": [
       {
-        "href": "/venues/community-choice-convention-center",
-        "label": "Community Choice Convention Center"
+        "href": "/venues/central-bank-center",
+        "label": "Central Bank Center"
       },
       {
-        "href": "/venues/emc-expo-center",
-        "label": "EMC Expo Center"
+        "href": "/venues/hyatt-regency-lexington",
+        "label": "Hyatt Regency Lexington"
       },
       {
-        "href": "/venues/caseys-center",
-        "label": "Casey's Center"
+        "href": "/venues/hilton-lexington-downtown",
+        "label": "Hilton Lexington/Downtown"
       },
       {
-        "href": "/venues/hilton-des-moines-downtown",
-        "label": "Hilton Des Moines Downtown"
+        "href": "/venues/lexington-marriott-city-center",
+        "label": "Lexington Marriott City Center"
       },
       {
-        "href": "/venues/des-moines-marriott-downtown",
-        "label": "Des Moines Marriott Downtown"
+        "href": "/venues/marriott-lexington-griffin-gate-golf-resort-and-spa",
+        "label": "Marriott Lexington Griffin Gate Golf Resort & Spa"
       },
       {
-        "href": "/venues/embassy-suites-des-moines-downtown",
-        "label": "Embassy Suites by Hilton Des Moines Downtown"
+        "href": "/venues/the-campbell-house-lexington",
+        "label": "The Campbell House Lexington"
       },
       {
-        "href": "/venues/renaissance-des-moines-savery-hotel",
-        "label": "Renaissance Des Moines Savery Hotel"
-      },
-      {
-        "href": "/venues/hotel-fort-des-moines",
-        "label": "Hotel Fort Des Moines"
+        "href": "/venues/embassy-suites-lexington-green",
+        "label": "Embassy Suites Lexington Green"
       }
     ]
   },
@@ -123,32 +119,32 @@ const FOOTER_SEO_COLUMNS: FooterColumn[] = [
         "label": "Healthcare Trade Show Services"
       },
       {
-        "href": "/industries/technology-trade-show-services",
-        "label": "Technology Trade Show Services"
+        "href": "/industries/technology-and-software-expo-services",
+        "label": "Technology and Software Expo Services"
       },
       {
         "href": "/industries/manufacturing-expo-services",
         "label": "Manufacturing Expo Services"
       },
       {
-        "href": "/industries/food-and-beverage-trade-show-services",
-        "label": "Food and Beverage Trade Show Services"
+        "href": "/industries/agriculture-and-agtech-expo-services",
+        "label": "Agriculture and AgTech Expo Services"
       },
       {
-        "href": "/industries/beauty-and-cosmetics-trade-show-services",
-        "label": "Beauty and Cosmetics Trade Show Services"
+        "href": "/industries/equine-and-bourbon-industry-events",
+        "label": "Equine and Bourbon Industry Events"
       },
       {
-        "href": "/industries/automotive-trade-show-services",
-        "label": "Automotive Trade Show Services"
+        "href": "/industries/financial-services-and-insurance-expo-services",
+        "label": "Financial Services and Insurance Expo Services"
       },
       {
-        "href": "/industries/retail-and-ecommerce-event-services",
-        "label": "Retail and Ecommerce Event Services"
+        "href": "/industries/logistics-and-distribution-expo-services",
+        "label": "Logistics and Distribution Expo Services"
       },
       {
-        "href": "/industries/industrial-trade-show-services",
-        "label": "Industrial Trade Show Services"
+        "href": "/industries/education-and-association-event-services",
+        "label": "Education and Association Event Services"
       }
     ]
   }

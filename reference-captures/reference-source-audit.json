@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-03-27T09:22:30-05:00",
+  "requestedReference": "https://exhibitinc.com",
+  "checkedOn": "2026-03-27",
+  "liveChecks": [
+    {
+      "url": "https://exhibitinc.com",
+      "observedResult": "HugeDomains parking page",
+      "observedTitle": "ExhibitInc.com is for sale | HugeDomains",
+      "savedHtml": "reference-captures/live-reference-2026-03-27.html"
+    },
+    {
+      "url": "https://www.exhibitinc.com",
+      "observedResult": "HugeDomains parking page",
+      "observedTitle": "ExhibitInc.com is for sale | HugeDomains",
+      "savedHtml": "reference-captures/live-reference-www-2026-03-27.html"
+    }
+  ],
+  "waybackChecks": [
+    {
+      "timestamp": "2016-10-21T05:12:18Z",
+      "url": "https://web.archive.org/web/20161021051218/http://www.exhibitinc.com/",
+      "observedResult": "GoDaddy parking-page iframe",
+      "savedHtml": "reference-captures/wayback-2016-10-21-www.html"
+    },
+    {
+      "timestamp": "2017-06-26T12:56:38Z",
+      "url": "https://web.archive.org/web/20170626125638/http://exhibitinc.com/",
+      "observedResult": "GoDaddy parking-page iframe",
+      "savedHtml": "reference-captures/wayback-2017-06-26-apex.html"
+    },
+    {
+      "timestamp": "2017-09-26T22:41:31Z",
+      "url": "https://web.archive.org/web/20170926224131/http://exhibitinc.com/",
+      "observedResult": "GoDaddy parking-page iframe",
+      "savedHtml": "reference-captures/wayback-2017-09-26-apex.html"
+    },
+    {
+      "timestamp": "2021-12-03T17:53:32Z",
+      "url": "https://web.archive.org/web/20211203175332/http://exhibitinc.com/",
+      "observedResult": "Default IIS Windows Server starter page",
+      "savedHtml": "reference-captures/wayback-2021-12-03-apex.html"
+    }
+  ],
+  "conclusion": {
+    "status": "failed",
+    "reason": "No usable Exhibit Inc trade-show website was available in live or archived form, so the required Phase 1 forensic capture set cannot be created honestly.",
+    "requiredArtifactsBlocked": [
+      "reference-captures/homepage-full.png",
+      "reference-captures/homepage-tablet.png",
+      "reference-captures/homepage-mobile.png",
+      "reference-captures/nav.png",
+      "reference-captures/hero.png",
+      "reference-captures/cta-band.png",
+      "reference-captures/footer.png",
+      "reference-captures/homepage-scroll.webm",
+      "reference-captures/style-dna.json",
+      "reference-captures/asset-inventory.json"
+    ]
+  }
+}

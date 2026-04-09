@@ -106,7 +106,7 @@ export function SiteFooter() {
         <div className="site-footer__top">
           <Link aria-label={business.name} href="/">
             <span className="site-wordmark">
-              tsdm<span className="site-wordmark__dot">.</span>
+              tslx<span className="site-wordmark__dot">.</span>
             </span>
           </Link>
 

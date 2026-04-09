@@ -26,7 +26,7 @@ export default function AboutPage() {
           <div className="site-shell">
             <div className="page-hero__content">
               <p className="section-kicker section-kicker--light">About us</p>
-              <h1>Project-led trade show delivery for Des Moines venues</h1>
+              <h1>Project-led trade show delivery for Lexington venues</h1>
               <p className="page-hero__lead">
                 {business.name} is built around turnkey show execution: booth design,
                 fabrication, labor, AV, logistics, exhibitor-appointed-contractor
@@ -42,7 +42,7 @@ export default function AboutPage() {
           <div className="site-shell">
             <div className="page-copy">
               <p>
-                This site is built around Des Moines&apos; actual meeting and convention
+                This site is built around Lexington&apos;s actual meeting and convention
                 landscape rather than a generic national template. The planning
                 framework starts with the downtown convention core, expands into West
                 Des Moines and the west corridor, moves through the{" "}

@@ -1,16 +1,20 @@
 {
-  "generatedAt": "2026-03-27T12:08:00.000Z",
+  "generatedAt": "2026-04-09T16:59:06.123Z",
   "market": {
-    "city": "Des Moines",
-    "state": "IA",
-    "domain": "tradeshowservicesdesmoines.com",
-    "businessName": "Trade Show Services of Des Moines"
+    "city": "Lexington",
+    "state": "KY",
+    "domain": "tradeshowserviceslexington.com",
+    "businessName": "Trade Show Services of Lexington"
   },
   "services": {
     "label": "Services",
     "routeBase": "/services",
     "required": true,
-    "requiredCorePages": [],
+    "requiredCorePages": [
+      "turnkey-trade-show-services",
+      "trade-show-general-contracting",
+      "trade-show-av-production"
+    ],
     "generatedPages": [
       {
         "slug": "turnkey-trade-show-services",
@@ -21,8 +25,8 @@
         "label": "Trade Show General Contracting"
       },
       {
-        "slug": "exhibitor-appointed-contractor-coordination",
-        "label": "Exhibitor-Appointed Contractor Coordination"
+        "slug": "trade-show-strategy-and-pre-show-planning",
+        "label": "Trade Show Strategy and Pre-Show Planning"
       },
       {
         "slug": "trade-show-booth-design",
@@ -37,410 +41,159 @@
         "label": "Trade Show Installation and Dismantle"
       },
       {
-        "slug": "trade-show-labor-coordination",
-        "label": "Trade Show Labor Coordination"
-      },
-      {
-        "slug": "show-site-supervision",
-        "label": "Show-Site Supervision"
-      },
-      {
         "slug": "trade-show-av-production",
         "label": "Trade Show AV Production"
-      },
-      {
-        "slug": "led-video-wall-production",
-        "label": "LED Video Wall Production"
-      },
-      {
-        "slug": "lighting-rigging-and-power",
-        "label": "Lighting, Rigging, and Power"
       },
       {
         "slug": "expo-logistics-and-shipping",
         "label": "Expo Logistics and Shipping"
       },
       {
-        "slug": "advance-warehouse-coordination",
-        "label": "Advance Warehouse Coordination"
-      },
-      {
-        "slug": "trade-show-graphic-production",
-        "label": "Trade Show Graphic Production"
-      },
-      {
-        "slug": "conference-registration-environments",
-        "label": "Conference Registration Environments"
-      },
-      {
-        "slug": "brand-activation-production",
-        "label": "Brand Activation Production"
-      },
-      {
-        "slug": "product-launch-event-production",
-        "label": "Product Launch Event Production"
-      },
-      {
-        "slug": "conference-stage-and-set-design",
-        "label": "Conference Stage and Set Design"
-      },
-      {
-        "slug": "sponsorship-activation-buildouts",
-        "label": "Sponsorship Activation Buildouts"
-      },
-      {
-        "slug": "portable-and-modular-display-programs",
-        "label": "Portable and Modular Display Programs"
-      },
-      {
-        "slug": "custom-island-exhibit-builds",
-        "label": "Custom Island Exhibit Builds"
-      },
-      {
-        "slug": "inline-booth-design-and-build",
-        "label": "Inline Booth Design and Build"
-      },
-      {
-        "slug": "double-deck-exhibit-management",
-        "label": "Double-Deck Exhibit Management"
-      },
-      {
-        "slug": "exhibit-storage-and-asset-management",
-        "label": "Exhibit Storage and Asset Management"
-      },
-      {
-        "slug": "exhibit-refurbishment-and-reconfiguration",
-        "label": "Exhibit Refurbishment and Reconfiguration"
-      },
-      {
-        "slug": "trade-show-program-management",
-        "label": "Trade Show Program Management"
-      },
-      {
-        "slug": "multi-show-rollout-services",
-        "label": "Multi-Show Rollout Services"
-      },
-      {
-        "slug": "event-furniture-and-lounge-environments",
-        "label": "Event Furniture and Lounge Environments"
-      },
-      {
-        "slug": "trade-show-project-management",
-        "label": "Trade Show Project Management"
-      },
-      {
-        "slug": "on-site-booth-maintenance",
-        "label": "On-Site Booth Maintenance"
-      },
-      {
-        "slug": "trade-show-strategy-and-pre-show-planning",
-        "label": "Trade Show Strategy and Pre-Show Planning"
-      },
-      {
         "slug": "show-services-order-management",
         "label": "Show Services Order Management"
       },
       {
-        "slug": "conference-and-venue-execution",
-        "label": "Conference and Venue Execution"
+        "slug": "exhibitor-appointed-contractor-coordination",
+        "label": "Exhibitor-Appointed-Contractor Coordination"
+      },
+      {
+        "slug": "show-site-supervision",
+        "label": "Show-Site Supervision"
+      },
+      {
+        "slug": "multi-show-rollout-services",
+        "label": "Multi-Show Rollout Services"
       }
     ],
-    "targetCount": 33,
-    "actualGeneratedCount": 33,
+    "targetCount": 12,
+    "actualGeneratedCount": 12,
     "representativeSampleSlugs": [
       "turnkey-trade-show-services",
       "trade-show-general-contracting",
-      "expo-logistics-and-shipping"
+      "trade-show-strategy-and-pre-show-planning",
+      "trade-show-booth-design"
     ],
-    "rationale": "The Des Moines service stack needs to cover real trade-show, exhibit, labor, AV, logistics, and project-led buyer intent without resorting to synonym spam. Thirty-three service pages cover downtown convention work, fairgrounds and Altoona event programs, and west-corridor corporate demand."
+    "rationale": "The Lexington service stack needs to cover real trade-show, exhibit, labor, AV, logistics, and project-led buyer intent without sounding like a keyword list."
   },
   "locations": {
     "label": "Locations",
     "routeBase": "/locations",
     "required": true,
-    "requiredCorePages": [],
+    "requiredCorePages": [
+      "downtown-lexington",
+      "newtown-pike-corridor",
+      "hamburg",
+      "beaumont"
+    ],
     "generatedPages": [
       {
-        "slug": "downtown-des-moines",
-        "label": "Downtown Des Moines"
+        "slug": "downtown-lexington",
+        "label": "Downtown Lexington"
       },
       {
-        "slug": "east-village",
-        "label": "East Village"
+        "slug": "newtown-pike-corridor",
+        "label": "Newtown Pike Corridor"
       },
       {
-        "slug": "western-gateway",
-        "label": "Western Gateway"
+        "slug": "hamburg",
+        "label": "Hamburg"
       },
       {
-        "slug": "court-avenue-district",
-        "label": "Court Avenue District"
+        "slug": "beaumont",
+        "label": "Beaumont"
       },
       {
-        "slug": "riverfront-des-moines",
-        "label": "Riverfront Des Moines"
+        "slug": "chevy-chase",
+        "label": "Chevy Chase"
       },
       {
-        "slug": "ingersoll-avenue",
-        "label": "Ingersoll Avenue"
+        "slug": "south-lexington",
+        "label": "South Lexington"
       },
       {
-        "slug": "sherman-hill",
-        "label": "Sherman Hill"
+        "slug": "nicholasville",
+        "label": "Nicholasville"
       },
       {
-        "slug": "drake-neighborhood",
-        "label": "Drake Neighborhood"
+        "slug": "georgetown",
+        "label": "Georgetown"
       },
       {
-        "slug": "beaverdale",
-        "label": "Beaverdale"
+        "slug": "richmond",
+        "label": "Richmond"
       },
       {
-        "slug": "highland-park",
-        "label": "Highland Park"
+        "slug": "versailles",
+        "label": "Versailles"
       },
       {
-        "slug": "capitol-east",
-        "label": "Capitol East"
+        "slug": "frankfort",
+        "label": "Frankfort"
       },
       {
-        "slug": "south-des-moines",
-        "label": "South Des Moines"
-      },
-      {
-        "slug": "airport-corridor",
-        "label": "Airport Corridor"
-      },
-      {
-        "slug": "pleasant-hill",
-        "label": "Pleasant Hill"
-      },
-      {
-        "slug": "altoona",
-        "label": "Altoona"
-      },
-      {
-        "slug": "ankeny",
-        "label": "Ankeny"
-      },
-      {
-        "slug": "west-des-moines",
-        "label": "West Des Moines"
-      },
-      {
-        "slug": "valley-junction",
-        "label": "Valley Junction"
-      },
-      {
-        "slug": "jordan-creek",
-        "label": "Jordan Creek"
-      },
-      {
-        "slug": "clive",
-        "label": "Clive"
-      },
-      {
-        "slug": "urbandale",
-        "label": "Urbandale"
-      },
-      {
-        "slug": "johnston",
-        "label": "Johnston"
-      },
-      {
-        "slug": "waukee",
-        "label": "Waukee"
-      },
-      {
-        "slug": "grimes",
-        "label": "Grimes"
-      },
-      {
-        "slug": "bondurant",
-        "label": "Bondurant"
-      },
-      {
-        "slug": "norwalk",
-        "label": "Norwalk"
-      },
-      {
-        "slug": "indianola",
-        "label": "Indianola"
-      },
-      {
-        "slug": "carlisle",
-        "label": "Carlisle"
-      },
-      {
-        "slug": "windsor-heights",
-        "label": "Windsor Heights"
-      },
-      {
-        "slug": "polk-city",
-        "label": "Polk City"
-      },
-      {
-        "slug": "adel",
-        "label": "Adel"
-      },
-      {
-        "slug": "de-soto",
-        "label": "De Soto"
-      },
-      {
-        "slug": "perry",
-        "label": "Perry"
-      },
-      {
-        "slug": "ames",
-        "label": "Ames"
-      },
-      {
-        "slug": "boone",
-        "label": "Boone"
-      },
-      {
-        "slug": "newton",
-        "label": "Newton"
+        "slug": "winchester",
+        "label": "Winchester"
       }
     ],
-    "targetCount": 36,
-    "actualGeneratedCount": 36,
+    "targetCount": 12,
+    "actualGeneratedCount": 12,
     "representativeSampleSlugs": [
-      "downtown-des-moines",
-      "west-des-moines",
-      "altoona"
+      "downtown-lexington",
+      "newtown-pike-corridor",
+      "hamburg",
+      "beaumont"
     ],
-    "rationale": "Des Moines sells as a metro made of distinct submarkets rather than a single compact downtown. Thirty-six location pages cover the convention core, west corridor, north corridor, east-side fairgrounds cluster, and practical satellite cities across Central Iowa."
+    "rationale": "Lexington sells as a convention core plus a practical ring of Bluegrass submarkets, hotel corridors, and short-drive regional markets."
   },
   "venues": {
     "label": "Venues",
     "routeBase": "/venues",
     "required": true,
-    "requiredCorePages": [],
+    "requiredCorePages": [
+      "central-bank-center",
+      "hyatt-regency-lexington",
+      "hilton-lexington-downtown",
+      "lexington-marriott-city-center"
+    ],
     "generatedPages": [
       {
-        "slug": "community-choice-convention-center",
-        "label": "Community Choice Convention Center"
+        "slug": "central-bank-center",
+        "label": "Central Bank Center"
       },
       {
-        "slug": "emc-expo-center",
-        "label": "EMC Expo Center"
+        "slug": "hyatt-regency-lexington",
+        "label": "Hyatt Regency Lexington"
       },
       {
-        "slug": "caseys-center",
-        "label": "Casey's Center"
+        "slug": "hilton-lexington-downtown",
+        "label": "Hilton Lexington/Downtown"
       },
       {
-        "slug": "hilton-des-moines-downtown",
-        "label": "Hilton Des Moines Downtown"
+        "slug": "lexington-marriott-city-center",
+        "label": "Lexington Marriott City Center"
       },
       {
-        "slug": "des-moines-marriott-downtown",
-        "label": "Des Moines Marriott Downtown"
+        "slug": "marriott-lexington-griffin-gate-golf-resort-and-spa",
+        "label": "Marriott Lexington Griffin Gate Golf Resort & Spa"
       },
       {
-        "slug": "embassy-suites-des-moines-downtown",
-        "label": "Embassy Suites by Hilton Des Moines Downtown"
+        "slug": "the-campbell-house-lexington",
+        "label": "The Campbell House Lexington"
       },
       {
-        "slug": "renaissance-des-moines-savery-hotel",
-        "label": "Renaissance Des Moines Savery Hotel"
-      },
-      {
-        "slug": "hotel-fort-des-moines",
-        "label": "Hotel Fort Des Moines"
-      },
-      {
-        "slug": "sheraton-west-des-moines-hotel",
-        "label": "Sheraton West Des Moines Hotel"
-      },
-      {
-        "slug": "ron-pearson-center",
-        "label": "Ron Pearson Center"
-      },
-      {
-        "slug": "stoney-creek-hotel-des-moines",
-        "label": "Stoney Creek Hotel Des Moines"
-      },
-      {
-        "slug": "ffa-enrichment-center",
-        "label": "FFA Enrichment Center"
-      },
-      {
-        "slug": "meadows-events-and-conference-center",
-        "label": "The Meadows Events & Conference Center"
-      },
-      {
-        "slug": "richard-o-jacobson-exhibition-center",
-        "label": "Richard O. Jacobson Exhibition Center"
-      },
-      {
-        "slug": "william-c-knapp-varied-industries-building",
-        "label": "William C. Knapp Varied Industries Building"
-      },
-      {
-        "slug": "elwell-family-food-center",
-        "label": "Elwell Family Food Center"
-      },
-      {
-        "slug": "walnut-center",
-        "label": "Walnut Center"
-      },
-      {
-        "slug": "greater-des-moines-botanical-garden",
-        "label": "Greater Des Moines Botanical Garden"
-      },
-      {
-        "slug": "science-center-of-iowa",
-        "label": "Science Center of Iowa"
-      },
-      {
-        "slug": "des-moines-art-center",
-        "label": "Des Moines Art Center"
-      },
-      {
-        "slug": "holiday-inn-and-suites-des-moines-northwest",
-        "label": "Holiday Inn Hotel & Suites Des Moines-Northwest"
-      },
-      {
-        "slug": "des-moines-heritage-center",
-        "label": "Des Moines Heritage Center"
-      },
-      {
-        "slug": "principal-park",
-        "label": "Principal Park"
-      },
-      {
-        "slug": "iowa-state-fairgrounds",
-        "label": "Iowa State Fairgrounds"
-      },
-      {
-        "slug": "prairie-meadows-racetrack-and-casino",
-        "label": "Prairie Meadows Racetrack & Casino"
-      },
-      {
-        "slug": "temple-for-performing-arts",
-        "label": "Temple for Performing Arts"
-      },
-      {
-        "slug": "capital-square",
-        "label": "Capital Square"
-      },
-      {
-        "slug": "worldly-brewing-event-center",
-        "label": "Worldly Brewing Event Center"
+        "slug": "embassy-suites-lexington-green",
+        "label": "Embassy Suites Lexington Green"
       }
     ],
-    "targetCount": 28,
-    "actualGeneratedCount": 28,
+    "targetCount": 7,
+    "actualGeneratedCount": 7,
     "representativeSampleSlugs": [
-      "community-choice-convention-center",
-      "ron-pearson-center",
-      "richard-o-jacobson-exhibition-center"
+      "central-bank-center",
+      "hyatt-regency-lexington",
+      "hilton-lexington-downtown",
+      "lexington-marriott-city-center"
     ],
-    "rationale": "The venue set uses real, current Des Moines properties across downtown, West Des Moines, Altoona, Ankeny, Johnston, and the fairgrounds. It balances true convention inventory with hotel, museum, and event spaces that support conferences, sponsor work, and activations."
+    "rationale": "The venue stack focuses on the downtown convention core, connected hotel inventory, and the strongest regional event properties that actually shape trade-show execution in Lexington."
   },
   "eventTypes": {
     "label": "Event Types",
@@ -449,14 +202,8 @@
     "requiredCorePages": [
       "trade-show-services",
       "conference-services",
-      "expo-services",
-      "convention-services",
-      "product-launch-services",
       "brand-activation-services",
-      "corporate-event-services",
-      "roadshow-services",
-      "sponsorship-activation-services",
-      "pop-up-event-services"
+      "user-conference-services"
     ],
     "generatedPages": [
       {
@@ -468,119 +215,85 @@
         "label": "Conference Services"
       },
       {
-        "slug": "expo-services",
-        "label": "Expo Services"
-      },
-      {
-        "slug": "convention-services",
-        "label": "Convention Services"
-      },
-      {
-        "slug": "product-launch-services",
-        "label": "Product Launch Services"
-      },
-      {
         "slug": "brand-activation-services",
         "label": "Brand Activation Services"
       },
       {
-        "slug": "corporate-event-services",
-        "label": "Corporate Event Services"
+        "slug": "user-conference-services",
+        "label": "User Conference Services"
       },
       {
-        "slug": "roadshow-services",
-        "label": "Roadshow Services"
-      },
-      {
-        "slug": "sponsorship-activation-services",
-        "label": "Sponsorship Activation Services"
-      },
-      {
-        "slug": "pop-up-event-services",
-        "label": "Pop-Up Event Services"
+        "slug": "association-event-services",
+        "label": "Association Event Services"
       },
       {
         "slug": "dealer-meeting-services",
         "label": "Dealer Meeting Services"
       },
       {
-        "slug": "user-conference-services",
-        "label": "User Conference Services"
+        "slug": "recruiting-event-services",
+        "label": "Recruiting Event Services"
+      },
+      {
+        "slug": "product-launch-services",
+        "label": "Product Launch Services"
       }
     ],
-    "targetCount": 12,
-    "actualGeneratedCount": 12,
+    "targetCount": 8,
+    "actualGeneratedCount": 8,
     "representativeSampleSlugs": [
       "trade-show-services",
       "conference-services",
-      "brand-activation-services"
+      "brand-activation-services",
+      "user-conference-services"
     ],
-    "rationale": "The event-type stack preserves the ten required core pages and adds dealer-meeting plus user-conference intent because Des Moines supports both classic convention work and relationship-driven corporate formats."
+    "rationale": "The event-type stack preserves classic trade-show intent while adding formats that matter in a Bluegrass market with conferences, university programs, and sponsor-led events."
   },
   "boothTypes": {
     "label": "Booth Types",
     "routeBase": "/booth-types",
     "required": true,
     "requiredCorePages": [
-      "inline-booth-displays",
-      "island-exhibit-booths",
-      "modular-trade-show-booths",
-      "portable-trade-show-displays",
       "custom-exhibit-booths",
-      "double-deck-exhibits",
-      "rental-exhibit-booths",
-      "conference-booth-displays"
+      "island-exhibit-booths",
+      "inline-booth-displays",
+      "rental-exhibit-booths"
     ],
     "generatedPages": [
       {
-        "slug": "inline-booth-displays",
-        "label": "Inline Booth Displays"
+        "slug": "custom-exhibit-booths",
+        "label": "Custom Exhibit Booths"
       },
       {
         "slug": "island-exhibit-booths",
         "label": "Island Exhibit Booths"
       },
       {
-        "slug": "modular-trade-show-booths",
-        "label": "Modular Trade Show Booths"
-      },
-      {
-        "slug": "portable-trade-show-displays",
-        "label": "Portable Trade Show Displays"
-      },
-      {
-        "slug": "custom-exhibit-booths",
-        "label": "Custom Exhibit Booths"
-      },
-      {
-        "slug": "double-deck-exhibits",
-        "label": "Double-Deck Exhibits"
+        "slug": "inline-booth-displays",
+        "label": "Inline Booth Displays"
       },
       {
         "slug": "rental-exhibit-booths",
         "label": "Rental Exhibit Booths"
       },
       {
-        "slug": "conference-booth-displays",
-        "label": "Conference Booth Displays"
+        "slug": "modular-exhibit-booths",
+        "label": "Modular Exhibit Booths"
       },
       {
-        "slug": "10x20-inline-trade-show-booths",
-        "label": "10x20 Inline Trade Show Booths"
-      },
-      {
-        "slug": "20x20-trade-show-booths",
-        "label": "20x20 Trade Show Booths"
+        "slug": "double-deck-exhibit-booths",
+        "label": "Double-Deck Exhibit Booths"
       }
     ],
-    "targetCount": 10,
-    "actualGeneratedCount": 10,
+    "targetCount": 6,
+    "actualGeneratedCount": 6,
     "representativeSampleSlugs": [
+      "custom-exhibit-booths",
+      "island-exhibit-booths",
       "inline-booth-displays",
-      "double-deck-exhibits",
-      "20x20-trade-show-booths"
+      "rental-exhibit-booths"
     ],
-    "rationale": "The booth-type stack keeps the eight required core pages and adds two footprint-driven searches that buyers commonly use when comparing inline and island-scale concepts."
+    "rationale": "Booth-format pages help the site speak to footprint, sightlines, and install complexity instead of flattening every exhibit into one generic booth concept."
   },
   "industries": {
     "label": "Industries",
@@ -588,13 +301,9 @@
     "required": true,
     "requiredCorePages": [
       "healthcare-trade-show-services",
-      "technology-trade-show-services",
       "manufacturing-expo-services",
-      "food-and-beverage-trade-show-services",
-      "beauty-and-cosmetics-trade-show-services",
-      "automotive-trade-show-services",
-      "retail-and-ecommerce-event-services",
-      "industrial-trade-show-services"
+      "agriculture-and-agtech-expo-services",
+      "education-and-association-event-services"
     ],
     "generatedPages": [
       {
@@ -602,32 +311,8 @@
         "label": "Healthcare Trade Show Services"
       },
       {
-        "slug": "technology-trade-show-services",
-        "label": "Technology Trade Show Services"
-      },
-      {
         "slug": "manufacturing-expo-services",
         "label": "Manufacturing Expo Services"
-      },
-      {
-        "slug": "food-and-beverage-trade-show-services",
-        "label": "Food and Beverage Trade Show Services"
-      },
-      {
-        "slug": "beauty-and-cosmetics-trade-show-services",
-        "label": "Beauty and Cosmetics Trade Show Services"
-      },
-      {
-        "slug": "automotive-trade-show-services",
-        "label": "Automotive Trade Show Services"
-      },
-      {
-        "slug": "retail-and-ecommerce-event-services",
-        "label": "Retail and Ecommerce Event Services"
-      },
-      {
-        "slug": "industrial-trade-show-services",
-        "label": "Industrial Trade Show Services"
       },
       {
         "slug": "agriculture-and-agtech-expo-services",
@@ -636,62 +321,158 @@
       {
         "slug": "education-and-association-event-services",
         "label": "Education and Association Event Services"
+      },
+      {
+        "slug": "equine-and-bourbon-industry-events",
+        "label": "Equine and Bourbon Industry Events"
+      },
+      {
+        "slug": "financial-services-and-insurance-expo-services",
+        "label": "Financial Services and Insurance Expo Services"
+      },
+      {
+        "slug": "logistics-and-distribution-expo-services",
+        "label": "Logistics and Distribution Expo Services"
+      },
+      {
+        "slug": "technology-and-software-expo-services",
+        "label": "Technology and Software Expo Services"
       }
     ],
-    "targetCount": 10,
-    "actualGeneratedCount": 10,
+    "targetCount": 8,
+    "actualGeneratedCount": 8,
     "representativeSampleSlugs": [
       "healthcare-trade-show-services",
       "manufacturing-expo-services",
-      "agriculture-and-agtech-expo-services"
+      "agriculture-and-agtech-expo-services",
+      "education-and-association-event-services"
     ],
-    "rationale": "The industry stack preserves the eight required core pages and adds agriculture/agtech plus education/association demand, both of which are credible in Central Iowa and help the site sound local rather than generic."
+    "rationale": "The industry stack keeps Lexington grounded in the sectors that actually create recurring event demand in the Bluegrass region: healthcare, manufacturing, agriculture, education, equine, finance, and technology."
   },
   "optionalTaxonomies": [
     {
       "label": "Capabilities",
       "routeBase": "/capabilities",
       "required": false,
-      "requiredCorePages": [],
-      "generatedPages": [],
-      "targetCount": 0,
-      "actualGeneratedCount": 0,
-      "representativeSampleSlugs": [],
-      "rationale": "Capabilities was intentionally left inactive because the required service stack already covers project-led execution depth without creating thin overlap pages."
+      "requiredCorePages": [
+        "experience-strategy-and-show-planning",
+        "creative-and-booth-development"
+      ],
+      "generatedPages": [
+        {
+          "slug": "experience-strategy-and-show-planning",
+          "label": "Experience Strategy and Show Planning"
+        },
+        {
+          "slug": "creative-and-booth-development",
+          "label": "Creative and Booth Development"
+        },
+        {
+          "slug": "fabrication-coordination",
+          "label": "Fabrication Coordination"
+        },
+        {
+          "slug": "show-site-leadership",
+          "label": "Show-Site Leadership"
+        }
+      ],
+      "targetCount": 4,
+      "actualGeneratedCount": 4,
+      "representativeSampleSlugs": [
+        "experience-strategy-and-show-planning",
+        "creative-and-booth-development",
+        "fabrication-coordination",
+        "show-site-leadership"
+      ],
+      "rationale": "Capabilities are useful as a support taxonomy because they explain how the team actually delivers work from planning through show-site leadership."
     },
     {
       "label": "Rentals",
       "routeBase": "/rentals",
       "required": false,
-      "requiredCorePages": [],
-      "generatedPages": [],
-      "targetCount": 0,
-      "actualGeneratedCount": 0,
-      "representativeSampleSlugs": [],
-      "rationale": "Rentals was intentionally left inactive because rental intent is already distributed across services and booth types, and the Des Moines market did not justify a separate deep taxonomy for this build."
+      "requiredCorePages": [
+        "modular-exhibit-rentals",
+        "portable-display-rentals"
+      ],
+      "generatedPages": [
+        {
+          "slug": "modular-exhibit-rentals",
+          "label": "Modular Exhibit Rentals"
+        },
+        {
+          "slug": "portable-display-rentals",
+          "label": "Portable Display Rentals"
+        },
+        {
+          "slug": "rental-booth-packages",
+          "label": "Rental Booth Packages"
+        },
+        {
+          "slug": "event-furnishing-rentals",
+          "label": "Event Furnishing Rentals"
+        }
+      ],
+      "targetCount": 4,
+      "actualGeneratedCount": 4,
+      "representativeSampleSlugs": [
+        "modular-exhibit-rentals",
+        "portable-display-rentals",
+        "rental-booth-packages",
+        "event-furnishing-rentals"
+      ],
+      "rationale": "Rental intent is strong enough to merit its own route set because many buyers want a fast, flexible, and budget-aware exhibit path."
     },
     {
       "label": "Exhibit Types",
       "routeBase": "/exhibit-types",
       "required": false,
-      "requiredCorePages": [],
-      "generatedPages": [],
-      "targetCount": 0,
-      "actualGeneratedCount": 0,
-      "representativeSampleSlugs": [],
-      "rationale": "Exhibit-types was intentionally left inactive because the required booth-type taxonomy already captures the strongest exhibit-format intent without spreading the page set thinner than necessary."
+      "requiredCorePages": [
+        "corporate-exhibit-environments",
+        "island-exhibit-environments",
+        "inline-exhibit-environments"
+      ],
+      "generatedPages": [
+        {
+          "slug": "corporate-exhibit-environments",
+          "label": "Corporate Exhibit Environments"
+        },
+        {
+          "slug": "island-exhibit-environments",
+          "label": "Island Exhibit Environments"
+        },
+        {
+          "slug": "inline-exhibit-environments",
+          "label": "Inline Exhibit Environments"
+        },
+        {
+          "slug": "portable-exhibit-environments",
+          "label": "Portable Exhibit Environments"
+        },
+        {
+          "slug": "roadshow-exhibit-environments",
+          "label": "Roadshow Exhibit Environments"
+        }
+      ],
+      "targetCount": 5,
+      "actualGeneratedCount": 5,
+      "representativeSampleSlugs": [
+        "corporate-exhibit-environments",
+        "island-exhibit-environments",
+        "inline-exhibit-environments",
+        "portable-exhibit-environments"
+      ],
+      "rationale": "Exhibit-type pages give the site a way to explain how the room should behave once the brand, the footprint, and the live traffic pattern are all real."
     }
   ],
-  "optionalTaxonomiesUsed": [],
   "pageCountPlan": {
-    "services": 33,
-    "locations": 36,
-    "venues": 28,
-    "eventTypes": 12,
-    "boothTypes": 10,
-    "industries": 10,
-    "totalDetailPages": 129,
-    "totalIndexPages": 6,
-    "totalSitePagesBeforeAboutContactPrivacyTerms": 135
+    "services": 12,
+    "locations": 12,
+    "venues": 7,
+    "eventTypes": 8,
+    "boothTypes": 6,
+    "industries": 8,
+    "capabilities": 4,
+    "rentals": 4,
+    "exhibitTypes": 5
   }
 }

@@ -13,7 +13,7 @@ import {
 function BrandMark() {
   return (
     <span className="site-wordmark" aria-hidden="true">
-      tsdm<span className="site-wordmark__dot">.</span>
+      tslx<span className="site-wordmark__dot">.</span>
     </span>
   );
 }
@@ -130,7 +130,7 @@ export function SiteHeader() {
 
           <aside className="site-menu__aside">
             <p className="site-menu__eyebrow">{business.legalName}</p>
-            <h2>Project-led exhibit execution across Des Moines and Central Iowa.</h2>
+            <h2>Project-led exhibit execution across Lexington and the Bluegrass region.</h2>
             <p>
               Use the menu to move between services, venue guides, market coverage,
               event formats, booth formats, and industry-specific planning routes.

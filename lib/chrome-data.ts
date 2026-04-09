@@ -1,12 +1,12 @@
 export const business = {
-  name: "Trade Show Services of Des Moines",
-  legalName: "Trade Show Services of Des Moines",
-  city: "Des Moines",
-  state: "IA",
-  domain: "tradeshowservicesdesmoines.com",
-  address: "699 Walnut St, Suite 400, Des Moines, IA 50309",
-  phone: "555-555-5615",
-  email: "info@tradeshowdisplaydesmoines.com"
+  name: "Trade Show Services of Lexington",
+  legalName: "Trade Show Services of Lexington",
+  city: "Lexington",
+  state: "KY",
+  domain: "tradeshowserviceslexington.com",
+  address: "300 W Vine St, Suite 200, Lexington, KY 40507",
+  phone: "859-555-0147",
+  email: "info@tradeshowserviceslexington.com"
 } as const;
 
 export type HeaderNavItem = {
@@ -59,10 +59,10 @@ export const headerNavigation: HeaderNavItem[] = [
     label: "Venues",
     href: "/venues",
     children: [
-      { label: "Community Choice Convention Center", href: "/venues/community-choice-convention-center" },
-      { label: "EMC Expo Center", href: "/venues/emc-expo-center" },
-      { label: "Ron Pearson Center", href: "/venues/ron-pearson-center" },
-      { label: "Richard O. Jacobson Exhibition Center", href: "/venues/richard-o-jacobson-exhibition-center" }
+      { label: "Central Bank Center", href: "/venues/central-bank-center" },
+      { label: "Hyatt Regency Lexington", href: "/venues/hyatt-regency-lexington" },
+      { label: "Hilton Lexington/Downtown", href: "/venues/hilton-lexington-downtown" },
+      { label: "Lexington Marriott City Center", href: "/venues/lexington-marriott-city-center" }
     ],
     panel: {
       title: "Venue guidance for downtown halls, suburban hotels, and fairgrounds buildings",
@@ -75,10 +75,10 @@ export const headerNavigation: HeaderNavItem[] = [
     label: "Locations",
     href: "/locations",
     children: [
-      { label: "Downtown Des Moines", href: "/locations/downtown-des-moines" },
-      { label: "West Des Moines", href: "/locations/west-des-moines" },
-      { label: "Ankeny", href: "/locations/ankeny" },
-      { label: "Altoona", href: "/locations/altoona" }
+      { label: "Downtown Lexington", href: "/locations/downtown-lexington" },
+      { label: "Newtown Pike Corridor", href: "/locations/newtown-pike-corridor" },
+      { label: "Hamburg", href: "/locations/hamburg" },
+      { label: "South Lexington", href: "/locations/south-lexington" }
     ],
     panel: {
       title: "Metro coverage that reflects real planning differences",
@@ -123,9 +123,9 @@ export const headerNavigation: HeaderNavItem[] = [
     label: "Industries",
     href: "/industries",
     children: [
-      { label: "Agriculture and AgTech Expo Services", href: "/industries/agriculture-and-agtech-expo-services" },
       { label: "Healthcare Trade Show Services", href: "/industries/healthcare-trade-show-services" },
       { label: "Manufacturing Expo Services", href: "/industries/manufacturing-expo-services" },
+      { label: "Agriculture and AgTech Expo Services", href: "/industries/agriculture-and-agtech-expo-services" },
       { label: "Education and Association Event Services", href: "/industries/education-and-association-event-services" }
     ],
     panel: {

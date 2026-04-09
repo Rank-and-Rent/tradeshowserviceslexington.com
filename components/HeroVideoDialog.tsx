@@ -56,7 +56,7 @@ export function HeroVideoDialog() {
           <div className="hero-video-dialog__scrim" onClick={() => setIsOpen(false)} />
           <div className="hero-video-dialog__frame">
             <div className="hero-video-dialog__toolbar">
-              <p id="hero-video-dialog-title">Des Moines show-floor reel</p>
+              <p id="hero-video-dialog-title">Lexington show-floor reel</p>
               <button
                 aria-label="Close video"
                 className="hero-video-dialog__close"

@@ -84,7 +84,7 @@ const articleCards = [
   },
   {
     tag: "Market coverage",
-    title: "Why Central Iowa should not be sold like one generic metro",
+    title: "Why the Bluegrass region should not be sold like one generic metro",
     text:
       "The downtown convention core, north metro, airport corridor, and east-side event cluster each need their own routing, staffing, and venue language, because the same project can feel very different in each of them.",
     href: "/locations"
@@ -258,13 +258,12 @@ export default function HomePage() {
               </p>
             </div>
             <div className="home-brief-band__actions">
-              <Link className="home-brief-band__button" href="/contact">
-                Start a project brief
+              <Link className="button button--blue" href="/services">
+                Browse services
               </Link>
-              <p>
-                We care about the protection of your data. Read our{" "}
-                <Link href="/privacy">Privacy Policy</Link>.
-              </p>
+              <Link className="button button--ghost" href="/venues">
+                Explore venues
+              </Link>
             </div>
           </div>
         </section>

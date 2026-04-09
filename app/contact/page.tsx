@@ -10,7 +10,7 @@ export default function ContactPage() {
           <div className="site-shell">
             <div className="page-hero__content">
               <p className="section-kicker section-kicker--light">Contact us</p>
-              <h1>Start the Des Moines project brief</h1>
+              <h1>Start the Lexington project brief</h1>
               <p className="page-hero__lead">
                 Share the show date, venue, service mix, and project details using the
                 intake fields below. That gives the team enough context to frame the

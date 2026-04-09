@@ -205,14 +205,14 @@ function readJson<T>(filename: string): T {
 }
 
 export const business = {
-  name: "Trade Show Services of Des Moines",
-  legalName: "Trade Show Services of Des Moines",
-  city: "Des Moines",
-  state: "IA",
-  domain: "tradeshowservicesdesmoines.com",
-  address: "699 Walnut St, Suite 400, Des Moines, IA 50309",
-  phone: "555-555-5615",
-  email: "info@tradeshowdisplaydesmoines.com"
+  name: "Trade Show Services of Lexington",
+  legalName: "Trade Show Services of Lexington",
+  city: "Lexington",
+  state: "KY",
+  domain: "tradeshowserviceslexington.com",
+  address: "300 W Vine St, Suite 200, Lexington, KY 40507",
+  phone: "859-555-0147",
+  email: "info@tradeshowserviceslexington.com"
 } as const;
 
 export const taxonomyPlan = readJson<TaxonomyPlan>("taxonomy-plan.json");
@@ -512,7 +512,7 @@ export function pickRelatedRoutes(
     {
       href: `/${section}`,
       label: `Browse all ${getTaxonomyCollection(section).label.toLowerCase()}`,
-      description: `View the full ${getTaxonomyCollection(section).label.toLowerCase()} stack for ${business.city} and the wider Central Iowa market.`
+      description: `View the full ${getTaxonomyCollection(section).label.toLowerCase()} stack for ${business.city} and the wider Bluegrass region market.`
     }
   ];
 
@@ -606,10 +606,10 @@ export const headerNavigation: HeaderNavItem[] = [
     label: "Venues",
     href: "/venues",
     children: [
-      { label: "Community Choice Convention Center", href: "/venues/community-choice-convention-center" },
-      { label: "EMC Expo Center", href: "/venues/emc-expo-center" },
-      { label: "Ron Pearson Center", href: "/venues/ron-pearson-center" },
-      { label: "Richard O. Jacobson Exhibition Center", href: "/venues/richard-o-jacobson-exhibition-center" }
+      { label: "Central Bank Center", href: "/venues/central-bank-center" },
+      { label: "Hyatt Regency Lexington", href: "/venues/hyatt-regency-lexington" },
+      { label: "Hilton Lexington/Downtown", href: "/venues/hilton-lexington-downtown" },
+      { label: "Lexington Marriott City Center", href: "/venues/lexington-marriott-city-center" }
     ],
     panel: {
       title: "Venue guidance for downtown halls, suburban hotels, and fairgrounds buildings",
@@ -622,10 +622,10 @@ export const headerNavigation: HeaderNavItem[] = [
     label: "Locations",
     href: "/locations",
     children: [
-      { label: "Downtown Des Moines", href: "/locations/downtown-des-moines" },
-      { label: "West Des Moines", href: "/locations/west-des-moines" },
-      { label: "Ankeny", href: "/locations/ankeny" },
-      { label: "Altoona", href: "/locations/altoona" }
+      { label: "Downtown Lexington", href: "/locations/downtown-lexington" },
+      { label: "Newtown Pike Corridor", href: "/locations/newtown-pike-corridor" },
+      { label: "Hamburg", href: "/locations/hamburg" },
+      { label: "South Lexington", href: "/locations/south-lexington" }
     ],
     panel: {
       title: "Metro coverage that reflects real planning differences",
@@ -759,7 +759,7 @@ export const homepageBenefitCards: HomepageCard[] = [
   {
     icon: "tag",
     title: "Regional Coverage",
-    text: "Downtown, West Des Moines, Ankeny, Altoona, and fairgrounds work are treated as distinct planning environments, not one metro template.",
+    text: "Downtown, Newtown Pike, Hamburg, Beaumont, and the surrounding Bluegrass drive market are treated as distinct planning environments, not one metro template.",
     href: "/locations"
   }
 ];
@@ -781,9 +781,9 @@ export const homepageInsightCards: HomepageInsightCard[] = [
   },
   {
     tag: "Fairgrounds and East-Side Scale",
-    title: "Fairgrounds buildings and public-show logistics",
-    text: "The fairgrounds and Altoona cluster matter because east-side halls create a second real event environment beyond the downtown core.",
-    href: "/venues/william-c-knapp-varied-industries-building",
+    title: "Griffin Gate and north-Lexington resort logistics",
+    text: "The Griffin Gate corridor matters because it creates a second real event environment beyond the downtown core for retreats, overflow, and hospitality-heavy programs.",
+    href: "/venues/marriott-lexington-griffin-gate-golf-resort-and-spa",
     accent: "slate"
   }
 ];
@@ -792,7 +792,7 @@ export const homepageSplitCallout = {
   eyebrow: "Need a cleaner planning path?",
   title: "Build the next Des Moines event around the venue guide that actually fits the room.",
   text:
-    "Downtown convention work, west-corridor hotel meetings, fairgrounds events, Ankeny conference programs, and Altoona hospitality all need different timing, utilities, labor language, and freight assumptions. Start with the venue, service mix, and show date and we can map the cleanest path.",
+    "Downtown convention work, Newtown Pike hotel meetings, south-Lexington programs, Hamburg corporate events, and Bluegrass regional spillover all need different timing, utilities, labor language, and freight assumptions. Start with the venue, service mix, and show date and we can map the cleanest path.",
   href: "/contact",
   buttonLabel: "Start a Project Brief"
 } as const;
@@ -800,7 +800,7 @@ export const homepageSplitCallout = {
 export const resourceCards = [
   {
     label: "Venues",
-    title: "Downtown, west-corridor, and fairgrounds venue playbooks",
+    title: "Downtown, hotel-ring, and regional venue playbooks",
     description:
       "Move from the market view into venue-specific planning, exhibitor-kit review, and service-order timing without guessing how the building works.",
     href: "/venues",
@@ -808,7 +808,7 @@ export const resourceCards = [
   },
   {
     label: "Locations",
-    title: "Des Moines metro and Central Iowa coverage",
+    title: "Lexington metro and Bluegrass region coverage",
     description:
       "Use the location stack to see how downtown, the west corridor, the north metro, and the east-side event cluster change execution.",
     href: "/locations",
@@ -826,7 +826,7 @@ export const resourceCards = [
     label: "Industries",
     title: "Buyer-specific planning paths",
     description:
-      "Industry pages connect the same Des Moines venue logic to healthcare, manufacturing, agriculture, and association demand.",
+      "Industry pages connect the same Lexington venue logic to healthcare, manufacturing, agriculture, equine, and association demand.",
     href: "/industries",
     tone: "charcoal"
   }
@@ -843,17 +843,17 @@ export const footerMenuLinks = [
 export const footerPlanningLinks = [
   {
     title: "Downtown convention district venue guides",
-    href: "/venues/community-choice-convention-center",
+    href: "/venues/central-bank-center",
     label: "Venue"
   },
   {
-    title: "West Des Moines hotel and conference routing",
-    href: "/locations/west-des-moines",
+    title: "West Lexington hotel and conference routing",
+    href: "/locations/beaumont",
     label: "West"
   },
   {
-    title: "Fairgrounds and Altoona event coverage",
-    href: "/locations/altoona",
+    title: "Hamburg and east-Lexington event coverage",
+    href: "/locations/hamburg",
     label: "East"
   }
 ] as const;
@@ -903,11 +903,11 @@ export const footerLegalLinks = [
 ] as const;
 
 export const footerCoverageLine = [
-  "Downtown Des Moines",
-  "West Des Moines",
-  "Ankeny",
-  "Altoona",
-  "Iowa State Fairgrounds"
+  "Downtown Lexington",
+  "Newtown Pike Corridor",
+  "Hamburg",
+  "South Lexington",
+  "Bluegrass region"
 ].join(" | ");
 
 export function getRepresentativeRoutes(): string[] {

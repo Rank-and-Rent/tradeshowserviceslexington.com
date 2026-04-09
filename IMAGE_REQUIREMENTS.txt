@@ -1,8 +1,8 @@
-Trade Show Services of Des Moines Image Requirements
+Trade Show Services of Lexington Image Requirements
 
-Project: Trade Show Services of Des Moines
-Domain: tradeshowservicesdesmoines.com
-City: Des Moines, IA
+Project: Trade Show Services of Lexington
+Domain: tradeshowserviceslexington.com
+City: Lexington, IA
 
 Reference behavior: the source homepage uses hero video.
 Hero decision: no local hero video was created because the project uses a legal still-hero fallback instead of watermarked or unverifiable footage.
@@ -16,7 +16,7 @@ Current live assets already in this project
 
 Required image direction
 - Use original stills, licensed reusable stills, or commissioned illustration only.
-- Favor convention-center, expo-hall, fairgrounds, conference-hotel, sponsor-activation, and show-floor environments relevant to Des Moines and Central Iowa.
+- Favor convention-center, expo-hall, conference-hotel, sponsor-activation, and show-floor environments relevant to Lexington and the Bluegrass region.
 - Avoid visible third-party logos, readable venue branding, watermarks, low-resolution source material, and obvious AI artifacts.
 - Preserve negative space for large white title overlays and the Sparks-style black/white layout system used throughout the site.
 - Keep every taxonomy image plausibly distinct from adjacent pages, especially venue pages and nearby location pages.
@@ -29,7 +29,7 @@ Active taxonomy counts
 - Booth Types: 10 detail pages
 - Industries: 10 detail pages
 
-Manifest path: /Users/jackgreenberg/Desktop/rank-and-rent/trade-shows/tradeshowservicesdesmoines.com/IMAGE_MANIFEST.json
-Hero fallback manifest: /Users/jackgreenberg/Desktop/rank-and-rent/trade-shows/tradeshowservicesdesmoines.com/hero-still-fallback.json
+Manifest path: /Users/jackgreenberg/Desktop/rank-and-rent/trade-shows/tradeshowserviceslexington.com/IMAGE_MANIFEST.json
+Hero fallback manifest: /Users/jackgreenberg/Desktop/rank-and-rent/trade-shows/tradeshowserviceslexington.com/hero-still-fallback.json
 Generated at: 2026-04-06T20:43:19.193Z
 Manifest sections: generatedAt, project, reference, homepage, about, contact, shared, servicesIndex, locationsIndex, venuesIndex, eventTypesIndex, boothTypesIndex, industriesIndex, servicePages, locationPages, venuePages, eventTypePages, boothTypePages, industryPages

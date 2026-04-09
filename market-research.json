@@ -1,430 +1,247 @@
 {
-  "generatedAt": "2026-03-27T12:00:00.000Z",
+  "generatedAt": "2026-04-09T16:59:06.123Z",
   "market": {
-    "city": "Des Moines",
-    "state": "IA",
-    "businessName": "Trade Show Services of Des Moines",
-    "address": "699 Walnut St, Suite 400, Des Moines, IA 50309",
-    "serviceRadiusStrategy": "Lead with the downtown Des Moines convention core, then cover the west corridor, north corridor, east-side fairgrounds and Altoona cluster, and practical day-trip satellite markets across Central Iowa."
+    "city": "Lexington",
+    "state": "KY",
+    "businessName": "Trade Show Services of Lexington",
+    "address": "300 W Vine St, Suite 200, Lexington, KY 40507",
+    "serviceRadiusStrategy": "Lead with downtown Lexington and the Central Bank Center hotel ring, then extend into Newtown Pike, Hamburg, Beaumont, South Lexington, Nicholasville, Georgetown, Richmond, Versailles, Winchester, and Frankfort as the realistic Bluegrass markets that feed event traffic."
   },
   "marketSignals": [
     {
-      "label": "Downtown skywalk access",
-      "finding": "Catch Des Moines says downtown offers four miles of climate-controlled skywalks, which matters for attendee circulation between venues, hotels, restaurants, and parking in all-weather conditions.",
-      "sourceUrl": "https://www.catchdesmoines.com/plan/transportation/skywalks/"
+      "label": "Downtown convention core",
+      "finding": "Central Bank Center gives Lexington a true downtown convention anchor with current public rules and dimension docs that make venue-driven planning necessary from the start.",
+      "sourceUrl": "https://www.centralbankcenter.com/"
     },
     {
-      "label": "Convention inventory",
-      "finding": "Iowa Events Center markets 304,000 total square feet, 226,000 square feet of meeting space, 150,000 square feet of exhibit space, and 1,900 hotel rooms within one mile of the downtown complex.",
-      "sourceUrl": "https://www.iowaeventscenter.com/book-your-event"
+      "label": "Hotel-led event spine",
+      "finding": "Hyatt Regency Lexington, Hilton Lexington/Downtown, and Lexington Marriott City Center create a connected downtown hospitality cluster that supports conferences, sponsor rooms, and overflow planning.",
+      "sourceUrl": "https://www.marriott.com/en-us/hotels/lexdt-lexington-marriott-city-center/overview/"
     },
     {
-      "label": "Airport growth and connectivity",
-      "finding": "DSM says the airport reached 35 nonstop destinations in 2025 and is building a new terminal targeted for early 2027, reinforcing the market's viability for regional and national attendee travel.",
-      "sourceUrl": "https://www.flydsm.com/airport-business/news/dsm-celebrates-record-breaking-growth-with-allegiants-new-nonstop-flight-to-fort-myers"
+      "label": "Bluegrass identity",
+      "finding": "Lexington's equine, bourbon, and university identity gives the city more than one buyer story, which helps support recurring event demand across industries.",
+      "sourceUrl": "https://www.visitlex.com/"
     },
     {
-      "label": "Expanded parking and access",
-      "finding": "DSM's LiftDSM updates added more than 1,100 new covered parking spaces in 2025, increasing garage capacity by 63 percent and improving access for airport travelers and event traffic.",
-      "sourceUrl": "https://www.flydsm.com/airport-business/news/new-garage-opening-as-part-of-liftdsm-project"
+      "label": "Regional access",
+      "finding": "The city's position in central Kentucky makes it practical for drive-in attendees from the surrounding Bluegrass communities and nearby regional markets.",
+      "sourceUrl": "https://www.lexingtonky.gov/"
     },
     {
-      "label": "Corporate and institutional depth",
-      "finding": "The Greater Des Moines Partnership positions the region around financial services, insurance, government, manufacturing, trade, and service employers, giving the market year-round conference and exhibitor demand beyond one industry vertical.",
-      "sourceUrl": "https://www.desmoinesmetro.com/en/talent_development/major_employers/"
-    },
-    {
-      "label": "Off-site venue mix",
-      "finding": "Catch Des Moines tells planners the metro has 60 unique off-site venues in addition to core convention inventory, which supports sponsor events, hospitality, and multi-venue conference agendas.",
-      "sourceUrl": "https://www.catchdesmoines.com/meeting-planners/"
+      "label": "Resort and meeting spillover",
+      "finding": "Griffin Gate and The Campbell House widen the meeting map beyond downtown and give planners real options for hospitality-heavy programs.",
+      "sourceUrl": "https://www.thecampbellhouse.com/"
     }
   ],
   "regionalFramework": {
     "meetingInfrastructureNotes": [
-      "Downtown Des Moines is the primary convention engine, centered on the Iowa Events Center complex, attached Hilton, nearby hotels, and the skywalk network.",
-      "The west corridor adds meaningful suburban conference capacity through West Des Moines, Johnston, Urbandale, Clive, and Jordan Creek-adjacent properties.",
-      "East-side inventory is stronger than many similar-sized metros because the Iowa State Fairgrounds and Altoona event venues create a second event cluster outside downtown.",
-      "North-metro Ankeny contributes conference and training inventory that works well for education, agriculture, association, and community-driven events."
+      "Downtown Lexington is the convention engine, centered on Central Bank Center and the hotel ring around Vine, High, Main, and Broadway.",
+      "North Lexington and Newtown Pike matter because they offer resort and hotel options that can support overflow and executive programs.",
+      "South Lexington and Lexington Green add suburban hotel inventory for projects that need parking simplicity and room-block flexibility.",
+      "The Bluegrass corridor beyond the city gives Lexington a wider regional radius than a downtown-only event market."
     ],
     "accessibilityNotes": [
-      "Interstates 80 and 35, plus I-235 across the metro, keep Des Moines relatively easy to route for exhibitors, freight, and day-drive attendees.",
-      "DSM's route growth and terminal investment support fly-in attendance, while the compact downtown core keeps many destination routes short once guests arrive.",
-      "Fairgrounds and suburban venues generally offer simpler parking and vehicle access than the denser downtown core, which matters for road-heavy events and public shows."
+      "I-75, I-64, and the broader central-Kentucky road network make Lexington a real drive-market destination for regional exhibits and meetings.",
+      "Blue Grass Airport helps the city support fly-in attendance for planners who need regional and national reach.",
+      "Downtown walkability matters because a lot of Lexington's strongest event inventory sits close enough to support guest movement without long transit hops."
     ],
     "destinationSupportNotes": [
-      "Catch Des Moines actively markets venue selection, convention registration, hotel blocks, and planner support, which is useful for buyer-facing destination framing.",
-      "Downtown hospitality districts like the East Village, Court Avenue, and the Riverwalk make it easier to sell receptions, sponsor dinners, and off-site programming.",
-      "The market reads as practical and central rather than flashy, so the strongest positioning emphasizes execution, attendee convenience, and venue fluency."
+      "Lexington can sell as a business market, a horse-country destination, and a bourbon-country destination depending on the audience.",
+      "The strongest copy angle is practical: venue fluency, hospitality quality, and a region that knows how to host visitors without making the experience feel overbuilt.",
+      "Because the city has more than one strong event node, the best planning copy should explain why the venue choice matters instead of flattening everything into one downtown story."
     ]
   },
   "demandDrivers": [
     {
-      "slug": "financial-services-and-insurance",
-      "label": "Financial Services and Insurance",
-      "sourceUrl": "https://www.desmoinesmetro.com/en/talent_development/major_employers/",
-      "reason": "Greater Des Moines is nationally associated with insurance and financial-services employers, which supports conferences, recruiting events, customer meetings, and association work."
+      "slug": "central-bank-center-and-downtown-conventions",
+      "label": "Central Bank Center and Downtown Conventions",
+      "sourceUrl": "https://www.centralbankcenter.com/",
+      "reason": "The downtown convention campus creates a real exhibit and conference demand base that needs venue-aware show planning."
     },
     {
-      "slug": "government-and-public-sector",
-      "label": "Government and Public Sector",
-      "sourceUrl": "https://www.desmoinesmetro.com/en/talent_development/major_employers/",
-      "reason": "State and local government employment concentration creates recurring demand for training, policy, association, and civic gatherings."
+      "slug": "university-healthcare-and-research-events",
+      "label": "University, Healthcare, and Research Events",
+      "sourceUrl": "https://www.uky.edu/",
+      "reason": "University of Kentucky and the regional healthcare economy support training, recruiting, education, and association programs."
     },
     {
-      "slug": "manufacturing-and-industrial-business",
-      "label": "Manufacturing and Industrial Business",
-      "sourceUrl": "https://www.desmoinesmetro.com/en/talent_development/major_employers/",
-      "reason": "Manufacturing and industrial employers widen the exhibitor base beyond office users, supporting vendor expos, dealer programs, and operations-focused events."
+      "slug": "equine-and-bourbon-industry-events",
+      "label": "Equine and Bourbon Industry Events",
+      "sourceUrl": "https://www.visitlex.com/",
+      "reason": "Lexington's identity in horse country and bourbon country gives the city a distinct event and hospitality story that planners can actually use."
     },
     {
-      "slug": "agriculture-and-rural-industry",
-      "label": "Agriculture and Rural Industry",
-      "sourceUrl": "https://www.ffaenrichmentcenter.com/",
-      "reason": "The FFA Enrichment Center, Iowa State Fairgrounds, and Central Iowa's farm-and-rural economy keep agriculture-adjacent meetings and events relevant in this market."
+      "slug": "manufacturing-and-supplier-events",
+      "label": "Manufacturing and Supplier Events",
+      "sourceUrl": "https://www.lexingtonky.gov/",
+      "reason": "Bluegrass-region manufacturers and suppliers create recurring demand for trade-show booths, dealer meetings, and customer programs."
     },
     {
-      "slug": "destination-conventions-and-live-events",
-      "label": "Destination Conventions and Live Events",
-      "sourceUrl": "https://www.iowaeventscenter.com/book-your-event",
-      "reason": "Downtown convention inventory, arena capacity, and attached-hotel infrastructure make Des Moines viable for multi-day conferences, expos, and sponsor-led live events."
+      "slug": "regional-roadshow-and-training-programs",
+      "label": "Regional Roadshow and Training Programs",
+      "sourceUrl": "https://www.lexingtonky.gov/",
+      "reason": "Lexington works well as a central Kentucky stop for roadshows, training programs, and multi-city event series."
     }
   ],
   "primaryVenueClusters": [
     {
-      "name": "Downtown Convention Core",
+      "name": "Downtown Lexington Convention Core",
       "locations": [
-        "downtown-des-moines",
-        "western-gateway",
-        "court-avenue-district",
-        "east-village",
-        "riverfront-des-moines"
+        "downtown-lexington",
+        "central-bank-center",
+        "hyatt-regency-lexington",
+        "hilton-lexington-downtown",
+        "lexington-marriott-city-center"
       ],
-      "notes": "This is the anchor cluster for conventions, ballroom programs, skywalk-connected events, sponsor receptions, and hotel-led meeting calendars."
+      "notes": "This cluster covers the city's main convention campus, the connected downtown hotels, and the strongest walkable hospitality pattern."
     },
     {
-      "name": "West Corridor / West Des Moines",
+      "name": "Newtown Pike and North Lexington",
       "locations": [
-        "west-des-moines",
-        "valley-junction",
-        "jordan-creek",
-        "clive",
-        "urbandale",
-        "johnston",
-        "windsor-heights"
+        "newtown-pike-corridor",
+        "marriott-lexington-griffin-gate-golf-resort-and-spa"
       ],
-      "notes": "The west corridor is where suburban hotel meetings, corporate events, and many easy-parking regional programs naturally route."
+      "notes": "This is the north-side hotel and resort corridor that works well for overflow, executive, and hospitality-heavy programs."
     },
     {
-      "name": "East Side / Altoona / Fairgrounds",
+      "name": "South Lexington and Lexington Green",
       "locations": [
-        "altoona",
-        "pleasant-hill",
-        "capitol-east",
-        "bondurant"
+        "south-lexington",
+        "beaumont",
+        "chevy-chase",
+        "embassy-suites-lexington-green",
+        "the-campbell-house-lexington"
       ],
-      "notes": "This cluster matters for fairgrounds work, Prairie Meadows programs, public shows, and east-side logistics."
+      "notes": "This cluster gives the site a useful suburban and boutique-hotel angle for meetings, dinners, and mid-size programs."
     },
     {
-      "name": "North Corridor",
+      "name": "Bluegrass Regional Drive Market",
       "locations": [
-        "ankeny",
-        "polk-city",
-        "grimes"
+        "nicholasville",
+        "georgetown",
+        "richmond",
+        "versailles",
+        "frankfort",
+        "winchester"
       ],
-      "notes": "North-metro coverage captures conference-center demand tied to Ankeny, agriculture, education, and suburban business growth."
+      "notes": "This is the realistic short-drive ring that turns Lexington into a regional event hub rather than a one-city island."
     }
   ],
   "locationTargets": [
     {
-      "slug": "downtown-des-moines",
-      "label": "Downtown Des Moines",
-      "region": "Convention Core",
+      "slug": "downtown-lexington",
+      "label": "Downtown Lexington",
+      "region": "Downtown Lexington",
       "priority": "primary",
-      "reason": "The downtown core is the market's main convention and hotel district anchored by the Iowa Events Center, skywalk system, and room-block inventory."
+      "reason": "This is the convention and hospitality core where the city's strongest event logic begins."
     },
     {
-      "slug": "east-village",
-      "label": "East Village",
-      "region": "Downtown Des Moines",
+      "slug": "newtown-pike-corridor",
+      "label": "Newtown Pike Corridor",
+      "region": "North Lexington",
       "priority": "primary",
-      "reason": "East Village matters for boutique hotel programs, receptions, sponsor dinners, and walkable downtown hospitality."
+      "reason": "The corridor carries resort, overflow, and hotel-based event demand just north of downtown."
     },
     {
-      "slug": "western-gateway",
-      "label": "Western Gateway",
-      "region": "Downtown Des Moines",
+      "slug": "hamburg",
+      "label": "Hamburg",
+      "region": "East Lexington",
       "priority": "primary",
-      "reason": "Western Gateway supports civic events, festival spillover, museum adjacency, and downtown business activity."
+      "reason": "Hamburg is the east-side hotel and retail node that works well for drive-up meetings and corporate programs."
     },
     {
-      "slug": "court-avenue-district",
-      "label": "Court Avenue District",
-      "region": "Downtown Des Moines",
+      "slug": "beaumont",
+      "label": "Beaumont",
+      "region": "West Lexington",
       "priority": "primary",
-      "reason": "Court Avenue is a key downtown entertainment district that helps conference agendas and sponsor events extend beyond ballroom hours."
+      "reason": "Beaumont is a strong west-side business corridor with practical hotel and office access."
     },
     {
-      "slug": "riverfront-des-moines",
-      "label": "Riverfront Des Moines",
-      "region": "Downtown Des Moines",
+      "slug": "chevy-chase",
+      "label": "Chevy Chase",
+      "region": "Inner Lexington",
+      "priority": "secondary",
+      "reason": "Chevy Chase supports local-business, medical, and boutique hospitality demand close to downtown."
+    },
+    {
+      "slug": "south-lexington",
+      "label": "South Lexington",
+      "region": "South Lexington",
       "priority": "primary",
-      "reason": "Riverfront assets like the Botanical Garden and nearby downtown venues support hospitality, launches, and outdoor-leaning events."
+      "reason": "South Lexington adds parking-friendly hotel and conference options without leaving the city."
     },
     {
-      "slug": "ingersoll-avenue",
-      "label": "Ingersoll Avenue",
-      "region": "Central Des Moines",
+      "slug": "nicholasville",
+      "label": "Nicholasville",
+      "region": "Jessamine County",
       "priority": "secondary",
-      "reason": "Ingersoll extends downtown's hospitality footprint and reads well for creative off-sites and meeting-adjacent dinners."
+      "reason": "Nicholasville is an easy regional extension for central Kentucky meetings and exhibit traffic."
     },
     {
-      "slug": "sherman-hill",
-      "label": "Sherman Hill",
-      "region": "Central Des Moines",
+      "slug": "georgetown",
+      "label": "Georgetown",
+      "region": "Scott County",
       "priority": "secondary",
-      "reason": "Sherman Hill sits close to downtown and helps capture central-city intent that is adjacent to, but not the same as, the convention core."
+      "reason": "Georgetown supports supplier, manufacturing, and customer-event demand within a short drive of Lexington."
     },
     {
-      "slug": "drake-neighborhood",
-      "label": "Drake Neighborhood",
-      "region": "Central Des Moines",
+      "slug": "richmond",
+      "label": "Richmond",
+      "region": "Madison County",
       "priority": "secondary",
-      "reason": "Drake University activity supports community, education, and institutional event demand on the near west side."
+      "reason": "Richmond adds a university and healthcare-adjacent regional market south of Lexington."
     },
     {
-      "slug": "beaverdale",
-      "label": "Beaverdale",
-      "region": "Northwest Des Moines",
+      "slug": "versailles",
+      "label": "Versailles",
+      "region": "Woodford County",
       "priority": "secondary",
-      "reason": "Beaverdale helps cover established northwest neighborhoods that feed Johnston, Urbandale, and central Des Moines events."
+      "reason": "Versailles is a natural Bluegrass extension for hospitality-heavy and equine-linked events."
     },
     {
-      "slug": "highland-park",
-      "label": "Highland Park",
-      "region": "North Des Moines",
+      "slug": "frankfort",
+      "label": "Frankfort",
+      "region": "State Capitol Region",
       "priority": "secondary",
-      "reason": "Highland Park widens north-side coverage and supports community-driven and neighborhood business demand."
+      "reason": "Frankfort gives the site a government and association-adjacent regional option west of Lexington."
     },
     {
-      "slug": "capitol-east",
-      "label": "Capitol East",
-      "region": "East Des Moines",
+      "slug": "winchester",
+      "label": "Winchester",
+      "region": "Clark County",
       "priority": "secondary",
-      "reason": "Capitol East sits between downtown and the fairgrounds, making it relevant for government, fairgrounds, and east-side routing."
-    },
-    {
-      "slug": "south-des-moines",
-      "label": "South Des Moines",
-      "region": "South Des Moines",
-      "priority": "secondary",
-      "reason": "South Des Moines matters for airport access, fairgrounds access, and south-side community and business events."
-    },
-    {
-      "slug": "airport-corridor",
-      "label": "Airport Corridor",
-      "region": "South Des Moines",
-      "priority": "primary",
-      "reason": "The airport corridor matters for fly-in attendees, airport-adjacent lodging, and logistics-sensitive programs."
-    },
-    {
-      "slug": "pleasant-hill",
-      "label": "Pleasant Hill",
-      "region": "East Metro",
-      "priority": "secondary",
-      "reason": "Pleasant Hill captures east-side suburban demand and routes naturally into the fairgrounds and Altoona cluster."
-    },
-    {
-      "slug": "altoona",
-      "label": "Altoona",
-      "region": "East Metro",
-      "priority": "primary",
-      "reason": "Altoona is a real event node because Prairie Meadows and adjacent visitor traffic support conferences, banquets, and east-metro programs."
-    },
-    {
-      "slug": "ankeny",
-      "label": "Ankeny",
-      "region": "North Metro",
-      "priority": "primary",
-      "reason": "Ankeny adds north-corridor demand through the FFA Enrichment Center, DMACC adjacency, and rapid suburban growth."
-    },
-    {
-      "slug": "west-des-moines",
-      "label": "West Des Moines",
-      "region": "West Corridor",
-      "priority": "primary",
-      "reason": "West Des Moines is the metro's strongest suburban corporate market, with major hotels, Hy-Vee's conference center, and major office traffic."
-    },
-    {
-      "slug": "valley-junction",
-      "label": "Valley Junction",
-      "region": "West Des Moines",
-      "priority": "secondary",
-      "reason": "Valley Junction gives West Des Moines coverage a distinct historic district and event identity rather than a generic suburb page."
-    },
-    {
-      "slug": "jordan-creek",
-      "label": "Jordan Creek",
-      "region": "West Des Moines",
-      "priority": "primary",
-      "reason": "Jordan Creek is a strong west-side hospitality and retail node that supports meetings, launches, and sponsor activity."
-    },
-    {
-      "slug": "clive",
-      "label": "Clive",
-      "region": "West Corridor",
-      "priority": "secondary",
-      "reason": "Clive supports west-corridor business demand and helps bridge West Des Moines, Urbandale, and Waukee coverage."
-    },
-    {
-      "slug": "urbandale",
-      "label": "Urbandale",
-      "region": "Northwest Metro",
-      "priority": "primary",
-      "reason": "Urbandale matters because the Holiday Inn Des Moines-Northwest and Merle Hay corridor support suburban meetings and trade events."
-    },
-    {
-      "slug": "johnston",
-      "label": "Johnston",
-      "region": "Northwest Metro",
-      "priority": "primary",
-      "reason": "Johnston carries real conference demand through Stoney Creek and nearby suburban corporate and institutional traffic."
-    },
-    {
-      "slug": "waukee",
-      "label": "Waukee",
-      "region": "West Growth Corridor",
-      "priority": "secondary",
-      "reason": "Waukee is one of the metro's fastest-growing western suburbs and expands service coverage into new residential and business growth."
-    },
-    {
-      "slug": "grimes",
-      "label": "Grimes",
-      "region": "Northwest Metro",
-      "priority": "secondary",
-      "reason": "Grimes broadens northwest coverage and fits regional meetings tied to service, logistics, and suburban business traffic."
-    },
-    {
-      "slug": "bondurant",
-      "label": "Bondurant",
-      "region": "East Growth Corridor",
-      "priority": "secondary",
-      "reason": "Bondurant widens east-corridor reach beyond Altoona and Pleasant Hill into a fast-growing I-80 market."
-    },
-    {
-      "slug": "norwalk",
-      "label": "Norwalk",
-      "region": "South Metro",
-      "priority": "secondary",
-      "reason": "Norwalk adds a south-metro growth market that is close enough to downtown and the airport to be commercially relevant."
-    },
-    {
-      "slug": "indianola",
-      "label": "Indianola",
-      "region": "South Satellite",
-      "priority": "secondary",
-      "reason": "Indianola extends practical day-drive coverage south of the metro and adds college- and community-event relevance."
-    },
-    {
-      "slug": "carlisle",
-      "label": "Carlisle",
-      "region": "South Logistics Corridor",
-      "priority": "secondary",
-      "reason": "Carlisle supports south-corridor coverage where I-35 access and logistics-oriented businesses matter."
-    },
-    {
-      "slug": "windsor-heights",
-      "label": "Windsor Heights",
-      "region": "Central West Infill",
-      "priority": "secondary",
-      "reason": "Windsor Heights fills the gap between Des Moines and West Des Moines and supports hyper-local west-central search intent."
-    },
-    {
-      "slug": "polk-city",
-      "label": "Polk City",
-      "region": "North Metro",
-      "priority": "secondary",
-      "reason": "Polk City adds north-of-Ankeny coverage for outdoor, community, and lakeside-adjacent event interest."
-    },
-    {
-      "slug": "adel",
-      "label": "Adel",
-      "region": "Western Satellite",
-      "priority": "secondary",
-      "reason": "Adel extends practical westward range for regional conferences, retreats, and client events."
-    },
-    {
-      "slug": "de-soto",
-      "label": "De Soto",
-      "region": "Western Satellite",
-      "priority": "secondary",
-      "reason": "De Soto captures west-of-Waukee growth and industrial/logistics relevance in the far-west corridor."
-    },
-    {
-      "slug": "perry",
-      "label": "Perry",
-      "region": "Northwest Satellite",
-      "priority": "secondary",
-      "reason": "Perry adds northwest regional coverage for Central Iowa day-drive programs."
-    },
-    {
-      "slug": "ames",
-      "label": "Ames",
-      "region": "North Satellite",
-      "priority": "primary",
-      "reason": "Ames is a meaningful satellite market because of Iowa State University, research activity, and frequent conference/event overlap with Des Moines providers."
-    },
-    {
-      "slug": "boone",
-      "label": "Boone",
-      "region": "Northwest Satellite",
-      "priority": "secondary",
-      "reason": "Boone contributes northwestern day-drive demand and agricultural/community event relevance."
-    },
-    {
-      "slug": "newton",
-      "label": "Newton",
-      "region": "East Satellite",
-      "priority": "secondary",
-      "reason": "Newton extends eastward coverage into a real manufacturing and interstate-connected satellite market."
+      "reason": "Winchester rounds out the eastbound drive market and supports regional coverage language."
     }
   ],
   "notes": [
-    "Des Moines is not only a downtown convention market; it sells well when the copy reflects the downtown core plus west, north, and east venue clusters.",
-    "The market rewards practical, execution-led positioning more than flashy destination language.",
-    "Day-drive coverage across Central Iowa is commercially relevant because many programs pull from regional employers, associations, and public-sector groups."
+    "Lexington works best when the site explains the downtown core and the regional drive market together.",
+    "The city has enough meeting inventory to support more than one strong venue cluster without making the copy feel inflated."
   ],
   "sources": [
     {
-      "label": "Catch Des Moines - Meeting Planners",
-      "url": "https://www.catchdesmoines.com/meeting-planners/"
+      "label": "Central Bank Center",
+      "url": "https://www.centralbankcenter.com/"
     },
     {
-      "label": "Catch Des Moines - Skywalks",
-      "url": "https://www.catchdesmoines.com/plan/transportation/skywalks/"
+      "label": "Lexington Marriott City Center",
+      "url": "https://www.marriott.com/en-us/hotels/lexdt-lexington-marriott-city-center/overview/"
     },
     {
-      "label": "Iowa Events Center - Convention Center",
-      "url": "https://www.iowaeventscenter.com/convention-center"
+      "label": "Hilton Lexington/Downtown",
+      "url": "https://www.hilton.com/en/hotels/lexdthf-hilton-lexington-downtown/"
     },
     {
-      "label": "Iowa Events Center - Book Your Event",
-      "url": "https://www.iowaeventscenter.com/book-your-event"
+      "label": "The Campbell House Lexington",
+      "url": "https://www.thecampbellhouse.com/"
     },
     {
-      "label": "Des Moines International Airport - Route Growth",
-      "url": "https://www.flydsm.com/airport-business/news/dsm-celebrates-record-breaking-growth-with-allegiants-new-nonstop-flight-to-fort-myers"
+      "label": "VisitLEX",
+      "url": "https://www.visitlex.com/"
     },
     {
-      "label": "Des Moines International Airport - LiftDSM",
-      "url": "https://www.flydsm.com/lift-dsm"
-    },
-    {
-      "label": "Greater Des Moines Partnership - Major Employers",
-      "url": "https://www.desmoinesmetro.com/en/talent_development/major_employers/"
-    },
-    {
-      "label": "FFA Enrichment Center",
-      "url": "https://www.ffaenrichmentcenter.com/"
+      "label": "City of Lexington",
+      "url": "https://www.lexingtonky.gov/"
     }
   ]
 }

@@ -407,7 +407,7 @@ function buildFaqs(context: DetailContext): FaqItem[] {
       },
       {
         question: `Can a project start in ${label} and extend into nearby markets?`,
-        answer: `Yes. That is common in the Central Iowa market. The important part is keeping one readable schedule for freight, venue communication, labor, AV, graphics, and dismantle so the move between ${label} and nearby venues does not create duplicated effort or missed handoffs.`
+        answer: `Yes. That is common in the Bluegrass region market. The important part is keeping one readable schedule for freight, venue communication, labor, AV, graphics, and dismantle so the move between ${label} and nearby venues does not create duplicated effort or missed handoffs.`
       },
       {
         question: `What should a buyer confirm first for ${label}?`,
@@ -452,7 +452,7 @@ function buildFaqs(context: DetailContext): FaqItem[] {
     },
     {
       question: `Why does ${relatedLocationName} matter for this page?`,
-      answer: `${relatedLocationName} matters because it affects routing, venue choice, hotel behavior, and how teams move through the wider Central Iowa market. This site uses location references to keep the planning conversation tied to the real region instead of flattening every page into generic metro copy.`
+      answer: `${relatedLocationName} matters because it affects routing, venue choice, hotel behavior, and how teams move through the wider Bluegrass region market. This site uses location references to keep the planning conversation tied to the real region instead of flattening every page into generic metro copy.`
     },
     {
       question: `What makes ${label} relevant for ${demandDriverLabel.toLowerCase()} programs?`,
@@ -560,9 +560,9 @@ export function buildDetailPageContent(
     relatedLinks,
     wordCount,
     seoTitle: `${item.label} | ${business.name}`,
-    seoDescription: `${business.name} provides Des Moines ${item.label.toLowerCase()} with venue-aware planning, logistics coordination, labor alignment, AV integration, and show-site execution.`,
-    ctaTitle: `Need a Des Moines plan for ${item.label.toLowerCase()}?`,
+    seoDescription: `${business.name} provides Lexington ${item.label.toLowerCase()} with venue-aware planning, logistics coordination, labor alignment, AV integration, and show-site execution.`,
+    ctaTitle: `Need a Lexington plan for ${item.label.toLowerCase()}?`,
     ctaText:
-      "Share the venue, show date, service scope, and project details. We use that brief to map the most workable Des Moines delivery path before show week gets compressed."
+      "Share the venue, show date, service scope, and project details. We use that brief to map the most workable Lexington delivery path before show week gets compressed."
   };
 }

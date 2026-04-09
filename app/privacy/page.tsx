@@ -28,7 +28,7 @@ export default function PrivacyPage() {
               <p>
                 Submitted information may be used to reply to requests, review service
                 needs, prepare follow-up communication, coordinate next steps, and
-                improve the way the site supports Des Moines trade show planning and
+                improve the way the site supports Lexington trade show planning and
                 exhibitor project intake.
               </p>
               <p>

@@ -12,7 +12,7 @@ export default function NotFound() {
               <p className="section-kicker section-kicker--light">Not found</p>
               <h1>Page not found</h1>
               <p className="page-hero__lead">
-                Use the main navigation to return to Des Moines services, venue guides,
+                Use the main navigation to return to Lexington services, venue guides,
                 location coverage, or the contact page.
               </p>
               <div style={{ marginTop: "18px" }}>

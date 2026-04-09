@@ -40,7 +40,7 @@ export default function TermsPage() {
               </p>
               <p>
                 Submitted information may be used only for follow-up communication and
-                internal planning purposes related to Des Moines trade show services,
+                internal planning purposes related to Lexington trade show services,
                 market coverage, and event support.
               </p>
             </div>
