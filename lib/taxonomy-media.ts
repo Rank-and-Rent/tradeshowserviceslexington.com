@@ -23,16 +23,35 @@ function snake(v: string) {
   return kebab(v).replace(/-/g, "_");
 }
 
+const KIND_ALIASES: Record<string, string[]> = {
+  services: ["services", "service", "servicePages", "service_pages", "service-pages"],
+  locations: ["locations", "location", "locationPages", "location_pages", "location-pages"],
+  venues: ["venues", "venue", "venuePages", "venue_pages", "venue-pages"],
+  "event-types": ["event-types", "eventTypes", "event_types", "eventType", "eventTypePages", "event-type-pages", "event_type_pages"],
+  "booth-types": ["booth-types", "boothTypes", "booth_types", "boothType", "boothTypePages", "booth-type-pages", "booth_type_pages"],
+  industries: ["industries", "industry", "industryPages", "industry_pages", "industry-pages"],
+  capabilities: ["capabilities", "capability", "capabilityPages", "capability_pages", "capability-pages"],
+  rentals: ["rentals", "rental", "rentalPages", "rental_pages", "rental-pages"],
+  "exhibit-types": ["exhibit-types", "exhibitTypes", "exhibit_types", "exhibitType", "exhibitTypePages", "exhibit-type-pages", "exhibit_type_pages"],
+};
+
 function dirVariants(kind: string): string[] {
   const k = kebab(kind);
-  const variants = Array.from(new Set([k, camel(k), snake(k)]));
+  const aliasList = KIND_ALIASES[k] || [k];
+  const variants = Array.from(new Set([k, camel(k), snake(k), ...aliasList]));
   const bases = [
     "media/generated",
     "media/recovered",
     "media/planned",
     "media/required",
+    "media/placeholders",
     "generated",
     "images",
+    "images/generated",
+    "images/recovered",
+    "images/planned",
+    "images/required",
+    "images/placeholders",
     "art",
   ];
   const out: string[] = [];
