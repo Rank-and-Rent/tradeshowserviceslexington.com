@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { buildIndexPageContent } from "@/lib/content";
 import { business, getTaxonomyCollection, type TaxonomySection } from "@/lib/site-data";
+import { getRecoveredTaxonomyMediaUrl } from "@/lib/taxonomy-media";
 
 type TaxonomyIndexPageProps = {
   section: TaxonomySection;
@@ -17,6 +18,15 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
         <div className="site-shell">
           <div className="page-hero__content">
             <p className="section-kicker section-kicker--light">{content.eyebrow}</p>
+            {(() => {
+              const _kind = (section as any);
+              const _first = ((collection as any)?.generatedPages?.[0]);
+              const _slug = _first?.slug || "";
+              const imgSrc = _slug ? getRecoveredTaxonomyMediaUrl(_kind as string, _slug as string) : null;
+              return imgSrc ? (
+                <img src={imgSrc} alt={((collection as any)?.label || "")} className="taxonomy-hero-image" style={{ width: "100%", maxHeight: 480, objectFit: "cover", borderRadius: 12, marginBottom: 24 }} loading="eager" />
+              ) : null;
+            })()}
             <h1>{content.title}</h1>
             <p className="page-hero__lead">{content.lead}</p>
           </div>
