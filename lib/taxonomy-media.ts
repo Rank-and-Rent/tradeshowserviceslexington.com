@@ -37,7 +37,16 @@ function dirVariants(kind: string): string[] {
   ];
   const out: string[] = [];
   for (const b of bases) for (const v of variants) out.push(`${b}/${v}`);
-  out.push("images", "media");
+  // Shared/flat buckets that hold files prefixed by kind
+  out.push(
+    "media/generated/shared",
+    "media/recovered/shared",
+    "media/planned/shared",
+    "media/required/shared",
+    "placeholders",
+    "images",
+    "media",
+  );
   return out;
 }
 
