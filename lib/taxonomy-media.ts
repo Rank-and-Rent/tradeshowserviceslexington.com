@@ -92,9 +92,13 @@ function dirVariants(kind: string): string[] {
   for (const b of bases) for (const v of variants) out.push(`${b}/${v}`);
   out.push(
     "media/recovered/shared",
+    "images/recovered/shared",
     "media/generated/shared",
+    "images/generated/shared",
     "media/planned/shared",
+    "images/planned/shared",
     "media/required/shared",
+    "images/required/shared",
     "images",
     "media",
   );
@@ -113,10 +117,10 @@ const TYPE_DIR_CANDIDATES: Record<string, string[]> = {
   exhibittypes: dirVariants("exhibit-types"),
 };
 
-const IMG_RE = /\.(avif|webp|png|jpg|jpeg)$/i;
+const IMG_RE = /\.(avif|webp|png|jpg|jpeg|svg)$/i;
 
 function normalizeName(name: string): string {
-  return name.toLowerCase().replace(/\.(avif|webp|png|jpg|jpeg)$/i, "").replace(/[^a-z0-9]+/g, "-");
+  return name.toLowerCase().replace(/\.(avif|webp|png|jpg|jpeg|svg)$/i, "").replace(/[^a-z0-9]+/g, "-");
 }
 
 function isPlaceholder(rel: string, name: string): boolean {
@@ -158,11 +162,7 @@ function pickBest(
     const score = scoreMatch(norm, slug, prefix);
     if (score === 0) continue;
     const lenDelta = Math.abs(norm.length - s.length);
-    if (
-      !best ||
-      score > best.score ||
-      (score === best.score && lenDelta < best.lenDelta)
-    ) {
+    if (!best || score > best.score || (score == best.score && lenDelta < best.lenDelta)) {
       best = { rel: f.rel, score, lenDelta };
     }
   }
@@ -212,9 +212,7 @@ export function getRecoveredTaxonomyMediaUrl(kind: string, slug: string): string
       }
     });
 
-    const slugDir =
-      subdirs.find((d) => kebab(d) === s) ||
-      subdirs.find((d) => kebab(d).includes(s));
+    const slugDir = subdirs.find((d) => kebab(d) === s) || subdirs.find((d) => kebab(d).includes(s));
     if (slugDir) {
       const subAbs = path.join(abs, slugDir);
       const subFiles = listDirShallow(subAbs)

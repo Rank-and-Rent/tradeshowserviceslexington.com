@@ -233,25 +233,25 @@ const sectionConfig: Record<TaxonomySection, SectionConfig> = {
     singularLabel: "service",
     eyebrow: "Trade Show Services",
     pageTitlePrefix: `${business.city} trade show services`,
-    heroLabel: "Service mix",
+    heroLabel: "Service stack",
     cardLabel: "Service",
-    ctaLabel: "Brief this service path"
+    ctaLabel: "Scope this service"
   },
   locations: {
     label: "Locations",
     singularLabel: "location",
-    eyebrow: "Market Coverage",
-    pageTitlePrefix: `${business.city} market coverage`,
-    heroLabel: "Metro coverage",
+    eyebrow: "Location Guides",
+    pageTitlePrefix: `${business.city} location guides`,
+    heroLabel: "Location guides",
     cardLabel: "Location",
-    ctaLabel: "Plan this market"
+    ctaLabel: "Plan this area"
   },
   venues: {
     label: "Venues",
     singularLabel: "venue",
     eyebrow: "Venue Planning",
     pageTitlePrefix: `${business.city} venue planning`,
-    heroLabel: "Venue playbooks",
+    heroLabel: "Venue guides",
     cardLabel: "Venue",
     ctaLabel: "Coordinate this venue"
   },
@@ -260,7 +260,7 @@ const sectionConfig: Record<TaxonomySection, SectionConfig> = {
     singularLabel: "event type",
     eyebrow: "Event Formats",
     pageTitlePrefix: `${business.city} event support`,
-    heroLabel: "Format coverage",
+    heroLabel: "Format paths",
     cardLabel: "Event Type",
     ctaLabel: "Map this format"
   },
@@ -269,23 +269,23 @@ const sectionConfig: Record<TaxonomySection, SectionConfig> = {
     singularLabel: "booth type",
     eyebrow: "Booth Formats",
     pageTitlePrefix: `${business.city} booth formats`,
-    heroLabel: "Booth planning",
+    heroLabel: "Booth shapes",
     cardLabel: "Booth Type",
     ctaLabel: "Scope this booth"
   },
   industries: {
     label: "Industries",
     singularLabel: "industry",
-    eyebrow: "Industry Coverage",
+    eyebrow: "Industry Planning",
     pageTitlePrefix: `${business.city} industry event support`,
-    heroLabel: "Buyer-specific coverage",
+    heroLabel: "Buyer-specific planning",
     cardLabel: "Industry",
     ctaLabel: "Plan this exhibitor profile"
   },
   capabilities: {
     label: "Capabilities",
     singularLabel: "capability",
-    eyebrow: "Execution Capabilities",
+    eyebrow: "Execution Depth",
     pageTitlePrefix: `${business.city} execution capabilities`,
     heroLabel: "Operational depth",
     cardLabel: "Capability",
@@ -296,7 +296,7 @@ const sectionConfig: Record<TaxonomySection, SectionConfig> = {
     singularLabel: "rental",
     eyebrow: "Rental Programs",
     pageTitlePrefix: `${business.city} exhibit rentals`,
-    heroLabel: "Rental options",
+    heroLabel: "Rental paths",
     cardLabel: "Rental",
     ctaLabel: "Build this rental scope"
   },
@@ -305,7 +305,7 @@ const sectionConfig: Record<TaxonomySection, SectionConfig> = {
     singularLabel: "exhibit type",
     eyebrow: "Environment Types",
     pageTitlePrefix: `${business.city} exhibit environments`,
-    heroLabel: "Environment planning",
+    heroLabel: "Environment types",
     cardLabel: "Exhibit Type",
     ctaLabel: "Plan this environment"
   }
@@ -512,7 +512,7 @@ export function pickRelatedRoutes(
     {
       href: `/${section}`,
       label: `Browse all ${getTaxonomyCollection(section).label.toLowerCase()}`,
-      description: `View the full ${getTaxonomyCollection(section).label.toLowerCase()} stack for ${business.city} and the wider Bluegrass region market.`
+      description: `View the full ${getTaxonomyCollection(section).label.toLowerCase()} set for ${business.city.toUpperCase()} and the wider Bluegrass region.`
     }
   ];
 
@@ -529,7 +529,7 @@ export function pickRelatedRoutes(
       links.push({
         href: `/${entry}/${related.slug}`,
         label: related.label,
-        description: `${getTaxonomyCollection(entry).cardLabel} guidance connected back to ${business.city} venue, logistics, and show-site planning.`
+        description: `${getTaxonomyCollection(entry).cardLabel} guidance connected back to ${business.city.toUpperCase()} venue, logistics, and show-day planning.`
       });
     });
 
@@ -557,16 +557,16 @@ const representativeVenueNames = activeVenueResearch.slice(0, 4).map((venue) => 
 export const marketHighlights = [
   {
     label: "Convention nodes",
-    value: "Downtown + West + East",
+    value: "Downtown + Newtown Pike + South Lexington",
     body: marketResearch.market.serviceRadiusStrategy
   },
   {
     label: "Verified venues",
-    value: `${activeVenueResearch.length} real venues`,
-    body: `Coverage includes ${representativeVenueNames.join(", ")}.`
+    value: `${activeVenueResearch.length} verified venues`,
+    body: `Highlights include ${representativeVenueNames.join(", ")}.`
   },
   {
-    label: "Location coverage",
+    label: "Location reach",
     value: `${activeLocationTargets.length} target markets`,
     body: `Primary clusters include ${clusterNames.slice(0, 3).join(", ")}.`
   },
@@ -596,8 +596,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Expo Logistics and Shipping", href: "/services/expo-logistics-and-shipping" }
     ],
     panel: {
-      title: "A service stack built around the venue, not around a template",
-      text: "From booth design to labor, AV, freight, and show-site leadership, the right mix depends on the room, the calendar, and the venue rules already in play.",
+      title: "A service stack built around the venue and the schedule",
+      text: "From booth design to labor, AV, freight, and show-day leadership, the right mix depends on the room, the calendar, and the venue rules already in play.",
       href: "/services",
       buttonLabel: "See services"
     }
@@ -612,8 +612,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Lexington Marriott City Center", href: "/venues/lexington-marriott-city-center" }
     ],
     panel: {
-      title: "Venue guidance for downtown halls, suburban hotels, and fairgrounds buildings",
-      text: "Each Des Moines venue changes the way freight moves, labor is ordered, and guest traffic feels on the floor, so the building should shape the plan from the start.",
+      title: "Venue guidance for downtown halls and hotel properties",
+      text: "Each Lexington venue changes the way freight moves, labor is ordered, and guest traffic feels on the floor, so the building should shape the plan from the start.",
       href: "/venues",
       buttonLabel: "Browse venues"
     }
@@ -628,8 +628,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "South Lexington", href: "/locations/south-lexington" }
     ],
     panel: {
-      title: "Metro coverage that reflects real planning differences",
-      text: "Downtown, the west corridor, the fairgrounds and Altoona cluster, and the north metro each create their own routing, parking, and hotel behavior.",
+      title: "Market mapping that reflects real planning differences",
+      text: "Downtown, Newtown Pike, Hamburg, Beaumont, and the regional Bluegrass ring each create their own parking, hotel, and access behavior.",
       href: "/locations",
       buttonLabel: "View locations"
     }
@@ -644,7 +644,7 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "User Conference Services", href: "/event-types/user-conference-services" }
     ],
     panel: {
-      title: "Format coverage for trade shows, conferences, and activation programs",
+      title: "Format paths for trade shows, conferences, and activations",
       text: "Use the event-type stack when the room needs to support exhibitors, sponsors, registration, and general-session work without losing the thread.",
       href: "/event-types",
       buttonLabel: "See event types"
@@ -677,7 +677,7 @@ export const headerNavigation: HeaderNavItem[] = [
     ],
     panel: {
       title: "Buyer-specific planning paths for real industries",
-      text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic event page can offer.",
+      text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic page can offer.",
       href: "/industries",
       buttonLabel: "Browse industries"
     }
@@ -690,10 +690,10 @@ export const headerNavigation: HeaderNavItem[] = [
 
 export const homepageHero = {
   eyebrow: `${business.city} trade show, exhibit, and event execution`,
-  title: "A Des Moines trade show team that keeps planning, fabrication, and field execution aligned.",
-  highlight: "We handle exhibit production, labor, AV, logistics, and venue coordination as one delivery path.",
+  title: "A Lexington trade show team that keeps planning, fabrication, and field execution aligned.",
+  highlight: "We handle exhibit production, labor, audio, logistics, and venue coordination as one delivery chain.",
   lead:
-    "We help exhibitors, organizers, agencies, and venue teams turn the messy parts of a show into one readable project: booth design, fabrication, installation and dismantle, AV, freight, exhibitor-appointed-contractor coordination, labor, and show-site supervision across downtown Des Moines, West Des Moines, Ankeny, Altoona, the fairgrounds, and the wider Central Iowa market.",
+    "We help exhibitors, organizers, agencies, and venue teams turn the messy parts of a show into one readable project: booth design, fabrication, installation and dismantle, audio, freight, exhibitor-appointed-contractor coordination, labor, and show-day supervision across downtown Lexington, Newtown Pike, Hamburg, Beaumont, South Lexington, and the surrounding Bluegrass region.",
   primaryAction: {
     label: "Contact",
     href: "/contact"
@@ -738,7 +738,7 @@ export const homepageServiceCards: HomepageCard[] = [
   {
     icon: "calendar",
     title: "Show Services and Coordination",
-    text: "Labor, utilities, AV, freight, decorator timing, and venue forms translated into one production path the team can actually run.",
+    text: "Labor, utilities, audio, freight, decorator timing, and venue forms translated into one production chain the team can actually run.",
     href: "/services/show-services-order-management"
   }
 ];
@@ -753,13 +753,13 @@ export const homepageBenefitCards: HomepageCard[] = [
   {
     icon: "eye",
     title: "Show-Site Control",
-    text: "Graphics, AV, logistics, install, and punch-list decisions stay tied to one field-led calendar instead of drifting into separate inboxes.",
+    text: "Graphics, audio, logistics, install, and punch-list decisions stay tied to one field-led calendar instead of drifting into separate inboxes.",
     href: "/services/show-site-supervision"
   },
   {
     icon: "tag",
-    title: "Regional Coverage",
-    text: "Downtown, Newtown Pike, Hamburg, Beaumont, and the surrounding Bluegrass drive market are treated as distinct planning environments, not one metro template.",
+    title: "Regional Market Map",
+    text: "Downtown, Newtown Pike, Hamburg, Beaumont, and the surrounding Bluegrass drive market are treated as distinct planning environments, not one generic market pattern.",
     href: "/locations"
   }
 ];
@@ -767,22 +767,22 @@ export const homepageBenefitCards: HomepageCard[] = [
 export const homepageInsightCards: HomepageInsightCard[] = [
   {
     tag: "Downtown Convention Core",
-    title: "Community Choice Convention Center and the downtown convention core",
-    text: "This is the route for programs that depend on skywalk-connected hotels, loading discipline, and the exhibit-hall sequence downtown is built around.",
-    href: "/venues/community-choice-convention-center",
+    title: "Central Bank Center and the downtown convention core",
+    text: "This is the page for programs that depend on attached hotels, loading discipline, and the exhibit-hall sequence downtown is built around.",
+    href: "/venues/central-bank-center",
     accent: "gold"
   },
   {
-    tag: "West Corridor Corporate Work",
-    title: "Ron Pearson Center and West Des Moines delivery",
-    text: "Westown Parkway programs behave differently from downtown, with parking, hotel behavior, and room flow changing the operating model fast.",
-    href: "/venues/ron-pearson-center",
+    tag: "Newtown Pike Programs",
+    title: "Newtown Pike hotel and resort delivery",
+    text: "Programs on the north side behave differently from downtown, with parking, hotel behavior, and room flow changing the operating model fast.",
+    href: "/locations/newtown-pike-corridor",
     accent: "blue"
   },
   {
-    tag: "Fairgrounds and East-Side Scale",
-    title: "Griffin Gate and north-Lexington resort logistics",
-    text: "The Griffin Gate corridor matters because it creates a second real event environment beyond the downtown core for retreats, overflow, and hospitality-heavy programs.",
+    tag: "Regional Scale",
+    title: "Marriott Lexington Griffin Gate and the north-side resort corridor",
+    text: "The north-side resort corridor matters because it creates a second real event environment beyond the downtown core for retreats, overflow, and hospitality-heavy programs.",
     href: "/venues/marriott-lexington-griffin-gate-golf-resort-and-spa",
     accent: "slate"
   }
@@ -790,9 +790,9 @@ export const homepageInsightCards: HomepageInsightCard[] = [
 
 export const homepageSplitCallout = {
   eyebrow: "Need a cleaner planning path?",
-  title: "Build the next Des Moines event around the venue guide that actually fits the room.",
+  title: "Build the next Lexington event around the venue guide that actually fits the room.",
   text:
-    "Downtown convention work, Newtown Pike hotel meetings, south-Lexington programs, Hamburg corporate events, and Bluegrass regional spillover all need different timing, utilities, labor language, and freight assumptions. Start with the venue, service mix, and show date and we can map the cleanest path.",
+    "Downtown convention work, Newtown Pike hotel meetings, South Lexington programs, Hamburg corporate events, and Bluegrass regional spillover all need different timing, utilities, labor language, and freight assumptions. Start with the venue, service mix, and show date and we can map the cleanest path.",
   href: "/contact",
   buttonLabel: "Start a Project Brief"
 } as const;
@@ -800,17 +800,17 @@ export const homepageSplitCallout = {
 export const resourceCards = [
   {
     label: "Venues",
-    title: "Downtown, hotel-ring, and regional venue playbooks",
+    title: "Downtown, hotel-ring, and regional venue guides",
     description:
-      "Move from the market view into venue-specific planning, exhibitor-kit review, and service-order timing without guessing how the building works.",
+      "Move from the market view into venue-specific planning, exhibitor-kit review, and service-order timing without guessing how the building works. These guides help the reader compare a downtown convention campus, a hotel ballroom, a resort meeting property, and a regional event space with enough detail to understand which building changes the schedule the most. The goal is not to make the venue sound larger than it is. The goal is to show how the room, the dock, the guest flow, the service process, and the sponsor path actually behave once the project starts to tighten. A strong venue guide should make the loading sequence easier to imagine, the hotel relationship easier to read, and the room behavior easier to plan against before the first truck arrives. It should also make it easier to see whether the venue is better suited to a polished conference, a product-heavy expo, or a hospitality-forward program that needs the room to work quietly in the background.",
     href: "/venues",
     tone: "blue"
   },
   {
     label: "Locations",
-    title: "Lexington metro and Bluegrass region coverage",
+    title: "Lexington and Bluegrass market mapping",
     description:
-      "Use the location stack to see how downtown, the west corridor, the north metro, and the east-side event cluster change execution.",
+      "Use the location stack to see how downtown, Newtown Pike, Hamburg, Beaumont, South Lexington, and the surrounding Bluegrass ring change execution. The point of the location pages is to show where hotel behavior shifts, where parking gets easier or harder, and where a project is likely to pick up or lose time before the event even begins. That makes the market feel concrete instead of generic and helps the planner choose the right submarket before the brief gets too wide. It also helps the reader see whether the project belongs in the convention core, the hotel corridors, or a regional setting that pulls from a broader drive market and needs a different level of coordination. The useful part of that clarity is that it helps the client understand what kind of pace, travel pattern, and support structure the event will actually need.",
     href: "/locations",
     tone: "slate"
   },
@@ -818,7 +818,7 @@ export const resourceCards = [
     label: "Services",
     title: "Project-led service stacks",
     description:
-      "Compare labor, AV, fabrication, GC coordination, logistics, and show-site supervision without flattening them into generic bundles.",
+      "Compare labor, audio, fabrication, GC coordination, logistics, and show-day supervision without flattening them into generic bundles. These pages make it easier to see which services anchor the project, which ones support the build, and which ones have to be confirmed early so the timeline stays realistic. That keeps the reader focused on how the work is actually run rather than on a list of disconnected offerings. It also helps the client understand which parts of the work need the earliest attention, which parts can be phased later, and which parts are most likely to affect the room once the calendar gets tight. The result is a cleaner sense of where the schedule can stretch and where it needs to stay fixed.",
     href: "/services",
     tone: "gold"
   },
@@ -826,7 +826,7 @@ export const resourceCards = [
     label: "Industries",
     title: "Buyer-specific planning paths",
     description:
-      "Industry pages connect the same Lexington venue logic to healthcare, manufacturing, agriculture, equine, and association demand.",
+      "Industry pages connect the same Lexington venue logic to healthcare, manufacturing, agriculture, equine, association, and university-facing demand. Each sector brings its own language, own priorities, and own tolerance for risk, which changes what the room should emphasize and how the support model should be framed. The pages are built to help the reader feel understood quickly and then move into the planning choices that fit the sector instead of a generic exhibit pattern. That means the wording can sound more specific, the planning advice can sound more useful, and the reader can see why one audience wants a different mix of proof points, pacing, and visual emphasis than another. The better the sector fit, the easier it becomes to keep the room credible to the people who walk into it.",
     href: "/industries",
     tone: "charcoal"
   }
@@ -847,12 +847,12 @@ export const footerPlanningLinks = [
     label: "Venue"
   },
   {
-    title: "West Lexington hotel and conference routing",
+    title: "West Lexington hotel and conference planning",
     href: "/locations/beaumont",
     label: "West"
   },
   {
-    title: "Hamburg and east-Lexington event coverage",
+    title: "Hamburg and east-Lexington event planning",
     href: "/locations/hamburg",
     label: "East"
   }

@@ -32,7 +32,7 @@ export type HeaderUtilityAction = {
 
 export const headerUtilityActions: HeaderUtilityAction[] = [
   {
-    label: "contact",
+    label: "Contact",
     href: "/contact",
     variant: "secondary"
   }
@@ -49,8 +49,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Expo Logistics and Shipping", href: "/services/expo-logistics-and-shipping" }
     ],
     panel: {
-      title: "A service stack built around the venue, not around a template",
-      text: "From booth design to labor, AV, freight, and show-site leadership, the right mix depends on the room, the calendar, and the venue rules already in play.",
+      title: "A service stack built around the venue and the schedule",
+      text: "From booth design to labor, AV, freight, and show-day leadership, the right mix depends on the room, the calendar, and the venue rules already in play.",
       href: "/services",
       buttonLabel: "See services"
     }
@@ -65,8 +65,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Lexington Marriott City Center", href: "/venues/lexington-marriott-city-center" }
     ],
     panel: {
-      title: "Venue guidance for downtown halls, suburban hotels, and fairgrounds buildings",
-      text: "Each Des Moines venue changes the way freight moves, labor is ordered, and guest traffic feels on the floor, so the building should shape the plan from the start.",
+      title: "Venue guidance for downtown halls and hotel properties",
+      text: "Each Lexington venue changes the way freight moves, labor is ordered, and guest traffic feels on the floor, so the building should shape the plan from the start.",
       href: "/venues",
       buttonLabel: "Browse venues"
     }
@@ -81,8 +81,8 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "South Lexington", href: "/locations/south-lexington" }
     ],
     panel: {
-      title: "Metro coverage that reflects real planning differences",
-      text: "Downtown, the west corridor, the fairgrounds and Altoona cluster, and the north metro each create their own routing, parking, and hotel behavior.",
+      title: "Market mapping that reflects real planning differences",
+      text: "Downtown, Newtown Pike, Hamburg, Beaumont, and the regional Bluegrass ring each create their own parking, hotel, and access behavior.",
       href: "/locations",
       buttonLabel: "View locations"
     }
@@ -97,7 +97,7 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "User Conference Services", href: "/event-types/user-conference-services" }
     ],
     panel: {
-      title: "Format coverage for trade shows, conferences, and activation programs",
+      title: "Format paths for trade shows, conferences, and activations",
       text: "Use the event-type stack when the room needs to support exhibitors, sponsors, registration, and general-session work without losing the thread.",
       href: "/event-types",
       buttonLabel: "See event types"
@@ -130,7 +130,7 @@ export const headerNavigation: HeaderNavItem[] = [
     ],
     panel: {
       title: "Buyer-specific planning paths for real industries",
-      text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic event page can offer.",
+      text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic page can offer.",
       href: "/industries",
       buttonLabel: "Browse industries"
     }

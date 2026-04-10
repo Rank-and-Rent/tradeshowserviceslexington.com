@@ -1,20 +1,12 @@
 import {
   business,
-  formatVenueFit,
-  getLocationBySlug,
   getTaxonomyCollection,
   getTaxonomyItem,
   getVenueBySlug,
-  getVenuePattern,
-  laborResearch,
   marketHighlights,
-  marketResearch,
-  pickDemandDriver,
-  pickItemsFromSection,
-  pickLaborFinding,
   pickRelatedRoutes,
   type RouteLink,
-  type TaxonomySection
+  type TaxonomySection,
 } from "./site-data";
 
 export type ContentSection = {
@@ -62,507 +54,651 @@ export type DetailPageContent = {
   ctaText: string;
 };
 
-type DetailContext = {
-  section: TaxonomySection;
-  slug: string;
-  label: string;
-  collectionLabel: string;
-  relatedVenueName: string;
-  relatedVenueFit: string;
-  relatedVenueFact: string;
-  relatedLocationName: string;
-  relatedLocationReason: string;
-  relatedLocationRegion: string;
-  relatedServiceName: string;
-  demandDriverLabel: string;
-  demandDriverReason: string;
-  laborPosition: string;
-  laborFinding: string;
-  venuePattern: string;
-  sectionAngle: string;
-  sectionPressure: string;
-  sectionOutcome: string;
+export type PageCopy = {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  paragraphs: string[];
+  linkRows: { href: string; label: string }[];
 };
 
-function countWords(text: string) {
-  return text
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean).length;
-}
+const CITY = business.city.toUpperCase();
+const CITY_STATE = `${business.city.toUpperCase()}, ${business.state.toUpperCase()}`;
 
-function clusterSummary(limit = 3) {
-  return marketResearch.primaryVenueClusters
-    .slice(0, limit)
-    .map((cluster) => cluster.name)
-    .join(", ");
-}
-
-function getSectionAngle(section: TaxonomySection, label: string) {
-  switch (section) {
-    case "services":
-      return `${label} sits inside a larger operating chain that includes planning, fabrication, freight, labor, AV, venue coordination, and the final handoff at the floor.`;
-    case "locations":
-      return `${label} belongs to a real Des Moines routing story with distinct hotel patterns, parking behavior, venue access, and traveler flow rather than a radius-page shortcut.`;
-    case "venues":
-      return `${label} works as a building-specific environment, where access paths, service orders, loading rules, and room flow shape the job long before the team arrives on site.`;
-    case "event-types":
-      return `${label} describes a format with its own audience rhythm, sponsor expectations, registration behavior, staging needs, and technical pressure.`;
-    case "booth-types":
-      return `${label} is a footprint and fabrication decision as much as a design decision, because the room, the aisle, and the install sequence all change the result.`;
-    case "industries":
-      return `${label} needs copy that reflects the buyer's sector, compliance concerns, and message priorities instead of generic trade-show language.`;
-    case "capabilities":
-      return `${label} is an execution capability that changes how projects are run, coordinated, and repeated across different venues and dates.`;
-    case "rentals":
-      return `${label} gives buyers a different balance of cost control, speed, storage, and visual flexibility than a permanent build.`;
-    case "exhibit-types":
-      return `${label} describes the overall environment the guest experiences, which means the room layout, staffing plan, and live-use pattern all matter.`;
+function getLocalContext(): string[] {
+  switch (business.city) {
+    case "Savannah":
+      return ["DOWNTOWN SAVANNAH", "THE RIVERFRONT", "THE AIRPORT-WEST CORRIDOR", "I-95"];
+    case "Philadelphia":
+      return ["CENTER CITY", "UNIVERSITY CITY", "PENN'S LANDING", "OAKS", "KING OF PRUSSIA"];
+    case "Lexington":
+      return ["DOWNTOWN LEXINGTON", "NEWTOWN PIKE", "KEENELAND", "THE BLUEGRASS PARKWAY", "DOWNTOWN HOTEL CORRIDOR"];
+    case "Columbia":
+      return ["DOWNTOWN COLUMBIA", "HARBISON", "FOREST ACRES", "IRMO", "WEST COLUMBIA", "I-26"];
+    default:
+      return [CITY];
   }
 }
 
-function getSectionPressure(section: TaxonomySection, label: string) {
-  switch (section) {
-    case "services":
-      return `${label} loses clarity when it is sold as an isolated line item after the venue, graphics, freight, and labor decisions have already drifted apart.`;
-    case "locations":
-      return `${label} gets muddy when planners flatten downtown, the west corridor, the east-side fairgrounds cluster, and the north metro into one generic market story.`;
-    case "venues":
-      return `${label} becomes risky when teams assume the building behaves like the last hall they used instead of following current venue documents and local operating rules.`;
-    case "event-types":
-      return `${label} starts costing more when the production plan copies a different format instead of matching the actual registration flow, sponsor footprint, and content cadence.`;
-    case "booth-types":
-      return `${label} slips when the footprint, traffic pattern, rigging needs, and setup sequence are decided too late to influence fabrication and show-services ordering.`;
-    case "industries":
-      return `${label} loses relevance when it sounds like generic trade show copy rather than a page that understands the buyer's sector and product story.`;
-    case "capabilities":
-      return `${label} only matters when it changes how the project is actually run, not when it reads like empty agency language.`;
-    case "rentals":
-      return `${label} gets oversimplified when it is framed as the cheapest option instead of the right balance of speed, flexibility, and reuse.`;
-    case "exhibit-types":
-      return `${label} underperforms when the environment concept ignores attendee flow, staffing, and the real logistics path behind the room.`;
+const localContext = getLocalContext();
+
+function getPrimaryRouteRows(): { href: string; label: string }[] {
+  switch (business.city) {
+    case "Savannah":
+      return [
+        { href: "/services/installation-and-dismantle", label: "INSTALLATION AND DISMANTLE" },
+        { href: "/venues/savannah-convention-center", label: "SAVANNAH CONVENTION CENTER" },
+        { href: "/locations/savannah", label: "SAVANNAH" },
+        { href: "/contact", label: "START A PROJECT BRIEF" },
+      ];
+    case "Philadelphia":
+      return [
+        { href: "/services/installation-and-dismantle", label: "INSTALLATION AND DISMANTLE" },
+        { href: "/venues/pennsylvania-convention-center", label: "PENNSYLVANIA CONVENTION CENTER" },
+        { href: "/locations/philadelphia", label: "PHILADELPHIA" },
+        { href: "/contact", label: "START A PROJECT BRIEF" },
+      ];
+    case "Lexington":
+      return [
+        { href: "/services/installation-and-dismantle", label: "INSTALLATION AND DISMANTLE" },
+        { href: "/venues/central-bank-center", label: "CENTRAL BANK CENTER" },
+        { href: "/locations/lexington", label: "LEXINGTON" },
+        { href: "/contact", label: "START A PROJECT BRIEF" },
+      ];
+    case "Columbia":
+      return [
+        { href: "/services/installation-and-dismantle", label: "INSTALLATION AND DISMANTLE" },
+        { href: "/venues/columbia-metropolitan-convention-center", label: "COLUMBIA METROPOLITAN CONVENTION CENTER" },
+        { href: "/locations/columbia", label: "COLUMBIA" },
+        { href: "/contact", label: "START A PROJECT BRIEF" },
+      ];
+    default:
+      return [
+        { href: "/services/installation-and-dismantle", label: "INSTALLATION AND DISMANTLE" },
+        { href: "/contact", label: "START A PROJECT BRIEF" },
+      ];
   }
 }
 
-function getSectionOutcome(section: TaxonomySection, label: string) {
-  switch (section) {
-    case "services":
-      return `A strong ${label.toLowerCase()} plan gives the buyer one readable path from kickoff through strike instead of a stack of disconnected vendor notes.`;
-    case "locations":
-      return `A strong ${label.toLowerCase()} page helps teams understand which nearby venues matter, how routing changes, and what the submarket is actually good for.`;
-    case "venues":
-      return `A strong ${label.toLowerCase()} page helps teams think through timing, ordering, supervision, and exhibitor coordination before move-in starts.`;
-    case "event-types":
-      return `A strong ${label.toLowerCase()} plan makes it easier to line up registration, content, sponsor, and guest-flow decisions around one format.`;
-    case "booth-types":
-      return `A strong ${label.toLowerCase()} plan translates geometry into cleaner production, safer install sequencing, and a better attendee experience.`;
-    case "industries":
-      return `A strong ${label.toLowerCase()} page sounds like the buyer's market and gives the reader a more credible planning route.`;
-    case "capabilities":
-      return `A strong ${label.toLowerCase()} page shows how the team keeps multi-venue, multi-vendor work under control without losing pace.`;
-    case "rentals":
-      return `A strong ${label.toLowerCase()} path balances budget, timeline, storage, and design goals without forcing an all-or-nothing decision.`;
-    case "exhibit-types":
-      return `A strong ${label.toLowerCase()} plan explains how the environment should behave in the room, on the floor, and during live guest use.`;
-  }
-}
+const primaryRouteRows = getPrimaryRouteRows();
 
-function buildContext(section: TaxonomySection, slug: string): DetailContext {
-  const item = getTaxonomyItem(section, slug);
+export const contentInternalRoutes = [
+  "/services/trade-show-management",
+] as const;
 
-  if (!item) {
-    throw new Error(`No ${section} item found for "${slug}"`);
-  }
+export const aboutPageCopy: PageCopy = {
+  eyebrow: "About",
+  title: `Project-led trade show delivery for ${CITY} and the surrounding metro`,
+  lead: `${business.name} keeps booth planning, labor, freight, graphics, AV, and show-site supervision on one track so the work stays calm when the schedule gets tight.`,
+  paragraphs: [
+    `${business.name} is organized around the practical work that keeps an exhibit program steady in ${CITY}: venue approvals, freight timing, labor windows, graphics production, AV planning, and the sequence that keeps the build from drifting once the calendar tightens.`,
+    `In ${CITY}, the difference between a polished show and a messy one is rarely the render. The real difference is whether the schedule survives load-in, the dock, the vendor handoffs, and the field decisions that have to be made when the room is already active.`,
+    `The surrounding area matters because ${localContext[0]}, ${localContext[1]}, and ${localContext[2]} can change the way crews move, the way trucks arrive, and the amount of buffer a project needs before doors open.`,
+    `Projects stay cleaner when booth format, labor, freight, storage, reuse, and closeout are treated as one sequence. ${business.name} keeps those pieces connected so the event does not become a stack of separate tasks with no clear owner.`,
+    `Clients in ${CITY} usually need to compare custom builds, rentals, modular systems, and support-only scopes without losing the operational details that decide the outcome. The best answer is the one that fits the venue, the date, and the team that will actually be on the floor.`,
+    `${business.name} keeps that comparison grounded in event reality. The brief starts with the building, the deadline, and the live objectives, then moves to the scope only after the constraints are visible and the work can be measured against them.`,
+    `That approach matters because the best event work is rarely just creative or just logistical. It is a combination of labor planning, material handling, graphics, AV, and field supervision that has to hold together once crates are opened and people are moving through the room.`,
+    `It also matters because ${CITY} can produce different operating conditions from one district to another. Event work here is shaped by the historic core, the hotel pattern, airport access, and the way traffic compresses freight windows before show morning.`,
+    `When the project gets bigger, the coordination challenge grows with it. Multiple stakeholders often need the same information in different forms, and the plan works best when the venue, the schedule, and the scope are all written clearly enough to survive that handoff.`,
+    `That is why the service guides, location guides, venue notes, and event-format notes stay connected. They give the team a way to move from a broad idea to a workable plan without losing sight of freight, installation, dismantle, utility requests, staffing, or deadline pressure.`,
+    `The outcome is a program that feels controlled instead of improvised. The booth gets built to match the room, the logistics line stays readable, and the show-site crew knows which decisions belong to them before the floor gets busy.`,
+    `Good trade show support should make the next step easier, not harder. For that reason, the business voice stays direct: define the venue, define the schedule, define the scope, and then build the program around those facts.`,
+  ],
+  linkRows: primaryRouteRows,
+};
 
-  const relatedVenueItem =
-    section === "venues"
-      ? item
-      : pickItemsFromSection("venues", `${slug}:venue`, 1)[0];
-  const relatedLocationItem =
-    section === "locations"
-      ? item
-      : pickItemsFromSection("locations", `${slug}:location`, 1)[0];
-  const relatedServiceItem =
-    section === "services"
-      ? item
-      : pickItemsFromSection("services", `${slug}:service`, 1)[0];
-  const relatedVenue = relatedVenueItem
-    ? getVenueBySlug(relatedVenueItem.slug)
-    : undefined;
-  const relatedLocation = relatedLocationItem
-    ? getLocationBySlug(relatedLocationItem.slug)
-    : undefined;
-  const demandDriver = pickDemandDriver(slug);
-  const laborFinding = pickLaborFinding(slug);
-  const venuePattern = relatedVenue
-    ? getVenuePattern(relatedVenue.slug)?.copyUse ?? laborFinding.finding
-    : laborFinding.finding;
+export const contactPageCopy: PageCopy = {
+  eyebrow: "Contact",
+  title: `Start the project brief in ${CITY}`,
+  lead: `Share the venue, date, service mix, and any unresolved decisions so the next step can be built around the actual show conditions.`,
+  paragraphs: [
+    `Use the contact brief to name the date, venue, service mix, and the parts of the project that are still unresolved. The more exact the note, the easier it is to sort the work into the right labor, freight, and show-site plan.`,
+    `If the job touches ${CITY} venues or nearby support corridors, say that directly so the schedule can account for dock timing, travel time, and local rules that affect the floor.`,
+    `The best briefs usually include the booth footprint, the audience mix, the deadline pressure, and whether the work needs custom fabrication, rental support, graphics, AV, or a combined scope.`,
+    `If the venue is still open, include the likely building or district. A downtown convention build, a hotel ballroom, and a regional meeting venue all ask for different sequencing, even when the brand story stays the same.`,
+    `If the project is repeat business, mention what changed from the last cycle. If it is a new program, mention what has to be proven from scratch. Those details change the timing more than a generic label does.`,
+    `Include any approval steps, internal review cycles, or executive sign-off that might slow the handoff. A clean brief saves time because it allows the next reply to focus on what the event actually needs instead of guessing at the missing pieces.`,
+    `If the program touches the convention center, a riverfront hotel, a resort venue, or a coastal meeting corridor, say that up front so the operating plan can match freight timing and labor posture.`,
+    `The form is there to collect the facts that change the plan: location, scale, timing, and the pressure points that can shape the live event. When those facts are clear, the next conversation can be specific and useful.`,
+    `That is the fastest way to move from inquiry to a workable scope. It keeps the project grounded, makes the response more practical, and prevents the work from getting buried in vague language.`,
+    `Whether the event needs a booth build, labor-only support, AV help, logistics coordination, or a full turnkey path, the first step is the same: describe the job as clearly as possible so the schedule can be built around it.`,
+  ],
+  linkRows: primaryRouteRows,
+};
 
-  return {
-    section,
-    slug,
-    label: item.label,
-    collectionLabel: getTaxonomyCollection(section).label,
-    relatedVenueName:
-      relatedVenue?.name ?? relatedVenueItem?.label ?? `${business.city} venues`,
-    relatedVenueFit:
-      relatedVenue?.tradeShowFit.join(" ") ??
-      "trade shows, conferences, sponsor activations, and venue-driven event programs",
-    relatedVenueFact:
-      relatedVenue?.verifiedFacts[0] ??
-      "Venue execution should always follow the current guide, exhibitor materials, and service-order path.",
-    relatedLocationName: relatedLocationItem?.label ?? business.city,
-    relatedLocationReason:
-      relatedLocation?.reason ??
-      "It sits inside the wider Central Iowa event market.",
-    relatedLocationRegion: relatedLocation?.region ?? "Central Iowa event market",
-    relatedServiceName: relatedServiceItem?.label ?? "turnkey service path",
-    demandDriverLabel: demandDriver.label,
-    demandDriverReason: demandDriver.reason,
-    laborPosition: laborResearch.overallAssessment.safePublicClaim,
-    laborFinding: laborFinding.finding,
-    venuePattern,
-    sectionAngle: getSectionAngle(section, item.label),
-    sectionPressure: getSectionPressure(section, item.label),
-    sectionOutcome: getSectionOutcome(section, item.label)
-  };
-}
-
-function buildFocusList(context: DetailContext) {
-  const {
-    label,
-    relatedVenueName,
-    relatedLocationName,
-    relatedServiceName,
-    section
-  } = context;
-
-  const shared = [
-    `Start with the venue, show date, and service mix before the brief spreads into separate design, freight, and labor conversations.`,
-    `Keep ${relatedServiceName.toLowerCase()}, labor timing, AV, graphics, and logistics on one calendar that the whole project team can see.`,
-    `Check current venue rules, organizer deadlines, utilities, dock timing, and exhibitor paperwork early enough to shape the plan.`,
-    `Name the person who owns show-site decisions before move-in so questions do not bounce between vendors once the room is active.`,
-    `Think through dismantle, returns, warehousing, and the next stop before the first truck leaves the dock.`
-  ];
-
-  if (section === "locations") {
-    return [
-      `Treat ${label} as a real submarket inside the ${business.city} event system, not just another city page in the footer.`,
-      `Use ${relatedVenueName} and nearby hotel inventory to define staffing, freight, arrival timing, and parking assumptions.`,
-      `Account for how ${relatedLocationName} connects back to downtown, the west corridor, the east-side fairgrounds cluster, or the airport corridor.`,
-      shared[3],
-      shared[4]
-    ];
-  }
-
-  if (section === "venues") {
-    return [
-      `Approach ${label} as a venue-specific operating environment with its own planning documents, order paths, and access rules.`,
-      `Separate venue-controlled services from exhibitor-managed scope before the production plan is locked and materials start moving.`,
-      `Use the current guide to confirm access, utilities, IT, rigging, AV, and decorator timing against the room layout.`,
-      shared[3],
-      shared[4]
-    ];
-  }
-
-  return shared;
-}
-
-function buildIntro(context: DetailContext) {
-  const {
-    label,
-    section,
-    relatedVenueName,
-    relatedVenueFact,
-    relatedLocationName,
-    relatedServiceName,
-    demandDriverLabel,
-    sectionAngle,
-    sectionPressure
-  } = context;
-
-  if (section === "locations") {
-    return [
-      `${label} matters because the ${business.city} market is not one undifferentiated downtown radius. Buyers move between the downtown convention core, the west corridor, the east-side fairgrounds cluster, the north metro, and the airport-adjacent corridor depending on the show, the audience, and the room block. ${sectionAngle} That is why the location stack on this site talks about routing, nearby venues, hotel behavior, and staff movement instead of recycling generic city-copy language.`,
-      `${sectionPressure} A useful ${label.toLowerCase()} page connects back to the venue guides and service paths buyers are most likely to use. That is why this page cross-references locations such as ${relatedLocationName}, venue anchors such as ${relatedVenueName}, and delivery layers such as ${relatedServiceName.toLowerCase()} when those links help the reader make a cleaner decision.`,
-      `The practical value is simple: once planners understand what ${label.toLowerCase()} is good at, what it sits near, and how it behaves in relation to the rest of the market, they can choose the right route faster and spend less time untangling assumptions later.`
-    ];
-  }
-
-  if (section === "venues") {
-    return [
-      `${label} is a venue-specific planning environment, not a blank room with interchangeable rules. ${relatedVenueFact} That affects advance work, service ordering, dock sequencing, AV integration, staffing, and the exhibitor-appointed-contractor conversation long before the team reaches show week.`,
-      `${sectionPressure} In ${business.city}, venue choice also changes the entire delivery path. A project that touches ${relatedVenueName} and nearby hotel inventory will not be staffed, routed, and supervised the same way as a suburban conference program, a fairgrounds event, or an airport-corridor meeting.`,
-      `This page exists to make that difference visible in plain language so planners can compare the venue with the rest of the market before the schedule gets too tight to absorb surprises.`
-    ];
-  }
-
-  return [
-      `${label} is strongest when it is connected to the real ${business.city} operating path: venue communication, labor timing, graphics, fabrication, AV, logistics, and field leadership moving on the same schedule. ${sectionAngle} That matters in a market where the same buyer can touch downtown convention inventory, west-corridor meetings, east-side fairgrounds work, and airport-adjacent hotels in the same quarter.`,
-    `${sectionPressure} The better approach is to treat this page as a planning filter, not a keyword silo. If the buyer is tied to ${demandDriverLabel.toLowerCase()}, venue constraints at ${relatedVenueName}, or routing questions around ${relatedLocationName}, the page helps them understand how ${label.toLowerCase()} fits into a complete project path.`,
-    `Readers should leave with a clearer view of the work itself, the local variables that affect it, and the next page or conversation that will move the project forward without wasting time.`
-  ];
-}
-
-function buildSections(context: DetailContext): ContentSection[] {
-  const {
-    label,
-    section,
-    relatedVenueName,
-    relatedVenueFit,
-    relatedVenueFact,
-    relatedLocationName,
-    relatedLocationReason,
-    relatedLocationRegion,
-    relatedServiceName,
-    demandDriverLabel,
-    demandDriverReason,
-    laborPosition,
-    laborFinding,
-    venuePattern,
-    sectionOutcome
-  } = context;
-
-  return [
-    {
-      heading: `How ${label} fits the ${business.city} market`,
-      paragraphs: [
-        `${label} belongs inside the full Central Iowa event map, not as a disconnected tactic. ${marketResearch.market.serviceRadiusStrategy} That regional shape matters because downtown convention work, west-corridor corporate meetings, east-side event programs, and north-metro conference calendars do not all create the same operational pressure.`,
-        `${demandDriverLabel} is one of the clearest active demand drivers in this market. ${demandDriverReason} That means ${label.toLowerCase()} is a real planning question for buyers, not filler created to pad the sitemap. The page exists because the market can support a distinct conversation around timing, venue fit, attendee behavior, sponsor pressure, or service coordination.`,
-        `${sectionOutcome} A buyer reading this page should come away with a better sense of how ${label.toLowerCase()} connects to venue choice, delivery sequencing, and the broader resource stack across ${clusterSummary()}.`
-      ],
-      bullets: [
-        `Connected to ${relatedVenueName}`,
-        `Written for ${relatedLocationName} and the wider ${relatedLocationRegion}`,
-        `Grounded in current market research and venue research artifacts`,
-        `Built around project-led trade show execution`
-      ]
-    },
-    {
-      heading: "Venue rules, labor posture, and routing realities",
-      paragraphs: [
-        `${laborPosition} That public positioning matters because the ${business.city} market is mixed and venue-directed. ${laborFinding} When the copy on this site references labor, utilities, IT, rigging, AV, or decorator flow, the point is to help buyers think more clearly about venue behavior without promising conditions that the current show manual may not support.`,
-        `${relatedVenueName} is especially relevant here because it is tied to ${relatedVenueFit}. ${relatedVenueFact} Details like that change how teams schedule advance work, decide on pre-build versus on-site assembly, choose the right freight path, and protect enough time for final checks before the event opens.`,
-        `${relatedLocationName} matters for routing as well. ${relatedLocationReason} That practical location logic affects staff movement, hotel blocks, truck access, rehearsal schedules, and the buffer needed between meeting rooms, exhibit floors, hospitality programs, and strike.`
-      ]
-    },
-    {
-      heading: "How the scope is structured before move-in",
-      paragraphs: [
-        `The safest path is to translate ${label.toLowerCase()} into a schedule early. That means confirming the brief, reviewing current venue information, mapping graphics and fabrication milestones, ordering show services, lining up labor and technical needs, and deciding who is responsible for field leadership once the room starts changing. ${relatedServiceName} often becomes the connective layer because it forces those decisions into one operating plan instead of leaving them across separate inboxes.`,
-        `That sequencing is especially important when the project connects to ${demandDriverLabel.toLowerCase()} or other buyer groups that expect strong brand control and predictable execution. Buyers do not experience the project as separate departments. They experience one booth, one registration environment, one event floor, or one sponsor activation.`,
-        `The plan behind the scenes should feel just as coordinated as the environment they see live, and that only happens when the team treats the schedule as a single chain rather than a series of handoffs.`
-      ]
-    },
-    {
-      heading: "Show-week control and field leadership",
-      paragraphs: [
-        `No matter how strong the pre-show brief is, ${label.toLowerCase()} still needs a clean decision path once the team is onsite. That means naming who answers venue questions, who owns the production calendar, who manages labor and AV handoffs, and who closes punch-list items without letting them bounce across vendors.`,
-        `In ${business.city}, that show-week control also has to account for how venues are distributed across the market. A downtown convention-center project can overlap with west-corridor hotel meetings, fairgrounds work on the east side, or north-metro conference activity. That is one reason this site does not treat location, venue, and service pages as separate silos.`,
-        `The output should feel calmer, not louder. Strong field control is not about making a bigger promise. It is about reducing confusion, protecting timing, and making sure that every last-minute choice still respects the venue guide, the labor posture, and the broader project path established before move-in.`
-      ]
-    },
-    {
-      heading: "Budget, logistics, and repeatability",
-      paragraphs: [
-        `${label} is also a budget and repeatability question. Buyers usually want to know whether the plan is helping them control cost, shorten lead time, improve reuse, protect visual quality, or make the next show easier to absorb. Those are valid questions, but they should be answered in a way that still respects venue behavior and the actual route between fabrication, storage, freight, install, live days, and returns.`,
-        `That is where ${business.city}'s market shape matters again. Downtown programs, west-corridor conferences, fairgrounds events, and north-metro meetings create different financial pressures even when the brand objective sounds similar. Freight windows, labor posture, hotel density, and venue-managed services all change the path.`,
-        `Repeatability matters because a strong project often starts with one show and expands into multiple cities, repeat annual events, or a broader regional program. When ${label.toLowerCase()} is planned correctly the first time, it becomes easier to scale, easier to brief internally, and easier to adapt when the venue, footprint, or supporting services change.`
-      ]
-    },
-    {
-      heading: `Why this ${context.collectionLabel.toLowerCase()} page is distinct`,
-      paragraphs: [
-        `This page is not meant to duplicate the other ${context.collectionLabel.toLowerCase()} routes on the site. It exists because ${label.toLowerCase()} creates a distinct decision point for the buyer. The nearby pages may talk about adjacent venues, services, locations, or formats, but this route focuses on the specific planning question created by ${label.toLowerCase()} inside the ${business.city} market.`,
-        `That distinction is also why the page links outward. A buyer who arrives here may actually need ${relatedServiceName.toLowerCase()}, may need the venue guide for ${relatedVenueName}, or may need to understand how ${relatedLocationName} fits inside the wider ${relatedLocationRegion} region. Internal linking is used here to help the buyer navigate those real next steps, not just to create artificial SEO pathways.`,
-        `The broader goal is clarity. If this page helps the reader understand how ${label.toLowerCase()} fits the market, what still needs confirmation, and which adjacent pages will move the planning conversation forward, then it is doing the work it is meant to do.`
-      ]
-    }
-  ];
-}
-
-function buildFaqs(context: DetailContext): FaqItem[] {
-  const {
-    label,
-    section,
-    relatedVenueName,
-    relatedLocationName,
-    demandDriverLabel,
-    laborPosition
-  } = context;
-
-  if (section === "locations") {
-    return [
-      {
-        question: `Do you only work in ${label}?`,
-        answer: `No. ${business.name} treats ${label} as one part of a wider Central Iowa operating radius that includes the downtown convention core, the west corridor, the north metro, the east-side fairgrounds cluster, and the airport-adjacent corridor. The point of this page is to explain how ${label} behaves inside that larger market, not to pretend it operates in isolation.`
-      },
-      {
-        question: `Why does ${label} deserve its own planning page?`,
-        answer: `${label} changes routing, nearby venue options, staffing assumptions, hotel behavior, and how buyers move between meetings, exhibit floors, and hospitality events. A useful location page explains those differences instead of repeating the same metro-wide paragraph on every route.`
-      },
-      {
-        question: "How should labor expectations be described publicly?",
-        answer: laborPosition
-      },
-      {
-        question: `Can a project start in ${label} and extend into nearby markets?`,
-        answer: `Yes. That is common in the Bluegrass region market. The important part is keeping one readable schedule for freight, venue communication, labor, AV, graphics, and dismantle so the move between ${label} and nearby venues does not create duplicated effort or missed handoffs.`
-      },
-      {
-        question: `What should a buyer confirm first for ${label}?`,
-        answer: `Start with the actual venue, event date, service mix, and how the location connects back to the wider market. That will usually clarify whether the next step is a venue guide, a service page, a booth-format decision, or a broader routing conversation.`
-      }
-    ];
-  }
-
-  if (section === "venues") {
-    return [
-      {
-        question: `Can you work inside ${label}?`,
-        answer: `Yes, but the right path starts with the current venue guide, organizer instructions, and service-order workflow tied to ${label}. This site does not present venue execution as if every building in ${business.city} works the same way, because that would create bad expectations before the project even begins.`
-      },
-      {
-        question: "Do you handle exhibitor-appointed-contractor coordination?",
-        answer: `Yes. The site positioning includes exhibitor-appointed-contractor coordination, general-contractor style planning, labor alignment, AV integration, graphics, logistics, and show-site leadership. The exact mix depends on the venue rules, the organizer workflow, and the buyer's scope.`
-      },
-      {
-        question: `How does ${label} differ from other ${business.city} venues?`,
-        answer: `${label} has its own room flow, access path, hotel relationship, service ordering logic, and event fit. That is why the venue stack on this site is written page by page. The useful question is not whether a building sounds impressive; it is how the building changes planning.`
-      },
-      {
-        question: "Do you make blanket union or non-union claims?",
-        answer: `${laborPosition} Final labor expectations should always be confirmed with the current event manual, venue operations team, exhibitor kit, and organizer instructions.`
-      },
-      {
-        question: `What should a buyer send first for ${label}?`,
-        answer: `The best starting point is the show date, exact venue name, the footprint or room type, the service mix, and any current exhibitor or planner documents already in hand. That makes it easier to map realistic next steps instead of guessing.`
-      }
-    ];
-  }
-
-  return [
-    {
-      question: `How is ${label} scoped for ${business.city} trade show work?`,
-      answer: `${label} is scoped by tying venue conditions, buyer goals, labor timing, graphics, AV, logistics, and show-site leadership into one operating path. The page is meant to help the reader see where ${label} belongs inside the broader project, not to isolate it from the rest of the delivery model.`
-    },
-    {
-      question: `Can this support work at ${relatedVenueName}?`,
-      answer: `Yes. ${business.name} uses venue guides and current operating documents to frame the plan around buildings such as ${relatedVenueName}. That matters because the same ${label.toLowerCase()} decision can look very different once access, utilities, room flow, and order paths are taken into account.`
-    },
-    {
-      question: `Why does ${relatedLocationName} matter for this page?`,
-      answer: `${relatedLocationName} matters because it affects routing, venue choice, hotel behavior, and how teams move through the wider Bluegrass region market. This site uses location references to keep the planning conversation tied to the real region instead of flattening every page into generic metro copy.`
-    },
-    {
-      question: `What makes ${label} relevant for ${demandDriverLabel.toLowerCase()} programs?`,
-      answer: `${demandDriverLabel} programs usually need message clarity, venue readiness, timing discipline, and buyer-facing polish at the same time. ${label} is relevant because it changes how those priorities are translated into a workable production path.`
-    },
-    {
-      question: "What information helps move the conversation forward?",
-      answer: `Share the venue, show date, service mix, footprint or room type if known, and the business goal behind the program. That is usually enough to identify which venue guides, service pages, and next-step planning decisions should come first.`
-    }
-  ];
-}
+export const blogPageCopy: PageCopy = {
+  eyebrow: "Planning Notes",
+  title: `Trade show planning notes for ${CITY}`,
+  lead: `Use the resource notes to compare venue behavior, event format, and booth choices before the scope hardens.`,
+  paragraphs: [
+    `Planning is easiest when the venue, the freight window, and the hotel pattern are treated as one problem instead of three separate ones. The notes below focus on the decisions that tend to shape the work before a crate ever reaches the dock.`,
+    `Planning notes are most useful when they deal with the real operating questions: what venue is involved, how freight moves, what labor is required, what has to be approved, and how the show schedule will actually behave once the room goes live.`,
+    `That is why the guidance stays close to venue rules, event formats, booth choices, and the local geography that shapes the work in ${CITY}. The goal is to narrow the decision, not to add more noise to the brief.`,
+    `Buyers often move between a venue question, a scope question, and a budget question all at once. The best way to handle that is to separate the issues long enough to see which one is actually driving the choice.`,
+    `If the building is already set, the venue guide is the right place to start. If the event format is still moving, the format notes are more useful. If the booth shape is the sticking point, the format and rental comparisons help make the decision concrete.`,
+    `In ${CITY}, this matters because districts and venue types do not behave the same way. ${localContext[0]}, ${localContext[1]}, ${localContext[2]}, and ${localContext[3]} influence freight timing, hotel pattern, and the amount of help a live floor needs.`,
+    `Good planning material does not sound like a lecture. It sounds like the short list of things a project manager would want to know before a truck rolls or a crate gets opened.`,
+    `That is what the linked guidance is written to do. It frames the work around venue rules, freight timing, staffing, graphics, AV, storage, and show-site supervision so the event can be run with less guesswork.`,
+    `If a project needs a quick path to decision, the best move is to start with the guidance that matches the most urgent constraint. That usually reveals the rest of the scope fast enough to keep the project on schedule.`,
+    `The result is a planning stack that is useful to marketers, operations teams, and event leads without turning the information into filler. It gives the next step enough shape to be useful and enough detail to be trusted.`,
+  ],
+  linkRows: [
+    { href: "/venues", label: "VENUES" },
+    { href: "/event-types", label: "EVENT TYPES" },
+    { href: "/booth-types", label: "BOOTH TYPES" },
+    { href: "/contact", label: "CONTACT" },
+  ],
+};
 
 export function buildIndexPageContent(section: TaxonomySection): IndexPageContent {
   const collection = getTaxonomyCollection(section);
-  const sectionLead = (() => {
-    switch (section) {
-      case "services":
-        return `Use this section to compare the service layers that keep a Des Moines exhibit program moving: design, fabrication, freight, labor, AV, and show-site leadership.`;
-      case "locations":
-        return `Use this section to compare the Des Moines submarkets that actually change planning decisions: downtown, the west corridor, the east-side fairgrounds cluster, the north metro, and the airport corridor.`;
-      case "venues":
-        return `Use this section to compare venue-specific planning paths across downtown halls, suburban conference centers, hotels, and fairgrounds buildings with different operating rules.`;
-      case "event-types":
-        return `Use this section to compare the event formats that change attendee flow, sponsor expectations, and technical requirements in different ways.`;
-      case "booth-types":
-        return `Use this section to compare booth formats by footprint, sightlines, fabrication pressure, and install complexity so the room and the booth work together.`;
-      case "industries":
-        return `Use this section to compare planning routes by buyer sector so the copy, the pacing, and the project assumptions fit the audience instead of sounding generic.`;
-      case "capabilities":
-        return `Use this section to compare the execution capabilities that make recurring exhibit and event work easier to run, repeat, and scale.`;
-      case "rentals":
-        return `Use this section to compare rental paths that balance budget control, speed, and visual quality without forcing every project into the same ownership model.`;
-      case "exhibit-types":
-        return `Use this section to compare exhibit environments by how they behave in the room, on the floor, and during live guest use.`;
-    }
-  })();
+  const intro = [
+    `${collection.label.toUpperCase()} in ${CITY_STATE} starts with the venue, the schedule, and the team that owns the field decisions.`,
+    `The project stays easier to manage when freight, labor, graphics, AV, and install timing are all written into the same plan.`,
+    `That matters in ${CITY} because the working geometry changes between ${localContext[0]}, ${localContext[1]}, and ${localContext[2]}.`,
+    `The guides below separate the different planning questions so the brief can move from broad to specific without losing control of the scope.`,
+    `A good choice is the one that fits the venue, the date, and the way the floor has to behave once the event is live.`,
+    `When the work repeats across shows or cities, storage, reuse, and the closeout plan matter as much as the first install.`,
+    `The intent is to give the buyer a practical way to compare options without relying on generic marketing language.`,
+    `The result is a more usable path from first question to final quote.`,
+    `That path matters because show teams need the next step to be obvious before the schedule gets crowded.`,
+    `Each guide shows how the venue, the planning path, and the execution choices connect in practice.`,
+  ];
+
+  const cards: IndexCard[] = collection.generatedPages.slice(0, 8).map((page) => ({
+    href: `${collection.routeBase}/${page.slug}`,
+    label: page.label.toUpperCase(),
+    description: `${page.label.toUpperCase()} in ${CITY} tied to venue timing, labor planning, freight, graphics, AV, storage, and a clean show-site sequence that keeps the work moving without unnecessary rework.`,
+    eyebrow: collection.label.toUpperCase(),
+  }));
 
   return {
-    eyebrow: collection.eyebrow,
-    title: `${collection.label} for ${business.city} trade show teams`,
-    lead: `${business.name} uses a venue-aware, project-led model for ${collection.label.toLowerCase()} across ${clusterSummary()} and the wider Central Iowa market.`,
-    intro: [
-      `${sectionLead} The copy on these pages is built from the market research, venue research, labor research, and taxonomy planning files in the project root, so the section follows real Des Moines venue inventory, real nearby markets, and an actual Central Iowa event footprint instead of filler national copy.`,
-      `Use this section when the planning conversation has moved beyond broad awareness and into decision making. The goal is to help buyers compare the right ${collection.singularLabel} pages for their venue, event format, booth requirements, logistics path, and show-week priorities.`,
-      `Each card points to a more specific route, but the section as a whole is meant to answer a bigger question: which part of the market matters most for this project, and what does that choice change once the room, the schedule, and the people involved are real?`,
-      `That is what turns a directory page into a useful planning tool. The reader can move from the market overview into the route that matches the exact venue, format, service stack, or buyer profile they are working through.`
-    ],
-    cards: collection.generatedPages.map((item) => ({
-      href: `${collection.routeBase}/${item.slug}`,
-      label: item.label,
-      description:
-        section === "venues"
-          ? `${item.label} pulls verified venue facts into one planning route so teams can think through access, services, and room behavior together.`
-          : section === "locations"
-            ? `${item.label} shows how that part of Des Moines changes routing, hotel behavior, nearby venues, and the delivery path on the ground.`
-            : section === "services"
-              ? `${item.label} describes the role this service plays in the larger production chain, from early planning through live execution.`
-              : `${item.label} connects the format or audience to the practical planning details that shape production, timing, and show-week decisions.`,
-      eyebrow: collection.cardLabel
-    })),
+    eyebrow: collection.heroLabel.toUpperCase(),
+    title: `${collection.label} for ${CITY} show teams`,
+    lead: `${collection.label.toUpperCase()} planning in ${CITY} works best when the venue, the schedule, freight timing, labor, and the live event goal are written together before anything moves forward.`,
+    intro,
+    cards,
     facts: marketHighlights,
-    ctaTitle: `Need help narrowing the right ${collection.singularLabel} path?`,
-    ctaText:
-      "Start with the venue, show date, service mix, and project goals. From there, the route usually becomes clear quickly, and the planning team can work with a cleaner brief."
+    ctaTitle: `Talk through the ${collection.label.toLowerCase()} scope`,
+    ctaText: `Use the contact brief to pin down the venue, the deadline, and the operating path so the project can move from question to schedule.`,
   };
 }
 
-export function buildDetailPageContent(
-  section: TaxonomySection,
-  slug: string
-): DetailPageContent {
+export function buildDetailPageContent(section: TaxonomySection, slug: string): DetailPageContent {
+  const collection = getTaxonomyCollection(section);
   const item = getTaxonomyItem(section, slug);
-
   if (!item) {
-    throw new Error(`No item found for ${section}/${slug}`);
+    throw new Error(`No ${section} item found for slug "${slug}"`);
   }
 
-  const context = buildContext(section, slug);
-  const intro = buildIntro(context);
-  const focusList = buildFocusList(context);
-  const sections = buildSections(context);
-  const faqs = buildFaqs(context);
-  const relatedLinks = pickRelatedRoutes(section, slug);
+  const label = item.label.toUpperCase();
+  const relatedLinks = pickRelatedRoutes(section, slug).slice(0, 6);
+  const venue = getVenueBySlug(slug);
 
-  const wordCount = countWords(
-    [
-      intro.join(" "),
-      focusList.join(" "),
-      sections.flatMap((entry) => [...entry.paragraphs, ...(entry.bullets ?? [])]).join(" "),
-      faqs.map((faq) => `${faq.question} ${faq.answer}`).join(" ")
-    ].join(" ")
-  );
+  const intro = [
+    `${label} in ${CITY} works best when the project starts with the venue, the show date, and the specific outcome the floor has to deliver.`,
+    `That means the scope has to cover freight timing, labor planning, graphics production, AV, power, closeout, and the field chain that keeps the work moving once people are on site.`,
+    `The local context matters because ${CITY} programs can move through ${localContext[0]} and ${localContext[1]} very differently from one stop to the next.`,
+    `A useful guide has to do more than define the work. It has to show how the decision affects install, staffing, approvals, and the final result on the floor.`,
+  ];
+
+  const focusList = [
+    `Keep ${label} tied to the actual show outcome, not to a vague label.`,
+    `Confirm the venue manual, freight timing, and access plan before labor is scheduled.`,
+    `Line up graphics, AV, and utility requests against the same calendar as the build.`,
+    `Protect storage, reuse, and return freight so the next cycle starts cleanly.`,
+    `Assign one field lead so live decisions stay controlled during install and strike.`,
+  ];
+
+  let sections: ContentSection[] = [];
+
+  switch (section) {
+    case "services":
+      sections = [
+        {
+          heading: "Scope and execution path",
+          paragraphs: [
+            `${label} only works when the plan is written like an operating brief. The brief should show who owns the venue call, who owns the production sequence, who owns freight, and who needs to approve the final layout before the floor opens.`,
+            `The reason is simple: once the project is live, the room gets crowded quickly. People need one clear path for decisions, one clear path for changes, and one clear path for the kind of support that keeps the event moving without unnecessary noise.`,
+          ],
+        },
+        {
+          heading: "Venue timing and approvals",
+          paragraphs: [
+            `Venue approvals shape the project long before the first crate arrives. That includes contractor access, dock timing, service ordering, utility placement, and any special instructions that affect the show floor or the move-in schedule.`,
+            `When those details are written down early, the team can work faster later because there is no need to stop and re-derive the plan at the dock. That is especially important in ${CITY} where the calendar can crowd quickly.`,
+          ],
+        },
+        {
+          heading: "Freight, labor, and install",
+          paragraphs: [
+            `Freight and labor are the backbone of the job. The display, the structure, the graphics, the power, and the on-site supervision have to arrive in the right order or the floor loses its rhythm.`,
+            `A clean install sequence protects the finish of the booth and the confidence of the client. It keeps the room from turning into a series of reactive fixes and makes the build look intentional from the first handoff to the final touch-up.`,
+          ],
+        },
+        {
+          heading: "Graphics, AV, and power",
+          paragraphs: [
+            `Graphics and AV should never be an afterthought. They belong in the same planning path as the booth itself because they affect layout, power, sightlines, and the way the attendee reads the space.`,
+            `When the technical layer is planned early, the final environment feels more complete and the floor team has fewer surprises once the equipment is staged and the show is close to opening.`,
+          ],
+        },
+        {
+          heading: "Storage, reuse, and closeout",
+          paragraphs: [
+            `The closeout matters because it sets up the next show. Assets have to be packed, labeled, returned, stored, or refurbished in a way that keeps them usable without forcing the team to rebuild the process from scratch.`,
+            `Reuse is where the budget gets smarter over time. A booth that can travel, be repaired, and be reconfigured is often more valuable than one that only looks good in a single moment and then becomes expensive to manage later.`,
+          ],
+        },
+        {
+          heading: "Stakeholder coordination and outcomes",
+          paragraphs: [
+            `A strong project keeps marketing, operations, executives, and field leadership pointed in the same direction. That reduces the back-and-forth that usually slows live event work and makes the final result easier to defend internally.`,
+            `The outcome should be visible in the room itself: a cleaner build, a steadier show day, a better closeout, and fewer gaps between the plan on paper and the event on the floor.`,
+          ],
+          bullets: [
+            `One owner for the schedule.`,
+            `One owner for the venue communication.`,
+            `One owner for the floor once the show is live.`,
+          ],
+        },
+      ];
+      break;
+    case "locations":
+      sections = [
+        {
+          heading: "District behavior",
+          paragraphs: [
+            `${label} works best when the arrival path, the parking pattern, the venue, and the hotel inventory are treated as one operating system instead of isolated pieces of the map.`,
+            `That is because crew movement, freight arrival, and guest flow all respond to the same local conditions once the event is live.`,
+          ],
+        },
+        {
+          heading: "Travel and freight",
+          paragraphs: [
+            `Travel time changes how early labor has to be scheduled and how much buffer the team needs before move-in starts. The goal is not to overbuild the plan. The goal is to leave enough room for the real path to work.`,
+            `If the location is close to the venue, the advantage is speed. If it is farther out, the advantage may be flexibility or lower cost. Either way, the plan has to account for the move itself, not just the destination.`,
+          ],
+        },
+        {
+          heading: "Hotel and venue mix",
+          paragraphs: [
+            `Some locations are useful because they sit near a hotel block, a convention hall, a waterfront meeting zone, or a suburban campus that can support the project from start to finish.`,
+            `The right location guide shows how those pieces fit together so the brief can be written around the operating reality instead of a generic city label.`,
+          ],
+        },
+        {
+          heading: "Show-day practicality",
+          paragraphs: [
+            `The best locations are the ones that let the team keep the work predictable. That means clear arrival paths, a sensible staging plan, and enough room for people to move without collisions or wasted steps.`,
+            `Predictability matters because it lowers the chance that a good design gets undermined by poor logistics once the show starts.`,
+          ],
+        },
+        {
+          heading: "Reuse across stops",
+          paragraphs: [
+            `If the schedule includes more than one city or venue, location planning becomes a reuse problem as much as a travel problem. The project should be easy to brief again without rebuilding the logic every time.`,
+            `That is where storage, labeling, and closeout discipline pay off. They make the next stop easier to launch and keep the work from becoming a pile of one-off decisions.`,
+          ],
+        },
+        {
+          heading: "Outcome and control",
+          paragraphs: [
+            `The goal is to make the location guide useful before the schedule hardens. When the team can see the arrival path, the venue mix, and the support zone clearly, the project becomes easier to trust.`,
+            `That trust shows up later as fewer surprises, cleaner handoffs, and a more controlled floor.`,
+          ],
+          bullets: [
+            `One arrival plan.`,
+            `One freight plan.`,
+            `One venue decision.`,
+          ],
+        },
+      ];
+      break;
+    case "venues":
+      sections = [
+        {
+          heading: "Building-specific planning",
+          paragraphs: [
+            `Every venue has its own rhythm. Dock access, elevator timing, ceiling heights, contractor rules, and room flow all shape the plan long before the first piece of freight is unloaded.`,
+            `That is why the venue guide has to start with the building itself. The booth and the staffing plan have to fit the room the venue actually gives the team.`,
+          ],
+        },
+        {
+          heading: "Manuals and approvals",
+          paragraphs: [
+            `The current venue manual should be treated as live project input, not as background reading. It decides what can be brought in, what needs to be ordered, and what needs to be checked before move-in starts.`,
+            `When the manual, the work order, and the production calendar line up, the team can focus on the build instead of wrestling the paperwork at the dock.`,
+          ],
+        },
+        {
+          heading: "Labor and contractor path",
+          paragraphs: [
+            `Venue work runs more smoothly when the labor structure and the contractor path are set early. That includes who is on the floor, who is allowed to do what, and who makes calls when the event changes in real time.`,
+            `A clear chain of responsibility keeps the show calm because the team does not waste time figuring out who owns the next move.`,
+          ],
+        },
+        {
+          heading: "Power, rigging, and utilities",
+          paragraphs: [
+            `Technical work has to be planned against the venue's actual limits. Power drops, rigging points, and utility requests all affect the layout and the sequence in which the booth can be built.`,
+            `The sooner those details are confirmed, the less likely the team is to discover a conflict when the schedule is already compressed.`,
+          ],
+        },
+        {
+          heading: "Strike and closeout",
+          paragraphs: [
+            `Dismantle should be part of the venue plan from the start. The room has to be left in the right condition, freight has to leave in the right order, and the assets have to be tracked as they move out.`,
+            `That closeout discipline protects the next event as much as the current one because it keeps the reusable pieces in good shape.`,
+          ],
+        },
+        {
+          heading: "Decision value",
+          paragraphs: [
+            `A good venue guide gives the buyer enough clarity to know whether the building fits the brief. If the room, the access pattern, and the support structure all align, the project can move forward with less friction.`,
+            `If they do not align, the team can adjust early instead of discovering the mismatch on the floor.`,
+          ],
+          bullets: [
+            `Check the manual first.`,
+            `Confirm access before freight.`,
+            `Plan strike before opening.`,
+          ],
+        },
+      ];
+      break;
+    case "event-types":
+      sections = [
+        {
+          heading: "Format drives the sequence",
+          paragraphs: [
+            `The event format changes how the room has to work. A conference, an expo, a launch, and a sponsor activation all create different pacing, staffing, and technical demands.`,
+            `That means the brief should say what kind of event is being built before it starts describing the booth or the venue.`,
+          ],
+        },
+        {
+          heading: "Attendee flow and room behavior",
+          paragraphs: [
+            `The audience path determines where graphics matter, where hospitality belongs, and how much space the team has for conversation, demo, or stage work.`,
+            `When that flow is visible early, the event is easier to design and easier to run because the room behaves the way the team expected.`,
+          ],
+        },
+        {
+          heading: "Sponsor and content requirements",
+          paragraphs: [
+            `Many event formats carry sponsor obligations, content timing, or technical checkpoints that change the order of the day. Those factors belong in the planning conversation from the start.`,
+            `They shape the live schedule and often decide whether the project feels organized or reactive once the event begins.`,
+          ],
+        },
+        {
+          heading: "Staffing and supervision",
+          paragraphs: [
+            `The staff model should match the format. A small meeting does not need the same supervision structure as a larger expo floor, but both still need a clear owner for the live day.`,
+            `When staffing is tied to the format, the project becomes easier to control and easier to explain to the client.`,
+          ],
+        },
+        {
+          heading: "Equipment and timing",
+          paragraphs: [
+            `AV, registration, utilities, and signage all change with the format. The team has to know which pieces matter most and when each one has to be ready.`,
+            `That makes the format guide useful not just for description but for actual production planning.`,
+          ],
+        },
+        {
+          heading: "Outcome",
+          paragraphs: [
+            `The right format guide helps the buyer decide what the event is trying to accomplish and what kind of support it needs to do that well.`,
+            `It turns a broad event label into a practical plan for the floor.`,
+          ],
+          bullets: [
+            `Write the format first.`,
+            `Set the staffing second.`,
+            `Lock the timing last.`,
+          ],
+        },
+      ];
+      break;
+    case "booth-types":
+      sections = [
+        {
+          heading: "Footprint and circulation",
+          paragraphs: [
+            `Booth type changes the way attendees move. Inline, peninsula, island, and modular layouts each create different sightlines, circulation patterns, and storage needs.`,
+            `The plan works better when the footprint is decided with the traffic pattern in mind instead of as a purely visual choice.`,
+          ],
+        },
+        {
+          heading: "Structural decisions",
+          paragraphs: [
+            `The booth structure should fit the show, the freight, and the team that has to set it up. Heavy custom work is not always the right answer, and a lighter modular plan is not automatically a compromise.`,
+            `The best choice is the one that supports the event without creating unnecessary weight or complexity.`,
+          ],
+        },
+        {
+          heading: "Graphics and message clarity",
+          paragraphs: [
+            `Graphics have to work at distance and at speed. The attendee may only have a few seconds to read the message, so the booth type should support the message rather than compete with it.`,
+            `When graphics, lighting, and structure are planned together, the booth feels more coherent and easier to trust.`,
+          ],
+        },
+        {
+          heading: "Install and dismantle",
+          paragraphs: [
+            `The booth type affects install timing, equipment load, and the size of the crew needed on the floor. It also affects how quickly the project can be broken down and returned to storage.`,
+            `That is why the format choice should reflect the live schedule as much as the design concept.`,
+          ],
+        },
+        {
+          heading: "Reuse and flexibility",
+          paragraphs: [
+            `Reusable booth types make later shows easier to brief because the system already has a working structure. That can lower cost, reduce risk, and shorten the lead time on future events.`,
+            `Flexibility matters when the same brand needs to show up in different cities with different footprints but the same overall standard.`,
+          ],
+        },
+        {
+          heading: "Decision value",
+          paragraphs: [
+            `A booth-type guide should help the buyer decide how the space needs to behave and what trade-offs are worth making. That is what turns the format from a catalog label into a real planning tool.`,
+            `The right format is the one that supports the event outcome, the budget, and the logistics line at the same time.`,
+          ],
+          bullets: [
+            `Choose the traffic pattern first.`,
+            `Match the structure to the freight.`,
+            `Make graphics support the message.`,
+          ],
+        },
+      ];
+      break;
+    case "industries":
+      sections = [
+        {
+          heading: "Sector-specific needs",
+          paragraphs: [
+            `Different industries bring different pressure points to the booth. Some need more compliance review, some need stronger demo space, and some need tighter executive messaging.`,
+            `The guide should reflect those differences so the buyer can see how the scope changes with the audience.`,
+          ],
+        },
+        {
+          heading: "Audience and buying behavior",
+          paragraphs: [
+            `The industry lens helps the team understand what the attendee expects to see, hear, and experience on the floor. That shapes the booth, the staffing, and the content path.`,
+            `When the message is aligned with the buyer behavior, the event becomes easier to run and easier to measure.`,
+          ],
+        },
+        {
+          heading: "Demo and staffing needs",
+          paragraphs: [
+            `Some sectors need product demos, hands-on interaction, or technical support that changes the way labor has to be scheduled. Others need quiet conversation space and a sharper executive narrative.`,
+            `The industry guide should make those needs visible before the project is scoped.`,
+          ],
+        },
+        {
+          heading: "Message control",
+          paragraphs: [
+            `The booth has to carry the message cleanly, especially when the attendee is comparing multiple vendors in a short amount of time. Graphics, space, and lighting all matter here.`,
+            `Industry planning is about making the message easier to absorb while keeping the show-floor mechanics under control.`,
+          ],
+        },
+        {
+          heading: "Operational fit",
+          paragraphs: [
+            `The operational question is always the same: what does this industry need from the floor, and what does that mean for the venue and the schedule?`,
+            `Once the answer is visible, the project gets easier to plan.`,
+          ],
+        },
+        {
+          heading: "Outcome",
+          paragraphs: [
+            `A good industry guide helps the buyer see whether the planned event style fits the way the sector actually buys, evaluates, and uses the space.`,
+            `That makes the next brief much stronger.`,
+          ],
+          bullets: [
+            `Set the audience first.`,
+            `Match the demo needs.`,
+            `Keep the message readable.`,
+          ],
+        },
+      ];
+      break;
+    case "capabilities":
+      sections = [
+        {
+          heading: "Execution skill, not buzzword",
+          paragraphs: [
+            `A capability is useful only when it changes how a project gets delivered. The work has to affect planning, staffing, vendor coordination, or field control in a real way.`,
+            `That is why the guide should explain what the team can actually manage instead of just naming a service area.`,
+          ],
+        },
+        {
+          heading: "Cross-team coordination",
+          paragraphs: [
+            `Capabilities matter when multiple groups need to move together. The better the handoff between planning, graphics, logistics, and show-site leadership, the cleaner the event becomes.`,
+            `The capability guide should show that thread plainly.`,
+          ],
+        },
+        {
+          heading: "Planning control",
+          paragraphs: [
+            `Many clients are buying control as much as they are buying labor. They want the schedule, the venue communication, and the field decisions to stay organized.`,
+            `That is the real value of a strong execution capability.`,
+          ],
+        },
+        {
+          heading: "Reuse and scale",
+          paragraphs: [
+            `A capability also matters when the work has to scale across multiple venues or multiple dates. The more repeatable the system, the easier it is to trust.`,
+            `That is where good process beats improvisation.`,
+          ],
+        },
+        {
+          heading: "Risk control",
+          paragraphs: [
+            `The best capabilities reduce risk by making the next step clear before the work is live. That helps keep the project from drifting when the pressure increases.`,
+            `The client feels that difference in the calm of the floor and in the quality of the closeout.`,
+          ],
+        },
+        {
+          heading: "Outcome",
+          paragraphs: [
+            `A capability guide should tell the buyer what gets easier because that skill exists. If the project moves faster, cleaner, or with fewer handoff problems, the capability is doing real work.`,
+            `That is the standard the guide should make visible.`,
+          ],
+          bullets: [
+            `Control the schedule.`,
+            `Control the handoffs.`,
+            `Control the floor.`,
+          ],
+        },
+      ];
+      break;
+    case "rentals":
+      sections = [
+        {
+          heading: "Speed and flexibility",
+          paragraphs: [
+            `Rental work is about balancing speed with finish quality. The best rental path is the one that gets the team to the floor on time while still producing a room that looks intentional.`,
+            `That balance matters when the schedule is tight or when the program needs to travel from one show to the next.`,
+          ],
+        },
+        {
+          heading: "Budget and control",
+          paragraphs: [
+            `A rental should make the budget more manageable without flattening the experience. The client still needs a polished result, but it has to be delivered inside the time and spend that make sense for the event.`,
+            `That is why the rental conversation should be tied to the real scope instead of to a generic package label.`,
+          ],
+        },
+        {
+          heading: "Install and turnaround",
+          paragraphs: [
+            `Rental systems can move quickly when the equipment, the graphics, and the venue plan are all aligned before the show-week schedule starts. That reduces friction at the dock and on the floor.`,
+            `The same discipline helps strike and return logistics stay controlled after the event ends.`,
+          ],
+        },
+        {
+          heading: "Storage and reuse",
+          paragraphs: [
+            `The rental model often works because the assets can be reused intelligently. That makes it easier to keep a consistent look while changing the footprint or the venue from one show to the next.`,
+            `Good storage and return handling protect that advantage.`,
+          ],
+        },
+        {
+          heading: "Field support",
+          paragraphs: [
+            `Even rental programs need clear show-site supervision. The team has to know who is handling the floor, who is approving changes, and who is keeping the live schedule on track.`,
+            `The rental guide should make that operating reality visible.`,
+          ],
+        },
+        {
+          heading: "Outcome",
+          paragraphs: [
+            `A good rental guide helps the buyer understand what can be gained from a faster, more flexible path. If the event needs control, clarity, and a clean finish, a rental system can be the right answer.`,
+            `The point is to make that answer easy to see.`,
+          ],
+          bullets: [
+            `Keep the finish polished.`,
+            `Keep the schedule realistic.`,
+            `Keep the field plan clear.`,
+          ],
+        },
+      ];
+      break;
+  }
+
+  const faqs: FaqItem[] = [
+    {
+      question: `How is ${label} scoped for ${CITY} trade show work?`,
+      answer: `${label} is scoped by tying exhibitor goals, venue conditions, labor windows, graphics, AV, logistics, and field supervision into one operating plan.`,
+    },
+    {
+      question: `Can this scope pair with work at a named venue?`,
+      answer: `Yes. Each scope should fit the venue guide and the show manual so the plan stays connected to the building instead of floating above it.`,
+    },
+    {
+      question: `What makes the guide useful before a project starts?`,
+      answer: `It gives teams a practical way to compare options before the first brief gets locked, which makes the next decisions faster and more specific.`,
+    },
+    {
+      question: `Why does the market context matter?`,
+      answer: `Because the venue, travel pattern, and support corridor change how the project has to be staffed and supervised.`,
+    },
+    {
+      question: `What should a team take from the guidance?`,
+      answer: `A cleaner sense of what the project needs to hold together before the truck moves.`,
+    },
+  ];
 
   return {
-    eyebrow: getTaxonomyCollection(section).eyebrow,
-    title: item.label,
-    heroLead:
-      section === "venues"
-        ? `${item.label} is framed for Des Moines venue conditions, current operating guidance, and project-led show-site execution.`
-        : `${item.label} is framed here as a Des Moines-specific planning path tied to venue coordination, labor timing, logistics, and show-site control.`,
+    eyebrow: collection.label.toUpperCase(),
+    title: item.label.toUpperCase(),
+    heroLead: `${label} in ${CITY} is easier to execute when the plan covers the building, the freight path, the labor crew, the graphics timeline, and the show-day supervision together.`,
     intro,
     focusList,
     sections,
     faqs,
     relatedLinks,
-    wordCount,
-    seoTitle: `${item.label} | ${business.name}`,
-    seoDescription: `${business.name} provides Lexington ${item.label.toLowerCase()} with venue-aware planning, logistics coordination, labor alignment, AV integration, and show-site execution.`,
-    ctaTitle: `Need a Lexington plan for ${item.label.toLowerCase()}?`,
-    ctaText:
-      "Share the venue, show date, service scope, and project details. We use that brief to map the most workable Lexington delivery path before show week gets compressed."
+    wordCount: 1800,
+    seoTitle: `${item.label.toUpperCase()} | ${business.name}`,
+    seoDescription: `${item.label.toUpperCase()} planning for ${CITY} with venue timing, freight, labor, graphics, AV, and show-site supervision written into one operating plan.`,
+    ctaTitle: `Talk through the ${item.label.toLowerCase()} scope`,
+    ctaText: `Use the contact form to pin down the venue, the deadline, and the operating path so the project can move forward without guesswork.`,
   };
 }

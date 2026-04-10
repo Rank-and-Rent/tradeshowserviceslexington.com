@@ -1,37 +1,52 @@
 import Link from "next/link";
 
 import { SiteFrame } from "@/components/SiteFrame";
-import { resourceCards } from "@/lib/site-data";
+import { blogPageCopy } from "@/lib/content";
+
+const resourceCards = [
+  {
+    title: "Venue Planning Guides",
+    body: blogPageCopy.paragraphs[1],
+    href: "/venues",
+  },
+  {
+    title: "Event Format Playbooks",
+    body: blogPageCopy.paragraphs[2],
+    href: "/event-types",
+  },
+  {
+    title: "Booth and Rental Paths",
+    body: blogPageCopy.paragraphs[3],
+    href: "/booth-types",
+  },
+] as const;
 
 export default function BlogPage() {
   return (
     <SiteFrame>
-      <div className="page-shell">
-        <section className="page-hero">
-          <div className="site-shell">
-            <div className="page-hero__content">
-              <p className="section-kicker section-kicker--light">Resources</p>
-              <h1>Lexington trade show planning routes and resource paths</h1>
-              <p className="page-hero__lead">
-                Use these routes to move from high-level planning into venue guides,
-                service stacks, location coverage, and buyer-specific detail pages
-                across the Des Moines market. The goal is to make the next decision
-                easier by showing which route explains the room, which route explains
-                the service mix, and which route explains the local market around it.
-              </p>
-            </div>
+      <div className="content-page">
+        <section className="inner-hero">
+          <div className="container">
+            <p className="section-kicker">{blogPageCopy.eyebrow}</p>
+            <h1>{blogPageCopy.title}</h1>
+            <p className="inner-hero__lead">{blogPageCopy.lead}</p>
           </div>
         </section>
 
-        <section className="page-section page-section--soft">
-          <div className="site-shell">
-            <div className="page-card-grid">
-              {resourceCards.map((item) => (
-                <Link className="page-card" href={item.href} key={item.href}>
-                  <p className="page-card__kicker">{item.label}</p>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                  <span className="page-card__link">Explore route</span>
+        <section className="page-section">
+          <div className="container">
+            <div className="page-copy">
+              {blogPageCopy.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+
+            <div className="taxonomy-grid">
+              {resourceCards.map((card) => (
+                <Link className="taxonomy-card" href={card.href} key={card.href}>
+                  <p className="taxonomy-card__eyebrow">Resource path</p>
+                  <h3>{card.title}</h3>
+                  <p>{card.body}</p>
                 </Link>
               ))}
             </div>

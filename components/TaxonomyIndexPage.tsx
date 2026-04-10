@@ -58,7 +58,7 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
           <div className="section-heading">
             <p className="section-kicker">{collection.heroLabel}</p>
             <h2>
-              {collection.label} for {business.city} buyers and event teams
+              {collection.label} for {business.city.toUpperCase()} buyers and event teams
             </h2>
           </div>
 
@@ -68,7 +68,7 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
                 <p className="page-card__kicker">{card.eyebrow}</p>
                 <h3>{card.label}</h3>
                 <p>{card.description}</p>
-                <span className="page-card__link">View page</span>
+                <span className="page-card__link">Open guide</span>
               </Link>
             ))}
           </div>

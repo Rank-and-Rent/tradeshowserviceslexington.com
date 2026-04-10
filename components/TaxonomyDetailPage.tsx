@@ -27,31 +27,31 @@ export function TaxonomyDetailPage({
   const content = buildDetailPageContent(section, slug);
   const venue = section === "venues" ? getVenueBySlug(slug) : undefined;
   const statCards = venue
-    ? [
+      ? [
         {
           label: "Venue type",
-          value: venue.venueType.replace(/-/g, " ")
+          value: venue.venueType.replace(/-/g, " ").toUpperCase()
         },
         {
           label: "City",
-          value: venue.city
+          value: venue.city.toUpperCase()
         },
         {
           label: "Region",
-          value: venue.region
+          value: venue.region.toUpperCase()
         }
       ]
     : [
         {
-          label: "Category",
+          label: "Focus area",
           value: item.section.replace(/-/g, " ")
         },
         {
-          label: "Market",
-          value: `${business.city}, ${business.state}`
+          label: "City",
+          value: `${business.city.toUpperCase()}, ${business.state.toUpperCase()}`
         },
         {
-          label: "Delivery model",
+          label: "Execution path",
           value: "Project-led"
         }
       ];
@@ -159,7 +159,7 @@ export function TaxonomyDetailPage({
               </div>
 
               <div className="sidebar-card">
-                <p className="section-kicker">Related routes</p>
+                <p className="section-kicker">More pages to explore</p>
                 <div className="related-links">
                   {content.relatedLinks.map((link) => (
                     <Link className="related-link" href={link.href} key={link.href}>

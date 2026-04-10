@@ -13,7 +13,7 @@ export default function NotFound() {
               <h1>Page not found</h1>
               <p className="page-hero__lead">
                 Use the main navigation to return to Lexington services, venue guides,
-                location coverage, or the contact page.
+                market maps, or the contact page.
               </p>
               <div style={{ marginTop: "18px" }}>
                 <Link className="button button--dark" href="/">
