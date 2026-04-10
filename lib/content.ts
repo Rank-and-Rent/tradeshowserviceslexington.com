@@ -66,7 +66,7 @@ const CITY = business.city.toUpperCase();
 const CITY_STATE = `${business.city.toUpperCase()}, ${business.state.toUpperCase()}`;
 
 function getLocalContext(): string[] {
-  switch (business.city) {
+  switch (business.city as string) {
     case "Savannah":
       return ["DOWNTOWN SAVANNAH", "THE RIVERFRONT", "THE AIRPORT-WEST CORRIDOR", "I-95"];
     case "Philadelphia":
@@ -83,7 +83,7 @@ function getLocalContext(): string[] {
 const localContext = getLocalContext();
 
 function getPrimaryRouteRows(): { href: string; label: string }[] {
-  switch (business.city) {
+  switch (business.city as string) {
     case "Savannah":
       return [
         { href: "/services/installation-and-dismantle", label: "INSTALLATION AND DISMANTLE" },
