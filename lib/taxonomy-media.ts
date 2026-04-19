@@ -76,31 +76,12 @@ function dirVariants(kind: string): string[] {
   const aliasList = KIND_ALIASES[k] || [k];
   const variants = Array.from(new Set([k, camel(k), snake(k), ...aliasList]));
   const bases = [
-    "media/recovered",
-    "images/recovered",
-    "media/generated",
-    "images/generated",
-    "media/planned",
-    "images/planned",
-    "media/required",
-    "images/required",
-    "generated",
-    "images",
-    "art",
+    "media",
   ];
   const out: string[] = [];
   for (const b of bases) for (const v of variants) out.push(`${b}/${v}`);
   out.push(
-    "media/recovered/shared",
-    "images/recovered/shared",
-    "media/generated/shared",
-    "images/generated/shared",
-    "media/planned/shared",
-    "images/planned/shared",
-    "media/required/shared",
-    "images/required/shared",
-    "images",
-    "media",
+    "media/shared"
   );
   return out;
 }

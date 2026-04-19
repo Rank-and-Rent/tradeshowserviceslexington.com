@@ -189,8 +189,8 @@ export function FooterSeoLinks() {
             {column.title}
           </h3>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "0.4rem" }}>
-            {column.links.map((link) => (
-              <li key={link.href}>
+            {column.links.map((link, idx) => (
+              <li key={`${link.href}-${idx}`}>
                 <Link href={link.href} style={{ color: "inherit", textDecoration: "none" }}>
                   {link.label}
                 </Link>
@@ -212,8 +212,8 @@ export function FooterSeoLinks() {
           Company
         </h3>
         <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "0.4rem" }}>
-          {FOOTER_SEO_COMPANY.map((link) => (
-            <li key={link.href}>
+          {FOOTER_SEO_COMPANY.map((link, idx) => (
+              <li key={`${link.href}-${idx}`}>
               <Link href={link.href} style={{ color: "inherit", textDecoration: "none" }}>
                 {link.label}
               </Link>

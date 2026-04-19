@@ -1,8 +1,6 @@
 import Link from "next/link";
 
-import { HeroVideoDialog } from "@/components/HeroVideoDialog";
 import { SiteFrame } from "@/components/SiteFrame";
-import { business } from "@/lib/site-data";
 
 type FeaturedWorkCard = {
   title: string;
@@ -11,18 +9,16 @@ type FeaturedWorkCard = {
   tone: "photo" | "blue" | "sand" | "red";
 };
 
-const featuredWork = [
+const featuredWork: FeaturedWorkCard[] = [
   {
     title: "Downtown convention execution with walkable hotel support",
     href: "/venues/central-bank-center",
-    image: "/media/hero-candidate-2.jpg",
-    tone: "photo"
+    tone: "blue"
   },
   {
     title: "NEWTOWN PIKE programs that keep arrivals, rooms, and load-in aligned",
     href: "/locations/newtown-pike-corridor",
-    image: "/media/hero-candidate-1.jpg",
-    tone: "photo"
+    tone: "sand"
   },
   {
     title: "Fairgrounds-scale logistics with a second-cluster mindset",
@@ -39,7 +35,7 @@ const featuredWork = [
     href: "/services/brand-activation-production",
     tone: "red"
   }
-] satisfies FeaturedWorkCard[];
+];
 
 const capabilityRows = [
   {
@@ -96,28 +92,19 @@ export default function HomePage() {
     <SiteFrame>
       <div className="home-page">
         <section className="sparks-hero">
-          <div className="sparks-hero__media" aria-hidden="true">
-            <video
-              autoPlay
-              className="sparks-hero__video"
-              loop
-              muted
-              playsInline
-              poster="/media/hero-poster.png"
-            >
-              <source src="/media/hero-loop.webm" type="video/webm" />
-              <source src="/media/hero-loop.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <div className="sparks-hero__media" aria-hidden="true" />
           <div className="sparks-hero__scrim" />
           <div className="site-shell">
             <div className="sparks-hero__content">
               <div className="sparks-hero__headline">
+                <p className="sparks-hero__eyebrow">Lexington, Kentucky</p>
                 <h1>
-                  Experiences for exhibitors who need venue fit, production, and field leadership working as one plan.
+                  Trade show services built for Central Bank Center, Rupp Arena, Kentucky Horse Park, and the Bluegrass region.
                 </h1>
+                <p className="sparks-hero__lede">
+                  Venue-first planning, booth build, logistics, and show-day field leadership working as one accountable delivery chain.
+                </p>
               </div>
-              <HeroVideoDialog />
             </div>
           </div>
         </section>
