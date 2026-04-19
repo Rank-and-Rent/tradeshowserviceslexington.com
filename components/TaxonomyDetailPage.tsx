@@ -2,9 +2,8 @@ import Link from "next/link";
 
 import { buildDetailPageContent } from "@/lib/content";
 import {
-  business,
-  getTaxonomyItem,
   getVenueBySlug,
+  getTaxonomyItem,
   type TaxonomySection
 } from "@/lib/site-data";
 import { getRecoveredTaxonomyMediaUrl } from "@/lib/taxonomy-media";
@@ -26,35 +25,8 @@ export function TaxonomyDetailPage({
 
   const content = buildDetailPageContent(section, slug);
   const venue = section === "venues" ? getVenueBySlug(slug) : undefined;
-  const statCards = venue
-      ? [
-        {
-          label: "Venue type",
-          value: venue.venueType.replace(/-/g, " ").toUpperCase()
-        },
-        {
-          label: "City",
-          value: venue.city.toUpperCase()
-        },
-        {
-          label: "Region",
-          value: venue.region.toUpperCase()
-        }
-      ]
-    : [
-        {
-          label: "Focus area",
-          value: item.section.replace(/-/g, " ")
-        },
-        {
-          label: "City",
-          value: `${business.city.toUpperCase()}, ${business.state.toUpperCase()}`
-        },
-        {
-          label: "Execution path",
-          value: "Project-led"
-        }
-      ];
+
+  const sectionLabel = section.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
   return (
     <div className="page-shell">
@@ -74,14 +46,6 @@ export function TaxonomyDetailPage({
             <p className="page-hero__lead">{content.heroLead}</p>
           </div>
 
-          <div className="page-stat-grid" style={{ marginTop: "36px" }}>
-            {statCards.map((card) => (
-              <article className="page-stat-card" key={card.label}>
-                <strong>{card.label}</strong>
-                <span>{card.value}</span>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -148,6 +112,13 @@ export function TaxonomyDetailPage({
 
             <aside className="sidebar-stack">
               <div className="sidebar-card sidebar-card--sticky">
+                <nav className="breadcrumb" aria-label="Breadcrumb">
+                  <Link href="/">Home</Link>
+                  <span aria-hidden="true"> / </span>
+                  <Link href={`/${section}`}>{sectionLabel}</Link>
+                  <span aria-hidden="true"> / </span>
+                  <span>{item.label}</span>
+                </nav>
                 <p className="section-kicker">{content.eyebrow}</p>
                 <h2>{content.ctaTitle}</h2>
                 <p>{content.ctaText}</p>

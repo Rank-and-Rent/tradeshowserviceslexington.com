@@ -77,10 +77,12 @@ function dirVariants(kind: string): string[] {
   const variants = Array.from(new Set([k, camel(k), snake(k), ...aliasList]));
   const bases = [
     "media",
+    "media/generated",
   ];
   const out: string[] = [];
   for (const b of bases) for (const v of variants) out.push(`${b}/${v}`);
   out.push(
+    "media/required",
     "media/shared"
   );
   return out;
