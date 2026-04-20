@@ -33,26 +33,6 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
         </div>
       </section>
 
-      <section className="page-section">
-        <div className="site-shell">
-          <div className="page-copy">
-            {content.intro.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-
-          <div className="page-stat-grid">
-            {content.facts.map((fact) => (
-              <article className="page-stat-card" key={fact.label}>
-                <strong>{fact.label}</strong>
-                <span>{fact.value}</span>
-                <p>{fact.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="page-section page-section--soft">
         <div className="site-shell">
           <div className="section-heading">

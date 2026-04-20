@@ -47,7 +47,7 @@ const capabilityRows = [
   {
     title: "Creative development and booth building",
     body:
-      "Booth concepts are shaped around sightlines, product display, storage, traffic movement, and the way the visitor should experience the brand in the first few seconds. The goal is not just to make something attractive. The goal is to make a structure that survives fabrication, transport, install, and live use without losing the idea that made it worthwhile in the first place. That means checking scale, budget, height, private conversation needs, and the amount of visual pressure the room can support before the design gets locked. A good design conversation also protects the small operational details, like how staff enter the space, where literature or product storage disappears, and what the visitor sees first when they arrive at the booth edge.",
+      "Booth concepts are shaped around sightlines, product display, storage, traffic movement, and the way the visitor should experience the brand in the first few seconds. The goal is to make a structure that survives fabrication, transport, install, and live use without losing the idea that made it worthwhile in the first place. That means checking scale, budget, height, private conversation needs, and the amount of visual pressure the room can support before the design gets locked. A good design conversation also protects the small operational details, like how staff enter the space, where literature or product storage disappears, and what the visitor sees first when they arrive at the booth edge.",
     href: "/services/trade-show-booth-design"
   },
   {

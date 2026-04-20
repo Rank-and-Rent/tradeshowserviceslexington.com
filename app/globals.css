@@ -715,7 +715,7 @@ ol {
 }
 
 .home-centered {
-  padding: 118px 0 122px;
+  padding: 88px 0 88px;
   background: var(--color-white);
 }
 
@@ -736,7 +736,7 @@ ol {
 }
 
 .home-featured {
-  padding: 112px 0 120px;
+  padding: 88px 0 88px;
   color: var(--color-white);
   background: var(--color-ink);
 }
@@ -836,7 +836,7 @@ ol {
 }
 
 .home-accordion {
-  padding: 132px 0 126px;
+  padding: 88px 0 88px;
   background: var(--color-white);
 }
 

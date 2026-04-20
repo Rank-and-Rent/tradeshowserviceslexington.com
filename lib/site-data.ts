@@ -562,12 +562,12 @@ export const marketHighlights = [
   },
   {
     label: "Verified venues",
-    value: `${activeVenueResearch.length} verified venues`,
+    value: "Research-backed venues",
     body: `Highlights include ${representativeVenueNames.join(", ")}.`
   },
   {
     label: "Location reach",
-    value: `${activeLocationTargets.length} target markets`,
+    value: "Regional coverage",
     body: `Primary clusters include ${clusterNames.slice(0, 3).join(", ")}.`
   },
   {
