@@ -28,6 +28,24 @@ export function TaxonomyDetailPage({
   const heroImage = getRecoveredTaxonomyMediaUrl(section, slug);
 
   const sectionLabel = section.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  const focusTitle =
+    section === "venues"
+      ? `${item.label} venue priorities`
+      : section === "locations"
+        ? `${item.label} location priorities`
+        : `${item.label} priorities`;
+  const faqTitle =
+    section === "venues"
+      ? `${item.label} venue questions`
+      : section === "locations"
+        ? `${item.label} location questions`
+        : `${item.label} planning questions`;
+  const ctaCopy =
+    section === "venues"
+      ? `Share the property, move-in window, and service list so ${item.label.toLowerCase()} can be lined up with house rules and dock timing.`
+      : section === "locations"
+        ? `Share the district, venue cluster, and travel window so ${item.label.toLowerCase()} can be judged against the way the market actually moves.`
+        : `Share the venue, date, and the first scope issue you want solved so ${item.label.toLowerCase()} can be mapped to the real show plan.`;
 
   return (
     <div className="page-shell">
@@ -72,7 +90,7 @@ export function TaxonomyDetailPage({
               ) : null}
 
               <section className="panel">
-                <h2>Execution priorities</h2>
+                <h2>{focusTitle}</h2>
                 <ul>
                   {content.focusList.map((itemText) => (
                     <li key={itemText}>{itemText}</li>
@@ -97,7 +115,7 @@ export function TaxonomyDetailPage({
               ))}
 
               <section className="detail-section">
-                <h2>Frequently asked questions</h2>
+                <h2>{faqTitle}</h2>
                 <div className="faq-list">
                   {content.faqs.map((faq) => (
                     <article className="faq-item" key={faq.question}>
@@ -118,9 +136,9 @@ export function TaxonomyDetailPage({
                   <span aria-hidden="true"> / </span>
                   <span>{item.label}</span>
                 </nav>
-                <p className="section-kicker">{content.eyebrow}</p>
+                <p className="section-kicker">{item.label} next step</p>
                 <h2>{content.ctaTitle}</h2>
-                <p>{content.ctaText}</p>
+                <p>{ctaCopy}</p>
                 <div style={{ marginTop: "18px" }}>
                   <Link className="button button--blue" href="/contact">
                     Start a Conversation
