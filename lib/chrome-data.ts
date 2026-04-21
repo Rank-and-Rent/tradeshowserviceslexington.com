@@ -129,7 +129,7 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Education and Association Event Services", href: "/industries/education-and-association-event-services" }
     ],
     panel: {
-      title: "Buyer-specific planning paths for real industries",
+      title: "Buyer-specific exhibit plans for real industries",
       text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic page can offer.",
       href: "/industries",
       buttonLabel: "Browse industries"

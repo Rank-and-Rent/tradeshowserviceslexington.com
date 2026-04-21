@@ -180,7 +180,7 @@ export default function HomePage() {
                   </summary>
                   <div className="home-accordion__body">
                     <p>{item.body}</p>
-                    <Link href={item.href}>View planning path</Link>
+                    <Link href={item.href}>View the exhibit plan</Link>
                   </div>
                 </details>
               ))}

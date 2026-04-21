@@ -676,7 +676,7 @@ export const headerNavigation: HeaderNavItem[] = [
       { label: "Education and Association Event Services", href: "/industries/education-and-association-event-services" }
     ],
     panel: {
-      title: "Buyer-specific planning paths for real industries",
+    title: "Buyer-specific exhibit plans for real industries",
       text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic page can offer.",
       href: "/industries",
       buttonLabel: "Browse industries"
@@ -789,7 +789,7 @@ export const homepageInsightCards: HomepageInsightCard[] = [
 ];
 
 export const homepageSplitCallout = {
-  eyebrow: "Need a cleaner planning path?",
+  eyebrow: "Need a cleaner exhibit plan?",
   title: "Build the next Lexington event around the venue guide that actually fits the room.",
   text:
     "Downtown convention work, Newtown Pike hotel meetings, South Lexington programs, Hamburg corporate events, and Bluegrass regional spillover all need different timing, utilities, labor language, and freight assumptions. Start with the venue, service mix, and show date and we can map the cleanest path.",
@@ -824,7 +824,7 @@ export const resourceCards = [
   },
   {
     label: "Industries",
-    title: "Buyer-specific planning paths",
+    title: "Buyer-specific exhibit plans",
     description:
       "Industry pages connect the same Lexington venue logic to healthcare, manufacturing, agriculture, equine, association, and university-facing demand. Each sector brings its own language, priorities, and tolerance for risk, which changes what the room emphasizes and how the support model is framed. The pages are built to help the reader feel understood quickly and then move into the planning choices that fit the sector instead of a generic exhibit pattern. That means the wording can sound more specific, the planning advice can sound more useful, and the reader can see why one audience wants a different mix of proof points, pacing, and visual emphasis than another. The better the sector fit, the easier it becomes to keep the room credible to the people who walk into it.",
     href: "/industries",

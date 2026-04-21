@@ -177,7 +177,7 @@ export function ContactForm({ serviceOptions }: ContactFormProps) {
             ? "Request received. We’ll follow up with the next planning step."
             : status === "error"
               ? "Submission could not be completed. Try again in a moment."
-              : "The more detail you share here, the faster we can route the request to the right planning path."}
+              : "The more detail you share here, the faster we can route the request to the right team."}
         </p>
       </div>
     </form>
