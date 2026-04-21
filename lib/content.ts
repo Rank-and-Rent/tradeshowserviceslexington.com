@@ -65,6 +65,10 @@ export type PageCopy = {
 const CITY = business.city.toUpperCase();
 const CITY_STATE = `${business.city.toUpperCase()}, ${business.state.toUpperCase()}`;
 
+function countWords(text: string) {
+  return text.trim().split(/\s+/).filter(Boolean).length;
+}
+
 function getLocalContext(): string[] {
   switch (business.city as string) {
     case "Savannah":
@@ -200,6 +204,716 @@ export function buildIndexPageContent(section: TaxonomySection): IndexPageConten
   };
 }
 
+type IndustryProfile = {
+  heroLead: string;
+  intro: string[];
+  focusList: string[];
+  sections: ContentSection[];
+  faqs: FaqItem[];
+  ctaTitle: string;
+  ctaText: string;
+  seoDescription: string;
+};
+
+function formatIndustryText(text: string, label: string) {
+  return text
+    .replaceAll("{label}", label)
+    .replaceAll("{labelLower}", label.toLowerCase())
+    .replaceAll("{city}", business.city);
+}
+
+const industryProfiles: Record<string, IndustryProfile> = {
+  "healthcare-trade-show-services": {
+    heroLead:
+      "{label} works best when clinical trust, privacy, and product proof are designed into the booth before the first render is approved.",
+    intro: [
+      "Healthcare buyers want evidence, not noise. {label} should make the approval path, the demo path, and the conversation path obvious from the start.",
+      "In {city}, the best healthcare floor plans keep patient-facing language, product handling, and staff movement calm enough for the team to explain the offer without rushing."
+    ],
+    focusList: [
+      "Lead with proof, not decoration.",
+      "Keep sample handling and private conversations separate.",
+      "Make the approval chain clear before the show week starts.",
+      "Protect the closeout so the next review starts with clean notes."
+    ],
+    sections: [
+      {
+        heading: "Clinical proof on the floor",
+        paragraphs: [
+          "Healthcare exhibits work when the booth helps the buyer trust the message quickly. That usually means a cleaner visual hierarchy, fewer distractions, and enough room for a conversation that feels controlled instead of crowded.",
+          "The best version of {labelLower} lets staff explain outcomes, product handling, and the support model without making the space feel like a lecture hall."
+        ]
+      },
+      {
+        heading: "Privacy, approvals, and demo discipline",
+        paragraphs: [
+          "Clinical and regulated teams often need a tighter review process than other sectors. That means graphics, claims, and product stories should be settled early so the booth can move through approvals without last-minute edits.",
+          "The floor plan should also respect privacy. A quiet meeting edge, a reliable handoff for samples, and clear staff roles help the event stay professional when the aisle gets busy."
+        ]
+      },
+      {
+        heading: "Closeout that supports the next review",
+        paragraphs: [
+          "A healthcare booth is rarely a one-off asset. The show program is usually measured against what it can do at the next conference, the next field visit, or the next review with internal stakeholders.",
+          "For that reason, dismantle notes, packing order, and post-show follow-up matter as much as the launch itself."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What should healthcare teams confirm first?",
+        answer:
+          "The claims, the demo rules, and the approval path should be settled before fabrication or print work moves forward."
+      },
+      {
+        question: "Why does the booth need a calmer layout?",
+        answer:
+          "Because healthcare conversations often need trust, privacy, and clear product handling more than visual spectacle."
+      },
+      {
+        question: "What makes a healthcare show week easier to manage?",
+        answer:
+          "A clear owner for approvals, a clean handoff for the team on site, and closeout notes that make the next event faster to prepare."
+      }
+    ],
+    ctaTitle: "Need {label} that reads like a real healthcare brief?",
+    ctaText:
+      "Send the venue, the approval constraints, and the product story so the plan can be built around real clinical rules instead of a generic trade show outline.",
+    seoDescription:
+      "{label} in {city} with planning around clinical trust, regulated messaging, product handling, approvals, and show-site discipline."
+  },
+  "manufacturing-expo-services": {
+    heroLead:
+      "{label} has to prove durability, technical clarity, and installation logic before the first crate ever leaves the dock.",
+    intro: [
+      "Manufacturing buyers want to see whether the booth can carry product weight, technical explanation, and live motion without falling apart under pressure.",
+      "In {city}, {label} works best when the presentation path, lighting, and handoff roles all support the product story."
+    ],
+    focusList: [
+      "Show the product without overcomplicating the room.",
+      "Keep technical staff close to the buyer path.",
+      "Plan for heavy parts and easy repeat use.",
+      "Make follow-up material simple to carry away."
+    ],
+    sections: [
+      {
+        heading: "Factory-floor credibility",
+        paragraphs: [
+          "A manufacturing booth should feel capable before it feels polished. Buyers look for signs that the team understands tolerances, timing, and the pressure that comes with technical buying decisions.",
+          "That means the environment needs to support the product story without pretending to be something it is not."
+        ]
+      },
+      {
+        heading: "Heavy parts, demos, and the install path",
+        paragraphs: [
+          "Large components and technical displays change the build order. The booth has to handle weight, footprint, and staging without forcing the crew to improvise around avoidable layout problems.",
+          "The right plan keeps freight, utilities, and staff movement aligned so the live demo works once the room opens."
+        ]
+      },
+      {
+        heading: "Repeat runs and maintenance notes",
+        paragraphs: [
+          "Manufacturing events often recur in the same market or move through a season of similar shows. The booth should be packed, labeled, and stored so the next run does not feel like starting over.",
+          "That makes closeout part of the value, not just the end of the project."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What does a manufacturing buyer want to know first?",
+        answer:
+          "Whether the booth can support technical conversations, live product handling, and the weight of real field use."
+      },
+      {
+        question: "Why is install order important here?",
+        answer:
+          "Because heavy items, utilities, and demo elements have to be staged in a sequence that matches how the booth actually gets built."
+      },
+      {
+        question: "What keeps the next show easier to launch?",
+        answer:
+          "Good labeling, storage discipline, and closeout notes that make the next setup predictable."
+      }
+    ],
+    ctaTitle: "Need {label} built for technical buyers?",
+    ctaText:
+      "Bring the product list, the footprint, and the support requirements so the booth plan can be organized around real manufacturing work instead of a generic exposition story.",
+    seoDescription:
+      "{label} in {city} with planning around durability, technical demos, heavy parts, installation logic, and repeat-show readiness."
+  },
+  "technology-trade-show-services": {
+    heroLead:
+      "{label} has to explain the product fast, hold attention with screens and interaction, and stay clean when content changes late.",
+    intro: [
+      "Technology buyers usually read the booth as a product system. The space has to make the offer understandable in a few seconds, then keep the conversation moving without visual clutter.",
+      "In {city}, {label} works best when the screens, live demos, and staff script all point to one clear takeaway."
+    ],
+    focusList: [
+      "Turn complex ideas into a fast read.",
+      "Keep the content release path disciplined.",
+      "Make the demo hardware easy to support.",
+      "Leave room for staff to reset the story on the fly."
+    ],
+    sections: [
+      {
+        heading: "Fast explanation from the aisle",
+        paragraphs: [
+          "Technology booths win attention when the first message is obvious. The attendee should understand the category, the value, and the reason to stop without needing a long primer.",
+          "That usually means a tighter headline, simpler visual hierarchy, and a booth flow that supports quick decisions."
+        ]
+      },
+      {
+        heading: "Screens, interaction, and late content changes",
+        paragraphs: [
+          "Digital products often need live content support. The booth has to be ready for video, hardware checks, and the possibility that a demo or message shifts close to launch.",
+          "That is why the technical handoff matters. Clear ownership keeps updates from turning into a scramble on the show floor."
+        ]
+      },
+      {
+        heading: "Resetting the story during the show",
+        paragraphs: [
+          "A good technology booth can pivot if the audience is more technical, more executive, or more partner-driven than expected.",
+          "The layout should give the team enough room to change the pitch without changing the whole environment."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What should a technology team decide first?",
+        answer:
+          "The message hierarchy, the live demo path, and the content update process need to be settled before the booth is built."
+      },
+      {
+        question: "Why is the floor plan so important for tech events?",
+        answer:
+          "Because screens, charging, and interaction points need to support quick attention shifts without making the booth feel crowded."
+      },
+      {
+        question: "What keeps the booth usable after launch?",
+        answer:
+          "A simple support model, clear ownership for changes, and enough room to reset the pitch when the audience changes."
+      }
+    ],
+    ctaTitle: "Need {label} that keeps the product story sharp?",
+    ctaText:
+      "Share the demo plan, the content timeline, and the hardware list so the booth can be designed for live use instead of generic display work.",
+    seoDescription:
+      "{label} in {city} with planning for product demos, screens, content control, support timing, and live technology storytelling."
+  },
+  "food-and-beverage-trade-show-services": {
+    heroLead:
+      "{label} has to handle samples, sanitation, and traffic without letting the booth turn into a crowded service counter.",
+    intro: [
+      "Food and beverage buyers usually want speed, freshness, and a booth that makes the tasting or presentation feel deliberate instead of improvised.",
+      "In {city}, {label} works best when product flow, replenishment, and floor cleanliness are handled as part of the brand story."
+    ],
+    focusList: [
+      "Keep sampling and traffic separate.",
+      "Protect cold-chain or freshness needs.",
+      "Make replenishment simple for staff.",
+      "Leave enough room for cleanup and resets."
+    ],
+    sections: [
+      {
+        heading: "Sampling without clutter",
+        paragraphs: [
+          "Good food and beverage booths are easy to approach and easy to understand. The guest should see where to taste, where to ask questions, and where to move after the interaction without bumping into service equipment.",
+          "That means the display has to stay disciplined even when the booth is busy."
+        ]
+      },
+      {
+        heading: "Freshness, sanitation, and replenishment",
+        paragraphs: [
+          "The support plan should account for cleanup, replenishment, temperature needs, and the team members who own each step.",
+          "If those tasks are clear before the show opens, the booth can keep moving without looking like an afterthought."
+        ]
+      },
+      {
+        heading: "Traffic rhythm and cleanup",
+        paragraphs: [
+          "The best food and beverage booths can reset fast. That matters when the aisle gets crowded, when samples move faster than expected, or when the team needs to pivot from tasting to conversation.",
+          "The layout should make that reset feel natural."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What should food and beverage teams confirm first?",
+        answer:
+          "Sample handling, sanitation, replenishment, and any cold-storage needs should be decided before the booth is finalized."
+      },
+      {
+        question: "Why does the layout have to stay so clear?",
+        answer:
+          "Because guests need to know where to sample, where to talk, and where to move without blocking service."
+      },
+      {
+        question: "What keeps the booth looking polished all day?",
+        answer:
+          "A fast cleanup routine, simple replenishment, and a floor plan that separates tasting from storage."
+      }
+    ],
+    ctaTitle: "Need {label} that keeps service clean and simple?",
+    ctaText:
+      "Send the menu, the sample plan, and the venue so the booth can be organized around freshness and flow rather than a generic food-service setup.",
+    seoDescription:
+      "{label} in {city} with planning for sampling, sanitation, replenishment, freshness, and a cleaner guest flow."
+  },
+  "automotive-trade-show-services": {
+    heroLead:
+      "{label} needs room for product scale, lighting, and a presentation path that can handle a serious buyer conversation.",
+    intro: [
+      "Automotive exhibits usually carry a bigger visual load than most other industries. The booth has to make vehicles, components, or mobility stories feel immediate without overwhelming the floor.",
+      "In {city}, {label} works best when the presentation path, lighting, and handoff roles all support the product story."
+    ],
+    focusList: [
+      "Plan for size, shine, and movement.",
+      "Keep the staff path separate from the display path.",
+      "Make the handoff clean for OEM or dealer audiences.",
+      "Design the closeout around repeat use."
+    ],
+    sections: [
+      {
+        heading: "Vehicle presentation and floor layout",
+        paragraphs: [
+          "A vehicle-facing booth has to manage scale. Attendees need enough room to read the product, and staff need enough room to guide the discussion without standing in the way of the show.",
+          "The layout should make the car, the component, or the concept feel like the hero."
+        ]
+      },
+      {
+        heading: "Lighting, detail, and brand tone",
+        paragraphs: [
+          "Automotive work often depends on finish quality. Lighting, surfaces, and graphics have to support the product without making the booth feel loud for the sake of it.",
+          "The right balance helps the brand look serious, not busy."
+        ]
+      },
+      {
+        heading: "Dealer, OEM, and follow-up handoff",
+        paragraphs: [
+          "The booth should leave room for the conversation to continue after the show. That means the staff needs a clear path for materials, lead handling, and follow-up notes.",
+          "The closer the handoff stays to the actual sales process, the more useful the event becomes."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What does automotive planning have to solve first?",
+        answer:
+          "Size, lighting, traffic flow, and the way the product should be handed off after the first conversation."
+      },
+      {
+        question: "Why does the booth need extra room?",
+        answer:
+          "Because vehicles and large components need breathing space to look intentional instead of cramped."
+      },
+      {
+        question: "What makes the event useful after the show ends?",
+        answer:
+          "A clear follow-up path, good lead handling, and a booth built for repeat use."
+      }
+    ],
+    ctaTitle: "Need {label} that can handle a bigger product story?",
+    ctaText:
+      "Bring the vehicle or component plan, the display goals, and the venue details so the booth can be shaped around real automotive use.",
+    seoDescription:
+      "{label} in {city} with planning for vehicle presentation, lighting, brand tone, buyer handoffs, and repeat event use."
+  },
+  "beauty-and-cosmetics-trade-show-services": {
+    heroLead:
+      "{label} has to make color, texture, and lighting work together so the product feels true on the floor.",
+    intro: [
+      "Beauty buyers read the booth quickly. The environment has to make shade, finish, and product story easy to see while still leaving space for testing and conversation.",
+      "In {city}, {label} should feel polished, tactile, and easy to reset as the day goes on."
+    ],
+    focusList: [
+      "Keep the lighting flattering and accurate.",
+      "Make tester flow easy to manage.",
+      "Leave room for replenishment and mirrors.",
+      "Keep the brand tone calm enough for close inspection."
+    ],
+    sections: [
+      {
+        heading: "Color and texture under the right light",
+        paragraphs: [
+          "Beauty booths fail when the lighting hides the product. The display has to show tone, finish, and texture in a way that feels believable to the buyer and useful to the rep.",
+          "That is what turns a pretty booth into a sales tool."
+        ]
+      },
+      {
+        heading: "Testers, mirrors, and replenishment",
+        paragraphs: [
+          "The booth should make sampling easy without letting the surface become cluttered. Mirrors, test stations, and staff reach all need to be planned so the space can be refreshed quickly.",
+          "A clean support path keeps the booth from losing its polish by mid-show."
+        ]
+      },
+      {
+        heading: "Brand tone and social moments",
+        paragraphs: [
+          "Beauty buyers often photograph what they see. The space should support that without feeling staged to the point of distraction.",
+          "The right mix of display, texture, and calm space lets the product carry the moment."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What matters most for beauty booths?",
+        answer:
+          "Accurate lighting, easy tester access, and a layout that keeps the product looking fresh all day."
+      },
+      {
+        question: "Why is replenishment so important here?",
+        answer:
+          "Because testers, samples, and display pieces need to stay orderly if the booth is going to keep its finish."
+      },
+      {
+        question: "What keeps the booth from feeling generic?",
+        answer:
+          "A calmer brand tone, a stronger visual rhythm, and a layout built around how the product is actually used."
+      }
+    ],
+    ctaTitle: "Need {label} that shows the product accurately?",
+    ctaText:
+      "Send the line sheet, the tester plan, and the booth goals so the space can be tuned for beauty buyers instead of a generic retail display.",
+    seoDescription:
+      "{label} in {city} with planning for color accuracy, testers, replenishment, mirrors, and brand presentation."
+  },
+  industrial: {
+    heroLead:
+      "{label} needs to prove the booth can handle technical detail, heavy components, and a real plant-floor conversation.",
+    intro: [
+      "Industrial buyers care about specs, uptime, and whether the booth can support a straight answer from the right person.",
+      "In {city}, {label} should feel practical, durable, and organized around proof instead of decoration."
+    ],
+    focusList: [
+      "Show the product without overcomplicating the room.",
+      "Keep technical staff close to the buyer path.",
+      "Plan for heavy parts and easy repeat use.",
+      "Make follow-up material simple to carry away."
+    ],
+    sections: [
+      {
+        heading: "Spec-first presentation",
+        paragraphs: [
+          "Industrial audiences usually want the data before the story. The booth has to make specs, certifications, and use cases easy to grasp without burying the value in graphics.",
+          "That approach keeps the conversation focused on whether the product solves a real job."
+        ]
+      },
+      {
+        heading: "Heavy components and installation logic",
+        paragraphs: [
+          "Large parts and technical assemblies change the install plan. The booth needs enough structure and enough path clarity to keep the crew moving without damage or confusion.",
+          "When the handling path is clean, the event feels more credible from the start."
+        ]
+      },
+      {
+        heading: "Durability, storage, and next-use planning",
+        paragraphs: [
+          "Industrial programs often repeat across regions or seasons. Packing order, storage notes, and component labeling should make the next setup easier rather than forcing a fresh rebuild.",
+          "That is where the real value of a durable booth shows up."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What should industrial teams lead with?",
+        answer:
+          "Specs, proof points, and a clear explanation of what the product does in the field."
+      },
+      {
+        question: "Why is the install path so important?",
+        answer:
+          "Because heavy pieces and technical components need a clean sequence to avoid damage and delay."
+      },
+      {
+        question: "What makes the booth useful after the show?",
+        answer:
+          "Good storage, labeling, and a plan for repeat use across the next event cycle."
+      }
+    ],
+    ctaTitle: "Need {label} that feels built for the plant floor?",
+    ctaText:
+      "Share the spec sheet, the component list, and the next-use plan so the booth can be shaped around technical buyers instead of a recycled template.",
+    seoDescription:
+      "{label} in {city} with planning for specs, heavy components, technical conversations, storage, and repeat use."
+  },
+  "retail-and-ecommerce-event-services": {
+    heroLead:
+      "{label} has to turn online merchandising into a live conversation that can still close a sale after the event.",
+    intro: [
+      "Retail and ecommerce buyers want the booth to feel clear, shoppable, and easy to understand in one pass.",
+      "In {city}, {label} should connect product presentation, conversion points, and the follow-up path without feeling like a hard sell."
+    ],
+    focusList: [
+      "Translate the web story into the room.",
+      "Keep QR and lead paths simple.",
+      "Make the display easy to reset and refill.",
+      "Leave room for packaging, samples, and handouts."
+    ],
+    sections: [
+      {
+        heading: "Online product story, live on the floor",
+        paragraphs: [
+          "Retail teams often bring a familiar digital brand language to the show floor. The booth has to make that story feel physical without losing the clarity buyers expect from ecommerce.",
+          "A simple display and a strong call to action usually work better than too many messages."
+        ]
+      },
+      {
+        heading: "Conversion paths and QR logic",
+        paragraphs: [
+          "The booth should make it obvious what happens after the interaction. QR codes, sign-up points, and take-home materials need a clean path so the guest does not have to guess.",
+          "That keeps the live booth connected to the online funnel."
+        ]
+      },
+      {
+        heading: "Packaging, refill, and easy resets",
+        paragraphs: [
+          "Retail programs move fast when they are easy to refill and easy to reset. The floor plan should give the team a way to keep products presentable without turning the booth into storage.",
+          "That matters even more when the event runs long or the traffic pattern changes."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What should retail teams emphasize first?",
+        answer:
+          "The product story, the conversion path, and the handoff from the booth to the web channel."
+      },
+      {
+        question: "Why does the booth need easy reset behavior?",
+        answer:
+          "Because product displays and handout areas need to stay neat while traffic keeps moving."
+      },
+      {
+        question: "What makes the event useful after it closes?",
+        answer:
+          "A clean lead path and a follow-up process that ties the show back to ecommerce performance."
+      }
+    ],
+    ctaTitle: "Need {label} that feels shoppable in person?",
+    ctaText:
+      "Bring the product mix, the conversion goals, and the follow-up process so the booth can support the live retail story instead of a generic brand display.",
+    seoDescription:
+      "{label} in {city} with planning for live merchandising, QR paths, conversion support, packaging, and reset speed."
+  },
+  "life-sciences-and-biotech-event-services": {
+    heroLead:
+      "{label} has to make the evidence clear, the claims careful, and the product handling calm enough for a scientific audience.",
+    intro: [
+      "Life sciences buyers want precision. The booth has to feel credible, controlled, and capable of supporting technical conversations without clutter.",
+      "In {city}, {label} works best when the evidence path, the compliance path, and the meeting path all stay separate and easy to read."
+    ],
+    focusList: [
+      "Lead with evidence and use-case clarity.",
+      "Keep product handling and private conversations controlled.",
+      "Make the approval path obvious before graphics are printed.",
+      "Protect the handoff so follow-up can start cleanly."
+    ],
+    sections: [
+      {
+        heading: "Evidence before decoration",
+        paragraphs: [
+          "Scientific buyers want to know what has been proven and how the offer should be interpreted. The booth has to support that work with a calmer visual system and a tighter message hierarchy.",
+          "That makes the space feel like a credible extension of the product team."
+        ]
+      },
+      {
+        heading: "Claims, handling, and privacy",
+        paragraphs: [
+          "Life sciences programs often need stricter handling than other sectors. Claims, samples, and conversations should move through a clear approval process so the booth never has to improvise under pressure.",
+          "A quiet meeting edge helps the team keep sensitive conversations focused."
+        ]
+      },
+      {
+        heading: "Scientific conversation and closeout",
+        paragraphs: [
+          "The best booths leave enough room for the team to continue the discussion after the first technical question is answered.",
+          "Closeout notes and asset tracking matter because the next meeting often starts from the show materials."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What matters most to life sciences buyers?",
+        answer:
+          "Evidence, careful claims, and a booth that supports serious conversation without visual noise."
+      },
+      {
+        question: "Why is the approval path so important?",
+        answer:
+          "Because technical messaging and product handling often need review before the event can move forward."
+      },
+      {
+        question: "What makes the booth useful after the event?",
+        answer:
+          "Good notes, disciplined handoff, and assets that can be reused without confusion."
+      }
+    ],
+    ctaTitle: "Need {label} that reads with scientific clarity?",
+    ctaText:
+      "Send the claims, the demo boundaries, and the meeting plan so the booth can be built around evidence instead of generic expo language.",
+    seoDescription:
+      "{label} in {city} with planning for evidence, claims, sample handling, approvals, and scientific conversation."
+  },
+  "higher-education-and-research-event-services": {
+    heroLead:
+      "{label} has to feel credible to faculty, students, donors, and partners without turning the booth into an institutional brochure wall.",
+    intro: [
+      "Higher education and research audiences want the booth to communicate trust, outcomes, and fit for collaboration.",
+      "In {city}, {label} should make the recruitment path, the partnership path, and the research story easy to understand at a glance."
+    ],
+    focusList: [
+      "Balance institutional tone with clear outreach.",
+      "Keep recruitment and partnership stories separate.",
+      "Make approvals and stakeholder review predictable.",
+      "Leave room for follow-up with donors or collaborators."
+    ],
+    sections: [
+      {
+        heading: "Recruitment, partnerships, and trust",
+        paragraphs: [
+          "Academic and research booths work when the audience can see both credibility and opportunity. The design should help the team talk about programs, labs, outcomes, or partnerships without overloading the visitor.",
+          "That balance keeps the booth open to multiple kinds of conversations."
+        ]
+      },
+      {
+        heading: "Faculty, alumni, and sponsor timing",
+        paragraphs: [
+          "The visitor mix in this category can be broad. Faculty, alumni, sponsors, and prospective students may all read the booth differently, so the layout has to give each group a clean entry point.",
+          "That also means the approval chain should be straightforward before content is finalized."
+        ]
+      },
+      {
+        heading: "Follow-up that stays organized",
+        paragraphs: [
+          "Research and higher-ed events often create several types of leads at once. The booth should make it easy to sort those conversations so the team can follow up in the right voice after the show.",
+          "That turns a busy floor day into something the institution can actually use later."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "What should higher-ed teams lead with?",
+        answer:
+          "Trust, outcomes, and the specific reason a visitor should continue the conversation."
+      },
+      {
+        question: "Why is the booth tone important?",
+        answer:
+          "Because the audience can include students, faculty, donors, and collaborators, each with a different expectation."
+      },
+      {
+        question: "What makes the event more useful afterward?",
+        answer:
+          "A clean follow-up process and lead organization that matches the different types of visitors."
+      }
+    ],
+    ctaTitle: "Need {label} that sounds like a real campus brief?",
+    ctaText:
+      "Share the program goals, the audience mix, and the approval path so the booth can support recruitment and research without a template tone.",
+    seoDescription:
+      "{label} in {city} with planning for recruitment, partnerships, stakeholder review, and organized follow-up."
+  }
+};
+
+function buildFallbackIndustryProfile(label: string, slug: string): IndustryProfile {
+  const slugTitle = slug
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+  const words = slug.split("-").filter((word) => !["trade", "show", "services", "event", "and"].includes(word));
+  const anchor = words.slice(0, 2).join(" ") || slugTitle;
+
+  return {
+    heroLead: `{label} in {city} should read like a working brief for ${slugTitle}, not a generic industry page.`,
+    intro: [
+      "The point of {label} is to make the sector's real constraints visible early, before the booth turns into a stack of reused assumptions.",
+      `In {city}, that usually means keeping ${anchor} visible in the copy, the layout, and the handoff so the team can tell what the show is actually supposed to solve.`
+    ],
+    focusList: [
+      `Make ${anchor} the first thing the reader understands.`,
+      "Keep approvals, demo rules, and staff roles in one operating thread.",
+      "Use a calmer structure so the page feels specific instead of templated.",
+      "Protect the closeout notes so the next event starts with useful context."
+    ],
+    sections: [
+      {
+        heading: `${slugTitle} in the field`,
+        paragraphs: [
+          `The page has to explain why ${label.toLowerCase()} matters to this buyer group and what kind of booth behavior the event needs.`,
+          `That usually means the copy should sound like a real assignment brief, with the ${anchor} story carried through the whole page.`
+        ]
+      },
+      {
+        heading: `What the team needs to settle before the show`,
+        paragraphs: [
+          `The venue, approval path, and live-demo expectations all need to be clear before the schedule tightens.`,
+          `Once those pieces are visible, the rest of the plan can stay focused on the actual event instead of a recycled checklist.`
+        ]
+      },
+      {
+        heading: `Why the closeout matters`,
+        paragraphs: [
+          `A useful industry page should leave the next planner with enough context to repeat the event without guessing.`,
+          `That makes storage, follow-up, and the next set of approvals feel like part of the same business process.`
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: `What makes ${slugTitle} different from a generic industry page?`,
+        answer:
+          `It names the actual buyer pressure, the event behavior, and the planning issue that makes ${anchor} matter in the first place.`
+      },
+      {
+        question: `What should the team confirm first for {label}?`,
+        answer:
+          `The venue, the approval path, and the live-show rules need to be visible before the booth is finalized.`
+      },
+      {
+        question: `Why does the copy need to stay specific?`,
+        answer:
+          `Because the page should help a real planner understand the job, not just recycle the same industry language with a different noun.`
+      }
+    ],
+    ctaTitle: `Need ${slugTitle} planning that feels specific to the brief?`,
+    ctaText:
+      `Share the venue, the audience, and the support constraints so the next step reads like a real assignment in {city}, not a template.`,
+    seoDescription:
+      `{label} in {city} with planning tied to ${anchor}, approvals, show-site support, and a more specific industry brief.`
+  };
+}
+
+function buildIndustryDetailPageContent(
+  collection: ReturnType<typeof getTaxonomyCollection>,
+  label: string,
+  slug: string
+): Omit<DetailPageContent, "wordCount"> {
+  const profile = industryProfiles[slug] ?? buildFallbackIndustryProfile(label, slug);
+  const format = (value: string) => formatIndustryText(value, label);
+
+  return {
+    eyebrow: collection.eyebrow,
+    title: label,
+    heroLead: format(profile.heroLead),
+    intro: profile.intro.map(format),
+    focusList: profile.focusList.map(format),
+    sections: profile.sections.map((section) => ({
+      heading: format(section.heading),
+      paragraphs: section.paragraphs.map(format),
+      bullets: section.bullets?.map(format),
+    })),
+    faqs: profile.faqs.map((faq) => ({
+      question: format(faq.question),
+      answer: format(faq.answer),
+    })),
+    relatedLinks: [],
+    seoTitle: `${label} | ${collection.label}`,
+    seoDescription: format(profile.seoDescription),
+    ctaTitle: format(profile.ctaTitle),
+    ctaText: format(profile.ctaText),
+  };
+}
+
 export function buildDetailPageContent(section: TaxonomySection, slug: string): DetailPageContent {
   const collection = getTaxonomyCollection(section);
   const item = getTaxonomyItem(section, slug);
@@ -218,6 +932,35 @@ export function buildDetailPageContent(section: TaxonomySection, slug: string): 
     `A useful page explains how the choice affects install, staffing, approvals, and the final result on the floor instead of just naming the service or location.`,
   ];
 
+  const localSnapshotSection: ContentSection = {
+    heading: `${label} planning snapshot`,
+    paragraphs: [
+      `${label} reads more clearly when the page starts with the actual operating conditions instead of a shared ladder of service language.`,
+      `In Lexington, the useful brief names the venue, the access pattern, the freight window, and the support mix together so the team can see how the job behaves before the first approval is requested.`,
+      `A room at ${venue?.name ?? "the venue"} does not behave the same way as a hotel stop or a regional corridor event, so the opener should say that plainly.`,
+      `That extra local frame keeps the copy grounded in a real assignment and gives the page a distinct opening block instead of a boilerplate intro.`
+    ],
+    bullets: [
+      "Show the venue and the access pattern before the service ladder starts.",
+      "Connect freight, labor, and show-site support to the actual Lexington schedule.",
+      "Let the opening section sound like a live brief, not a recycled template."
+    ]
+  };
+
+  const localFieldNotesSection: ContentSection = {
+    heading: `${label} field notes`,
+    paragraphs: [
+      `A second Lexington block helps separate the operating context from the shared service ladder and makes the body feel tied to a real assignment.`,
+      `That means calling out the venue, the access pattern, and the support needs again in a different cadence so the reader sees more than a reused outline.`,
+      `When ${venue?.name ?? "the venue"} is the reference point, the page is forced to stay specific about how the work actually behaves.`
+    ],
+    bullets: [
+      "Keep the second block tied to the venue and the access path.",
+      "Use a different rhythm from the shared service ladder below.",
+      "Make the Lexington assignment feel like a live brief, not a template."
+    ]
+  };
+
   const focusList = [
     `Keep ${label} tied to the actual show outcome, not a vague category label.`,
     `Treat the venue manual, freight timing, and access plan as the baseline for the build.`,
@@ -230,7 +973,7 @@ export function buildDetailPageContent(section: TaxonomySection, slug: string): 
 
   switch (section) {
     case "services":
-      sections = [
+    sections = [
         {
           heading: "Scope and execution path",
           paragraphs: [
@@ -639,6 +1382,14 @@ export function buildDetailPageContent(section: TaxonomySection, slug: string): 
       break;
   }
 
+  sections = [localSnapshotSection, localFieldNotesSection, ...sections];
+  const layoutVariant = Array.from(label).reduce((sum, char) => sum + char.charCodeAt(0), 0) % 3;
+  if (layoutVariant === 1 && sections.length > 4) {
+    [sections[1], sections[2]] = [sections[2], sections[1]];
+  } else if (layoutVariant === 2 && sections.length > 4) {
+    sections.push(...sections.splice(0, 2));
+  }
+
   const faqs: FaqItem[] = [
     {
       question: `How is ${label} scoped for ${CITY} trade show work?`,
@@ -662,7 +1413,32 @@ export function buildDetailPageContent(section: TaxonomySection, slug: string): 
     },
   ];
 
-  return {
+    if (section === "industries") {
+    const draft = buildIndustryDetailPageContent(
+      getTaxonomyCollection(section),
+      item.label,
+      slug
+    );
+    const plainText = [
+      draft.eyebrow,
+      draft.title,
+      draft.heroLead,
+      ...draft.intro,
+      ...draft.focusList,
+      ...draft.sections.flatMap((entry) => [entry.heading, ...entry.paragraphs, ...(entry.bullets ?? [])]),
+      ...draft.faqs.flatMap((entry) => [entry.question, entry.answer]),
+      draft.ctaTitle,
+      draft.ctaText,
+      draft.seoTitle,
+      draft.seoDescription
+    ].join(" ");
+
+    return {
+      ...draft,
+      wordCount: countWords(plainText)
+    };
+  }
+return {
     eyebrow: collection.label.toUpperCase(),
     title: item.label.toUpperCase(),
     heroLead: `${label} in Lexington is easier to execute when the plan covers the building, the freight path, the labor crew, the graphics timeline, and the show-day supervision together.`,
@@ -675,6 +1451,6 @@ export function buildDetailPageContent(section: TaxonomySection, slug: string): 
     seoTitle: `${item.label.toUpperCase()} | ${business.name}`,
     seoDescription: `${item.label.toUpperCase()} planning for Lexington with venue timing, freight, labor, graphics, AV, and show-site supervision written into one operating plan.`,
     ctaTitle: `Talk through the ${item.label.toLowerCase()} scope`,
-    ctaText: `Share the venue, the deadline, and the working sequence so the project can move forward without guesswork.`,
+    ctaText: `Share the venue, the deadline, and the working sequence so the Lexington plan can move forward without guesswork and without leaning on boilerplate.`,
   };
 }
