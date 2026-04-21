@@ -195,8 +195,8 @@ export function buildIndexPageContent(section: TaxonomySection): IndexPageConten
     intro,
     cards,
     facts: marketHighlights,
-    ctaTitle: `Talk through the ${collection.label.toLowerCase()} scope`,
-    ctaText: `Share the venue, the deadline, and the working sequence so the project can move from question to schedule without guesswork.`,
+    ctaTitle: `Talk through the ${collection.label.toLowerCase()} scope for Lexington`,
+    ctaText: `Share the venue, the deadline, and the working sequence so the project can move from question to schedule without guesswork and without sounding like a template.`,
   };
 }
 
