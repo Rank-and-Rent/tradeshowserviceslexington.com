@@ -10,6 +10,13 @@ export default function ContactPage() {
     <SiteFrame>
       <div className="content-page lex-contact">
         <section className="lex-contact__hero">
+          <div className="lex-contact__hero-media" aria-hidden="true">
+            <img
+              alt=""
+              src="/media/planned/services/services-trade-show-project-management-lexington-ky.webp"
+              loading="eager"
+            />
+          </div>
           <div className="lex-contact__hero-overlay" aria-hidden="true" />
           <div className="container lex-contact__hero-inner">
             <p className="lex-contact__eyebrow">{contactPageCopy.eyebrow}</p>
@@ -65,7 +72,7 @@ export default function ContactPage() {
             <div className="lex-contact__form-card">
               <p className="lex-contact__eyebrow lex-contact__eyebrow--dark">Project brief</p>
               <h2>Tell us about your show</h2>
-              <p className="lex-contact__form-note">Share the venue, dates, and what the booth needs to do on the floor. A senior Lexington producer replies within one business day.</p>
+              <p className="lex-contact__form-note">Share the venue, dates, and what the booth needs to do on the floor. The brief goes straight to the Lexington planning team for review.</p>
               <ContactForm serviceOptions={serviceOptions} />
             </div>
           </div>

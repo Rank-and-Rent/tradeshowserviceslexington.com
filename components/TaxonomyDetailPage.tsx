@@ -25,23 +25,22 @@ export function TaxonomyDetailPage({
 
   const content = buildDetailPageContent(section, slug);
   const venue = section === "venues" ? getVenueBySlug(slug) : undefined;
+  const heroImage = getRecoveredTaxonomyMediaUrl(section, slug);
 
   const sectionLabel = section.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
   return (
     <div className="page-shell">
-      <section className="page-hero page-hero--detail">
+      <section className="page-hero page-hero--media page-hero--detail">
+        {heroImage ? (
+          <div className="page-hero__media" aria-hidden="true">
+            <img alt="" loading="eager" src={heroImage} />
+          </div>
+        ) : null}
+        <div className="page-hero__overlay" aria-hidden="true" />
         <div className="site-shell">
           <div className="page-hero__content">
             <p className="section-kicker section-kicker--light">{content.eyebrow}</p>
-            {(() => {
-            const _kind = (section as any);
-            const _slug = (slug as any);
-            const imgSrc = _slug ? getRecoveredTaxonomyMediaUrl(_kind as string, _slug as string) : null;
-            return imgSrc ? (
-            <img src={imgSrc} alt={(slug as any)} className="taxonomy-hero-image" style={{ width: "100%", maxHeight: 480, objectFit: "cover", borderRadius: 12, marginBottom: 24 }} loading="eager" />
-            ) : null;
-            })()}
             <h1>{item.label}</h1>
             <p className="page-hero__lead">{content.heroLead}</p>
           </div>

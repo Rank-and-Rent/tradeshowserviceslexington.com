@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Trade Show Services of Lexington"
   },
   description:
-    "Lexington trade show execution with booth design, fabrication, labor, AV, logistics, venue coordination, and show-day leadership.",
+    "Lexington trade show planning and production for Central Bank Center, hotel meetings, booth builds, freight, AV, logistics, and show-day support.",
   alternates: {
     canonical: "/"
   }

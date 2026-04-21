@@ -8,11 +8,21 @@ export default function AboutPage() {
   return (
     <SiteFrame>
       <div className="content-page">
-        <section className="inner-hero">
-          <div className="container">
-            <p className="section-kicker">{aboutPageCopy.eyebrow}</p>
-            <h1>{aboutPageCopy.title}</h1>
-            <p className="inner-hero__lead">{aboutPageCopy.lead}</p>
+        <section className="page-hero page-hero--media page-hero--about">
+          <div className="page-hero__media" aria-hidden="true">
+            <img
+              alt=""
+              src="/media/planned/services/services-trade-show-booth-design-lexington-ky.webp"
+              loading="eager"
+            />
+          </div>
+          <div className="page-hero__overlay" aria-hidden="true" />
+          <div className="site-shell">
+            <div className="page-hero__content">
+              <p className="section-kicker section-kicker--light">{aboutPageCopy.eyebrow}</p>
+              <h1>{aboutPageCopy.title}</h1>
+              <p className="page-hero__lead">{aboutPageCopy.lead}</p>
+            </div>
           </div>
         </section>
 

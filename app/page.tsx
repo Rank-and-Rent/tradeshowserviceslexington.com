@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { SiteFrame } from "@/components/SiteFrame";
+import { getRecoveredTaxonomyMediaUrl } from "@/lib/taxonomy-media";
 
 type FeaturedWorkCard = {
   title: string;
@@ -11,29 +12,34 @@ type FeaturedWorkCard = {
 
 const featuredWork: FeaturedWorkCard[] = [
   {
-    title: "Downtown convention execution with walkable hotel support",
+    title: "Downtown convention execution with hotel-ring timing",
     href: "/venues/central-bank-center",
-    tone: "blue"
+    tone: "blue",
+    image: getRecoveredTaxonomyMediaUrl("services", "conference-and-venue-execution") ?? undefined
   },
   {
-    title: "NEWTOWN PIKE programs that keep arrivals, rooms, and load-in aligned",
+    title: "Newtown Pike programs that keep arrivals and load-in aligned",
     href: "/locations/newtown-pike-corridor",
-    tone: "sand"
+    tone: "sand",
+    image: getRecoveredTaxonomyMediaUrl("services", "trade-show-project-management") ?? undefined
   },
   {
-    title: "Fairgrounds-scale logistics with a second-cluster mindset",
+    title: "Fairgrounds-scale logistics with a calmer field plan",
     href: "/venues/william-c-knapp-varied-industries-building",
-    tone: "blue"
+    tone: "blue",
+    image: getRecoveredTaxonomyMediaUrl("services", "show-site-supervision") ?? undefined
   },
   {
     title: "North-side meetings built for repeat attendance and easy access",
     href: "/locations/versailles",
-    tone: "sand"
+    tone: "sand",
+    image: getRecoveredTaxonomyMediaUrl("services", "trade-show-booth-design") ?? undefined
   },
   {
     title: "Activation and audio programs that keep the room and the message aligned",
     href: "/services/brand-activation-production",
-    tone: "red"
+    tone: "red",
+    image: getRecoveredTaxonomyMediaUrl("services", "trade-show-av-production") ?? undefined
   }
 ];
 
@@ -47,7 +53,7 @@ const capabilityRows = [
   {
     title: "Creative development and booth building",
     body:
-      "Booth concepts are shaped around sightlines, product display, storage, traffic movement, and the way the visitor should experience the brand in the first few seconds. The goal is to make a structure that survives fabrication, transport, install, and live use without losing the idea that made it worthwhile in the first place. That means checking scale, budget, height, private conversation needs, and the amount of visual pressure the room can support before the design gets locked. A good design conversation also protects the small operational details, like how staff enter the space, where literature or product storage disappears, and what the visitor sees first when they arrive at the booth edge.",
+      "Booth concepts are shaped around sightlines, product display, storage, traffic movement, and how the visitor experiences the brand in the first few seconds. The goal is to make a structure that survives fabrication, transport, install, and live use without losing the idea that made it worthwhile in the first place. That means checking scale, budget, height, private conversation needs, and the amount of visual pressure the room can support before the design gets locked. A good design conversation also protects the small operational details, like how staff enter the space, where literature or product storage disappears, and what the visitor sees first when they arrive at the booth edge.",
     href: "/services/trade-show-booth-design"
   },
   {
@@ -65,7 +71,7 @@ const capabilityRows = [
   {
     title: "Reuse, storage, and multi-show rollouts",
     body:
-      "Storage, asset management, refurbishments, and multi-show rollouts matter because the best LEXINGTON project is usually the one that makes the next stop easier to brief, build, and repeat. A strong system can move faster on the next market, protect the visual standard, and avoid re-solving the same problems each time the calendar turns over. That matters for organizations that appear in more than one city because the exhibit becomes a platform rather than a one-off expense line. When the work is built with reuse in mind, the program gets more stable as it grows. The same logic also keeps the internal team from rebuilding a process every time the calendar changes, which is a hidden cost that rarely shows up until the work gets repetitive.",
+      "Storage, asset management, refurbishments, and multi-show rollouts matter because the best Lexington project is usually the one that makes the next stop easier to brief, build, and repeat. A strong system can move faster on the next market, protect the visual standard, and avoid re-solving the same problems each time the calendar turns over. That matters for organizations that appear in more than one city because the exhibit becomes a platform rather than a one-off expense line. When the work is built with reuse in mind, the program gets more stable as it grows. The same logic also keeps the internal team from rebuilding a process every time the calendar changes, which is a hidden cost that rarely shows up until the work gets repetitive.",
     href: "/services/multi-show-rollout-services"
   }
 ] as const;
@@ -73,16 +79,16 @@ const capabilityRows = [
 const articleCards = [
   {
     tag: "Venue planning",
-    title: "Why downtown LEXINGTON, the hotel ring, and the convention core do not ask for the same production sequence",
+    title: "Why downtown Lexington, the hotel ring, and the convention core do not ask for the same production sequence",
     text:
-      "Central Bank Center, the attached hotels, and the surrounding downtown blocks all create different timing, access, and labor assumptions, so the building should come before the rest of the build logic.",
+      "Central Bank Center, the attached hotels, and the surrounding downtown blocks all create different timing, access, and labor assumptions, so the building comes before the rest of the build logic.",
     href: "/venues"
   },
   {
     tag: "Market map",
-    title: "How LEXINGTON's neighborhoods and nearby BLUEGRASS markets change the planning conversation",
+    title: "How Lexington neighborhoods and nearby Bluegrass markets change the planning conversation",
     text:
-      "Downtown LEXINGTON, NEWTOWN PIKE, HAMBURG, BEAUMONT, South LEXINGTON, and the surrounding regional ring each create their own hotel, parking, and guest-flow behavior, which changes the way the work gets staged.",
+      "Downtown Lexington, Newtown Pike, Hamburg, Beaumont, South Lexington, and the surrounding regional ring each create their own hotel, parking, and guest-flow behavior, which changes the way the work gets staged.",
     href: "/locations"
   }
 ] as const;
@@ -102,7 +108,7 @@ export default function HomePage() {
                   Trade show services built for Central Bank Center, Rupp Arena, Kentucky Horse Park, and the Bluegrass region.
                 </h1>
                 <p className="sparks-hero__lede">
-                  Venue-first planning, booth build, logistics, and show-day field leadership working as one accountable delivery chain.
+                  Venue-first planning, booth build, logistics, and show-day field leadership working as one accountable delivery chain for Lexington programs and regional road shows.
                 </p>
               </div>
             </div>
@@ -112,37 +118,16 @@ export default function HomePage() {
         <section className="home-centered">
           <div className="site-shell">
             <Link className="section-kicker" href="/event-types/trade-show-services">
-              LEXINGTON trade show execution
+              Lexington trade show execution
             </Link>
             <h2>
               We integrate strategy, booth development, labor, logistics, and show-day execution into one accountable delivery chain.
             </h2>
             <p style={{ marginTop: "18px", maxWidth: "56rem" }}>
-              LEXINGTON works best when the building comes first and the rest of the
-              work follows the building. Downtown convention programs, hotel meetings on
-              NEWTOWN PIKE, western business districts, east-side drive traffic, and the
-              broader BLUEGRASS ring all create their own timing, access, and guest-flow
-              behavior. That means a strong plan cannot treat every show the same way.
-              It has to recognize whether the job belongs in a convention hall, a hotel
-              ballroom, a resort setting, or a regional meeting environment and then
-              shape the rest of the work around that choice. The right brief also keeps
-              the team honest about freight, labor, audio, graphics, and staffing before
-              the schedule tightens. When those variables are visible early, the project
-              can move with less friction and more confidence. The goal is not to make
-              the process sound grander than it is. The goal is to make the work easier
-              to run, easier to repeat, and easier to trust once the room is live.
+              Lexington works best when the building comes first and the rest of the work follows it. Downtown convention programs, hotel meetings on Newtown Pike, west-side business parks, east-side drive traffic, and the broader Bluegrass ring all create different timing and access behavior.
             </p>
             <p style={{ marginTop: "18px", maxWidth: "56rem" }}>
-              That same logic applies when the project is compared across venue types.
-              A downtown convention floor may need more disciplined freight timing and
-              stronger coordination with the hotel ring, while a suburban ballroom may
-              need easier parking, tighter hospitality flow, or a different approach to
-              storage and back-of-house movement. A regional meeting can add even more
-              variables if the audience is driving in from nearby counties and expects
-              the room to feel simple, direct, and easy to navigate. The copy should
-              make those trade-offs visible so the team can choose the better fit
-              without waiting until the last minute to understand the real pressure on
-              the build.
+              A downtown convention floor usually needs tighter freight timing and stronger hotel coordination, while a ballroom off Newtown Pike may need easier parking, a cleaner hospitality path, or a different storage plan. Regional meetings add another layer when the audience is driving in and expects the room to feel simple and direct.
             </p>
           </div>
         </section>
@@ -228,7 +213,7 @@ export default function HomePage() {
         <section className="home-split-cta">
           <div className="home-split-cta__grid">
             <Link className="home-split-cta__panel home-split-cta__panel--light" href="/about">
-              <p className="section-kicker">About LEXINGTON</p>
+              <p className="section-kicker">About Lexington</p>
               <h2>Project-led. Venue-aware. Execution-focused.</h2>
               <span>who we are</span>
             </Link>
@@ -246,17 +231,8 @@ export default function HomePage() {
             <div>
               <h2>Planning detail that keeps pace</h2>
               <p>
-                Start with the venue, show date, service mix, and project details. That
-                gives the planning team enough context to separate the big decisions
-                from the small ones and map the cleanest LEXINGTON delivery chain. It
-                also makes it easier to protect the schedule if the room changes, the
-                footprint shifts, or the event needs a different support mix than the
-                first brief suggested. The goal is to give the work enough structure
-                that the handoffs stay clear and the team can move without hesitation.
-                When the right pieces are visible early, the event feels calmer for the
-                client and more controlled for everyone doing the work. It also gives
-                the client a straightforward way to compare options without making the
-                discussion feel abstract or inflated.
+                Start with the venue, show date, service mix, and project details. That gives the planning team enough context to separate the big decisions from the small ones and map a cleaner Lexington delivery chain.
+                It also makes it easier to protect the schedule if the room changes, the footprint shifts, or the event needs a different support mix than the first pass suggested.
               </p>
             </div>
             <div className="home-brief-band__actions">

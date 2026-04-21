@@ -11,22 +11,21 @@ type TaxonomyIndexPageProps = {
 export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
   const collection = getTaxonomyCollection(section);
   const content = buildIndexPageContent(section);
+  const firstSlug = collection.generatedPages[0]?.slug ?? "";
+  const heroImage = firstSlug ? getRecoveredTaxonomyMediaUrl(section, firstSlug) : null;
 
   return (
     <div className="page-shell">
-      <section className="page-hero page-hero--index">
+      <section className="page-hero page-hero--media page-hero--index">
+        {heroImage ? (
+          <div className="page-hero__media" aria-hidden="true">
+            <img alt="" loading="eager" src={heroImage} />
+          </div>
+        ) : null}
+        <div className="page-hero__overlay" aria-hidden="true" />
         <div className="site-shell">
           <div className="page-hero__content">
             <p className="section-kicker section-kicker--light">{content.eyebrow}</p>
-            {(() => {
-              const _kind = (section as any);
-              const _first = ((collection as any)?.generatedPages?.[0]);
-              const _slug = _first?.slug || "";
-              const imgSrc = _slug ? getRecoveredTaxonomyMediaUrl(_kind as string, _slug as string) : null;
-              return imgSrc ? (
-                <img src={imgSrc} alt={((collection as any)?.label || "")} className="taxonomy-hero-image" style={{ width: "100%", maxHeight: 480, objectFit: "cover", borderRadius: 12, marginBottom: 24 }} loading="eager" />
-              ) : null;
-            })()}
             <h1>{content.title}</h1>
             <p className="page-hero__lead">{content.lead}</p>
           </div>
@@ -42,9 +41,9 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
             </h2>
           </div>
 
-          <div className="page-card-grid" style={{ marginTop: "36px" }}>
-            {content.cards.map((card) => (
-              <Link className="page-card" href={card.href} key={card.href}>
+            <div className="page-card-grid" style={{ marginTop: "36px" }}>
+              {content.cards.map((card) => (
+                <Link className="page-card" href={card.href} key={card.href}>
                 <p className="page-card__kicker">{card.eyebrow}</p>
                 <h3>{card.label}</h3>
                 <p>{card.description}</p>

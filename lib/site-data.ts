@@ -775,7 +775,7 @@ export const homepageInsightCards: HomepageInsightCard[] = [
   {
     tag: "Newtown Pike Programs",
     title: "Newtown Pike hotel and resort delivery",
-    text: "Programs on the north side behave differently from downtown, with parking, hotel behavior, and room flow changing the operating model fast.",
+    text: "Programs on the north side behave differently from downtown, with parking, hotel behavior, and room flow changing the planning assumptions fast.",
     href: "/locations/newtown-pike-corridor",
     accent: "blue"
   },
@@ -802,7 +802,7 @@ export const resourceCards = [
     label: "Venues",
     title: "Downtown, hotel-ring, and regional venue guides",
     description:
-      "Move from the market view into venue-specific planning, exhibitor-kit review, and service-order timing without guessing how the building works. These guides help the reader compare a downtown convention campus, a hotel ballroom, a resort meeting property, and a regional event space with enough detail to understand which building changes the schedule the most. The goal is not to make the venue sound larger than it is. The goal is to show how the room, the dock, the guest flow, the service process, and the sponsor path actually behave once the project starts to tighten. A strong venue guide should make the loading sequence easier to imagine, the hotel relationship easier to read, and the room behavior easier to plan against before the first truck arrives. It should also make it easier to see whether the venue is better suited to a polished conference, a product-heavy expo, or a hospitality-forward program that needs the room to work quietly in the background.",
+      "Move from the market view into venue-specific planning, exhibitor-kit review, and service-order timing without guessing how the building works. These guides help the reader compare a downtown convention campus, a hotel ballroom, a resort meeting property, and a regional event space with enough detail to see which building changes the schedule the most. The goal is to show how the room, the dock, the guest flow, the service process, and the sponsor path actually behave once the project starts to tighten. A strong venue guide makes the loading sequence easier to imagine, the hotel relationship easier to read, and the room behavior easier to plan against before the first truck arrives. It also helps the reader see whether the venue is better suited to a polished conference, a product-heavy expo, or a hospitality-forward program that needs the room to work quietly in the background.",
     href: "/venues",
     tone: "blue"
   },
@@ -818,7 +818,7 @@ export const resourceCards = [
     label: "Services",
     title: "Project-led service stacks",
     description:
-      "Compare labor, audio, fabrication, GC coordination, logistics, and show-day supervision without flattening them into generic bundles. These pages make it easier to see which services anchor the project, which ones support the build, and which ones have to be confirmed early so the timeline stays realistic. That keeps the reader focused on how the work is actually run rather than on a list of disconnected offerings. It also helps the client understand which parts of the work need the earliest attention, which parts can be phased later, and which parts are most likely to affect the room once the calendar gets tight. The result is a cleaner sense of where the schedule can stretch and where it needs to stay fixed.",
+      "Compare labor, audio, fabrication, GC coordination, logistics, and show-day supervision without flattening them into generic bundles. This service set makes it easier to see which scopes anchor the project, which ones support the build, and which ones have to be confirmed early so the timeline stays realistic. That keeps the reader focused on how the work is actually run rather than on a list of disconnected offerings. It also helps the client understand which parts of the work need the earliest attention, which parts can be phased later, and which parts are most likely to affect the room once the calendar gets tight. The result is a cleaner sense of where the schedule can stretch and where it needs to stay fixed.",
     href: "/services",
     tone: "gold"
   },
@@ -826,7 +826,7 @@ export const resourceCards = [
     label: "Industries",
     title: "Buyer-specific planning paths",
     description:
-      "Industry pages connect the same Lexington venue logic to healthcare, manufacturing, agriculture, equine, association, and university-facing demand. Each sector brings its own language, own priorities, and own tolerance for risk, which changes what the room should emphasize and how the support model should be framed. The pages are built to help the reader feel understood quickly and then move into the planning choices that fit the sector instead of a generic exhibit pattern. That means the wording can sound more specific, the planning advice can sound more useful, and the reader can see why one audience wants a different mix of proof points, pacing, and visual emphasis than another. The better the sector fit, the easier it becomes to keep the room credible to the people who walk into it.",
+      "Industry pages connect the same Lexington venue logic to healthcare, manufacturing, agriculture, equine, association, and university-facing demand. Each sector brings its own language, priorities, and tolerance for risk, which changes what the room emphasizes and how the support model is framed. The pages are built to help the reader feel understood quickly and then move into the planning choices that fit the sector instead of a generic exhibit pattern. That means the wording can sound more specific, the planning advice can sound more useful, and the reader can see why one audience wants a different mix of proof points, pacing, and visual emphasis than another. The better the sector fit, the easier it becomes to keep the room credible to the people who walk into it.",
     href: "/industries",
     tone: "charcoal"
   }

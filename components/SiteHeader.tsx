@@ -132,8 +132,8 @@ export function SiteHeader() {
             <p className="site-menu__eyebrow">{business.legalName}</p>
             <h2>Project-led exhibit execution across Lexington and the Bluegrass region.</h2>
             <p>
-              Use the menu to move between services, venue guides, market maps,
-              event formats, booth formats, and industry-specific planning pages.
+              Quick links for services, venue guides, market maps, event formats,
+              booth formats, and industry-specific planning pages.
             </p>
             <Link className="site-menu__cta" href="/contact">
               Open project brief
