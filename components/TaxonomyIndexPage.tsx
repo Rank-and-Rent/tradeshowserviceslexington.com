@@ -54,6 +54,59 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
         </div>
       </section>
 
+      {content.intro?.length ? (
+        <section className="page-section">
+          <div className="container">
+            <div className="page-copy">
+              {content.intro.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {content.deepSections?.length ? (
+        <section className="page-section">
+          <div className="container">
+            {content.deepSections.map((ds) => (
+              <section className="detail-section" key={ds.heading}>
+                <h2>{ds.heading}</h2>
+                {ds.paragraphs.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+                {ds.bullets ? (
+                  <ul>
+                    {ds.bullets.map((b) => (
+                      <li key={b}>{b}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </section>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {content.deepFaqs?.length ? (
+        <section className="page-section">
+          <div className="container">
+            <div className="section-heading">
+              <p className="section-kicker">Planner questions</p>
+              <h2>{collection.label} planning questions</h2>
+            </div>
+            <div className="faq-list">
+              {content.deepFaqs.map((faq) => (
+                <article className="faq-list__item" key={faq.question}>
+                  <h3>{faq.question}</h3>
+                  <p>{faq.answer}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="page-section">
         <div className="site-shell">
           <div className="cta-band">

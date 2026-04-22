@@ -8,6 +8,10 @@ import {
   type RouteLink,
   type TaxonomySection,
 } from "./site-data";
+import {
+  buildDeepDetailContent,
+  buildDeepIndexContent,
+} from "./deep-content";
 
 export type ContentSection = {
   heading: string;
@@ -914,7 +918,7 @@ function buildIndustryDetailPageContent(
   };
 }
 
-export function buildDetailPageContent(section: TaxonomySection, slug: string): DetailPageContent {
+function _buildDetailPageContentBase(section: TaxonomySection, slug: string): DetailPageContent {
   const collection = getTaxonomyCollection(section);
   const item = getTaxonomyItem(section, slug);
   if (!item) {
@@ -1452,5 +1456,46 @@ return {
     seoDescription: `${item.label.toUpperCase()} planning for Lexington with venue timing, freight, labor, graphics, AV, and show-site supervision written into one operating plan.`,
     ctaTitle: `Talk through the ${item.label.toLowerCase()} scope`,
     ctaText: `Share the venue, the deadline, and the working sequence so the Lexington plan can move forward without guesswork and without leaning on boilerplate.`,
+  };
+}
+
+export function buildDetailPageContent(
+  section: TaxonomySection,
+  slug: string
+): DetailPageContent {
+  const rawBase = _buildDetailPageContentBase(section, slug);
+  const item = getTaxonomyItem(section, slug);
+  const label = item?.label ?? section;
+  const base: any = rawBase ?? {
+    eyebrow: getTaxonomyCollection(section).eyebrow,
+    title: `${label} | ${business.name}`,
+    heroLead: `${label} planned for ${business.city} venues and a practical sequence from brief through strike.`,
+    intro: [],
+    focusList: [],
+    sections: [],
+    faqs: [],
+    relatedLinks: pickRelatedRoutes(section, slug),
+    wordCount: 0,
+    seoTitle: `${label} | ${business.name}`,
+    seoDescription: `${label} in ${business.city}.`,
+    ctaTitle: `Plan ${String(label).toLowerCase()}`,
+    ctaText: "Share the venue, date, and scope.",
+  };
+  const deep = buildDeepDetailContent(section, slug, String(label));
+  const sections = [...(base.sections ?? []), ...deep.sections];
+  const faqs = [...(base.faqs ?? []), ...deep.faqs];
+  const plainParts = [
+    base.heroLead,
+    ...(base.intro ?? []),
+    ...(base.focusList ?? []),
+    ...sections.flatMap((s: any) => [s.heading, ...s.paragraphs, ...(s.bullets ?? [])]),
+    ...faqs.flatMap((f: any) => [f.question, f.answer]),
+  ].filter((x: any): x is string => typeof x === "string");
+  const wc = plainParts.join(" ").trim().split(/\s+/).filter(Boolean).length;
+  return {
+    ...base,
+    sections,
+    faqs,
+    wordCount: wc,
   };
 }
