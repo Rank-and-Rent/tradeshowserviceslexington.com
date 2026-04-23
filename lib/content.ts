@@ -203,7 +203,7 @@ export function buildIndexPageContent(section: TaxonomySection): IndexPageConten
     intro,
     cards,
     facts: marketHighlights,
-    ctaTitle: `Talk through the ${collection.label.toLowerCase()} scope for Lexington`,
+    ctaTitle: `Talk through the ${collection.label} scope for Lexington`,
     ctaText: `Share the venue, the deadline, and the working sequence so the project can move from question to schedule without guesswork and without sounding like a template.`,
   };
 }
@@ -222,7 +222,7 @@ type IndustryProfile = {
 function formatIndustryText(text: string, label: string) {
   return text
     .replaceAll("{label}", label)
-    .replaceAll("{labelLower}", label.toLowerCase())
+    .replaceAll("{labelLower}", label)
     .replaceAll("{city}", business.city);
 }
 
@@ -843,7 +843,7 @@ function buildFallbackIndustryProfile(label: string, slug: string): IndustryProf
       {
         heading: `${slugTitle} in the field`,
         paragraphs: [
-          `The page has to explain why ${label.toLowerCase()} matters to this buyer group and what kind of booth behavior the event needs.`,
+          `The page has to explain why ${label} matters to this buyer group and what kind of booth behavior the event needs.`,
           `That usually means the copy should sound like a real assignment brief, with the ${anchor} story carried through the whole page.`
         ]
       },
@@ -1454,7 +1454,7 @@ return {
     wordCount: 1800,
     seoTitle: `${item.label.toUpperCase()} | ${business.name}`,
     seoDescription: `${item.label.toUpperCase()} planning for Lexington with venue timing, freight, labor, graphics, AV, and show-site supervision written into one operating plan.`,
-    ctaTitle: `Talk through the ${item.label.toLowerCase()} scope`,
+    ctaTitle: `Talk through the ${item.label} scope`,
     ctaText: `Share the venue, the deadline, and the working sequence so the Lexington plan can move forward without guesswork and without leaning on boilerplate.`,
   };
 }
@@ -1463,37 +1463,42 @@ export function buildDetailPageContent(
   section: TaxonomySection,
   slug: string
 ): DetailPageContent {
-  const rawBase = _buildDetailPageContentBase(section, slug);
+  const rawBase: any = _buildDetailPageContentBase(section, slug);
   const item = getTaxonomyItem(section, slug);
-  const label = item?.label ?? section;
+  const label = String(item?.label ?? section);
+  const deep = buildDeepDetailContent(section, slug, label);
+
   const base: any = rawBase ?? {
     eyebrow: getTaxonomyCollection(section).eyebrow,
     title: `${label} | ${business.name}`,
-    heroLead: `${label} planned for ${business.city} venues and a practical sequence from brief through strike.`,
-    intro: [],
-    focusList: [],
-    sections: [],
-    faqs: [],
     relatedLinks: pickRelatedRoutes(section, slug),
-    wordCount: 0,
     seoTitle: `${label} | ${business.name}`,
     seoDescription: `${label} in ${business.city}.`,
-    ctaTitle: `Plan ${String(label).toLowerCase()}`,
+    ctaTitle: `Plan ${label}`,
     ctaText: "Share the venue, date, and scope.",
   };
-  const deep = buildDeepDetailContent(section, slug, String(label));
-  const sections = [...(base.sections ?? []), ...deep.sections];
-  const faqs = [...(base.faqs ?? []), ...deep.faqs];
-  const plainParts = [
-    base.heroLead,
-    ...(base.intro ?? []),
-    ...(base.focusList ?? []),
+
+  const visitorHeroLead =
+    `${business.name} plans and builds ${label.toLowerCase()} for shows in ${business.city} — from first scope through strike.`;
+  const visitorIntro = [
+    `${business.name} is ${business.city}'s local trade show team. Design, fabrication, graphics, install, and show-site supervision run out of one shop, with one accountable lead on every project.`,
+    `${business.city} trade shows move on a tight rhythm. A ${label.toLowerCase()} project that lands cleanly has the venue, the freight, and the labor calls locked long before the booth ever gets crated.`,
+  ];
+  const visitorFocus: string[] = [];
+  const sections = deep.sections;
+  const faqs = deep.faqs;
+  const plain = [
+    visitorHeroLead,
+    ...visitorIntro,
     ...sections.flatMap((s: any) => [s.heading, ...s.paragraphs, ...(s.bullets ?? [])]),
     ...faqs.flatMap((f: any) => [f.question, f.answer]),
-  ].filter((x: any): x is string => typeof x === "string");
-  const wc = plainParts.join(" ").trim().split(/\s+/).filter(Boolean).length;
+  ].filter((x: any): x is string => typeof x === "string").join(" ");
+  const wc = plain.trim().split(/\s+/).filter(Boolean).length;
   return {
     ...base,
+    heroLead: visitorHeroLead,
+    intro: visitorIntro,
+    focusList: visitorFocus,
     sections,
     faqs,
     wordCount: wc,
