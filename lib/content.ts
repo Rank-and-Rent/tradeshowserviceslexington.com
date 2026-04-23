@@ -1479,10 +1479,10 @@ export function buildDetailPageContent(
   };
 
   const visitorHeroLead =
-    `${business.name} plans and builds ${label.toLowerCase()} for shows in ${business.city} — from first scope through strike.`;
+    `${business.name} plans and builds ${label} for shows in ${business.city} — from first scope through strike.`;
   const visitorIntro = [
     `${business.name} is ${business.city}'s local trade show team. Design, fabrication, graphics, install, and show-site supervision run out of one shop, with one accountable lead on every project.`,
-    `${business.city} trade shows move on a tight rhythm. A ${label.toLowerCase()} project that lands cleanly has the venue, the freight, and the labor calls locked long before the booth ever gets crated.`,
+    `${business.city} trade shows move on a tight rhythm. A ${label} project that lands cleanly has the venue, the freight, and the labor calls locked long before the booth ever gets crated.`,
   ];
   const visitorFocus: string[] = [];
   const sections = deep.sections;

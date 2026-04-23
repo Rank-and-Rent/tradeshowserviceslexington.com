@@ -126,7 +126,7 @@ function aOrAn(next: string): string {
 // ---- CITY MARKET ----
 
 function cityContextSection(seed: string, label: string): DeepContentSection {
-  const L = label.toLowerCase();
+  const L = label;
   const sigs = pickN(marketSignals, `${seed}:sig`, 2);
   const driver = pick(demandDrivers, `${seed}:drv`);
   const paragraphs: string[] = [];
@@ -195,7 +195,7 @@ function cityContextSection(seed: string, label: string): DeepContentSection {
 // ---- VENUES ----
 
 function venueSection(seed: string, label: string): DeepContentSection {
-  const L = label.toLowerCase();
+  const L = label;
   const picks = pickN(venueRecords, `${seed}:v`, 3);
   const paragraphs: string[] = [];
 
@@ -260,7 +260,7 @@ function venueSection(seed: string, label: string): DeepContentSection {
 // ---- LABOR / OPERATIONS ----
 
 function laborSection(seed: string, label: string): DeepContentSection {
-  const L = label.toLowerCase();
+  const L = label;
   const finding = pick(verifiedFindings, `${seed}:lf`);
   const patterns = pickN(approvedCopyPatterns, `${seed}:lp`, 2);
   const paragraphs: string[] = [];
@@ -270,6 +270,11 @@ function laborSection(seed: string, label: string): DeepContentSection {
     `There is no single labor model for ${city()} trade shows. The right approach depends on the specific venue and the show organizer's contracts.`,
     `${city()} floor operations follow the venue's own manual. Dock timing, utility orders, rigging, and crew calls all come out of that document.`,
     `Most of what goes wrong on a ${city()} install traces back to assumptions about labor. Staying inside the venue's published rules for the specific show prevents it.`,
+  ]));
+  paragraphs.push(variant(`${seed}:lopen2`, [
+    `Practically, that means pulling the current exhibitor manual for every show and confirming a handful of items in writing: which tasks the venue's house crews cover, which tasks the show's general contractor covers, and what an exhibitor or their appointed contractor can handle without escalation.`,
+    `The workable version of ${city()} labor planning is boring on purpose: read the manual, match the scope to its categories, order what the venue sells directly, and schedule everything else around its posted windows. Surprises almost always trace back to a step someone skipped.`,
+    `On most ${city()} shows, the labor plan takes one call with the venue's exhibitor services desk, one review of the current manual, and one email to the general contractor. Skipping any of those three is usually where problems start.`,
   ]));
 
   if (finding) {
@@ -320,7 +325,7 @@ function laborSection(seed: string, label: string): DeepContentSection {
 function clusterSection(seed: string, label: string): DeepContentSection | null {
   const clusters = primaryVenueClusters ?? [];
   if (!clusters?.length) return null;
-  const L = label.toLowerCase();
+  const L = label;
   const a = clusters[hashValue(`${seed}:ca`) % clusters.length];
   const b = clusters[hashValue(`${seed}:cb`) % clusters.length];
   const paragraphs: string[] = [];
@@ -358,7 +363,7 @@ function clusterSection(seed: string, label: string): DeepContentSection | null 
 // ---- PROCESS ----
 
 function processSection(seed: string, label: string, section: string): DeepContentSection {
-  const L = label.toLowerCase();
+  const L = label;
 
   const step1 = variant(`${seed}:p1`, [
     `Every ${L} project starts with a scope conversation: the show, the venue, the booth number, the dates, and the budget frame. Ten minutes of specifics produces a better plan than a week of generalities.`,
@@ -405,7 +410,7 @@ function processSection(seed: string, label: string, section: string): DeepConte
 // ---- COST & TIMING ----
 
 function costSection(seed: string, label: string, section: string): DeepContentSection {
-  const L = label.toLowerCase();
+  const L = label;
   const opener = variant(`${seed}:c0`, [
     `${L.charAt(0).toUpperCase() + L.slice(1)} pricing is driven by real line items: fabrication or rental, graphics, show services, labor, freight, and travel where it applies. Round numbers without that breakdown usually hide something.`,
     `An honest ${L} quote itemizes the variables. There is not a single price — there is a configuration.`,
@@ -436,7 +441,7 @@ function costSection(seed: string, label: string, section: string): DeepContentS
 // ---- WHY US ----
 
 function whySection(seed: string, label: string): DeepContentSection {
-  const L = label.toLowerCase();
+  const L = label;
   const paragraphs: string[] = [];
   paragraphs.push(variant(`${seed}:w0`, [
     `${biz()} is a ${city()}-based trade show team with in-house design, fabrication, graphics, and show-site crews. One shop, one point of contact, one accountable lead on every project.`,
@@ -447,6 +452,11 @@ function whySection(seed: string, label: string): DeepContentSection {
     `The difference from a national vendor shows up at the dock. A local team with an in-house shop can solve most install-day problems in the time it takes to drive back to the building with the right part.`,
     `Local fabrication means real-time problem-solving. A graphic that needs to be reprinted at 6 a.m. on install day is a same-morning fix, not a three-day shipping delay.`,
     `Working with a ${city()}-based shop matters most when something goes wrong on-site. Solutions live within driving distance instead of on another coast.`,
+  ]));
+  paragraphs.push(variant(`${seed}:w2`, [
+    `Consistency across show dates is the other reason to hire local. The same crew that built the booth runs the install, knows the pack-out, and catches the small things — a missing hardware pack, a graphic edge that needs reseating, a storage crate routed to the wrong bay — without needing the client team to intervene.`,
+    `Over a multi-show calendar, the compound value of a single team shows up in fewer surprises. The second install is faster than the first, the third is faster than the second, and by the fourth the project runs on memory and documentation rather than first-principles planning.`,
+    `Clients who run ${label} programs across multiple dates end up paying less per event when the same team handles everything. Less re-briefing, less re-training, less re-checking — the operational overhead drops year over year.`,
   ]));
 
   return {
@@ -463,7 +473,7 @@ function whySection(seed: string, label: string): DeepContentSection {
 // ---- FAQS ----
 
 function faqs(seed: string, label: string, section: string): DeepFaq[] {
-  const L = label.toLowerCase();
+  const L = label;
   const out: DeepFaq[] = [];
 
   const venue = pick(venueRecords, `${seed}:fv`);
@@ -527,7 +537,7 @@ function faqs(seed: string, label: string, section: string): DeepFaq[] {
 // ---- SCOPE: what's included ----
 
 function scopeSection(seed: string, label: string, section: string): DeepContentSection {
-  const L = label.toLowerCase();
+  const L = label;
   const opener = variant(`${seed}:sco0`, [
     `${L.charAt(0).toUpperCase() + L.slice(1)} projects typically include design work, fabrication or rental sourcing, graphics production, show-service paperwork, freight, install, show-hours coverage, and strike.`,
     `A full ${L} engagement covers scope development, fabrication or rental, graphics, show services, logistics, and on-site execution from move-in through dismantle.`,
@@ -537,9 +547,19 @@ function scopeSection(seed: string, label: string, section: string): DeepContent
     `The typical line items on a ${city()} ${L} project include booth structure (custom or rental), graphics and print, AV and lighting, show-service orders (power, internet, rigging), labor calls against the venue's rules, freight both ways, on-site supervision, and post-show closeout documentation.`,
     `What shows up in most ${L} budgets: structure, graphics, AV, show-service orders through the venue, labor, freight, supervision days, and closeout. Individual projects layer or remove items based on scope.`,
   ]);
+  const handoffs = variant(`${seed}:sco_h`, [
+    `The handoffs on a ${L} project matter almost as much as the line items. Design has to hand a build-ready drawing to fabrication. Fabrication has to hand a pre-built, dry-fitted booth to crating. The crater has to hand a labeled, manifested shipment to the carrier. Every handoff is a place quality can drop.`,
+    `Good ${L} execution comes from keeping the team small and the handoffs short. Every extra vendor in the chain adds a communication layer and a place where details get lost.`,
+    `A well-run ${L} project has few surprises on install day because the handoffs upstream were tight. A bad one has many, because they weren't.`,
+  ]);
   const reuse = variant(`${seed}:sco2`, [
     `Multi-show programs add asset management: storage, refurbishment, graphic swaps, and scheduled re-kitting so the booth rolls cleanly from ${city()} to the next city on the calendar.`,
     `For programs that repeat, asset management becomes part of the engagement — storage, graphic rotation, refurbishment, and re-crating are planned rather than one-off.`,
+  ]);
+  const scopeExtra = variant(`${seed}:sco_x`, [
+    `Out of scope by default are show organizer fees, booth lease costs paid directly to the show, staff travel and per diems, and any custom software or data-capture tooling the client runs on its own stack. Those stay on the client side and plug into our scope through coordination, not rebilling.`,
+    `A clean scope definition also calls out what isn't included: show organizer fees, client staff travel, and anything the client already has under contract (lead capture platforms, CRM integrations, promotional giveaways). Those run alongside the ${L} engagement rather than inside it.`,
+    `Scope boundary is as important as scope inclusion. Show organizer fees, client-side staff costs, and any tools the client already owns are handled outside the ${L} engagement. Defining that boundary up front prevents billing surprises later.`,
   ]);
   return {
     heading: variant(`${seed}:h:sco`, [
@@ -547,14 +567,14 @@ function scopeSection(seed: string, label: string, section: string): DeepContent
       `${L.charAt(0).toUpperCase() + L.slice(1)} scope`,
       `Line items on a typical ${L} project`,
     ]),
-    paragraphs: [opener, list, reuse],
+    paragraphs: [opener, list, handoffs, reuse, scopeExtra],
   };
 }
 
 // ---- OUTCOMES ----
 
 function outcomesSection(seed: string, label: string): DeepContentSection {
-  const L = label.toLowerCase();
+  const L = label;
   const paragraphs = [
     variant(`${seed}:o0`, [
       `Success on a ${city()} ${L} project looks like a booth that lands on time, passes venue inspection on the first walk, runs without incident through show hours, and ships out the same day it strikes.`,
@@ -565,6 +585,11 @@ function outcomesSection(seed: string, label: string): DeepContentSection {
       `Most ${L} programs in ${city()} are evaluated on lead-capture volume, meetings booked on the floor, and qualified-pipeline attribution after the show. The booth is a means to those numbers — it is not the number itself.`,
       `Exhibitors who measure ${L} programs seriously track leads, floor-booked meetings, and post-show pipeline. The build and the install are upstream inputs to those KPIs.`,
       `${L.charAt(0).toUpperCase() + L.slice(1)} ROI is measured at the lead and pipeline level. The show-floor execution either protects or undermines those numbers.`,
+    ]),
+    variant(`${seed}:o2`, [
+      `The post-show debrief is where the numbers get connected back to the physical booth. Which demo station drew traffic, which meeting area closed more conversations, which graphic zone attracted dwell time — that feedback shapes the next build rather than getting lost.`,
+      `A week after the show, the booth's actual floor performance is already clearer than any pre-show projection. We document those observations alongside the technical closeout so the next ${L} cycle inherits real signal, not nostalgia.`,
+      `Client teams sometimes want the booth to carry the pipeline on its own, but the best-performing programs treat the booth as a platform and put real operators on it. On-floor conversation discipline moves the KPIs more than any scenic decision.`,
     ]),
   ];
   return {
