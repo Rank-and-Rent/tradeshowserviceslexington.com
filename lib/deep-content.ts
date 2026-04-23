@@ -76,6 +76,22 @@ function asFact(s: string): string {
     .replace(/\s*— per [^.,;]+/gi, "")
     .replace(/\s*per [a-zA-Z0-9.\-]+\.com[a-zA-Z0-9./?=&_\-]*/gi, "")
     .trim();
+  // Strip meta/copywriting-brief phrases that leak through from research JSONs
+  out = out
+    .replace(/,?\s*so\s+(?:the\s+)?copy\s+should[^.,;]*/gi, "")
+    .replace(/,?\s*(?:and\s+)?(?:the\s+)?copy\s+should[^.,;]*/gi, "")
+    .replace(/\s*in the reviewed sources\b/gi, "")
+    .replace(/\s*(?:based on|from) (?:the )?reviewed sources/gi, "")
+    .replace(/\s*the published sources\b/gi, "")
+    .replace(/\s*the current venue guide or exhibitor kit should[^.,;]*/gi, "")
+    .replace(/\s*should shape the final production plan\b[^.,;]*/gi, "")
+    .replace(/\s*should not import [^.,;]*/gi, "")
+    .replace(/,\s*so\s*[.!]/gi, ".")
+    .replace(/\s+so\s*[.!]/gi, ".")
+    .replace(/,\s*,/g, ",")
+    .replace(/,\s*\./g, ".")
+    .replace(/\s+\./g, ".")
+    .trim();
   if (/\|/.test(out)) return "";
   if (/^(Explore|Discover|Welcome|Experience|Step into|Make your|Find|Book|Plan your|Get ready|Tucked|Known as)/i.test(out)) return "";
   return out;
@@ -100,11 +116,14 @@ function isFactualSentence(s: string): boolean {
 
 function extractFacts(text: string, max: number): string[] {
   if (!text) return [];
-  // Split description into sentences
-  const sentences = text.split(/(?<=[.!?])\s+(?=[A-Z])/).map((x) => x.trim()).filter(Boolean);
+  // Split into sentences; accept both "A. B" and ". the building..." continuations
+  const sentences = text.split(/(?<=[.!?])\s+/).map((x) => x.trim()).filter(Boolean);
   const out: string[] = [];
   for (const s of sentences) {
-    if (isFactualSentence(s)) out.push(s);
+    if (isFactualSentence(s)) {
+      // Capitalize the first letter so "the building totals..." → "The building totals..."
+      out.push(s[0].toUpperCase() + s.slice(1));
+    }
     if (out.length >= max) break;
   }
   return out;
@@ -121,6 +140,63 @@ function aOrAn(next: string): string {
   const w = next.trim().split(/\s+/)[0] ?? "";
   const first = (w[0] ?? "").toLowerCase();
   return /[aeiou]/.test(first) ? "an" : "a";
+}
+
+// workTerm: how to refer to the subject of the page in body copy.
+// For services/event-types/etc., the label is a service name. For venues/locations,
+// the label is a proper noun and we need a natural-language substitute.
+function workTerm(section: string, label: string): { indef: string; title: string; atPhrase: string; plural: string } {
+  const sk = String(section ?? "").toLowerCase();
+  const L = label;
+  if (sk === "venues") {
+    return {
+      indef: `a trade show project at ${L}`,
+      title: `a project at ${L}`,
+      atPhrase: `at ${L}`,
+      plural: `projects at ${L}`,
+    };
+  }
+  if (sk === "locations") {
+    return {
+      indef: `a trade show project in ${L}`,
+      title: `a project in ${L}`,
+      atPhrase: `in ${L}`,
+      plural: `projects in ${L}`,
+    };
+  }
+  // Services, event-types, booth-types, industries, etc. — label is a noun phrase already
+  const lower = L.toLowerCase();
+  // Pick correct article
+  const article = /^[aeiou]/i.test(lower) ? "an" : "a";
+  return {
+    indef: `${article} ${lower} project`,
+    title: `${article} ${lower} project`,
+    atPhrase: `on a ${lower} project`,
+    plural: `${lower} projects`,
+  };
+}
+
+// Look up the current taxonomy item (by section + slug). Returns the raw record
+// (venue, location, etc.) if available so venue/location pages can center on it.
+function getCurrentItem(section: string, slug: string): any {
+  if (section === "venues") {
+    const fn = (sd as any).getVenueBySlug;
+    if (typeof fn === "function") {
+      try { return fn(slug); } catch {}
+    }
+    // Fallback: scan venueRecords
+    return (venueRecords as any[]).find((v: any) => v?.slug === slug);
+  }
+  if (section === "locations") {
+    const fn = (sd as any).getLocationBySlug;
+    if (typeof fn === "function") {
+      try { return fn(slug); } catch {}
+    }
+    // Fallback: scan market locationTargets
+    const locs = (rawMarketResearch as any)?.locationTargets ?? [];
+    return (locs as any[]).find((l: any) => l?.slug === slug);
+  }
+  return undefined;
 }
 
 // ---- CITY MARKET ----
@@ -156,7 +232,7 @@ function cityContextSection(seed: string, label: string): DeepContentSection {
     paragraphs.push(variant(`${seed}:sig${i}`, [
       `${f}`,
       `${stripTrailingPeriod(f)}, which sets the practical ceiling for a booth program working the market.`,
-      `${stripTrailingPeriod(f)} — a useful reference point when sizing a ${L} scope.`,
+      `${stripTrailingPeriod(f)} — a useful reference point when sizing a project.`,
     ]));
   });
 
@@ -165,7 +241,7 @@ function cityContextSection(seed: string, label: string): DeepContentSection {
     paragraphs.push(variant(`${seed}:open3`, [
       `The venue mix in ${city()} ranges from dedicated convention halls to hotel ballrooms and private event spaces. Booth requirements change across that mix — a convention-hall island looks and installs nothing like a hotel-ballroom inline — so the choice of venue drives a lot of downstream scope.`,
       `${city()} exhibitors tend to cluster into recurring show calendars: industry conferences that return each year, regional trade associations that rotate through the same venues, and brand-activation one-offs that piggy-back on larger events. Each pattern has its own lead-time rhythm.`,
-      `Most ${L} projects in ${city()} follow a similar path: scope discussion in month one, venue coordination in month two, fabrication and graphics in months three through four, install and show hours, then strike and closeout. Short-cycle rentals compress that, custom builds extend it.`,
+      `Most projects in ${city()} follow a similar path: scope discussion in month one, venue coordination in month two, fabrication and graphics in months three through four, install and show hours, then strike and closeout. Short-cycle rentals compress that, custom builds extend it.`,
     ]));
   }
 
@@ -203,7 +279,7 @@ function venueSection(seed: string, label: string): DeepContentSection {
     `${city()} events cluster around a small number of venues, and each one has a different personality on the floor.`,
     `The building matters more than almost anything else in a trade show plan. A few ${city()} venues carry most of the calendar.`,
     `Different ${city()} venues mean different floor plans, different labor rules, and different freight realities.`,
-    `Every ${city()} show takes place in a specific building with its own rules. The venues below account for most of the ${L} work in the market.`,
+    `Every ${city()} show takes place in a specific building with its own rules. The venues below come up most often on our production calendar.`,
   ]));
   paragraphs.push(variant(`${seed}:vopen2`, [
     `The right building depends on the show: a consumer expo wants open aisles and broad traffic flow; a corporate conference wants controlled breakout space; a brand activation wants a venue that can carry scenic and production without fighting the architecture.`,
@@ -222,10 +298,10 @@ function venueSection(seed: string, label: string): DeepContentSection {
     const candidates: string[] = [];
     for (const f of facts) {
       const cleaned = asFact(f);
-      if (cleaned && isFactualSentence(cleaned)) candidates.push(cleaned);
+      if (cleaned && isFactualSentence(cleaned)) candidates.push(capitalizeFirst(cleaned));
     }
     if (description) {
-      for (const f of extractFacts(description, 4)) candidates.push(asFact(f) || f);
+      for (const f of extractFacts(description, 4)) candidates.push(capitalizeFirst(asFact(f) || f));
     }
     if (candidates.length === 0) return;
     // First mention: name + first fact
@@ -239,10 +315,13 @@ function venueSection(seed: string, label: string): DeepContentSection {
     if (i === 0 && candidates.length > 1) {
       paragraphs.push(stripTrailingPeriod(candidates[1]) + ".");
     }
-    // Fit note
+    // Fit note — only if fit items look like tags (not full sentences)
     if (i === 0 && fit?.length) {
-      const fitStr = fit.map((f: string) => f.replace(/-/g, " ")).join(", ");
-      paragraphs.push(`${name} fits ${fitStr} programs well.`);
+      const isTagList = fit.every((f: any) => typeof f === "string" && f.length < 60 && !/[.!]$/.test(f));
+      if (isTagList) {
+        const fitStr = fit.map((f: string) => f.replace(/-/g, " ")).join(", ");
+        paragraphs.push(`${name} suits ${fitStr}.`);
+      }
     }
   });
 
@@ -252,6 +331,147 @@ function venueSection(seed: string, label: string): DeepContentSection {
       `Where ${city()} shows actually happen`,
       `The buildings that host ${city()} events`,
       `${city()} convention venues and meeting properties`,
+    ]),
+    paragraphs,
+  };
+}
+
+// ---- THIS VENUE (for /venues/[slug] pages) ----
+
+function thisVenueSection(seed: string, slug: string, label: string): DeepContentSection | null {
+  const venue = getCurrentItem("venues", slug);
+  if (!venue) return null;
+  const name = (venue as any)?.name ?? label;
+  const facts = (venue as any)?.verifiedFacts ?? [];
+  const description = (venue as any)?.description ?? "";
+  const fit = (venue as any)?.tradeShowFit ?? [];
+  const venueType = (venue as any)?.venueType ?? "";
+  const address = (venue as any)?.streetAddress ?? "";
+  const region = (venue as any)?.region ?? "";
+
+  const candidates: string[] = [];
+  for (const f of facts) {
+    const cleaned = asFact(f);
+    if (cleaned && isFactualSentence(cleaned)) candidates.push(capitalizeFirst(cleaned));
+  }
+  if (description) {
+    for (const f of extractFacts(description, 6)) candidates.push(capitalizeFirst(asFact(f) || f));
+  }
+
+  const paragraphs: string[] = [];
+
+  // Opening paragraph — direct declarative
+  if (candidates.length > 0) {
+    paragraphs.push(stripTrailingPeriod(candidates[0]) + ".");
+  } else {
+    paragraphs.push(variant(`${seed}:tv0`, [
+      `${name} is one of the venues we work on regularly in ${city()}.`,
+      `${name} is part of the active ${city()} venue set.`,
+      `${name} shows up on our ${city()} production calendar often enough that we know the building.`,
+    ]));
+  }
+
+  // Second paragraph: more facts if available
+  if (candidates.length > 1) {
+    paragraphs.push(stripTrailingPeriod(candidates[1]) + ".");
+  }
+  if (candidates.length > 2) {
+    paragraphs.push(stripTrailingPeriod(candidates[2]) + ".");
+  }
+
+  // Fit paragraph — only if fit items look like tags (short, not full sentences)
+  if (fit?.length) {
+    const isTagList = fit.every((f: any) => typeof f === "string" && f.length < 60 && !/[.!]$/.test(f));
+    if (isTagList) {
+      const fitStr = fit.map((f: string) => f.replace(/-/g, " ")).join(", ");
+      paragraphs.push(variant(`${seed}:tvfit`, [
+        `The building suits ${fitStr}.`,
+        `${name} tends to work best for ${fitStr}.`,
+        `Show types that fit well here: ${fitStr}.`,
+      ]));
+    }
+  }
+
+  // Address / region line if present
+  if (address || region) {
+    const parts = [address, region].filter(Boolean).join(", ");
+    paragraphs.push(`Located at ${parts}.`);
+  }
+
+  // Why it matters for planning
+  paragraphs.push(variant(`${seed}:tvplan`, [
+    `Running a project here means working against the venue's own exhibitor manual, dock windows, and service-order deadlines. Those details are confirmed before any build commits to fabrication.`,
+    `Projects at ${name} start with its published floor plan, dock schedule, and service-order deadlines. Everything downstream — build, freight, install, labor — is planned against those real inputs.`,
+    `On any ${name} project, the first step is pulling the current exhibitor manual and confirming the service-order deadlines, dock windows, and any rigging approval path. Design decisions come after those are locked.`,
+  ]));
+
+  return {
+    heading: variant(`${seed}:h:tv`, [
+      `About ${name}`,
+      `${name} at a glance`,
+      `The ${name} footprint`,
+      `Working at ${name}`,
+    ]),
+    paragraphs,
+  };
+}
+
+// Nearby / also-in-the-market venue list (brief) — only for venue pages
+function nearbyVenuesSection(seed: string, currentSlug: string, label: string): DeepContentSection | null {
+  const others = (venueRecords as any[]).filter((v: any) => v?.slug && v.slug !== currentSlug);
+  if (!others.length) return null;
+  const picks = pickN(others, `${seed}:near`, 3);
+  if (!picks.length) return null;
+  const names = picks.map((v: any) => v?.name).filter(Boolean);
+  if (!names.length) return null;
+  const paragraphs: string[] = [];
+  paragraphs.push(variant(`${seed}:near0`, [
+    `Other ${city()} venues we work on a regular basis include ${names.slice(0, 3).join(", ")}. Each has its own rules, labor model, and freight pattern — plans don't carry cleanly between them without adjustment.`,
+    `${names.slice(0, 3).join(", ")} are also part of the active ${city()} venue mix. Projects that roll between buildings always get scoped against each building's specific rules.`,
+    `Nearby on the ${city()} calendar: ${names.slice(0, 3).join(", ")}. These come up often enough that we know how each one behaves on install day.`,
+  ]));
+  return {
+    heading: variant(`${seed}:h:near`, [
+      `Other ${city()} venues we work`,
+      `Also on the ${city()} venue list`,
+      `Nearby venues in the ${city()} market`,
+    ]),
+    paragraphs,
+  };
+}
+
+// ---- THIS LOCATION (for /locations/[slug] pages) ----
+
+function thisLocationSection(seed: string, slug: string, label: string): DeepContentSection | null {
+  const loc = getCurrentItem("locations", slug);
+  const name = (loc as any)?.label ?? label;
+  const region = (loc as any)?.region ?? "";
+  const reason = (loc as any)?.reason ?? "";
+
+  const paragraphs: string[] = [];
+  if (reason && isFactualSentence(reason + ".")) {
+    paragraphs.push(stripTrailingPeriod(reason) + ".");
+  } else {
+    paragraphs.push(variant(`${seed}:tl0`, [
+      `${name} is part of the ${city()} event market. Shows and meetings book here alongside the larger ${city()} calendar.`,
+      `${name} is one of the ${city()} area submarkets we cover for trade show work.`,
+      `${name} falls inside the ${city()} service footprint for trade show projects.`,
+    ]));
+  }
+  if (region) {
+    paragraphs.push(`${name} sits in the ${region} area.`);
+  }
+  paragraphs.push(variant(`${seed}:tl1`, [
+    `Projects in ${name} get scoped the same way as work in the ${city()} core: venue, dates, footprint, and budget frame first, then the build plan. The difference is usually in freight routing and which nearby buildings are the closest fit.`,
+    `Production for ${name} shows starts with the same brief we run for the rest of ${city()}: venue specifics, show dates, footprint, outcome. Freight paths and local vendor availability are the variables that shift from the city core.`,
+    `Trade show work in ${name} shares most of its structure with larger ${city()} projects. Where it diverges is in the nearby venue mix, freight routing, and local hotel block availability.`,
+  ]));
+
+  return {
+    heading: variant(`${seed}:h:tl`, [
+      `About ${name}`,
+      `${name} — what the area looks like for events`,
+      `Trade show work in ${name}`,
     ]),
     paragraphs,
   };
@@ -280,20 +500,23 @@ function laborSection(seed: string, label: string): DeepContentSection {
   if (finding) {
     const venueName = (finding as any)?.venue ?? (finding as any)?.building ?? "";
     let text = asFact((finding as any)?.finding ?? (finding as any)?.statement ?? (finding as any)?.rule ?? "");
-    // Strip leading "At {venueName}," if already present, to avoid duplication
     if (venueName && text) {
       const stripRe = new RegExp(`^At\\s+${venueName.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}\\s*[,:]?\\s*`, "i");
       text = text.replace(stripRe, "");
     }
     if (text) {
       const bare = stripTrailingPeriod(text);
-      if (venueName) {
+      // If bare starts with a proper noun (any capitalized word like "Georgia"), don't lowerFirst.
+      // Use "— " separator instead so capitalization is preserved.
+      const startsWithProper = /^[A-Z][a-z]+/.test(bare);
+      if (venueName && !startsWithProper) {
         paragraphs.push(variant(`${seed}:lfi`, [
           `At ${venueName}, ${lowerFirst(bare)}.`,
           `${venueName} — ${capitalizeFirst(bare)}.`,
         ]));
+      } else if (venueName) {
+        paragraphs.push(`${venueName}: ${bare}.`);
       } else {
-        // No venue prefix, keep the sentence as-is (preserve capitalization)
         paragraphs.push(capitalizeFirst(bare) + ".");
       }
     }
@@ -363,12 +586,12 @@ function clusterSection(seed: string, label: string): DeepContentSection | null 
 // ---- PROCESS ----
 
 function processSection(seed: string, label: string, section: string): DeepContentSection {
-  const L = label;
+  const wt = workTerm(section, label);
 
   const step1 = variant(`${seed}:p1`, [
-    `Every ${L} project starts with a scope conversation: the show, the venue, the booth number, the dates, and the budget frame. Ten minutes of specifics produces a better plan than a week of generalities.`,
-    `Every ${L} engagement begins the same way. The venue, the show dates, the footprint, and the target outcome go on the table first. From those four inputs, a real plan can be built.`,
-    `First step on any ${L} project is pinning down the show, the floor plan, the deadlines, and what success actually looks like. Everything downstream hinges on those answers.`,
+    `Every project starts with a scope conversation: the show, the venue, the booth number, the dates, and the budget frame. Ten minutes of specifics produces a better plan than a week of generalities.`,
+    `Every engagement begins the same way. The venue, the show dates, the footprint, and the target outcome go on the table first. From those four inputs, a real plan can be built.`,
+    `First step on any project is pinning down the show, the floor plan, the deadlines, and what success actually looks like. Everything downstream hinges on those answers.`,
   ]);
   const step2 = variant(`${seed}:p2`, [
     `Venue coordination comes next. That means pulling the current exhibitor manual, confirming dock and freight windows, submitting rigging approvals where needed, and placing utility orders against the building's published specs.`,
@@ -376,7 +599,7 @@ function processSection(seed: string, label: string, section: string): DeepConte
     `After the brief, the work turns to the building itself. Dock windows, utility orders, rigging approvals, and labor calls are all confirmed in writing before anything goes to fabrication.`,
   ]);
   const step3 = variant(`${seed}:p3`, [
-    `Production covers fabrication, graphics, AV spec, rentals, and crew chief assignment. It is the longest phase of most ${L} projects and the one where timelines are either protected or lost.`,
+    `Production covers fabrication, graphics, AV spec, rentals, and crew chief assignment. It is the longest phase of most projects and the one where timelines are either protected or lost.`,
     `With venue details locked, production runs. Build, print, AV integration, rentals, and the on-site lead's playbook all come together in this phase.`,
     `Production brings the plan into physical form: fabrication, graphics, AV, rentals, and the named lead who will run the floor.`,
   ]);
@@ -387,20 +610,20 @@ function processSection(seed: string, label: string, section: string): DeepConte
   ]);
   const step5 = variant(`${seed}:p5`, [
     `During show hours, the booth is a live operating space. The on-site team handles repairs, sponsor requests, lead-capture issues, and any venue questions so the client's staff can focus on conversations.`,
-    `Show-hours coverage is part of every ${L} engagement — not a premium add-on. On-floor support keeps the booth running while the client team runs the pipeline.`,
+    `Show-hours coverage is part of every engagement — not a premium add-on. On-floor support keeps the booth running while the client team runs the pipeline.`,
     `Throughout show hours, the on-site lead stays present. Tech breaks, sponsor changes, venue requests — all handled without pulling the client team off the floor.`,
   ]);
   const step6 = variant(`${seed}:p6`, [
     `Strike and closeout happen the same day. Storage labels, outbound manifests, vendor performance notes, and a written debrief go out within 24 hours of doors closing.`,
     `After the show, strike runs against the venue's posted window, and a same-day debrief captures what held and what needs to change before the next date.`,
-    `Closeout is tight: strike, crate, manifest, storage designation, and a written post-show report delivered within a day. That document drives the next ${L} booking.`,
+    `Closeout is tight: strike, crate, manifest, storage designation, and a written post-show report delivered within a day. That document drives the next booking.`,
   ]);
 
   return {
     heading: variant(`${seed}:h:p`, [
-      `How a ${L} project runs`,
-      `The ${L} process from start to finish`,
-      `What a ${L} engagement actually looks like`,
+      `How a project runs`,
+      `The process from start to finish`,
+      `What an engagement actually looks like`,
       `From first call to strike`,
     ]),
     paragraphs: [step1, step2, step3, step4, step5, step6],
@@ -410,11 +633,11 @@ function processSection(seed: string, label: string, section: string): DeepConte
 // ---- COST & TIMING ----
 
 function costSection(seed: string, label: string, section: string): DeepContentSection {
-  const L = label;
+  const wt = workTerm(section, label);
   const opener = variant(`${seed}:c0`, [
-    `${L.charAt(0).toUpperCase() + L.slice(1)} pricing is driven by real line items: fabrication or rental, graphics, show services, labor, freight, and travel where it applies. Round numbers without that breakdown usually hide something.`,
-    `An honest ${L} quote itemizes the variables. There is not a single price — there is a configuration.`,
-    `Every ${L} project has the same cost drivers. The number depends on scope, and scope depends on a handful of specific variables.`,
+    `Pricing is driven by real line items: fabrication or rental, graphics, show services, labor, freight, and travel where it applies. Round numbers without that breakdown usually hide something.`,
+    `An honest quote itemizes the variables. There is not a single price — there is a configuration.`,
+    `Every project has the same cost drivers. The number depends on scope, and scope depends on a handful of specific variables.`,
   ]);
   const body = variant(`${seed}:c1`, [
     `Six variables drive the cost: custom versus rental, booth footprint and complexity, venue-specific labor and rigging fees, graphics scope and substrate, freight distance and timing, and the number of on-site supervision days.`,
@@ -424,15 +647,15 @@ function costSection(seed: string, label: string, section: string): DeepContentS
   const timing = variant(`${seed}:c2`, [
     `On timing: custom builds for ${city()} shows run best with 16 to 20 weeks of lead time. Rental programs run on 8 to 12. Anything inside 4 weeks is a rush, which means fewer options and a premium on materials.`,
     `Lead time drives everything. Custom: 16 to 20 weeks. Rental: 8 to 12. Under 4 weeks is possible but narrows choices and raises cost.`,
-    `A clean ${L} schedule starts 4 to 5 months out for custom work and 2 to 3 months for rentals. Shorter lead times are workable but push rush premiums and limit material choices.`,
+    `A clean schedule starts 4 to 5 months out for custom work and 2 to 3 months for rentals. Shorter lead times are workable but push rush premiums and limit material choices.`,
   ]);
 
   return {
     heading: variant(`${seed}:h:c`, [
-      `${L.charAt(0).toUpperCase() + L.slice(1)} cost and lead time`,
+      `Cost and lead time`,
       `Pricing and scheduling`,
       `Budget and timeline`,
-      `What ${L} costs and how fast it moves`,
+      `What it costs and how fast it moves`,
     ]),
     paragraphs: [opener, body, timing],
   };
@@ -440,12 +663,12 @@ function costSection(seed: string, label: string, section: string): DeepContentS
 
 // ---- WHY US ----
 
-function whySection(seed: string, label: string): DeepContentSection {
-  const L = label;
+function whySection(seed: string, label: string, section: string = "services"): DeepContentSection {
+  const wt = workTerm(section, label);
   const paragraphs: string[] = [];
   paragraphs.push(variant(`${seed}:w0`, [
-    `${biz()} is a ${city()}-based trade show team with in-house design, fabrication, graphics, and show-site crews. One shop, one point of contact, one accountable lead on every project.`,
-    `${biz()} runs ${L} locally. Design, build, and install share the same team and the same playbook, which is how quality survives across a show week.`,
+    `${biz()} is ${city()}'s local trade show team, with in-house design, fabrication, graphics, and show-site crews. One shop, one point of contact, one accountable lead on every project.`,
+    `${biz()} keeps the work local. Design, build, and install share the same team and the same playbook, which is how quality survives across a show week.`,
     `${biz()} operates out of ${city()} with a full in-house production shop. Custom fabrication, rental inventory, graphics production, and show-site labor live under one roof.`,
   ]));
   paragraphs.push(variant(`${seed}:w1`, [
@@ -456,15 +679,15 @@ function whySection(seed: string, label: string): DeepContentSection {
   paragraphs.push(variant(`${seed}:w2`, [
     `Consistency across show dates is the other reason to hire local. The same crew that built the booth runs the install, knows the pack-out, and catches the small things — a missing hardware pack, a graphic edge that needs reseating, a storage crate routed to the wrong bay — without needing the client team to intervene.`,
     `Over a multi-show calendar, the compound value of a single team shows up in fewer surprises. The second install is faster than the first, the third is faster than the second, and by the fourth the project runs on memory and documentation rather than first-principles planning.`,
-    `Clients who run ${label} programs across multiple dates end up paying less per event when the same team handles everything. Less re-briefing, less re-training, less re-checking — the operational overhead drops year over year.`,
+    `Clients who run repeat programs across multiple dates end up paying less per event when the same team handles everything. Less re-briefing, less re-training, less re-checking — the operational overhead drops year over year.`,
   ]));
 
   return {
     heading: variant(`${seed}:h:w`, [
       `Why ${biz()}`,
-      `What makes our ${L} work different`,
+      `What makes our work different`,
       `The advantage of a local ${city()} team`,
-      `How ${biz()} is built to run ${L} projects`,
+      `How we're built to run your project`,
     ]),
     paragraphs,
   };
@@ -473,18 +696,25 @@ function whySection(seed: string, label: string): DeepContentSection {
 // ---- FAQS ----
 
 function faqs(seed: string, label: string, section: string): DeepFaq[] {
-  const L = label;
+  const wt = workTerm(section, label);
+  const sectionKey = String(section ?? "").toLowerCase();
+  const currentSlug = (seed.split(":")[2]) ?? "";
   const out: DeepFaq[] = [];
 
-  const venue = pick(venueRecords, `${seed}:fv`);
-  if (venue) {
+  // "Do you work at X" FAQ — skip for venue pages (we're already at that venue),
+  // and pick a DIFFERENT venue than the current one when on a venue page.
+  const venuePool = sectionKey === "venues"
+    ? (venueRecords as any[]).filter((v: any) => v?.slug !== currentSlug)
+    : venueRecords;
+  const venue = pick(venuePool, `${seed}:fv`);
+  if (venue && sectionKey !== "venues") {
     const name = (venue as any)?.name ?? "";
     const factRaw = ((venue as any)?.verifiedFacts ?? [])[0] ?? (venue as any)?.description ?? "";
     const fact = asFact(factRaw);
     if (name) {
       out.push({
         question: `Do you work at ${name}?`,
-        answer: `Yes. ${fact ? `${stripTrailingPeriod(fact)}. ` : ""}${L.charAt(0).toUpperCase() + L.slice(1)} at that building gets planned against its specific floor rules.`,
+        answer: `Yes. ${fact ? `${stripTrailingPeriod(fact)}. ` : ""}Projects at that building are planned against its specific floor rules.`,
       });
     }
   }
@@ -500,18 +730,24 @@ function faqs(seed: string, label: string, section: string): DeepFaq[] {
     }
     if (text) {
       const bare = stripTrailingPeriod(text);
-      const factLine = venueName
-        ? `At ${venueName}, ${lowerFirst(bare)}.`
-        : `${capitalizeFirst(bare)}.`;
+      const startsWithProper = /^[A-Z][a-z]+/.test(bare);
+      let factLine: string;
+      if (venueName && !startsWithProper) {
+        factLine = `At ${venueName}, ${lowerFirst(bare)}.`;
+      } else if (venueName) {
+        factLine = `${venueName}: ${bare}.`;
+      } else {
+        factLine = capitalizeFirst(bare) + ".";
+      }
       out.push({
-        question: `How does labor work for ${L} in ${city()}?`,
+        question: `How does labor work in ${city()}?`,
         answer: `It runs venue by venue. ${factLine} Other ${city()} venues have their own published rules, and the plan matches the specific building.`,
       });
     }
   }
 
   out.push({
-    question: `How much lead time is ideal for ${L}?`,
+    question: `How much lead time is ideal?`,
     answer: `Custom builds run best with 16 to 20 weeks of lead time. Rentals take 8 to 12 weeks. Work inside 4 weeks is possible but raises costs and narrows the options.`,
   });
   out.push({
@@ -537,35 +773,35 @@ function faqs(seed: string, label: string, section: string): DeepFaq[] {
 // ---- SCOPE: what's included ----
 
 function scopeSection(seed: string, label: string, section: string): DeepContentSection {
-  const L = label;
+  const wt = workTerm(section, label);
   const opener = variant(`${seed}:sco0`, [
-    `${L.charAt(0).toUpperCase() + L.slice(1)} projects typically include design work, fabrication or rental sourcing, graphics production, show-service paperwork, freight, install, show-hours coverage, and strike.`,
-    `A full ${L} engagement covers scope development, fabrication or rental, graphics, show services, logistics, and on-site execution from move-in through dismantle.`,
-    `${L.charAt(0).toUpperCase() + L.slice(1)} scope usually spans design, fabrication, graphics, AV, labor coordination, freight, install, show-hours support, and strike.`,
+    `${capitalizeFirst(wt.plural)} typically include design work, fabrication or rental sourcing, graphics production, show-service paperwork, freight, install, show-hours coverage, and strike.`,
+    `A full engagement covers scope development, fabrication or rental, graphics, show services, logistics, and on-site execution from move-in through dismantle.`,
+    `Project scope usually spans design, fabrication, graphics, AV, labor coordination, freight, install, show-hours support, and strike.`,
   ]);
   const list = variant(`${seed}:sco1`, [
-    `The typical line items on a ${city()} ${L} project include booth structure (custom or rental), graphics and print, AV and lighting, show-service orders (power, internet, rigging), labor calls against the venue's rules, freight both ways, on-site supervision, and post-show closeout documentation.`,
-    `What shows up in most ${L} budgets: structure, graphics, AV, show-service orders through the venue, labor, freight, supervision days, and closeout. Individual projects layer or remove items based on scope.`,
+    `Typical line items include booth structure (custom or rental), graphics and print, AV and lighting, show-service orders (power, internet, rigging), labor calls against the venue's rules, freight both ways, on-site supervision, and post-show closeout documentation.`,
+    `What shows up in most budgets: structure, graphics, AV, show-service orders through the venue, labor, freight, supervision days, and closeout. Individual projects layer or remove items based on scope.`,
   ]);
   const handoffs = variant(`${seed}:sco_h`, [
-    `The handoffs on a ${L} project matter almost as much as the line items. Design has to hand a build-ready drawing to fabrication. Fabrication has to hand a pre-built, dry-fitted booth to crating. The crater has to hand a labeled, manifested shipment to the carrier. Every handoff is a place quality can drop.`,
-    `Good ${L} execution comes from keeping the team small and the handoffs short. Every extra vendor in the chain adds a communication layer and a place where details get lost.`,
-    `A well-run ${L} project has few surprises on install day because the handoffs upstream were tight. A bad one has many, because they weren't.`,
+    `The handoffs on ${wt.title} matter almost as much as the line items. Design has to hand a build-ready drawing to fabrication. Fabrication has to hand a pre-built, dry-fitted booth to crating. The crater has to hand a labeled, manifested shipment to the carrier. Every handoff is a place quality can drop.`,
+    `Good execution comes from keeping the team small and the handoffs short. Every extra vendor in the chain adds a communication layer and a place where details get lost.`,
+    `A well-run project has few surprises on install day because the handoffs upstream were tight. A bad one has many, because they weren't.`,
   ]);
   const reuse = variant(`${seed}:sco2`, [
     `Multi-show programs add asset management: storage, refurbishment, graphic swaps, and scheduled re-kitting so the booth rolls cleanly from ${city()} to the next city on the calendar.`,
     `For programs that repeat, asset management becomes part of the engagement — storage, graphic rotation, refurbishment, and re-crating are planned rather than one-off.`,
   ]);
   const scopeExtra = variant(`${seed}:sco_x`, [
-    `Out of scope by default are show organizer fees, booth lease costs paid directly to the show, staff travel and per diems, and any custom software or data-capture tooling the client runs on its own stack. Those stay on the client side and plug into our scope through coordination, not rebilling.`,
-    `A clean scope definition also calls out what isn't included: show organizer fees, client staff travel, and anything the client already has under contract (lead capture platforms, CRM integrations, promotional giveaways). Those run alongside the ${L} engagement rather than inside it.`,
-    `Scope boundary is as important as scope inclusion. Show organizer fees, client-side staff costs, and any tools the client already owns are handled outside the ${L} engagement. Defining that boundary up front prevents billing surprises later.`,
+    `Out of scope by default are show organizer fees, booth lease costs paid directly to the show, staff travel and per diems, and any custom software or data-capture tooling the client runs on its own stack. Those stay on the client side and plug into the project through coordination, not rebilling.`,
+    `A clean scope definition also calls out what isn't included: show organizer fees, client staff travel, and anything the client already has under contract (lead capture platforms, CRM integrations, promotional giveaways). Those run alongside the engagement rather than inside it.`,
+    `Scope boundary is as important as scope inclusion. Show organizer fees, client-side staff costs, and any tools the client already owns are handled outside the engagement. Defining that boundary up front prevents billing surprises later.`,
   ]);
   return {
     heading: variant(`${seed}:h:sco`, [
-      `What's included in a ${L} engagement`,
-      `${L.charAt(0).toUpperCase() + L.slice(1)} scope`,
-      `Line items on a typical ${L} project`,
+      `What's included in the project scope`,
+      `Scope ${wt.atPhrase}`,
+      `Line items on a typical project`,
     ]),
     paragraphs: [opener, list, handoffs, reuse, scopeExtra],
   };
@@ -573,30 +809,30 @@ function scopeSection(seed: string, label: string, section: string): DeepContent
 
 // ---- OUTCOMES ----
 
-function outcomesSection(seed: string, label: string): DeepContentSection {
-  const L = label;
+function outcomesSection(seed: string, label: string, section: string = "services"): DeepContentSection {
+  const wt = workTerm(section, label);
   const paragraphs = [
     variant(`${seed}:o0`, [
-      `Success on a ${city()} ${L} project looks like a booth that lands on time, passes venue inspection on the first walk, runs without incident through show hours, and ships out the same day it strikes.`,
-      `A ${L} project runs well when install clears the venue's published window, all show services land as ordered, the booth performs across every show day without pulling the client team off pipeline work, and strike clears the dock before the next occupant loads in.`,
-      `The measure of a ${L} engagement is simple: on-time install, no venue callouts, clean show hours, and a closeout that makes the next event easier to book.`,
+      `A successful project in ${city()} looks like a booth that lands on time, passes venue inspection on the first walk, runs without incident through show hours, and ships out the same day it strikes.`,
+      `A project runs well when install clears the venue's published window, all show services land as ordered, the booth performs across every show day without pulling the client team off pipeline work, and strike clears the dock before the next occupant loads in.`,
+      `The measure of a good engagement is simple: on-time install, no venue callouts, clean show hours, and a closeout that makes the next event easier to book.`,
     ]),
     variant(`${seed}:o1`, [
-      `Most ${L} programs in ${city()} are evaluated on lead-capture volume, meetings booked on the floor, and qualified-pipeline attribution after the show. The booth is a means to those numbers — it is not the number itself.`,
-      `Exhibitors who measure ${L} programs seriously track leads, floor-booked meetings, and post-show pipeline. The build and the install are upstream inputs to those KPIs.`,
-      `${L.charAt(0).toUpperCase() + L.slice(1)} ROI is measured at the lead and pipeline level. The show-floor execution either protects or undermines those numbers.`,
+      `Most programs in ${city()} are evaluated on lead-capture volume, meetings booked on the floor, and qualified-pipeline attribution after the show. The booth is a means to those numbers — it is not the number itself.`,
+      `Exhibitors who measure programs seriously track leads, floor-booked meetings, and post-show pipeline. The build and the install are upstream inputs to those KPIs.`,
+      `Trade show ROI is measured at the lead and pipeline level. The show-floor execution either protects or undermines those numbers.`,
     ]),
     variant(`${seed}:o2`, [
       `The post-show debrief is where the numbers get connected back to the physical booth. Which demo station drew traffic, which meeting area closed more conversations, which graphic zone attracted dwell time — that feedback shapes the next build rather than getting lost.`,
-      `A week after the show, the booth's actual floor performance is already clearer than any pre-show projection. We document those observations alongside the technical closeout so the next ${L} cycle inherits real signal, not nostalgia.`,
+      `A week after the show, the booth's actual floor performance is already clearer than any pre-show projection. We document those observations alongside the technical closeout so the next cycle inherits real signal, not nostalgia.`,
       `Client teams sometimes want the booth to carry the pipeline on its own, but the best-performing programs treat the booth as a platform and put real operators on it. On-floor conversation discipline moves the KPIs more than any scenic decision.`,
     ]),
   ];
   return {
     heading: variant(`${seed}:h:o`, [
-      `What a successful ${L} project looks like`,
+      `What a successful project looks like`,
       `Outcomes we optimize for`,
-      `How ${L} performance gets measured`,
+      `How project performance gets measured`,
     ]),
     paragraphs,
   };
@@ -606,17 +842,47 @@ function outcomesSection(seed: string, label: string): DeepContentSection {
 
 export function buildDeepDetailContent(section: TaxonomySection, slug: string, label: string): DeepContent {
   const seed = `${city()}:${section}:${slug}`;
+  const sectionKey = String(section ?? "").toLowerCase();
   const sections: DeepContentSection[] = [];
-  sections.push(cityContextSection(seed, label));
-  sections.push(venueSection(seed, label));
-  sections.push(laborSection(seed, label));
-  const cl = clusterSection(seed, label);
-  if (cl) sections.push(cl);
-  sections.push(scopeSection(seed, label, section));
-  sections.push(processSection(seed, label, section));
-  sections.push(costSection(seed, label, section));
-  sections.push(outcomesSection(seed, label));
-  sections.push(whySection(seed, label));
+
+  if (sectionKey === "venues") {
+    // Venue detail page — focus on THIS venue, mention others only briefly
+    const tv = thisVenueSection(seed, slug, label);
+    if (tv) sections.push(tv);
+    sections.push(cityContextSection(seed, label));
+    sections.push(laborSection(seed, label));
+    const near = nearbyVenuesSection(seed, slug, label);
+    if (near) sections.push(near);
+    sections.push(scopeSection(seed, label, section));
+    sections.push(processSection(seed, label, section));
+    sections.push(costSection(seed, label, section));
+    sections.push(outcomesSection(seed, label, section));
+    sections.push(whySection(seed, label, section));
+  } else if (sectionKey === "locations") {
+    // Location detail page — focus on THIS location
+    const tl = thisLocationSection(seed, slug, label);
+    if (tl) sections.push(tl);
+    sections.push(cityContextSection(seed, label));
+    sections.push(venueSection(seed, label));
+    sections.push(laborSection(seed, label));
+    sections.push(scopeSection(seed, label, section));
+    sections.push(processSection(seed, label, section));
+    sections.push(costSection(seed, label, section));
+    sections.push(outcomesSection(seed, label, section));
+    sections.push(whySection(seed, label, section));
+  } else {
+    // Services, booth types, event types, industries, rentals, etc.
+    sections.push(cityContextSection(seed, label));
+    sections.push(venueSection(seed, label));
+    sections.push(laborSection(seed, label));
+    const cl = clusterSection(seed, label);
+    if (cl) sections.push(cl);
+    sections.push(scopeSection(seed, label, section));
+    sections.push(processSection(seed, label, section));
+    sections.push(costSection(seed, label, section));
+    sections.push(outcomesSection(seed, label, section));
+    sections.push(whySection(seed, label, section));
+  }
 
   const mode = hashValue(`${seed}:ord`) % 5;
   const ordered = [...sections];

@@ -1478,12 +1478,28 @@ export function buildDetailPageContent(
     ctaText: "Share the venue, date, and scope.",
   };
 
-  const visitorHeroLead =
-    `${business.name} plans and builds ${label} for shows in ${business.city} — from first scope through strike.`;
-  const visitorIntro = [
-    `${business.name} is ${business.city}'s local trade show team. Design, fabrication, graphics, install, and show-site supervision run out of one shop, with one accountable lead on every project.`,
-    `${business.city} trade shows move on a tight rhythm. A ${label} project that lands cleanly has the venue, the freight, and the labor calls locked long before the booth ever gets crated.`,
-  ];
+  const __sectionKey = String(section ?? "").toLowerCase();
+  let visitorHeroLead: string;
+  let visitorIntro: string[];
+  if (__sectionKey === "venues") {
+    visitorHeroLead = `${business.name} handles trade show projects at ${label} — design, build, install, and strike.`;
+    visitorIntro = [
+      `${business.name} is ${business.city}'s local trade show team. Design, fabrication, graphics, install, and show-site supervision run out of one shop, with one accountable lead on every project at ${label}.`,
+      `Projects at ${label} run on the building's own exhibitor manual: dock windows, utility orders, labor calls, and rigging approvals get confirmed in writing before any build commits to fabrication.`,
+    ];
+  } else if (__sectionKey === "locations") {
+    visitorHeroLead = `${business.name} runs trade show projects in ${label} and the rest of ${business.city}.`;
+    visitorIntro = [
+      `${business.name} is ${business.city}'s local trade show team, covering ${label} and the surrounding area. Design, fabrication, graphics, install, and show-site supervision run out of one shop, with one accountable lead on every project.`,
+      `Projects in ${label} follow the same rhythm as the rest of ${business.city} work — venue, dates, footprint, and budget frame up front, then a build plan that moves through fabrication, install, show hours, and strike.`,
+    ];
+  } else {
+    visitorHeroLead = `${business.name} plans and delivers ${label.toLowerCase()} for shows in ${business.city} — from first scope through strike.`;
+    visitorIntro = [
+      `${business.name} is ${business.city}'s local trade show team. Design, fabrication, graphics, install, and show-site supervision run out of one shop, with one accountable lead on every project.`,
+      `${business.city} trade shows move on a tight rhythm. ${label} that lands cleanly has the venue, the freight, and the labor calls locked long before the booth ever gets crated.`,
+    ];
+  }
   const visitorFocus: string[] = [];
   const sections = deep.sections;
   const faqs = deep.faqs;
