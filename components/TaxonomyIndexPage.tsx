@@ -15,24 +15,24 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
   const heroImage = firstSlug ? getRecoveredTaxonomyMediaUrl(section, firstSlug) : null;
 
   return (
-    <div className="page-shell">
-      <section className="page-hero page-hero--media page-hero--index">
+    <div className="section-shell">
+      <section className="section-hero section-hero--media section-hero--index">
         {heroImage ? (
-          <div className="page-hero__media" aria-hidden="true">
+          <div className="section-hero__media" aria-hidden="true">
             <img alt="" loading="eager" src={heroImage} />
           </div>
         ) : null}
-        <div className="page-hero__overlay" aria-hidden="true" />
+        <div className="section-hero__overlay" aria-hidden="true" />
         <div className="site-shell">
-          <div className="page-hero__content">
+          <div className="section-hero__content">
             <p className="section-kicker section-kicker--light">{content.eyebrow}</p>
             <h1>{content.title}</h1>
-            <p className="page-hero__lead">{content.lead}</p>
+            <p className="section-hero__lead">{content.lead}</p>
           </div>
         </div>
       </section>
 
-      <section className="page-section page-section--soft">
+      <section className="section-section section-section--soft">
         <div className="site-shell">
           <div className="section-heading">
             <p className="section-kicker">{collection.heroLabel}</p>
@@ -41,13 +41,13 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
             </h2>
           </div>
 
-            <div className="page-card-grid" style={{ marginTop: "36px" }}>
+            <div className="section-card-grid" style={{ marginTop: "36px" }}>
               {content.cards.map((card) => (
-                <Link className="page-card" href={card.href} key={card.href}>
-                <p className="page-card__kicker">{card.eyebrow}</p>
+                <Link className="section-card" href={card.href} key={card.href}>
+                <p className="section-card__kicker">{card.eyebrow}</p>
                 <h3>{card.label}</h3>
                 <p>{card.description}</p>
-                <span className="page-card__link">Open guide</span>
+                <span className="section-card__link">Open guide</span>
               </Link>
             ))}
           </div>
@@ -55,9 +55,9 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
       </section>
 
       {content.intro?.length ? (
-        <section className="page-section">
+        <section className="section-section">
           <div className="container">
-            <div className="page-copy">
+            <div className="section-copy">
               {content.intro.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -67,7 +67,7 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
       ) : null}
 
       {content.deepSections?.length ? (
-        <section className="page-section">
+        <section className="section-section">
           <div className="container">
             {content.deepSections.map((ds) => (
               <section className="detail-section" key={ds.heading}>
@@ -89,7 +89,7 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
       ) : null}
 
       {content.deepFaqs?.length ? (
-        <section className="page-section">
+        <section className="section-section">
           <div className="container">
             <div className="section-heading">
               <p className="section-kicker">Planner questions</p>
@@ -107,7 +107,7 @@ export function TaxonomyIndexPage({ section }: TaxonomyIndexPageProps) {
         </section>
       ) : null}
 
-      <section className="page-section">
+      <section className="section-section">
         <div className="site-shell">
           <div className="cta-band">
             <div>

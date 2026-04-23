@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 import { chromium } from "playwright";
-import type { Browser, Page } from "playwright";
+import type { Browser, Section } from "playwright";
 
 const root = process.cwd();
 const compareDir = path.join(root, "qa-reference-compare");
@@ -39,13 +39,13 @@ const viewports = [
   }
 ] as const;
 
-async function waitForReady(page: Page) {
-  await page.goto(baseUrl, { waitUntil: "domcontentloaded" });
-  await page.waitForLoadState("load");
-  await page.evaluate(async () => {
+async function waitForReady(section: Section) {
+  await section.goto(baseUrl, { waitUntil: "domcontentloaded" });
+  await section.waitForLoadState("load");
+  await section.evaluate(async () => {
     await document.fonts.ready;
   });
-  await page.waitForTimeout(900);
+  await section.waitForTimeout(900);
 }
 
 async function recordScrollVideo(browser: Browser) {
@@ -62,23 +62,23 @@ async function recordScrollVideo(browser: Browser) {
       }
     }
   });
-  const page = await context.newPage();
-  await waitForReady(page);
+  const section = await context.newPage();
+  await waitForReady(section);
 
-  const maxScroll = await page.evaluate(
+  const maxScroll = await section.evaluate(
     () => document.documentElement.scrollHeight - window.innerHeight
   );
 
   for (let index = 0; index <= 18; index += 1) {
     const y = Math.round((maxScroll * index) / 18);
-    await page.evaluate((scrollTop) => {
+    await section.evaluate((scrollTop) => {
       window.scrollTo({ top: scrollTop, behavior: "instant" });
     }, y);
-    await page.waitForTimeout(300);
+    await section.waitForTimeout(300);
   }
 
-  const video = page.video();
-  await page.close();
+  const video = section.video();
+  await section.close();
   await context.close();
 
   if (!video) {
@@ -94,19 +94,19 @@ async function main() {
   const browser = await chromium.launch({ headless: true });
 
   for (const viewport of viewports) {
-    const page = await browser.newPage({
+    const section = await browser.newPage({
       viewport: {
         width: viewport.width,
         height: viewport.height
       }
     });
 
-    await waitForReady(page);
-    await page.screenshot({
+    await waitForReady(section);
+    await section.screenshot({
       path: path.join(compareDir, viewport.output),
       fullPage: true
     });
-    await page.close();
+    await section.close();
   }
 
   await recordScrollVideo(browser);

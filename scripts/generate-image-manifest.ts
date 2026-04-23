@@ -62,7 +62,7 @@ const sectionConfigMap: Record<TaxonomySection, SectionConfig> = {
     locationRelevance:
       "General Des Moines and Central Iowa exhibitor, conference, and expo relevance.",
     artDirection:
-      "Premium trade show environment with clean sightlines, layered depth, and enough negative space for bold white page-title overlays."
+      "Premium trade show environment with clean sightlines, layered depth, and enough negative space for bold white section-title overlays."
   },
   locations: {
     indexKey: "locationsIndex",
@@ -112,7 +112,7 @@ const sectionConfigMap: Record<TaxonomySection, SectionConfig> = {
     locationRelevance:
       "General Central Iowa exhibitor-demand, association, healthcare, manufacturing, agriculture, and conference-market relevance.",
     artDirection:
-      "Blend industry cues into event environments subtly so the page still reads as trade-show work instead of generic corporate stock."
+      "Blend industry cues into event environments subtly so the section still reads as trade-show work instead of generic corporate stock."
   },
   capabilities: {
     indexKey: "capabilitiesIndex",
@@ -219,7 +219,7 @@ function buildIndexSection(section: TaxonomySection) {
         height: 900,
         altText: `${collection.label} overview image for ${business.name}`,
         sourceBrief:
-          `Create or source an original still image for the ${collection.label.toLowerCase()} index page. Do not reuse reference photography or imply unverified venue conditions. Keep the frame plausible for Des Moines and Central Iowa trade show work.`,
+          `Create or source an original still image for the ${collection.label.toLowerCase()} index section. Do not reuse reference photography or imply unverified venue conditions. Keep the frame plausible for Des Moines and Central Iowa trade show work.`,
         artDirection: config.artDirection,
         subjectPriority: collection.label,
         locationRelevance: config.locationRelevance,
@@ -242,27 +242,27 @@ function buildDetailSection(section: TaxonomySection) {
 
   return {
     key: config.detailKey,
-    entries: collection.generatedPages.map((page) => {
-      const route = `${collection.routeBase}/${page.slug}`;
+    entries: collection.generatedPages.map((section) => {
+      const route = `${collection.routeBase}/${section.slug}`;
       const filename = createPlannedFilename(route);
 
       return createEntry({
-        id: `${section}-${page.slug}-hero`,
+        id: `${section}-${section.slug}-hero`,
         route,
         pageType: "taxonomy-detail",
         taxonomyType: section,
-        slug: page.slug,
+        slug: section.slug,
         filename,
         relativeOutputPath: `public/media/planned/${slugifyRoute(collection.routeBase)}/${filename}`,
         usage: `${config.singularLabel} detail hero still`,
         orientation: "landscape",
         width: 1600,
         height: 900,
-        altText: `${page.label} planning image for ${business.name}`,
+        altText: `${section.label} planning image for ${business.name}`,
         sourceBrief:
-          `Create or source an original still image for the ${page.label} page. Keep the frame plausible for Des Moines exhibit, event, booth, or venue planning without reusing reference photography or implying unverified venue conditions.`,
+          `Create or source an original still image for the ${section.label} section. Keep the frame plausible for Des Moines exhibit, event, booth, or venue planning without reusing reference photography or implying unverified venue conditions.`,
         artDirection: config.artDirection,
-        subjectPriority: page.label,
+        subjectPriority: section.label,
         locationRelevance: config.locationRelevance,
         required: true,
         notes:
@@ -330,30 +330,30 @@ function buildManifest() {
       createStaticEntry(
         "about-hero",
         "/about",
-        "core-page",
+        "core-section",
         "hero-candidate-1.jpg",
         "public/media/hero-candidate-1.jpg",
-        "about page hero still",
+        "about section hero still",
         "Des Moines audience and stage atmosphere hero background",
-        "Use a dark, premium conference or activation still that supports the internal-page hero overlay without borrowing reference media.",
+        "Use a dark, premium conference or activation still that supports the internal-section hero overlay without borrowing reference media.",
         "Stage, audience, or event-floor frame with broad negative space and enough texture for large white title overlays.",
-        "About page hero",
+        "About section hero",
         "General Des Moines and Central Iowa event relevance.",
-        "Shared still currently used across internal page heroes."
+        "Shared still currently used across internal section heroes."
       )
     ],
     contact: [
       createStaticEntry(
         "contact-hero",
         "/contact",
-        "core-page",
+        "core-section",
         "contact-hero-des-moines.webp",
         "public/media/planned/contact-hero-des-moines.webp",
-        "contact page hero still",
-        "Des Moines contact page planning still",
+        "contact section hero still",
+        "Des Moines contact section planning still",
         "Create or source an original still that supports project-intake messaging with neutral branding and premium event-production cues.",
         "Operational trade-show moment with schedules, show-floor prep, or stage-management detail rather than generic handshake imagery.",
-        "Contact page hero",
+        "Contact section hero",
         "General Des Moines project-brief relevance.",
         "Current live build uses the shared internal-hero still."
       )
@@ -365,9 +365,9 @@ function buildManifest() {
         "shared",
         "hero-candidate-1.jpg",
         "public/media/hero-candidate-1.jpg",
-        "shared internal-page hero still",
-        "Shared dark event-production hero still for internal pages",
-        "Maintain one legally reusable dark still that can cover internal hero treatments until dedicated stills are sourced for each core page.",
+        "shared internal-section hero still",
+        "Shared dark event-production hero still for internal sections",
+        "Maintain one legally reusable dark still that can cover internal hero treatments until dedicated stills are sourced for each core section.",
         "Audience, stage, or expo atmosphere with low visual noise and strong dark contrast.",
         "Shared internal hero system",
         "General Des Moines and Central Iowa event relevance.",
@@ -427,7 +427,7 @@ function writeImageRequirements(manifest: Record<string, unknown>) {
     ``,
     `Current live assets already in this project`,
     `- public/media/hero-candidate-2.jpg is the homepage hero still fallback.`,
-    `- public/media/hero-candidate-1.jpg is the shared internal-page hero still.`,
+    `- public/media/hero-candidate-1.jpg is the shared internal-section hero still.`,
     `- Featured-work rail panels currently mix these stills with original CSS-based gradient surfaces.`,
     ``,
     `Required image direction`,
@@ -435,13 +435,13 @@ function writeImageRequirements(manifest: Record<string, unknown>) {
     `- Favor convention-center, expo-hall, fairgrounds, conference-hotel, sponsor-activation, and show-floor environments relevant to Des Moines and Central Iowa.`,
     `- Avoid visible third-party logos, readable venue branding, watermarks, low-resolution source material, and obvious AI artifacts.`,
     `- Preserve negative space for large white title overlays and the Sparks-style black/white layout system used throughout the site.`,
-    `- Keep every taxonomy image plausibly distinct from adjacent pages, especially venue pages and nearby location pages.`,
+    `- Keep every taxonomy image plausibly distinct from adjacent sections, especially venue guides and nearby location guides.`,
     ``,
     `Active taxonomy counts`
   ];
 
   activeCollections.forEach((collection) => {
-    lines.push(`- ${collection.label}: ${collection.generatedPages.length} detail pages`);
+    lines.push(`- ${collection.label}: ${collection.generatedPages.length} detail sections`);
   });
 
   lines.push(

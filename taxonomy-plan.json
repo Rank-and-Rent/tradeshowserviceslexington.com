@@ -293,7 +293,7 @@
       "inline-booth-displays",
       "rental-exhibit-booths"
     ],
-    "rationale": "Booth-format pages help the site speak to footprint, sightlines, and install complexity instead of flattening every exhibit into one generic booth concept."
+    "rationale": "Booth-format sections help the site speak to footprint, sightlines, and install complexity instead of flattening every exhibit into one generic booth concept."
   },
   "industries": {
     "label": "Industries",
@@ -461,7 +461,7 @@
         "inline-exhibit-environments",
         "portable-exhibit-environments"
       ],
-      "rationale": "Exhibit-type pages give the site a way to explain how the room should behave once the brand, the footprint, and the live traffic pattern are all real."
+      "rationale": "Exhibit-type sections give the site a way to explain how the room should behave once the brand, the footprint, and the live traffic pattern are all real."
     }
   ],
   "pageCountPlan": {

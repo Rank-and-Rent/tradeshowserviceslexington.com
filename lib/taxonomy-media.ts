@@ -60,15 +60,15 @@ function snake(v: string) {
 }
 
 const KIND_ALIASES: Record<string, string[]> = {
-  services: ["services", "service", "servicePages", "service_pages", "service-pages"],
-  locations: ["locations", "location", "locationPages", "location_pages", "location-pages"],
-  venues: ["venues", "venue", "venuePages", "venue_pages", "venue-pages"],
-  "event-types": ["event-types", "eventTypes", "event_types", "eventType", "eventTypePages", "event-type-pages", "event_type_pages"],
-  "booth-types": ["booth-types", "boothTypes", "booth_types", "boothType", "boothTypePages", "booth-type-pages", "booth_type_pages"],
-  industries: ["industries", "industry", "industryPages", "industry_pages", "industry-pages"],
-  capabilities: ["capabilities", "capability", "capabilityPages", "capability_pages", "capability-pages"],
-  rentals: ["rentals", "rental", "rentalPages", "rental_pages", "rental-pages"],
-  "exhibit-types": ["exhibit-types", "exhibitTypes", "exhibit_types", "exhibitType", "exhibitTypePages", "exhibit-type-pages", "exhibit_type_pages"],
+  services: ["services", "service", "servicePages", "service_pages", "service-sections"],
+  locations: ["locations", "location", "locationPages", "location_pages", "location-sections"],
+  venues: ["venues", "venue", "venuePages", "venue_pages", "venue-sections"],
+  "event-types": ["event-types", "eventTypes", "event_types", "eventType", "eventTypePages", "event-type-sections", "event_type_pages"],
+  "booth-types": ["booth-types", "boothTypes", "booth_types", "boothType", "boothTypePages", "booth-type-sections", "booth_type_pages"],
+  industries: ["industries", "industry", "industryPages", "industry_pages", "industry-sections"],
+  capabilities: ["capabilities", "capability", "capabilityPages", "capability_pages", "capability-sections"],
+  rentals: ["rentals", "rental", "rentalPages", "rental_pages", "rental-sections"],
+  "exhibit-types": ["exhibit-types", "exhibitTypes", "exhibit_types", "exhibitType", "exhibitTypePages", "exhibit-type-sections", "exhibit_type_pages"],
 };
 
 function dirVariants(kind: string): string[] {

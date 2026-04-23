@@ -169,7 +169,7 @@ export const blogPageCopy: PageCopy = {
   paragraphs: [
     `Planning works best when the venue, the freight window, and the hotel pattern are treated as one problem. In Lexington, that means Central Bank Center, the downtown hotel ring, Newtown Pike, and the wider Bluegrass market all stay in the same conversation.`,
     `The notes below are meant to make the decision easier, not busier. They compare the real planning variables that tend to matter before a crate ever reaches the dock: venue rules, event format, booth style, labor needs, and the pace of the live day.`,
-    `That is especially useful here because downtown programs, hotel meetings, and regional drive-in events all create different timing and support assumptions. The right page helps the buyer see which path fits the brief before the scope hardens.`,
+    `That is especially useful here because downtown programs, hotel meetings, and regional drive-in events all create different timing and support assumptions. The right section helps the buyer see which path fits the brief before the scope hardens.`,
     `A good planning note sounds like a practical comparison, not a lecture. It gives the next step enough context to be useful and enough local detail to feel credible.`,
   ],
   linkRows: [
@@ -189,10 +189,10 @@ export function buildIndexPageContent(section: TaxonomySection): IndexPageConten
     `The goal is a clear path from first question to workable scope without generic filler or repeated marketing language.`,
   ];
 
-  const cards: IndexCard[] = collection.generatedPages.slice(0, 8).map((page) => ({
-    href: `${collection.routeBase}/${page.slug}`,
-    label: page.label,
-    description: `${page.label} planning in Lexington, with venue timing, labor, freight, graphics, AV, storage, and show-day support lined up against the actual room and schedule.`,
+  const cards: IndexCard[] = collection.generatedPages.slice(0, 8).map((section) => ({
+    href: `${collection.routeBase}/${section.slug}`,
+    label: section.label,
+    description: `${section.label} planning in Lexington, with venue timing, labor, freight, graphics, AV, storage, and show-day support lined up against the actual room and schedule.`,
     eyebrow: collection.label,
   }));
 
@@ -828,7 +828,7 @@ function buildFallbackIndustryProfile(label: string, slug: string): IndustryProf
   const anchor = words.slice(0, 2).join(" ") || slugTitle;
 
   return {
-    heroLead: `{label} in {city} should read like a working brief for ${slugTitle}, not a generic industry page.`,
+    heroLead: `{label} in {city} should read like a working brief for ${slugTitle}, not a generic industry section.`,
     intro: [
       "The point of {label} is to make the sector's real constraints visible early, before the booth turns into a stack of reused assumptions.",
       `In {city}, that usually means keeping ${anchor} visible in the copy, the layout, and the handoff so the team can tell what the show is actually supposed to solve.`
@@ -836,15 +836,15 @@ function buildFallbackIndustryProfile(label: string, slug: string): IndustryProf
     focusList: [
       `Make ${anchor} the first thing the reader understands.`,
       "Keep approvals, demo rules, and staff roles in one operating thread.",
-      "Use a calmer structure so the page feels specific instead of templated.",
+      "Use a calmer structure so the section feels specific instead of templated.",
       "Protect the closeout notes so the next event starts with useful context."
     ],
     sections: [
       {
         heading: `${slugTitle} in the field`,
         paragraphs: [
-          `The page has to explain why ${label} matters to this buyer group and what kind of booth behavior the event needs.`,
-          `That usually means the copy should sound like a real assignment brief, with the ${anchor} story carried through the whole page.`
+          `The section has to explain why ${label} matters to this buyer group and what kind of booth behavior the event needs.`,
+          `That usually means the copy should sound like a real assignment brief, with the ${anchor} story carried through the whole section.`
         ]
       },
       {
@@ -857,14 +857,14 @@ function buildFallbackIndustryProfile(label: string, slug: string): IndustryProf
       {
         heading: `Why the closeout matters`,
         paragraphs: [
-          `A useful industry page should leave the next planner with enough context to repeat the event without guessing.`,
+          `A useful industry section should leave the next planner with enough context to repeat the event without guessing.`,
           `That makes storage, follow-up, and the next set of approvals feel like part of the same business process.`
         ]
       }
     ],
     faqs: [
       {
-        question: `What makes ${slugTitle} different from a generic industry page?`,
+        question: `What makes ${slugTitle} different from a generic industry section?`,
         answer:
           `It names the actual buyer pressure, the event behavior, and the planning issue that makes ${anchor} matter in the first place.`
       },
@@ -876,7 +876,7 @@ function buildFallbackIndustryProfile(label: string, slug: string): IndustryProf
       {
         question: `Why does the copy need to stay specific?`,
         answer:
-          `Because the page should help a real planner understand the job, not just recycle the same industry language with a different noun.`
+          `Because the section should help a real planner understand the job, not just recycle the same industry language with a different noun.`
       }
     ],
     ctaTitle: `Need ${slugTitle} planning that feels specific to the brief?`,
@@ -933,16 +933,16 @@ function _buildDetailPageContentBase(section: TaxonomySection, slug: string): De
     `${label} in Lexington works best when the project starts with the venue, the show date, and the result the floor has to deliver.`,
     `From there, the scope has to account for freight timing, labor planning, graphics production, AV, power, closeout, and the field decisions that keep the work moving once people are on site.`,
     `Local context matters because a program near Central Bank Center does not behave the same way as a hotel event off Newtown Pike or a regional stop in the Bluegrass ring.`,
-    `A useful page explains how the choice affects install, staffing, approvals, and the final result on the floor instead of just naming the service or location.`,
+    `A useful section explains how the choice affects install, staffing, approvals, and the final result on the floor instead of just naming the service or location.`,
   ];
 
   const localSnapshotSection: ContentSection = {
     heading: `${label} planning snapshot`,
     paragraphs: [
-      `${label} reads more clearly when the page starts with the actual operating conditions instead of a shared ladder of service language.`,
+      `${label} reads more clearly when the section starts with the actual operating conditions instead of a shared ladder of service language.`,
       `In Lexington, the useful brief names the venue, the access pattern, the freight window, and the support mix together so the team can see how the job behaves before the first approval is requested.`,
       `A room at ${venue?.name ?? "the venue"} does not behave the same way as a hotel stop or a regional corridor event, so the opener should say that plainly.`,
-      `That extra local frame keeps the copy grounded in a real assignment and gives the page a distinct opening block instead of a boilerplate intro.`
+      `That extra local frame keeps the copy grounded in a real assignment and gives the section a distinct opening block instead of a boilerplate intro.`
     ],
     bullets: [
       "Show the venue and the access pattern before the service ladder starts.",
@@ -956,7 +956,7 @@ function _buildDetailPageContentBase(section: TaxonomySection, slug: string): De
     paragraphs: [
       `A second Lexington block helps separate the operating context from the shared service ladder and makes the body feel tied to a real assignment.`,
       `That means calling out the venue, the access pattern, and the support needs again in a different cadence so the reader sees more than a reused outline.`,
-      `When ${venue?.name ?? "the venue"} is the reference point, the page is forced to stay specific about how the work actually behaves.`
+      `When ${venue?.name ?? "the venue"} is the reference point, the section is forced to stay specific about how the work actually behaves.`
     ],
     bullets: [
       "Keep the second block tied to the venue and the access path.",

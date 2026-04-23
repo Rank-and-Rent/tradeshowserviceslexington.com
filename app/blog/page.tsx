@@ -24,7 +24,7 @@ const resourceCards = [
 export default function BlogPage() {
   return (
     <SiteFrame>
-      <div className="content-page">
+      <div className="content-section">
         <section className="inner-hero">
           <div className="container">
             <p className="section-kicker">{blogPageCopy.eyebrow}</p>
@@ -33,9 +33,9 @@ export default function BlogPage() {
           </div>
         </section>
 
-        <section className="page-section">
+        <section className="section-section">
           <div className="container">
-            <div className="page-copy">
+            <div className="section-copy">
               {blogPageCopy.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}

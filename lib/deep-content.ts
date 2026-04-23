@@ -1,7 +1,7 @@
 // @ts-nocheck
 // Normal marketing-website copy generator.
 // Reads like a real company website: declarative statements, facts woven in,
-// no references to "the page" or source citations in body text.
+// no references to "the section" or source citations in body text.
 
 import * as sd from "./site-data";
 
@@ -142,7 +142,7 @@ function aOrAn(next: string): string {
   return /[aeiou]/.test(first) ? "an" : "a";
 }
 
-// workTerm: how to refer to the subject of the page in body copy.
+// workTerm: how to refer to the subject of the section in body copy.
 // For services/event-types/etc., the label is a service name. For venues/locations,
 // the label is a proper noun and we need a natural-language substitute.
 function workTerm(section: string, label: string): { indef: string; title: string; atPhrase: string; plural: string } {
@@ -177,7 +177,7 @@ function workTerm(section: string, label: string): { indef: string; title: strin
 }
 
 // Look up the current taxonomy item (by section + slug). Returns the raw record
-// (venue, location, etc.) if available so venue/location pages can center on it.
+// (venue, location, etc.) if available so venue/location guides can center on it.
 function getCurrentItem(section: string, slug: string): any {
   if (section === "venues") {
     const fn = (sd as any).getVenueBySlug;
@@ -336,7 +336,7 @@ function venueSection(seed: string, label: string): DeepContentSection {
   };
 }
 
-// ---- THIS VENUE (for /venues/[slug] pages) ----
+// ---- THIS VENUE (for /venues/[slug] sections) ----
 
 function thisVenueSection(seed: string, slug: string, label: string): DeepContentSection | null {
   const venue = getCurrentItem("venues", slug);
@@ -416,7 +416,7 @@ function thisVenueSection(seed: string, slug: string, label: string): DeepConten
   };
 }
 
-// Nearby / also-in-the-market venue list (brief) — only for venue pages
+// Nearby / also-in-the-market venue list (brief) — only for venue guides
 function nearbyVenuesSection(seed: string, currentSlug: string, label: string): DeepContentSection | null {
   const others = (venueRecords as any[]).filter((v: any) => v?.slug && v.slug !== currentSlug);
   if (!others.length) return null;
@@ -440,7 +440,7 @@ function nearbyVenuesSection(seed: string, currentSlug: string, label: string): 
   };
 }
 
-// ---- THIS LOCATION (for /locations/[slug] pages) ----
+// ---- THIS LOCATION (for /locations/[slug] sections) ----
 
 function thisLocationSection(seed: string, slug: string, label: string): DeepContentSection | null {
   const loc = getCurrentItem("locations", slug);
@@ -701,8 +701,8 @@ function faqs(seed: string, label: string, section: string): DeepFaq[] {
   const currentSlug = (seed.split(":")[2]) ?? "";
   const out: DeepFaq[] = [];
 
-  // "Do you work at X" FAQ — skip for venue pages (we're already at that venue),
-  // and pick a DIFFERENT venue than the current one when on a venue page.
+  // "Do you work at X" FAQ — skip for venue guides (we're already at that venue),
+  // and pick a DIFFERENT venue than the current one when on a venue section.
   const venuePool = sectionKey === "venues"
     ? (venueRecords as any[]).filter((v: any) => v?.slug !== currentSlug)
     : venueRecords;
@@ -846,7 +846,7 @@ export function buildDeepDetailContent(section: TaxonomySection, slug: string, l
   const sections: DeepContentSection[] = [];
 
   if (sectionKey === "venues") {
-    // Venue detail page — focus on THIS venue, mention others only briefly
+    // Venue detail section — focus on THIS venue, mention others only briefly
     const tv = thisVenueSection(seed, slug, label);
     if (tv) sections.push(tv);
     sections.push(cityContextSection(seed, label));
@@ -859,7 +859,7 @@ export function buildDeepDetailContent(section: TaxonomySection, slug: string, l
     sections.push(outcomesSection(seed, label, section));
     sections.push(whySection(seed, label, section));
   } else if (sectionKey === "locations") {
-    // Location detail page — focus on THIS location
+    // Location detail section — focus on THIS location
     const tl = thisLocationSection(seed, slug, label);
     if (tl) sections.push(tl);
     sections.push(cityContextSection(seed, label));

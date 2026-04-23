@@ -8,7 +8,7 @@ import { business, serviceOptions } from "@/lib/site-data";
 export default function ContactPage() {
   return (
     <SiteFrame>
-      <div className="content-page lex-contact">
+      <div className="content-section lex-contact">
         <section className="lex-contact__hero">
           <div className="lex-contact__hero-media" aria-hidden="true">
             <img
@@ -59,7 +59,7 @@ export default function ContactPage() {
               {contactPageCopy.paragraphs.map((paragraph, idx) => (
                 <p className="lex-contact__paragraph" key={`para-${idx}`}>{paragraph}</p>
               ))}
-              <div className="lex-contact__links" aria-label="Related planning pages">
+              <div className="lex-contact__links" aria-label="Related planning sections">
                 {contactPageCopy.linkRows.map((link, idx) => (
                   <Link className="lex-contact__related-link" href={link.href} key={`${link.href}-${idx}`}>
                     {link.label}

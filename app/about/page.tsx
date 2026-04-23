@@ -7,27 +7,27 @@ import { marketHighlights } from "@/lib/site-data";
 export default function AboutPage() {
   return (
     <SiteFrame>
-      <div className="content-page">
-        <section className="page-hero page-hero--media page-hero--about">
-          <div className="page-hero__media" aria-hidden="true">
+      <div className="content-section">
+        <section className="section-hero section-hero--media section-hero--about">
+          <div className="section-hero__media" aria-hidden="true">
             <img
               alt=""
               src="/media/planned/services/services-trade-show-booth-design-lexington-ky.webp"
               loading="eager"
             />
           </div>
-          <div className="page-hero__overlay" aria-hidden="true" />
+          <div className="section-hero__overlay" aria-hidden="true" />
           <div className="site-shell">
-            <div className="page-hero__content">
+            <div className="section-hero__content">
               <p className="section-kicker section-kicker--light">{aboutPageCopy.eyebrow}</p>
               <h1>{aboutPageCopy.title}</h1>
-              <p className="page-hero__lead">{aboutPageCopy.lead}</p>
+              <p className="section-hero__lead">{aboutPageCopy.lead}</p>
             </div>
           </div>
         </section>
 
-        <section className="page-section">
-          <div className="container page-copy">
+        <section className="section-section">
+          <div className="container section-copy">
             {aboutPageCopy.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -46,7 +46,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="page-section page-section--tight">
+        <section className="section-section section-section--tight">
           <div className="container two-column-copy">
             <div>
               <p className="section-kicker">Operational focus</p>
@@ -58,7 +58,7 @@ export default function AboutPage() {
               <p>{aboutPageCopy.paragraphs[2]}</p>
               <p>{aboutPageCopy.paragraphs[3]}</p>
               <p>{aboutPageCopy.paragraphs[4]}</p>
-              <div className="rich-link-row" aria-label="Related planning pages">
+              <div className="rich-link-row" aria-label="Related planning sections">
                 {aboutPageCopy.linkRows.map((link) => (
                   <Link className="inline-link" href={link.href} key={link.href}>
                     {link.label}

@@ -130,7 +130,7 @@ export const headerNavigation: HeaderNavItem[] = [
     ],
     panel: {
       title: "Buyer-specific exhibit plans for real industries",
-      text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic page can offer.",
+      text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic section can offer.",
       href: "/industries",
       buttonLabel: "Browse industries"
     }

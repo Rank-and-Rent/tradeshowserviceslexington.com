@@ -4,15 +4,15 @@
   "buildStatus": "passed",
   "poisonMatchesRemaining": 0,
   "notes": [
-    "Rewrote the shared taxonomy content builder so the service, location, venue, event-type, booth-type, industry, capability, rental, and exhibit-type detail pages inherit richer source copy.",
-    "Reworked the homepage, about page, contact page, blog resource hub, shared header panels, and contact-form status copy without changing layouts, slugs, routes, or forms.",
-    "Regenerated content-summary.json after the source rewrite; all active taxonomy detail pages remain above the 1200-word threshold."
+    "Rewrote the shared taxonomy content builder so the service, location, venue, event-type, booth-type, industry, capability, rental, and exhibit-type detail sections inherit richer source copy.",
+    "Reworked the homepage, about section, contact section, blog resource hub, shared header panels, and contact-form status copy without changing layouts, slugs, routes, or forms.",
+    "Regenerated content-summary.json after the source rewrite; all active taxonomy detail sections remain above the 1200-word threshold."
   ],
   "sourceFilesEdited": [
-    "app/about/page.tsx",
-    "app/blog/page.tsx",
-    "app/contact/page.tsx",
-    "app/page.tsx",
+    "app/about/section.tsx",
+    "app/blog/section.tsx",
+    "app/contact/section.tsx",
+    "app/section.tsx",
     "components/ContactForm.tsx",
     "lib/chrome-data.ts",
     "lib/content.ts",
@@ -21,11 +21,11 @@
   ],
   "contentSurfacesTouched": [
     "homepage hero, centered intro, featured work cards, accordion bodies, article teasers, split CTA, and brief band",
-    "about page hero, narrative copy, card blurbs, and CTA band",
-    "contact page hero, support copy, and form status messaging",
+    "about section hero, narrative copy, card blurbs, and CTA band",
+    "contact section hero, support copy, and form status messaging",
     "blog/resource hub hero and route descriptions",
-    "taxonomy index page lead copy, intro copy, stats cards, card blurbs, and CTA copy",
-    "taxonomy detail page intro copy, focus lists, section copy, FAQ answers, and related-route blurbs",
+    "taxonomy index section lead copy, intro copy, stats cards, card blurbs, and CTA copy",
+    "taxonomy detail section intro copy, focus lists, section copy, FAQ answers, and related-route blurbs",
     "shared header navigation panels and menu-aside copy"
   ]
 }

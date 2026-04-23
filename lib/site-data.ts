@@ -677,7 +677,7 @@ export const headerNavigation: HeaderNavItem[] = [
     ],
     panel: {
     title: "Buyer-specific exhibit plans for real industries",
-      text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic page can offer.",
+      text: "Healthcare, manufacturing, agriculture, education, and other verticals need different language, pacing, and exhibit priorities than a generic section can offer.",
       href: "/industries",
       buttonLabel: "Browse industries"
     }
@@ -768,7 +768,7 @@ export const homepageInsightCards: HomepageInsightCard[] = [
   {
     tag: "Downtown Convention Core",
     title: "Central Bank Center and the downtown convention core",
-    text: "This is the page for programs that depend on attached hotels, loading discipline, and the exhibit-hall sequence downtown is built around.",
+    text: "This is the section for programs that depend on attached hotels, loading discipline, and the exhibit-hall sequence downtown is built around.",
     href: "/venues/central-bank-center",
     accent: "gold"
   },
@@ -810,7 +810,7 @@ export const resourceCards = [
     label: "Locations",
     title: "Lexington and Bluegrass market mapping",
     description:
-      "Use the location stack to see how downtown, Newtown Pike, Hamburg, Beaumont, South Lexington, and the surrounding Bluegrass ring change execution. The point of the location pages is to show where hotel behavior shifts, where parking gets easier or harder, and where a project is likely to pick up or lose time before the event even begins. That makes the market feel concrete instead of generic and helps the planner choose the right submarket before the brief gets too wide. It also helps the reader see whether the project belongs in the convention core, the hotel corridors, or a regional setting that pulls from a broader drive market and needs a different level of coordination. The useful part of that clarity is that it helps the client understand what kind of pace, travel pattern, and support structure the event will actually need.",
+      "Use the location stack to see how downtown, Newtown Pike, Hamburg, Beaumont, South Lexington, and the surrounding Bluegrass ring change execution. The point of the location guides is to show where hotel behavior shifts, where parking gets easier or harder, and where a project is likely to pick up or lose time before the event even begins. That makes the market feel concrete instead of generic and helps the planner choose the right submarket before the brief gets too wide. It also helps the reader see whether the project belongs in the convention core, the hotel corridors, or a regional setting that pulls from a broader drive market and needs a different level of coordination. The useful part of that clarity is that it helps the client understand what kind of pace, travel pattern, and support structure the event will actually need.",
     href: "/locations",
     tone: "slate"
   },
@@ -826,7 +826,7 @@ export const resourceCards = [
     label: "Industries",
     title: "Buyer-specific exhibit plans",
     description:
-      "Industry pages connect the same Lexington venue logic to healthcare, manufacturing, agriculture, equine, association, and university-facing demand. Each sector brings its own language, priorities, and tolerance for risk, which changes what the room emphasizes and how the support model is framed. The pages are built to help the reader feel understood quickly and then move into the planning choices that fit the sector instead of a generic exhibit pattern. That means the wording can sound more specific, the planning advice can sound more useful, and the reader can see why one audience wants a different mix of proof points, pacing, and visual emphasis than another. The better the sector fit, the easier it becomes to keep the room credible to the people who walk into it.",
+      "Industry sections connect the same Lexington venue logic to healthcare, manufacturing, agriculture, equine, association, and university-facing demand. Each sector brings its own language, priorities, and tolerance for risk, which changes what the room emphasizes and how the support model is framed. The sections are built to help the reader feel understood quickly and then move into the planning choices that fit the sector instead of a generic exhibit pattern. That means the wording can sound more specific, the planning advice can sound more useful, and the reader can see why one audience wants a different mix of proof points, pacing, and visual emphasis than another. The better the sector fit, the easier it becomes to keep the room credible to the people who walk into it.",
     href: "/industries",
     tone: "charcoal"
   }
@@ -934,8 +934,8 @@ export function getAllSiteRoutes(): string[] {
   activeCollections.forEach((collection) => {
     routes.push(collection.routeBase);
 
-    collection.generatedPages.forEach((page) => {
-      routes.push(`${collection.routeBase}/${page.slug}`);
+    collection.generatedPages.forEach((section) => {
+      routes.push(`${collection.routeBase}/${section.slug}`);
     });
   });
 

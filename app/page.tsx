@@ -96,7 +96,7 @@ const articleCards = [
 export default function HomePage() {
   return (
     <SiteFrame>
-      <div className="home-page">
+      <div className="home-section">
         <section className="sparks-hero">
           <div className="sparks-hero__media" aria-hidden="true" />
           <div className="sparks-hero__scrim" />

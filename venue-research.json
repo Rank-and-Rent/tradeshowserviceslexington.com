@@ -73,7 +73,7 @@
       ],
       "verifiedFacts": [
         "Hilton Lexington/Downtown sits steps from Rupp Arena and Lexington Center in the downtown core.",
-        "The hotel page shows a meaningful group-travel and events operation tied to the center of the city.",
+        "The hotel section shows a meaningful group-travel and events operation tied to the center of the city.",
         "The property works well when a program needs downtown walkability, hospitality polish, and direct access to the convention district."
       ],
       "tradeShowFit": [
@@ -99,7 +99,7 @@
       ],
       "verifiedFacts": [
         "Marriott positions the hotel at the heart of downtown Lexington.",
-        "The events page gives the property a genuine meetings-and-weddings angle that supports corporate programs and planner-facing events.",
+        "The events section gives the property a genuine meetings-and-weddings angle that supports corporate programs and planner-facing events.",
         "Its downtown placement makes it a clean fit for meetings that need modern hospitality without leaving the city center."
       ],
       "tradeShowFit": [
@@ -191,7 +191,7 @@
   "excludedVenues": [
     {
       "name": "Small restaurant private rooms without durable public event specs",
-      "reason": "They can work for dinners, but they do not support a strong trade-show or conference venue page."
+      "reason": "They can work for dinners, but they do not support a strong trade-show or conference venue section."
     },
     {
       "name": "Wedding-first estates and rural properties outside the practical Lexington sales radius",

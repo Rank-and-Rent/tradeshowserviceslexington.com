@@ -8,12 +8,12 @@ const root = process.cwd();
 const outputPath = path.join(root, "content-summary.json");
 
 const taxonomySummaries = activeCollections.map((collection) => {
-  const wordStats = collection.generatedPages.map((page) => {
-    const content = buildDetailPageContent(collection.section, page.slug);
+  const wordStats = collection.generatedPages.map((section) => {
+    const content = buildDetailPageContent(collection.section, section.slug);
 
     return {
-      slug: page.slug,
-      label: page.label,
+      slug: section.slug,
+      label: section.label,
       wordCount: content.wordCount
     };
   });
@@ -37,11 +37,11 @@ const taxonomySummaries = activeCollections.map((collection) => {
 });
 
 const underTargetPages = taxonomySummaries.flatMap((entry) =>
-  entry.underTargetPages.map((page) => ({
+  entry.underTargetPages.map((section) => ({
     section: entry.section,
-    slug: page.slug,
-    label: page.label,
-    wordCount: page.wordCount
+    slug: section.slug,
+    label: section.label,
+    wordCount: section.wordCount
   }))
 );
 
@@ -69,7 +69,7 @@ console.log(`Wrote ${outputPath}`);
 
 if (underTargetPages.length > 0) {
   console.error(
-    `Found ${underTargetPages.length} detail pages under the 1200-word requirement.`
+    `Found ${underTargetPages.length} detail sections under the 1200-word requirement.`
   );
   process.exit(1);
 }

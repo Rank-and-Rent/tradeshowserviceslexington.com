@@ -14,9 +14,9 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return activeCollections.flatMap((collection) =>
-    collection.generatedPages.map((page) => ({
+    collection.generatedPages.map((section) => ({
       section: collection.section,
-      slug: page.slug
+      slug: section.slug
     }))
   );
 }

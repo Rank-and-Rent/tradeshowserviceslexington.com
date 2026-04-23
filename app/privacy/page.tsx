@@ -3,13 +3,13 @@ import { SiteFrame } from "@/components/SiteFrame";
 export default function PrivacyPage() {
   return (
     <SiteFrame>
-      <div className="page-shell">
-        <section className="page-hero">
+      <div className="section-shell">
+        <section className="section-hero">
           <div className="site-shell">
-            <div className="page-hero__content">
+            <div className="section-hero__content">
               <p className="section-kicker section-kicker--light">Privacy policy</p>
               <h1>Privacy policy</h1>
-              <p className="page-hero__lead">
+              <p className="section-hero__lead">
                 The privacy notice below explains what information may be collected
                 through the contact form and how it is used for follow-up communication
                 and internal operations.
@@ -18,12 +18,12 @@ export default function PrivacyPage() {
           </div>
         </section>
 
-        <section className="page-section">
+        <section className="section-section">
           <div className="site-shell">
             <div className="legal-copy">
               <p>
                 Information submitted through the contact form may include the exact
-                fields shown on the page: name, email, phone, company name, target
+                fields shown on the section: name, email, phone, company name, target
                 show date, show location, service, and project details.
               </p>
               <p>
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
               </p>
               <p>
                 Questions about the information collected here can be directed through
-                the contact page using the same required intake fields.
+                the contact section using the same required intake fields.
               </p>
             </div>
           </div>

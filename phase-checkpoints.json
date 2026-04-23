@@ -17,10 +17,10 @@
         "reference-captures/homepage-mobile.png",
         "reference-captures/nav.png",
         "reference-captures/hero.png",
-        "reference-captures/mid-page-band-01-centered-text.png",
-        "reference-captures/mid-page-band-02-featured-work.png",
-        "reference-captures/mid-page-band-03-capabilities.png",
-        "reference-captures/mid-page-band-04-related-content.png",
+        "reference-captures/mid-section-band-01-centered-text.png",
+        "reference-captures/mid-section-band-02-featured-work.png",
+        "reference-captures/mid-section-band-03-capabilities.png",
+        "reference-captures/mid-section-band-04-related-content.png",
         "reference-captures/cta-band.png",
         "reference-captures/footer.png",
         "reference-captures/homepage-scroll.webm",
@@ -68,7 +68,7 @@
       "status": "completed",
       "requiredArtifacts": [
         "built routes for every active taxonomy index",
-        "built routes for every active taxonomy detail page",
+        "built routes for every active taxonomy detail section",
         "content-summary.json"
       ],
       "missingArtifacts": [],

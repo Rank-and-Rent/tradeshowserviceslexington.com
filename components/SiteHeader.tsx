@@ -133,7 +133,7 @@ export function SiteHeader() {
             <h2>Project-led exhibit execution across Lexington and the Bluegrass region.</h2>
             <p>
               Quick links for services, venue guides, market maps, event formats,
-              booth formats, and industry-specific planning pages.
+              booth formats, and industry-specific planning sections.
             </p>
             <Link className="site-menu__cta" href="/contact">
               Open project brief

@@ -48,30 +48,30 @@ export function TaxonomyDetailPage({
         : `Share the venue, date, and the first scope issue you want solved so ${item.label.toLowerCase()} can be mapped to the real show plan.`;
 
   return (
-    <div className="page-shell">
-      <section className="page-hero page-hero--media page-hero--detail">
+    <div className="section-shell">
+      <section className="section-hero section-hero--media section-hero--detail">
         {heroImage ? (
-          <div className="page-hero__media" aria-hidden="true">
+          <div className="section-hero__media" aria-hidden="true">
             <img alt="" loading="eager" src={heroImage} />
           </div>
         ) : null}
-        <div className="page-hero__overlay" aria-hidden="true" />
+        <div className="section-hero__overlay" aria-hidden="true" />
         <div className="site-shell">
-          <div className="page-hero__content">
+          <div className="section-hero__content">
             <p className="section-kicker section-kicker--light">{content.eyebrow}</p>
             <h1>{item.label}</h1>
-            <p className="page-hero__lead">{content.heroLead}</p>
+            <p className="section-hero__lead">{content.heroLead}</p>
           </div>
 
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="section-section">
         <div className="site-shell">
           <div className="detail-layout">
             <article className="detail-content">
               <div className="panel">
-                <div className="page-copy">
+                <div className="section-copy">
                   {content.intro.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -147,7 +147,7 @@ export function TaxonomyDetailPage({
               </div>
 
               <div className="sidebar-card">
-                <p className="section-kicker">More pages to explore</p>
+                <p className="section-kicker">More sections to explore</p>
                 <div className="related-links">
                   {content.relatedLinks.map((link) => (
                     <Link className="related-link" href={link.href} key={link.href}>
