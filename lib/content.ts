@@ -1478,43 +1478,23 @@ export function buildDetailPageContent(
     ctaText: "Share the venue, date, and scope.",
   };
 
-  const __sectionKey = String(section ?? "").toLowerCase();
-  let visitorHeroLead: string;
-  let visitorIntro: string[];
-  if (__sectionKey === "venues") {
-    visitorHeroLead = `${business.name} handles trade show projects at ${label} — design, build, install, and strike.`;
-    visitorIntro = [
-      `${business.name} is ${business.city}'s local trade show team. Design, fabrication, graphics, install, and show-site supervision run out of one shop, with one accountable lead on every project at ${label}.`,
-      `Projects at ${label} run on the building's own exhibitor manual: dock windows, utility orders, labor calls, and rigging approvals get confirmed in writing before any build commits to fabrication.`,
-    ];
-  } else if (__sectionKey === "locations") {
-    visitorHeroLead = `${business.name} runs trade show projects in ${label} and the rest of ${business.city}.`;
-    visitorIntro = [
-      `${business.name} is ${business.city}'s local trade show team, covering ${label} and the surrounding area. Design, fabrication, graphics, install, and show-site supervision run out of one shop, with one accountable lead on every project.`,
-      `Projects in ${label} follow the same rhythm as the rest of ${business.city} work — venue, dates, footprint, and budget frame up front, then a build plan that moves through fabrication, install, show hours, and strike.`,
-    ];
-  } else {
-    visitorHeroLead = `${business.name} plans and delivers ${label.toLowerCase()} for shows in ${business.city} — from first scope through strike.`;
-    visitorIntro = [
-      `${business.name} is ${business.city}'s local trade show team. Design, fabrication, graphics, install, and show-site supervision run out of one shop, with one accountable lead on every project.`,
-      `${business.city} trade shows move on a tight rhythm. ${label} that lands cleanly has the venue, the freight, and the labor calls locked long before the booth ever gets crated.`,
-    ];
-  }
-  const visitorFocus: string[] = [];
   const sections = deep.sections;
   const faqs = deep.faqs;
+  const baseIntro: string[] = Array.isArray(base.intro) ? base.intro : [];
+  const baseFocus: string[] = Array.isArray(base.focusList) ? base.focusList : [];
   const plain = [
-    visitorHeroLead,
-    ...visitorIntro,
+    base.heroLead,
+    ...baseIntro,
+    ...baseFocus,
     ...sections.flatMap((s: any) => [s.heading, ...s.paragraphs, ...(s.bullets ?? [])]),
     ...faqs.flatMap((f: any) => [f.question, f.answer]),
   ].filter((x: any): x is string => typeof x === "string").join(" ");
   const wc = plain.trim().split(/\s+/).filter(Boolean).length;
   return {
     ...base,
-    heroLead: visitorHeroLead,
-    intro: visitorIntro,
-    focusList: visitorFocus,
+    heroLead: base.heroLead ?? "",
+    intro: baseIntro,
+    focusList: baseFocus,
     sections,
     faqs,
     wordCount: wc,
