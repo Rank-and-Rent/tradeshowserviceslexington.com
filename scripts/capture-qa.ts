@@ -1,8 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import { chromium } from "playwright";
-import type { Section } from "playwright";
+import { chromium, type Page } from "playwright";
 
 import {
   activeTaxonomySections,
@@ -41,13 +40,13 @@ function filenameForRoute(route: string): string {
   return route.replace(/^\//, "").replace(/\//g, "--");
 }
 
-async function waitForReady(section: Section, url: string) {
-  await section.goto(url, { waitUntil: "domcontentloaded" });
-  await section.waitForLoadState("load");
-  await section.evaluate(async () => {
+async function waitForReady(page: Page, url: string) {
+  await page.goto(url, { waitUntil: "domcontentloaded" });
+  await page.waitForLoadState("load");
+  await page.evaluate(async () => {
     await document.fonts.ready;
   });
-  await section.waitForTimeout(900);
+  await page.waitForTimeout(900);
 }
 
 async function main() {
@@ -60,7 +59,7 @@ async function main() {
   const browser = await chromium.launch({ headless: true });
 
   for (const viewport of viewports) {
-    const section = await browser.newPage({
+    const page = await browser.newPage({
       viewport: {
         width: viewport.width,
         height: viewport.height
@@ -68,8 +67,8 @@ async function main() {
     });
 
     for (const route of routes) {
-      await waitForReady(section, `${baseUrl}${route}`);
-      await section.screenshot({
+      await waitForReady(page, `${baseUrl}${route}`);
+      await page.screenshot({
         path: path.join(
           root,
           "qa-screens",
@@ -80,7 +79,7 @@ async function main() {
       });
     }
 
-    await section.close();
+    await page.close();
   }
 
   await browser.close();

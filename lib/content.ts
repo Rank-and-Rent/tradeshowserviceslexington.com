@@ -12,6 +12,7 @@ import {
   buildDeepDetailContent,
   buildDeepIndexContent,
 } from "./deep-content";
+import { getStaticTaxonomyDetailContent, getStaticTaxonomyIndexContent, isStaticTaxonomyOnly } from "./static-taxonomy-content";
 
 export type ContentSection = {
   heading: string;
@@ -40,6 +41,8 @@ export type IndexPageContent = {
   facts: typeof marketHighlights;
   ctaTitle: string;
   ctaText: string;
+  deepSections?: ContentSection[];
+  deepFaqs?: FaqItem[];
 };
 
 export type DetailPageContent = {
@@ -47,9 +50,11 @@ export type DetailPageContent = {
   title: string;
   heroLead: string;
   intro: string[];
+  focusHeading?: string;
   focusList: string[];
   sections: ContentSection[];
   faqs: FaqItem[];
+  faqTitle?: string;
   relatedLinks: RouteLink[];
   wordCount: number;
   seoTitle: string;
@@ -71,6 +76,55 @@ const CITY_STATE = `${business.city.toUpperCase()}, ${business.state.toUpperCase
 
 function countWords(text: string) {
   return text.trim().split(/\s+/).filter(Boolean).length;
+}
+
+function buildIndexCardDescription(
+  section: TaxonomySection,
+  slug: string,
+  index: number
+) {
+  const collection = getTaxonomyCollection(section);
+  const item = getTaxonomyItem(section, slug);
+  const label = item?.label ?? slug.replace(/-/g, " ");
+
+  if (section === "venues" && item) {
+    const venue = getVenueBySlug(slug);
+    return `${venue?.name ?? label} planning in Lexington, with venue rules, access, freight timing, labor, and show-day coordination aligned to the building itself.`;
+  }
+
+  if (section === "locations") {
+    return `${label} location planning in Lexington, with arrival paths, hotel inventory, freight movement, and regional access framed around the actual district.`;
+  }
+
+  if (section === "services") {
+    return `${label} in Lexington, tied to planning, freight, labor, graphics, AV, and show-site supervision so the scope reads like a real operating brief.`;
+  }
+
+  if (section === "event-types") {
+    return `${label} event support in Lexington, with staffing, timing, audience flow, and technical requirements matched to the format itself.`;
+  }
+
+  if (section === "booth-types") {
+    return `${label} booth planning for Lexington, with footprint, circulation, structure, and install timing shaped around the live floor.`;
+  }
+
+  if (section === "industries") {
+    return `${label} planning in Lexington, focused on buyer behavior, message control, and the support needs that change with the industry.`;
+  }
+
+  if (section === "capabilities") {
+    return `${label} capability coverage for Lexington, showing how planning, coordination, and field leadership shape the execution path.`;
+  }
+
+  if (section === "rentals") {
+    return `${label} rental planning in Lexington, with speed, budget control, and reusable assets aligned to the event schedule.`;
+  }
+
+  if (section === "exhibit-types") {
+    return `${label} exhibit planning in Lexington, with environment, footprint, and control needs matched to the event format.`;
+  }
+
+  return `${collection.label} card ${index + 1} for Lexington planning.`;
 }
 
 function getLocalContext(): string[] {
@@ -182,6 +236,34 @@ export const blogPageCopy: PageCopy = {
 
 export function buildIndexPageContent(section: TaxonomySection): IndexPageContent {
   const collection = getTaxonomyCollection(section);
+  const staticContent = getStaticTaxonomyIndexContent(String(section));
+
+  if (staticContent) {
+    const cards = collection.generatedPages.map((item, index) => ({
+      href: `${collection.routeBase}/${item.slug}`,
+      label: item.label,
+      description: buildIndexCardDescription(section, item.slug, index),
+      eyebrow: `${collection.heroLabel} ${String(index + 1).padStart(2, "0")}`,
+    }));
+
+    return {
+      eyebrow: collection.eyebrow,
+      title: staticContent.title,
+      lead: staticContent.lead,
+      intro: staticContent.intro,
+      cards,
+      facts: marketHighlights,
+      ctaTitle: staticContent.ctaTitle,
+      ctaText: staticContent.ctaText,
+      deepSections: staticContent.deepSections,
+      deepFaqs: staticContent.deepFaqs,
+    };
+  }
+
+  if (isStaticTaxonomyOnly()) {
+    throw new Error(`Missing static taxonomy index content for ${String(section)}`);
+  }
+
   const intro = [
     `${collection.label} in Lexington starts with the room, not the render. Central Bank Center, downtown hotels, the Newtown Pike corridor, and the broader Bluegrass market each create different timing, access, and labor assumptions.`,
     `These guides make those differences easier to compare before the scope hardens. That helps the buyer decide whether the project needs a service-led build, a venue-specific plan, or a location view that matches how people actually move through the market.`,
@@ -1463,6 +1545,42 @@ export function buildDetailPageContent(
   section: TaxonomySection,
   slug: string
 ): DetailPageContent {
+  const staticContent = getStaticTaxonomyDetailContent(String(section), slug);
+
+  if (staticContent) {
+    const relatedLinks = pickRelatedRoutes(section, slug);
+    const wordCount = countWords([
+      staticContent.title,
+      staticContent.heroLead,
+      ...staticContent.intro,
+      ...staticContent.focusList,
+      ...staticContent.sections.flatMap((entry) => [entry.heading, ...entry.paragraphs, ...(entry.bullets ?? [])]),
+      ...staticContent.faqs.flatMap((entry) => [entry.question, entry.answer]),
+    ].join(" "));
+
+    return {
+      eyebrow: getTaxonomyCollection(section).eyebrow,
+      title: staticContent.title,
+      heroLead: staticContent.heroLead,
+      intro: staticContent.intro,
+      focusHeading: staticContent.focusHeading,
+      focusList: staticContent.focusList,
+      sections: staticContent.sections,
+      faqs: staticContent.faqs,
+      faqTitle: staticContent.faqTitle,
+      relatedLinks,
+      wordCount,
+      seoTitle: staticContent.seoTitle,
+      seoDescription: staticContent.seoDescription,
+      ctaTitle: staticContent.ctaTitle,
+      ctaText: staticContent.ctaText,
+    };
+  }
+
+  if (isStaticTaxonomyOnly()) {
+    throw new Error(`Missing static taxonomy detail content for ${String(section)}/${slug}`);
+  }
+
   const rawBase: any = _buildDetailPageContentBase(section, slug);
   const item = getTaxonomyItem(section, slug);
   const label = String(item?.label ?? section);
@@ -1494,9 +1612,11 @@ export function buildDetailPageContent(
     ...base,
     heroLead: base.heroLead ?? "",
     intro: baseIntro,
+    focusHeading: base.focusHeading ?? "What we focus on",
     focusList: baseFocus,
     sections,
     faqs,
+    faqTitle: base.faqTitle ?? "Frequently asked questions",
     wordCount: wc,
   };
 }

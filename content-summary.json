@@ -1,44 +1,45 @@
 {
-  "generatedAt": "2026-04-09T14:49:19.405Z",
+  "generatedAt": "2026-04-25T02:48:06.865Z",
   "activeTaxonomies": [
     {
       "section": "services",
       "label": "Services",
       "routeBase": "/services",
-      "detailCount": 33,
+      "detailCount": 12,
       "representativeSlugs": [
         "turnkey-trade-show-services",
         "trade-show-general-contracting",
-        "expo-logistics-and-shipping"
+        "trade-show-strategy-and-pre-show-planning",
+        "trade-show-booth-design"
       ],
-      "minWordCount": 1694,
-      "maxWordCount": 1789,
+      "minWordCount": 1513,
+      "maxWordCount": 1637,
       "allPagesMeet1200WordRequirement": true,
       "sampleWordCounts": [
         {
           "slug": "turnkey-trade-show-services",
           "label": "Turnkey Trade Show Services",
-          "wordCount": 1723
+          "wordCount": 1531
         },
         {
           "slug": "trade-show-general-contracting",
           "label": "Trade Show General Contracting",
-          "wordCount": 1759
+          "wordCount": 1575
         },
         {
-          "slug": "exhibitor-appointed-contractor-coordination",
-          "label": "Exhibitor-Appointed Contractor Coordination",
-          "wordCount": 1716
+          "slug": "trade-show-strategy-and-pre-show-planning",
+          "label": "Trade Show Strategy and Pre-Show Planning",
+          "wordCount": 1637
         },
         {
           "slug": "trade-show-booth-design",
           "label": "Trade Show Booth Design",
-          "wordCount": 1750
+          "wordCount": 1579
         },
         {
           "slug": "custom-exhibit-fabrication",
           "label": "Custom Exhibit Fabrication",
-          "wordCount": 1732
+          "wordCount": 1513
         }
       ],
       "underTargetPages": []
@@ -47,40 +48,41 @@
       "section": "locations",
       "label": "Locations",
       "routeBase": "/locations",
-      "detailCount": 36,
+      "detailCount": 12,
       "representativeSlugs": [
-        "downtown-des-moines",
-        "west-des-moines",
-        "altoona"
+        "downtown-lexington",
+        "newtown-pike-corridor",
+        "hamburg",
+        "beaumont"
       ],
-      "minWordCount": 1696,
-      "maxWordCount": 1784,
+      "minWordCount": 1500,
+      "maxWordCount": 1616,
       "allPagesMeet1200WordRequirement": true,
       "sampleWordCounts": [
         {
-          "slug": "downtown-des-moines",
-          "label": "Downtown Des Moines",
-          "wordCount": 1773
+          "slug": "downtown-lexington",
+          "label": "Downtown Lexington",
+          "wordCount": 1613
         },
         {
-          "slug": "east-village",
-          "label": "East Village",
-          "wordCount": 1754
+          "slug": "newtown-pike-corridor",
+          "label": "Newtown Pike Corridor",
+          "wordCount": 1616
         },
         {
-          "slug": "western-gateway",
-          "label": "Western Gateway",
-          "wordCount": 1747
+          "slug": "hamburg",
+          "label": "Hamburg",
+          "wordCount": 1589
         },
         {
-          "slug": "court-avenue-district",
-          "label": "Court Avenue District",
-          "wordCount": 1776
+          "slug": "beaumont",
+          "label": "Beaumont",
+          "wordCount": 1507
         },
         {
-          "slug": "riverfront-des-moines",
-          "label": "Riverfront Des Moines",
-          "wordCount": 1776
+          "slug": "chevy-chase",
+          "label": "Chevy Chase",
+          "wordCount": 1551
         }
       ],
       "underTargetPages": []
@@ -89,40 +91,41 @@
       "section": "venues",
       "label": "Venues",
       "routeBase": "/venues",
-      "detailCount": 28,
+      "detailCount": 7,
       "representativeSlugs": [
-        "community-choice-convention-center",
-        "ron-pearson-center",
-        "richard-o-jacobson-exhibition-center"
+        "central-bank-center",
+        "hyatt-regency-lexington",
+        "hilton-lexington-downtown",
+        "lexington-marriott-city-center"
       ],
-      "minWordCount": 1650,
-      "maxWordCount": 1779,
+      "minWordCount": 1417,
+      "maxWordCount": 1481,
       "allPagesMeet1200WordRequirement": true,
       "sampleWordCounts": [
         {
-          "slug": "community-choice-convention-center",
-          "label": "Community Choice Convention Center",
-          "wordCount": 1733
+          "slug": "central-bank-center",
+          "label": "Central Bank Center",
+          "wordCount": 1474
         },
         {
-          "slug": "emc-expo-center",
-          "label": "EMC Expo Center",
-          "wordCount": 1662
+          "slug": "hyatt-regency-lexington",
+          "label": "Hyatt Regency Lexington",
+          "wordCount": 1432
         },
         {
-          "slug": "caseys-center",
-          "label": "Casey's Center",
-          "wordCount": 1650
+          "slug": "hilton-lexington-downtown",
+          "label": "Hilton Lexington/Downtown",
+          "wordCount": 1462
         },
         {
-          "slug": "hilton-des-moines-downtown",
-          "label": "Hilton Des Moines Downtown",
-          "wordCount": 1694
+          "slug": "lexington-marriott-city-center",
+          "label": "Lexington Marriott City Center",
+          "wordCount": 1417
         },
         {
-          "slug": "des-moines-marriott-downtown",
-          "label": "Des Moines Marriott Downtown",
-          "wordCount": 1701
+          "slug": "marriott-lexington-griffin-gate-golf-resort-and-spa",
+          "label": "Marriott Lexington Griffin Gate Golf Resort & Spa",
+          "wordCount": 1481
         }
       ],
       "underTargetPages": []
@@ -131,40 +134,41 @@
       "section": "event-types",
       "label": "Event Types",
       "routeBase": "/event-types",
-      "detailCount": 12,
+      "detailCount": 8,
       "representativeSlugs": [
         "trade-show-services",
         "conference-services",
-        "brand-activation-services"
+        "brand-activation-services",
+        "user-conference-services"
       ],
-      "minWordCount": 1682,
-      "maxWordCount": 1733,
+      "minWordCount": 1534,
+      "maxWordCount": 1639,
       "allPagesMeet1200WordRequirement": true,
       "sampleWordCounts": [
         {
           "slug": "trade-show-services",
           "label": "Trade Show Services",
-          "wordCount": 1716
+          "wordCount": 1639
         },
         {
           "slug": "conference-services",
           "label": "Conference Services",
-          "wordCount": 1707
+          "wordCount": 1612
         },
         {
-          "slug": "expo-services",
-          "label": "Expo Services",
-          "wordCount": 1701
+          "slug": "brand-activation-services",
+          "label": "Brand Activation Services",
+          "wordCount": 1585
         },
         {
-          "slug": "convention-services",
-          "label": "Convention Services",
-          "wordCount": 1695
+          "slug": "user-conference-services",
+          "label": "User Conference Services",
+          "wordCount": 1534
         },
         {
-          "slug": "product-launch-services",
-          "label": "Product Launch Services",
-          "wordCount": 1700
+          "slug": "association-event-services",
+          "label": "Association Event Services",
+          "wordCount": 1566
         }
       ],
       "underTargetPages": []
@@ -173,40 +177,41 @@
       "section": "booth-types",
       "label": "Booth Types",
       "routeBase": "/booth-types",
-      "detailCount": 10,
+      "detailCount": 6,
       "representativeSlugs": [
+        "custom-exhibit-booths",
+        "island-exhibit-booths",
         "inline-booth-displays",
-        "double-deck-exhibits",
-        "20x20-trade-show-booths"
+        "rental-exhibit-booths"
       ],
-      "minWordCount": 1685,
-      "maxWordCount": 1778,
+      "minWordCount": 1531,
+      "maxWordCount": 1580,
       "allPagesMeet1200WordRequirement": true,
       "sampleWordCounts": [
         {
-          "slug": "inline-booth-displays",
-          "label": "Inline Booth Displays",
-          "wordCount": 1718
+          "slug": "custom-exhibit-booths",
+          "label": "Custom Exhibit Booths",
+          "wordCount": 1580
         },
         {
           "slug": "island-exhibit-booths",
           "label": "Island Exhibit Booths",
-          "wordCount": 1753
+          "wordCount": 1554
         },
         {
-          "slug": "modular-trade-show-booths",
-          "label": "Modular Trade Show Booths",
-          "wordCount": 1752
+          "slug": "inline-booth-displays",
+          "label": "Inline Booth Displays",
+          "wordCount": 1569
         },
         {
-          "slug": "portable-trade-show-displays",
-          "label": "Portable Trade Show Displays",
-          "wordCount": 1740
+          "slug": "rental-exhibit-booths",
+          "label": "Rental Exhibit Booths",
+          "wordCount": 1572
         },
         {
-          "slug": "custom-exhibit-booths",
-          "label": "Custom Exhibit Booths",
-          "wordCount": 1730
+          "slug": "modular-exhibit-booths",
+          "label": "Modular Exhibit Booths",
+          "wordCount": 1531
         }
       ],
       "underTargetPages": []
@@ -215,62 +220,188 @@
       "section": "industries",
       "label": "Industries",
       "routeBase": "/industries",
-      "detailCount": 10,
+      "detailCount": 8,
       "representativeSlugs": [
         "healthcare-trade-show-services",
         "manufacturing-expo-services",
-        "agriculture-and-agtech-expo-services"
+        "agriculture-and-agtech-expo-services",
+        "education-and-association-event-services"
       ],
-      "minWordCount": 1695,
-      "maxWordCount": 1762,
+      "minWordCount": 1461,
+      "maxWordCount": 1513,
       "allPagesMeet1200WordRequirement": true,
       "sampleWordCounts": [
         {
           "slug": "healthcare-trade-show-services",
           "label": "Healthcare Trade Show Services",
-          "wordCount": 1740
-        },
-        {
-          "slug": "technology-trade-show-services",
-          "label": "Technology Trade Show Services",
-          "wordCount": 1752
+          "wordCount": 1502
         },
         {
           "slug": "manufacturing-expo-services",
           "label": "Manufacturing Expo Services",
-          "wordCount": 1695
+          "wordCount": 1499
         },
         {
-          "slug": "food-and-beverage-trade-show-services",
-          "label": "Food and Beverage Trade Show Services",
-          "wordCount": 1755
+          "slug": "agriculture-and-agtech-expo-services",
+          "label": "Agriculture and AgTech Expo Services",
+          "wordCount": 1502
         },
         {
-          "slug": "beauty-and-cosmetics-trade-show-services",
-          "label": "Beauty and Cosmetics Trade Show Services",
-          "wordCount": 1755
+          "slug": "education-and-association-event-services",
+          "label": "Education and Association Event Services",
+          "wordCount": 1513
+        },
+        {
+          "slug": "equine-and-bourbon-industry-events",
+          "label": "Equine and Bourbon Industry Events",
+          "wordCount": 1465
+        }
+      ],
+      "underTargetPages": []
+    },
+    {
+      "section": "capabilities",
+      "label": "Capabilities",
+      "routeBase": "/capabilities",
+      "detailCount": 4,
+      "representativeSlugs": [
+        "experience-strategy-and-show-planning",
+        "creative-and-booth-development",
+        "fabrication-coordination",
+        "show-site-leadership"
+      ],
+      "minWordCount": 1573,
+      "maxWordCount": 1614,
+      "allPagesMeet1200WordRequirement": true,
+      "sampleWordCounts": [
+        {
+          "slug": "experience-strategy-and-show-planning",
+          "label": "Experience Strategy and Show Planning",
+          "wordCount": 1573
+        },
+        {
+          "slug": "creative-and-booth-development",
+          "label": "Creative and Booth Development",
+          "wordCount": 1614
+        },
+        {
+          "slug": "fabrication-coordination",
+          "label": "Fabrication Coordination",
+          "wordCount": 1598
+        },
+        {
+          "slug": "show-site-leadership",
+          "label": "Show-Site Leadership",
+          "wordCount": 1584
+        }
+      ],
+      "underTargetPages": []
+    },
+    {
+      "section": "rentals",
+      "label": "Rentals",
+      "routeBase": "/rentals",
+      "detailCount": 4,
+      "representativeSlugs": [
+        "modular-exhibit-rentals",
+        "portable-display-rentals",
+        "rental-booth-packages",
+        "event-furnishing-rentals"
+      ],
+      "minWordCount": 1571,
+      "maxWordCount": 1610,
+      "allPagesMeet1200WordRequirement": true,
+      "sampleWordCounts": [
+        {
+          "slug": "modular-exhibit-rentals",
+          "label": "Modular Exhibit Rentals",
+          "wordCount": 1605
+        },
+        {
+          "slug": "portable-display-rentals",
+          "label": "Portable Display Rentals",
+          "wordCount": 1581
+        },
+        {
+          "slug": "rental-booth-packages",
+          "label": "Rental Booth Packages",
+          "wordCount": 1571
+        },
+        {
+          "slug": "event-furnishing-rentals",
+          "label": "Event Furnishing Rentals",
+          "wordCount": 1610
+        }
+      ],
+      "underTargetPages": []
+    },
+    {
+      "section": "exhibit-types",
+      "label": "Exhibit Types",
+      "routeBase": "/exhibit-types",
+      "detailCount": 5,
+      "representativeSlugs": [
+        "corporate-exhibit-environments",
+        "island-exhibit-environments",
+        "inline-exhibit-environments",
+        "portable-exhibit-environments"
+      ],
+      "minWordCount": 1545,
+      "maxWordCount": 1609,
+      "allPagesMeet1200WordRequirement": true,
+      "sampleWordCounts": [
+        {
+          "slug": "corporate-exhibit-environments",
+          "label": "Corporate Exhibit Environments",
+          "wordCount": 1564
+        },
+        {
+          "slug": "island-exhibit-environments",
+          "label": "Island Exhibit Environments",
+          "wordCount": 1563
+        },
+        {
+          "slug": "inline-exhibit-environments",
+          "label": "Inline Exhibit Environments",
+          "wordCount": 1581
+        },
+        {
+          "slug": "portable-exhibit-environments",
+          "label": "Portable Exhibit Environments",
+          "wordCount": 1609
+        },
+        {
+          "slug": "roadshow-exhibit-environments",
+          "label": "Roadshow Exhibit Environments",
+          "wordCount": 1545
         }
       ],
       "underTargetPages": []
     }
   ],
   "finalCountsByTaxonomy": {
-    "services": 33,
-    "locations": 36,
-    "venues": 28,
-    "event-types": 12,
-    "booth-types": 10,
-    "industries": 10
+    "services": 12,
+    "locations": 12,
+    "venues": 7,
+    "event-types": 8,
+    "booth-types": 6,
+    "industries": 8,
+    "capabilities": 4,
+    "rentals": 4,
+    "exhibit-types": 5
   },
   "everyActiveDetailPageMeets1200WordRequirement": true,
   "representativeSlugsChosenForQA": {
     "services": "turnkey-trade-show-services",
-    "locations": "downtown-des-moines",
-    "venues": "community-choice-convention-center",
+    "locations": "downtown-lexington",
+    "venues": "central-bank-center",
     "event-types": "trade-show-services",
-    "booth-types": "inline-booth-displays",
-    "industries": "healthcare-trade-show-services"
+    "booth-types": "custom-exhibit-booths",
+    "industries": "healthcare-trade-show-services",
+    "capabilities": "experience-strategy-and-show-planning",
+    "rentals": "modular-exhibit-rentals",
+    "exhibit-types": "corporate-exhibit-environments"
   },
   "underTargetPages": [],
-  "totalActiveDetailPages": 129
+  "totalActiveDetailPages": 66
 }

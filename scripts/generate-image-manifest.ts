@@ -242,27 +242,27 @@ function buildDetailSection(section: TaxonomySection) {
 
   return {
     key: config.detailKey,
-    entries: collection.generatedPages.map((section) => {
-      const route = `${collection.routeBase}/${section.slug}`;
+    entries: collection.generatedPages.map((item) => {
+      const route = `${collection.routeBase}/${item.slug}`;
       const filename = createPlannedFilename(route);
 
       return createEntry({
-        id: `${section}-${section.slug}-hero`,
+        id: `${section}-${item.slug}-hero`,
         route,
         pageType: "taxonomy-detail",
         taxonomyType: section,
-        slug: section.slug,
+        slug: item.slug,
         filename,
         relativeOutputPath: `public/media/planned/${slugifyRoute(collection.routeBase)}/${filename}`,
         usage: `${config.singularLabel} detail hero still`,
         orientation: "landscape",
         width: 1600,
         height: 900,
-        altText: `${section.label} planning image for ${business.name}`,
+        altText: `${item.label} planning image for ${business.name}`,
         sourceBrief:
-          `Create or source an original still image for the ${section.label} section. Keep the frame plausible for Des Moines exhibit, event, booth, or venue planning without reusing reference photography or implying unverified venue conditions.`,
+          `Create or source an original still image for the ${item.label} section. Keep the frame plausible for Des Moines exhibit, event, booth, or venue planning without reusing reference photography or implying unverified venue conditions.`,
         artDirection: config.artDirection,
-        subjectPriority: section.label,
+        subjectPriority: item.label,
         locationRelevance: config.locationRelevance,
         required: true,
         notes:
