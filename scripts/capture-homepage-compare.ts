@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import { chromium } from "playwright";
+import { chromium, type Page } from "playwright";
 import type { Browser, Section } from "playwright";
 
 const root = process.cwd();
@@ -39,7 +39,7 @@ const viewports = [
   }
 ] as const;
 
-async function waitForReady(section: Section) {
+async function waitForReady(section: Page) {
   await section.goto(baseUrl, { waitUntil: "domcontentloaded" });
   await section.waitForLoadState("load");
   await section.evaluate(async () => {
