@@ -4,3 +4,5 @@ logs/
 npm-debug.log*
 .DS_Store
 reference-captures/
+.vercel
+.env*.local
