@@ -4,7 +4,7 @@
   "site": {
     "name": "Trade Show Services of Lexington",
     "domain": "tradeshowserviceslexington.com",
-    "mode": "mixed"
+    "mode": "static-only"
   },
   "index": {
     "services": {
