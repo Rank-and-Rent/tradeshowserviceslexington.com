@@ -218,7 +218,7 @@ function cityContextSection(seed: string, label: string): DeepContentSection {
   paragraphs.push(variant(`${seed}:open2`, [
     `The attendees vary by show — some weeks draw regional operators, others pull international buyers in for a single conference — but the floor mechanics stay consistent. Every booth needs graphics production, show services, labor calls, and a plan for the specific building it's landing in.`,
     `Trade show weeks in ${city()} compress decisions. Dock windows are finite, rigging slots fill fast, and the labor calendar around a citywide conference runs hot. Exhibitors who treat planning as optional lose time they don't get back.`,
-    `Exhibitors pulling back on budget in ${city()} still have to show up in the same booth neighborhoods as their competitors. Scope gets tighter; standards don't. The booths that land well are the ones built on a specific plan, not a generic template.`,
+    `Exhibitors pulling back on budget in ${city()} still have to show up in the same booth neighborhoods as their competitors. Scope gets tighter; standards don't. The booths that land well are the ones built on a specific plan, not a standard layouts.`,
   ]));
 
   let signalCount = 0;
@@ -600,18 +600,18 @@ function processSection(seed: string, label: string, section: string): DeepConte
   ]);
   const step3 = variant(`${seed}:p3`, [
     `Production covers fabrication, graphics, AV spec, rentals, and crew chief assignment. It is the longest phase of most projects and the one where timelines are either protected or lost.`,
-    `With venue details locked, production runs. Build, print, AV integration, rentals, and the on-site lead's playbook all come together in this phase.`,
+    `With venue details locked, production runs. Build, print, AV integration, rentals, and the show floor lead's playbook all come together in this phase.`,
     `Production brings the plan into physical form: fabrication, graphics, AV, rentals, and the named lead who will run the floor.`,
   ]);
   const step4 = variant(`${seed}:p4`, [
     `One named show-site lead runs the install. Not a rotating crew and not a remote account manager — one person holds the floor plan, the punch list, and the labor calls from crates to doors.`,
-    `Install days are owned by a single on-site lead. That person carries the plan, works the punch list in real time, and reports up once a day with real status.`,
+    `Install days are owned by a single show floor lead. That person carries the plan, works the punch list in real time, and reports up once a day with real status.`,
     `The install phase has one owner on the floor. That person handles the labor calls, the graphics questions, the sequence adjustments, and the daily update.`,
   ]);
   const step5 = variant(`${seed}:p5`, [
-    `During show hours, the booth is a live operating space. The on-site team handles repairs, sponsor requests, lead-capture issues, and any venue questions so the client's staff can focus on conversations.`,
+    `During show hours, the booth functions as a live operating space. A booth supervisor manages repairs, sponsor requests, lead-capture issues, and any venue questions so client staff can focus on conversations.`,
     `Show-hours coverage is part of every engagement — not a premium add-on. On-floor support keeps the booth running while the client team runs the pipeline.`,
-    `Throughout show hours, the on-site lead stays present. Tech breaks, sponsor changes, venue requests — all handled without pulling the client team off the floor.`,
+    `Throughout show hours, the show floor lead stays present. Tech breaks, sponsor changes, venue requests — all handled without pulling the client team off the floor.`,
   ]);
   const step6 = variant(`${seed}:p6`, [
     `Strike and closeout happen the same day. Storage labels, outbound manifests, vendor performance notes, and a written debrief go out within 24 hours of doors closing.`,
@@ -764,7 +764,7 @@ function faqs(seed: string, label: string, section: string): DeepFaq[] {
   });
   out.push({
     question: `What happens if something breaks during show hours?`,
-    answer: `The on-site lead handles it. Minor repairs happen in place; anything larger gets sourced from the local shop or rerouted through the venue's service desk.`,
+    answer: `The show floor lead handles it. Minor repairs happen in place; anything larger gets sourced from the local fabricators or rerouted through the venue's service desk.`,
   });
 
   return out;
