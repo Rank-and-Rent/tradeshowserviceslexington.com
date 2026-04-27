@@ -2135,54 +2135,18 @@ iframe[src*="google.com/maps"], iframe[src*="maps.google"] { width: 100%; aspect
 .site-brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
 }
 
-.site-brand__mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #0f62fe 0%, #0043ce 100%);
-  color: #fff;
-  font-family: var(--font-display, "Inter", sans-serif);
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: -0.02em;
-  box-shadow: 0 4px 14px rgba(15, 98, 254, 0.32);
-}
-
-.site-header-v3.is-menu-open .site-brand__mark {
-  background: #fff;
-  color: #0f172a;
-  box-shadow: none;
-}
-
-.site-brand__text {
-  display: inline-flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.site-brand__name {
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.site-brand__city {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  opacity: 0.72;
-  margin-top: 4px;
+.site-brand__logo {
+  display: block;
+  height: 44px;
+  width: auto;
+  object-fit: contain;
 }
 
 @media (max-width: 520px) {
-  .site-brand__text {
-    display: none;
+  .site-brand__logo {
+    height: 36px;
   }
 }
 

@@ -12,13 +12,11 @@ import {
 function BrandMark() {
   return (
     <span className="site-brand" aria-label={business.name}>
-      <span className="site-brand__mark" aria-hidden="true">
-        <span>L</span>
-      </span>
-      <span className="site-brand__text">
-        <span className="site-brand__name">Trade Show Services</span>
-        <span className="site-brand__city">of Lexington</span>
-      </span>
+      <img
+        alt={business.name}
+        className="site-brand__logo"
+        src="/logo.png"
+      />
     </span>
   );
 }
