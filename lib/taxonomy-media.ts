@@ -78,6 +78,8 @@ function dirVariants(kind: string): string[] {
   const bases = [
     "media",
     "media/generated",
+    "media/planned",
+    "media/recovered",
   ];
   const out: string[] = [];
   for (const b of bases) for (const v of variants) out.push(`${b}/${v}`);

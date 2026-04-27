@@ -98,7 +98,19 @@ export default function HomePage() {
     <SiteFrame>
       <div className="home-section">
         <section className="sparks-hero">
-          <div className="sparks-hero__media" aria-hidden="true" />
+          <div className="sparks-hero__media" aria-hidden="true">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/media/hero-poster.png"
+            >
+              <source src="/media/hero-loop.webm" type="video/webm" />
+              <source src="/media/hero-loop.mp4" type="video/mp4" />
+            </video>
+          </div>
           <div className="sparks-hero__scrim" />
           <div className="site-shell">
             <div className="sparks-hero__content">
