@@ -512,7 +512,7 @@ export function pickRelatedRoutes(
     {
       href: `/${section}`,
       label: `Browse all ${getTaxonomyCollection(section).label.toLowerCase()}`,
-      description: `View the full ${getTaxonomyCollection(section).label.toLowerCase()} set for ${business.city.toUpperCase()} and the wider Bluegrass region.`
+      description: `View the full ${getTaxonomyCollection(section).label.toLowerCase()} set for ${business.city} and the wider Bluegrass region.`
     }
   ];
 
@@ -529,7 +529,7 @@ export function pickRelatedRoutes(
       links.push({
         href: `/${entry}/${related.slug}`,
         label: related.label,
-        description: `${getTaxonomyCollection(entry).cardLabel} guidance connected back to ${business.city.toUpperCase()} venue, logistics, and show-day planning.`
+        description: `${getTaxonomyCollection(entry).cardLabel} guidance connected back to ${business.city} venue, logistics, and show-day planning.`
       });
     });
 

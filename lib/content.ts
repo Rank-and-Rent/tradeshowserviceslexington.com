@@ -71,8 +71,8 @@ export type PageCopy = {
   linkRows: { href: string; label: string }[];
 };
 
-const CITY = business.city.toUpperCase();
-const CITY_STATE = `${business.city.toUpperCase()}, ${business.state.toUpperCase()}`;
+const CITY = business.city;
+const CITY_STATE = `${business.city}, ${business.state}`;
 
 function countWords(text: string) {
   return text.trim().split(/\s+/).filter(Boolean).length;
@@ -130,13 +130,13 @@ function buildIndexCardDescription(
 function getLocalContext(): string[] {
   switch (business.city as string) {
     case "Savannah":
-      return ["DOWNTOWN SAVANNAH", "THE RIVERFRONT", "THE AIRPORT-WEST CORRIDOR", "I-95"];
+      return ["Downtown Savannah", "the Riverfront", "the Airport-West corridor", "I-95"];
     case "Philadelphia":
-      return ["CENTER CITY", "UNIVERSITY CITY", "PENN'S LANDING", "OAKS", "KING OF PRUSSIA"];
+      return ["Center City", "University City", "Penn's Landing", "Oaks", "King of Prussia"];
     case "Lexington":
-      return ["DOWNTOWN LEXINGTON", "NEWTOWN PIKE", "KEENELAND", "THE BLUEGRASS PARKWAY", "DOWNTOWN HOTEL CORRIDOR"];
+      return ["Downtown Lexington", "Newtown Pike", "Keeneland", "the Bluegrass Parkway", "the downtown hotel corridor"];
     case "Columbia":
-      return ["DOWNTOWN COLUMBIA", "HARBISON", "FOREST ACRES", "IRMO", "WEST COLUMBIA", "I-26"];
+      return ["Downtown Columbia", "Harbison", "Forest Acres", "Irmo", "West Columbia", "I-26"];
     default:
       return [CITY];
   }
@@ -1007,7 +1007,7 @@ function _buildDetailPageContentBase(section: TaxonomySection, slug: string): De
     throw new Error(`No ${section} item found for slug "${slug}"`);
   }
 
-  const label = item.label.toUpperCase();
+  const label = item.label;
   const relatedLinks = pickRelatedRoutes(section, slug).slice(0, 6);
   const venue = getVenueBySlug(slug);
 
@@ -1525,8 +1525,8 @@ function _buildDetailPageContentBase(section: TaxonomySection, slug: string): De
     };
   }
 return {
-    eyebrow: collection.label.toUpperCase(),
-    title: item.label.toUpperCase(),
+    eyebrow: collection.label,
+    title: item.label,
     heroLead: `${label} in Lexington is easier to execute when the plan covers the building, the freight path, the labor crew, the graphics timeline, and the show-day supervision together.`,
     intro,
     focusList,
@@ -1534,8 +1534,8 @@ return {
     faqs,
     relatedLinks,
     wordCount: 1800,
-    seoTitle: `${item.label.toUpperCase()} | ${business.name}`,
-    seoDescription: `${item.label.toUpperCase()} planning for Lexington with venue timing, freight, labor, graphics, AV, and show-site supervision written into one operating plan.`,
+    seoTitle: `${item.label} | ${business.name}`,
+    seoDescription: `${item.label} planning for Lexington with venue timing, freight, labor, graphics, AV, and show-site supervision written into one operating plan.`,
     ctaTitle: `Talk through the ${item.label} scope`,
     ctaText: `Share the venue, the deadline, and the working sequence so the Lexington plan can move forward without guesswork and without leaning on boilerplate.`,
   };
