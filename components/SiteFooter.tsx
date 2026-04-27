@@ -104,10 +104,8 @@ export function SiteFooter() {
       <FooterSeoLinks />
       <div className="site-shell">
         <div className="site-footer__top">
-          <Link aria-label={business.name} href="/">
-            <span className="site-wordmark">
-              tslx<span className="site-wordmark__dot">.</span>
-            </span>
+          <Link aria-label={business.name} href="/" className="site-footer__brand">
+            <img alt={business.name} src="/logo.png" />
           </Link>
 
           <div className="site-footer__social">

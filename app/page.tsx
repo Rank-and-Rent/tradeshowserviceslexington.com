@@ -4,44 +4,64 @@ import { SiteFrame } from "@/components/SiteFrame";
 import { getRecoveredTaxonomyMediaUrl } from "@/lib/taxonomy-media";
 
 type FeaturedWorkCard = {
+  eyebrow: string;
   title: string;
   href: string;
-  image?: string;
-  tone: "photo" | "blue" | "sand" | "red";
+  image: string;
 };
 
 const featuredWork: FeaturedWorkCard[] = [
   {
+    eyebrow: "Central Bank Center",
     title: "Downtown convention execution with hotel-ring timing",
     href: "/venues/central-bank-center",
-    tone: "blue",
-    image: getRecoveredTaxonomyMediaUrl("services", "conference-and-venue-execution") ?? undefined
+    image: getRecoveredTaxonomyMediaUrl("venues", "central-bank-center") ?? "/media/planned/services/services-conference-and-venue-execution-lexington-ky.webp"
   },
   {
-    title: "Newtown Pike programs that keep arrivals and load-in aligned",
+    eyebrow: "Newtown Pike Corridor",
+    title: "Hotel-ring programs that keep arrivals and load-in aligned",
     href: "/locations/newtown-pike-corridor",
-    tone: "sand",
-    image: getRecoveredTaxonomyMediaUrl("services", "trade-show-project-management") ?? undefined
+    image: getRecoveredTaxonomyMediaUrl("locations", "newtown-pike-corridor") ?? "/media/planned/services/services-trade-show-project-management-lexington-ky.webp"
   },
   {
-    title: "Fairgrounds-scale logistics with a calmer field plan",
-    href: "/venues/william-c-knapp-varied-industries-building",
-    tone: "blue",
-    image: getRecoveredTaxonomyMediaUrl("services", "show-site-supervision") ?? undefined
+    eyebrow: "Griffin Gate",
+    title: "Resort-scale logistics with a calmer field plan",
+    href: "/venues/marriott-lexington-griffin-gate-golf-resort-and-spa",
+    image: getRecoveredTaxonomyMediaUrl("venues", "marriott-lexington-griffin-gate-golf-resort-and-spa") ?? "/media/planned/services/services-show-site-supervision-lexington-ky.webp"
   },
   {
-    title: "North-side meetings built for repeat attendance and easy access",
-    href: "/locations/versailles",
-    tone: "sand",
-    image: getRecoveredTaxonomyMediaUrl("services", "trade-show-booth-design") ?? undefined
+    eyebrow: "Hyatt Regency Lexington",
+    title: "Connected-tower meetings built for repeat attendance",
+    href: "/venues/hyatt-regency-lexington",
+    image: getRecoveredTaxonomyMediaUrl("venues", "hyatt-regency-lexington") ?? "/media/planned/services/services-trade-show-booth-design-lexington-ky.webp"
   },
   {
-    title: "Activation and audio programs that keep the room and the message aligned",
-    href: "/services/brand-activation-production",
-    tone: "red",
-    image: getRecoveredTaxonomyMediaUrl("services", "trade-show-av-production") ?? undefined
+    eyebrow: "Hilton Lexington Downtown",
+    title: "Activation and AV programs aligned to the room",
+    href: "/venues/hilton-lexington-downtown",
+    image: getRecoveredTaxonomyMediaUrl("venues", "hilton-lexington-downtown") ?? "/media/planned/services/services-trade-show-av-production-lexington-ky.webp"
   }
 ];
+
+const homepageVenues = [
+  { slug: "central-bank-center", label: "Central Bank Center" },
+  { slug: "hyatt-regency-lexington", label: "Hyatt Regency Lexington" },
+  { slug: "hilton-lexington-downtown", label: "Hilton Lexington Downtown" },
+  { slug: "lexington-marriott-city-center", label: "Lexington Marriott City Center" },
+  { slug: "marriott-lexington-griffin-gate-golf-resort-and-spa", label: "Griffin Gate Resort" },
+  { slug: "the-campbell-house-lexington", label: "The Campbell House" }
+] as const;
+
+const homepageLocations = [
+  { slug: "downtown-lexington", label: "Downtown Lexington" },
+  { slug: "newtown-pike-corridor", label: "Newtown Pike Corridor" },
+  { slug: "hamburg", label: "Hamburg" },
+  { slug: "beaumont", label: "Beaumont" },
+  { slug: "chevy-chase", label: "Chevy Chase" },
+  { slug: "south-lexington", label: "South Lexington" },
+  { slug: "nicholasville", label: "Nicholasville" },
+  { slug: "georgetown", label: "Georgetown" }
+] as const;
 
 const capabilityRows = [
   {
@@ -154,21 +174,67 @@ export default function HomePage() {
             <div className="home-featured__rail">
               {featuredWork.map((item) => (
                 <Link
-                  className={`home-featured__card home-featured__card--${item.tone}`}
+                  className="home-featured__card"
                   href={item.href}
                   key={item.href}
-                  style={
-                    item.image
-                      ? {
-                          backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.52)), url(${item.image})`
-                        }
-                      : undefined
-                  }
+                  style={{
+                    backgroundImage: `linear-gradient(180deg, rgba(11,18,32,0.0) 30%, rgba(11,18,32,0.78) 100%), url(${item.image})`
+                  }}
                 >
-                  <span>featured work</span>
+                  <span>{item.eyebrow}</span>
                   <strong>{item.title}</strong>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="home-venues">
+          <div className="site-shell">
+            <div className="home-venues__head">
+              <p className="section-kicker">Venue stack</p>
+              <h2>The buildings we plan around in Lexington.</h2>
+              <Link className="home-venues__view-all" href="/venues">View all venues <span aria-hidden="true">→</span></Link>
+            </div>
+            <div className="home-venues__grid">
+              {homepageVenues.map((venue) => {
+                const image = getRecoveredTaxonomyMediaUrl("venues", venue.slug);
+                return (
+                  <Link
+                    className="home-venues__card"
+                    href={`/venues/${venue.slug}`}
+                    key={venue.slug}
+                    style={image ? { backgroundImage: `linear-gradient(180deg, rgba(11,18,32,0) 40%, rgba(11,18,32,0.85) 100%), url(${image})` } : undefined}
+                  >
+                    <span>{venue.label}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="home-locations">
+          <div className="site-shell">
+            <div className="home-locations__head">
+              <p className="section-kicker">Lexington footprint</p>
+              <h2>Neighborhoods, corridors, and the regional ring.</h2>
+              <Link className="home-locations__view-all" href="/locations">View all locations <span aria-hidden="true">→</span></Link>
+            </div>
+            <div className="home-locations__grid">
+              {homepageLocations.map((loc) => {
+                const image = getRecoveredTaxonomyMediaUrl("locations", loc.slug);
+                return (
+                  <Link
+                    className="home-locations__card"
+                    href={`/locations/${loc.slug}`}
+                    key={loc.slug}
+                    style={image ? { backgroundImage: `linear-gradient(180deg, rgba(11,18,32,0) 35%, rgba(11,18,32,0.82) 100%), url(${image})` } : undefined}
+                  >
+                    <span>{loc.label}</span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

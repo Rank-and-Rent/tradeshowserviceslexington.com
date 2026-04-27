@@ -533,7 +533,7 @@ ol {
 
 .sparks-hero {
   position: relative;
-  min-height: 82vh;
+  min-height: 100vh;
   margin-top: calc(var(--c-header-height) * -1);
   color: var(--color-white);
   background: var(--color-shell);
@@ -597,7 +597,7 @@ ol {
   align-items: flex-end;
   justify-content: space-between;
   gap: 36px;
-  min-height: 82vh;
+  min-height: 100vh;
   padding: 160px 0 72px;
 }
 
@@ -1720,8 +1720,11 @@ iframe[src*="google.com/maps"], iframe[src*="maps.google"] { width: 100%; aspect
 .lex-contact { background: #f7f5f0; }
 .lex-contact__hero {
   position: relative;
-  padding: 120px 0 88px;
-  min-height: 480px;
+  display: flex;
+  align-items: flex-end;
+  padding: 180px 0 72px;
+  min-height: 64vh;
+  margin-top: calc(var(--c-header-height) * -1);
   background-color: #0b1220;
   color: #fff;
   overflow: hidden;
@@ -1730,8 +1733,8 @@ iframe[src*="google.com/maps"], iframe[src*="maps.google"] { width: 100%; aspect
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 18% 22%, rgba(15, 98, 254, 0.32), transparent 55%),
-    linear-gradient(180deg, rgba(7, 11, 22, 0.55) 0%, rgba(7, 11, 22, 0.78) 100%);
+    radial-gradient(120% 80% at 0% 100%, rgba(15, 98, 254, 0.22) 0%, rgba(11, 18, 32, 0) 60%),
+    linear-gradient(180deg, rgba(11, 18, 32, 0.32) 0%, rgba(11, 18, 32, 0.22) 45%, rgba(11, 18, 32, 0.92) 100%);
   pointer-events: none;
 }
 .lex-contact__hero-inner {
@@ -2474,7 +2477,10 @@ iframe[src*="google.com/maps"], iframe[src*="maps.google"] { width: 100%; aspect
 .lex-tax__hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(120px, 14vw, 200px) 0 clamp(72px, 10vw, 120px);
+  min-height: 72vh;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(160px, 18vw, 240px) 0 clamp(56px, 7vw, 88px);
   margin-top: calc(var(--c-header-height) * -1);
   background: #0b1220;
   color: #fff;
@@ -2491,22 +2497,23 @@ iframe[src*="google.com/maps"], iframe[src*="maps.google"] { width: 100%; aspect
   height: 100%;
   object-fit: cover;
   display: block;
+  transform: scale(1.04);
 }
 
 .lex-tax__hero-overlay {
   background:
-    linear-gradient(180deg, rgba(7, 10, 18, 0.55) 0%, rgba(7, 10, 18, 0.78) 100%),
-    linear-gradient(90deg, rgba(7, 10, 18, 0.55) 0%, rgba(7, 10, 18, 0.2) 100%);
+    radial-gradient(120% 80% at 0% 100%, rgba(15, 98, 254, 0.22) 0%, rgba(11, 18, 32, 0) 60%),
+    linear-gradient(180deg, rgba(11, 18, 32, 0.35) 0%, rgba(11, 18, 32, 0.25) 45%, rgba(11, 18, 32, 0.92) 100%);
 }
 
 .lex-tax__hero .site-shell {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .lex-tax__hero-content {
-  max-width: 880px;
-  padding-top: var(--c-header-height);
+  max-width: 940px;
 }
 
 .lex-tax__eyebrow {
@@ -2791,7 +2798,10 @@ iframe[src*="google.com/maps"], iframe[src*="maps.google"] { width: 100%; aspect
 .lex-detail__hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(120px, 14vw, 200px) 0 clamp(60px, 8vw, 96px);
+  min-height: 64vh;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(150px, 16vw, 220px) 0 clamp(48px, 6vw, 72px);
   margin-top: calc(var(--c-header-height) * -1);
   background: #0b1220;
   color: #fff;
@@ -2808,17 +2818,19 @@ iframe[src*="google.com/maps"], iframe[src*="maps.google"] { width: 100%; aspect
   height: 100%;
   object-fit: cover;
   display: block;
+  transform: scale(1.04);
 }
 
 .lex-detail__hero-overlay {
   background:
-    linear-gradient(180deg, rgba(7, 10, 18, 0.45) 0%, rgba(7, 10, 18, 0.78) 100%),
-    linear-gradient(90deg, rgba(7, 10, 18, 0.55) 0%, rgba(7, 10, 18, 0.15) 100%);
+    radial-gradient(120% 80% at 0% 100%, rgba(15, 98, 254, 0.18) 0%, rgba(11, 18, 32, 0) 60%),
+    linear-gradient(180deg, rgba(11, 18, 32, 0.3) 0%, rgba(11, 18, 32, 0.2) 40%, rgba(11, 18, 32, 0.92) 100%);
 }
 
 .lex-detail__hero .site-shell {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .lex-detail__breadcrumb {
@@ -3082,8 +3094,11 @@ iframe[src*="google.com/maps"], iframe[src*="maps.google"] { width: 100%; aspect
 
 .lex-about__hero {
   position: relative;
-  min-height: 520px;
-  padding: 120px 0 88px;
+  min-height: 72vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 200px 0 88px;
+  margin-top: calc(var(--c-header-height) * -1);
   overflow: hidden;
   background: #0b1220;
   color: #fff;
@@ -3097,15 +3112,15 @@ iframe[src*="google.com/maps"], iframe[src*="maps.google"] { width: 100%; aspect
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.55;
+  transform: scale(1.04);
 }
 .lex-about__hero-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(circle at 18% 22%, rgba(15, 98, 254, 0.32), transparent 55%),
-    linear-gradient(180deg, rgba(7, 11, 22, 0.55) 0%, rgba(7, 11, 22, 0.78) 100%);
+    radial-gradient(120% 80% at 0% 100%, rgba(15, 98, 254, 0.22) 0%, rgba(11, 18, 32, 0) 60%),
+    linear-gradient(180deg, rgba(11, 18, 32, 0.32) 0%, rgba(11, 18, 32, 0.22) 45%, rgba(11, 18, 32, 0.92) 100%);
   pointer-events: none;
 }
 .lex-about__hero .site-shell {
@@ -3406,3 +3421,130 @@ iframe[src*="google.com/maps"], iframe[src*="maps.google"] { width: 100%; aspect
   .lex-about__cta-links { grid-template-columns: 1fr; }
 }
 /* ==== /LEX-ABOUT ==== */
+
+/* ==== HOME-VENUES + HOME-LOCATIONS ==== */
+.home-venues {
+  padding: 96px 0 56px;
+  background: var(--color-shell);
+  color: var(--color-white);
+}
+.home-locations {
+  padding: 56px 0 104px;
+  background: var(--color-shell);
+  color: var(--color-white);
+}
+.home-venues__head,
+.home-locations__head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+.home-venues__head h2,
+.home-locations__head h2 {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  max-width: 920px;
+}
+.home-venues__head .section-kicker,
+.home-locations__head .section-kicker {
+  grid-column: 1;
+  grid-row: 1;
+}
+.home-venues__view-all,
+.home-locations__view-all {
+  grid-column: 3;
+  grid-row: 1;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+.home-venues__view-all:hover,
+.home-locations__view-all:hover {
+  color: #fff;
+}
+.home-venues__view-all span,
+.home-locations__view-all span { margin-left: 8px; }
+.home-venues__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.home-locations__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.home-venues__card,
+.home-locations__card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 240px;
+  padding: 22px;
+  border-radius: 14px;
+  background: #1a2333;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.home-venues__card { min-height: 280px; }
+.home-venues__card span,
+.home-locations__card span {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+.home-venues__card:hover,
+.home-locations__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.32);
+}
+@media (max-width: 960px) {
+  .home-venues__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-locations__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 540px) {
+  .home-venues__grid,
+  .home-locations__grid { grid-template-columns: 1fr; }
+  .home-venues__head,
+  .home-locations__head { grid-template-columns: 1fr; }
+  .home-venues__view-all,
+  .home-locations__view-all { grid-column: 1; grid-row: auto; }
+}
+/* ==== /HOME-VENUES + HOME-LOCATIONS ==== */
+
+/* ==== FOOTER BRAND LOGO ==== */
+.site-footer__brand {
+  display: inline-flex;
+  align-items: center;
+}
+.site-footer__brand img {
+  display: block;
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1) opacity(0.92);
+}
+@media (max-width: 540px) {
+  .site-footer__brand img { height: 44px; }
+}
+/* ==== /FOOTER BRAND LOGO ==== */
