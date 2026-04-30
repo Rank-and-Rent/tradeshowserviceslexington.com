@@ -6,22 +6,22 @@ import { business, marketHighlights } from "@/lib/site-data";
 
 const PROCESS_STEPS = [
   {
-    step: "01",
+    step: "",
     title: "Brief and venue read",
     body: "We start with the building. Central Bank Center, a downtown ballroom, a Newtown Pike corridor hotel, and a regional drive-in show all behave differently. The brief gets pinned to the actual room, dates, and goal before scope hardens.",
   },
   {
-    step: "02",
+    step: "",
     title: "Scope and freight plan",
     body: "Booth choice, graphics, AV, freight windows, labor calls, and show-service paperwork get written together. One plan, one budget, one timeline that survives the move from drawing to dock.",
   },
   {
-    step: "03",
+    step: "",
     title: "Floor delivery",
     body: "Site supervision runs the install, the live-day and the strike. The team that wrote the plan is the team on the floor, so decisions move at the speed of show week instead of waiting on a phone call.",
   },
   {
-    step: "04",
+    step: "",
     title: "Closeout and recall",
     body: "After strike, assets get inventoried, refurbished, and stored for the next cycle. Reuse, graphic swaps, and program updates make the second show easier to brief than the first.",
   },
@@ -103,8 +103,7 @@ export default function AboutPage() {
             </div>
             <div className="lex-about__process-grid">
               {PROCESS_STEPS.map((step) => (
-                <article className="lex-about__process-card" key={step.step}>
-                  <span className="lex-about__process-step" aria-hidden="true">{step.step}</span>
+                <article className="lex-about__process-card" key={step.title}>
                   <h3>{step.title}</h3>
                   <p>{step.body}</p>
                 </article>

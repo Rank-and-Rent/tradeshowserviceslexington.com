@@ -243,7 +243,7 @@ export function buildIndexPageContent(section: TaxonomySection): IndexPageConten
       href: `${collection.routeBase}/${item.slug}`,
       label: item.label,
       description: buildIndexCardDescription(section, item.slug, index),
-      eyebrow: `${collection.heroLabel} ${String(index + 1).padStart(2, "0")}`,
+      eyebrow: collection.cardLabel,
     }));
 
     return {
