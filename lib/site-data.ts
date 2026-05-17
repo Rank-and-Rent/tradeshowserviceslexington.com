@@ -10,7 +10,8 @@ export const sectionOrder = [
   "industries",
   "capabilities",
   "rentals",
-  "exhibit-types"
+  "exhibit-types",
+  "annual-events"
 ] as const;
 
 export type TaxonomySection = (typeof sectionOrder)[number];

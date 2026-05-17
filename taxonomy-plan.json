@@ -474,5 +474,38 @@
     "capabilities": 4,
     "rentals": 4,
     "exhibitTypes": 5
+  },
+  "annualEvents": {
+    "label": "Annual Lexington Events",
+    "routeBase": "/annual-events",
+    "required": true,
+    "requiredCorePages": [
+      "keeneland-september-yearling-sales",
+      "lexington-comedy-festival",
+      "breeders-cup",
+      "keeneland-fall-meet",
+      "keeneland-spring-meet"
+    ],
+    "generatedPages": [
+      "keeneland-september-yearling-sales",
+      "lexington-comedy-festival",
+      "breeders-cup",
+      "keeneland-fall-meet",
+      "keeneland-spring-meet",
+      "khsaa-sweet-16",
+      "land-rover-kentucky-three-day-event",
+      "lexington-bluegrass-fair",
+      "uk-wildcats-basketball",
+      "uk-wildcats-football"
+    ],
+    "rationale": "10 researched Lexington annual events with established recurrence and active exhibitor demand. Trade Show Services Lexington delivers end-to-end trade show program delivery engineered for each event's profile.",
+    "targetCount": 10,
+    "actualGeneratedPageCount": 10,
+    "representativeSampleSlugs": [
+      "keeneland-september-yearling-sales",
+      "lexington-comedy-festival",
+      "breeders-cup",
+      "keeneland-fall-meet"
+    ]
   }
 }
