@@ -7,7 +7,7 @@ City: Lexington, IA
 Reference behavior: the source homepage uses hero video.
 Hero decision: no local hero video was created because the project uses a legal still-hero fallback instead of watermarked or unverifiable footage.
 Still fallback asset: public/media/hero-candidate-2.jpg
-Media policy: do not reuse any reference photography or reference video from https://wearesparks.com.
+Media policy: do not reuse any reference photography or reference video from .
 
 Current live assets already in this project
 - public/media/hero-candidate-2.jpg is the homepage hero still fallback.

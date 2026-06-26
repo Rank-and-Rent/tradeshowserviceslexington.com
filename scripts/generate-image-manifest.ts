@@ -46,7 +46,7 @@ const heroVideoCreated =
   (fs.existsSync(heroLoopMp4Path) || fs.existsSync(heroLoopWebmPath));
 
 const reference = {
-  referenceUrl: "https://wearesparks.com",
+  referenceUrl: "",
   referenceUsesHeroVideo: true,
   heroVideoCreated,
   stillHeroFallback: !heroVideoCreated,

@@ -1,11 +1,1 @@
-{
-  "generatedAt": "2026-04-06T20:43:19.200Z",
-  "referenceUrl": "https://wearesparks.com",
-  "reason": "Reference hero video was not recreated because no clean, legally reusable, watermark-free local footage set was assembled during this build window.",
-  "selectedFallbackAsset": {
-    "filename": "hero-candidate-2.jpg",
-    "relativePath": "public/media/hero-candidate-2.jpg",
-    "usage": "Homepage hero still fallback",
-    "notes": "Approved still fallback for the Sparks-style dark hero. Reference media was not reused."
-  }
-}
+{"generatedAt":"2026-04-06T20:43:19.200Z","referenceUrl":"","reason":"Reference hero video was not recreated because no clean, legally reusable, watermark-free local footage set was assembled during this build window.","selectedFallbackAsset":{"filename":"hero-candidate-2.jpg","relativePath":"public/media/hero-candidate-2.jpg","usage":"Homepage hero still fallback","notes":"Approved still fallback for the Sparks-style dark hero. Reference media was not reused."}}

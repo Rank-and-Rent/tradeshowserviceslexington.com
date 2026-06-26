@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 :root {
-  --font-body: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Inter", "Helvetica Neue", Arial, sans-serif;
   --color-ink: #151515;
   --color-muted: #5f5f5f;
   --color-subtle: #8f8f8f;
