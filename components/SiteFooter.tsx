@@ -153,8 +153,7 @@ export function SiteFooter() {
             ))}
           </div>
           <p>
-            © 2026 {business.legalName}. All rights reserved.
-          </p>
+            {business.legalName}.           </p>
         </div>
       </div>
       <p data-footer-hours style={{ margin: 0, padding: "14px clamp(20px, 5vw, 72px) 22px", textAlign: "center", fontSize: "0.86rem", letterSpacing: "0.04em", opacity: 0.82 }}>
