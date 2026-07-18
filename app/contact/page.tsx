@@ -35,14 +35,6 @@ export default function ContactPage() {
                 <h2>{business.name}</h2>
                 <ul className="lex-contact__detail-list">
                   <li>
-                    <span aria-hidden="true" className="lex-contact__icon">◴</span>
-                    <span>
-                      <strong>Address</strong>
-                      <br />
-                      {business.address}
-                    </span>
-                  </li>
-                  <li>
                     <span aria-hidden="true" className="lex-contact__icon">☏</span>
                     <span>
                       <strong>Phone</strong>

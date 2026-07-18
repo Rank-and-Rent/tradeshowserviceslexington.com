@@ -48,6 +48,10 @@ type TaxonomyPlan = {
   boothTypes: TaxonomyNode;
   industries: TaxonomyNode;
   optionalTaxonomies: TaxonomyNode[];
+  annualEvents: Omit<TaxonomyNode, "generatedPages" | "actualGeneratedCount"> & {
+    generatedPages: string[];
+    actualGeneratedPageCount: number;
+  };
   pageCountPlan: Record<string, number>;
 };
 
@@ -218,6 +222,7 @@ export const business = {
 
 export const taxonomyPlan = readJson<TaxonomyPlan>("taxonomy-plan.json");
 export const venueResearch = readJson<VenueResearch>("venue-research.json");
+export const venueRecords = venueResearch.venueRecords;
 export const marketResearch = readJson<MarketResearch>("market-research.json");
 export const laborResearch = readJson<LaborResearch>("labor-research.json");
 
@@ -309,6 +314,15 @@ const sectionConfig: Record<TaxonomySection, SectionConfig> = {
     heroLabel: "Environment types",
     cardLabel: "Exhibit Type",
     ctaLabel: "Plan this environment"
+  },
+  "annual-events": {
+    label: "Annual Events",
+    singularLabel: "annual event",
+    eyebrow: "Annual Event Planning",
+    pageTitlePrefix: `${business.city} annual event support`,
+    heroLabel: "Annual event guides",
+    cardLabel: "Annual Event",
+    ctaLabel: "Plan this event"
   }
 };
 
@@ -326,6 +340,15 @@ function getNodeForSection(section: TaxonomySection): TaxonomyNode {
       return taxonomyPlan.boothTypes;
     case "industries":
       return taxonomyPlan.industries;
+    case "annual-events":
+      return {
+        ...taxonomyPlan.annualEvents,
+        generatedPages: taxonomyPlan.annualEvents.generatedPages.map((slug) => ({
+          slug,
+          label: slug.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ")
+        })),
+        actualGeneratedCount: taxonomyPlan.annualEvents.actualGeneratedPageCount
+      };
     case "capabilities":
     case "rentals":
     case "exhibit-types": {

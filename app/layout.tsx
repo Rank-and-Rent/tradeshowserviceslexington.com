@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  other: {
+    "business:contact_data:street_address": "300 W Vine St, Suite 200, Lexington, KY 40507",
+  },
   metadataBase: new URL("https://tradeshowserviceslexington.com"),
   title: {
     default: "Trade Show Services of Lexington",

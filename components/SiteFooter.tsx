@@ -157,6 +157,9 @@ export function SiteFooter() {
           </p>
         </div>
       </div>
+      <p data-footer-hours style={{ margin: 0, padding: "14px clamp(20px, 5vw, 72px) 22px", textAlign: "center", fontSize: "0.86rem", letterSpacing: "0.04em", opacity: 0.82 }}>
+        Monday–Sunday · Open 24/7
+      </p>
     </footer>
   );
 }

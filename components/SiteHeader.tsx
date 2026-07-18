@@ -162,7 +162,6 @@ export function SiteHeader() {
             <div className="site-menu-v3__contact">
               <a href={phoneHref}>{business.phone}</a>
               <a href={`mailto:${business.email}`}>{business.email}</a>
-              <span>{business.address}</span>
             </div>
           </aside>
         </div>
