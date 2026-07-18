@@ -10,10 +10,8 @@ type FormState = {
   name: string;
   email: string;
   phone: string;
-  companyName: string;
   targetShowDate: string;
   showLocation: string;
-  service: string;
   projectDetails: string;
 };
 
@@ -21,10 +19,8 @@ const initialState: FormState = {
   name: "",
   email: "",
   phone: "",
-  companyName: "",
   targetShowDate: "",
   showLocation: "",
-  service: "",
   projectDetails: ""
 };
 
@@ -76,7 +72,7 @@ export function ContactForm({ serviceOptions }: ContactFormProps) {
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form className="contact-form" onSubmit={handleSubmit} action="/api/contact" method="post">
       <div className="contact-form__grid">
         <label>
           <span>Name</span>
@@ -108,14 +104,7 @@ export function ContactForm({ serviceOptions }: ContactFormProps) {
           />
         </label>
 
-        <label>
-          <span>Company Name</span>
-          <input
-            onChange={(event) => updateField("companyName", event.target.value)}
-            type="text"
-            value={formState.companyName}
-          />
-        </label>
+
 
         <label>
           <span>Target Show Date</span>
@@ -135,20 +124,7 @@ export function ContactForm({ serviceOptions }: ContactFormProps) {
           />
         </label>
 
-        <label className="contact-form__full">
-          <span>Service</span>
-          <select
-            onChange={(event) => updateField("service", event.target.value)}
-            value={formState.service}
-          >
-            <option value="">Select a service</option>
-            {serviceOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </label>
+
 
         <label className="contact-form__full">
           <span>Project Details</span>
