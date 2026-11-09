@@ -5,7 +5,7 @@ export const business = {
   state: "KY",
   domain: "tradeshowserviceslexington.com",
   address: "300 W Vine St, Suite 200, Lexington, KY 40507",
-  phone: "859-555-0147",
+  phone: "859-695-3406",
   email: "info@tradeshowserviceslexington.com"
 } as const;
 

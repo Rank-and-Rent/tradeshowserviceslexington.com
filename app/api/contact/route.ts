@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { checkBotId } from "botid/server";
 
 export const runtime = "nodejs";
 
@@ -82,6 +83,14 @@ async function sendMail(apiKey: string, message: Record<string, unknown>) {
 }
 
 export async function POST(request: Request) {
+  try {
+    const verification = await checkBotId({ advancedOptions: { checkLevel: "basic" } });
+    if (verification.isBot) {
+      return NextResponse.json({ ok: false, error: "Please refresh the page and try again." }, { status: 403 });
+    }
+  } catch {
+    return NextResponse.json({ ok: false, error: "Please refresh the page and try again." }, { status: 403 });
+  }
   const contentType = request.headers.get("content-type") ?? "";
   const wantsJson = contentType.includes("application/json");
 
@@ -89,6 +98,9 @@ export async function POST(request: Request) {
     const rawBody = wantsJson
       ? ((await request.json()) as Record<string, unknown>)
       : Object.fromEntries((await request.formData()).entries());
+    if (typeof rawBody.website === "string" && rawBody.website.trim()) {
+      return NextResponse.json({ ok: true, success: true, message: "Project details received." });
+    }
     const lead = normalizeBody(rawBody);
     const missing = Object.entries(lead)
       .filter(([, value]) => !value)
@@ -145,14 +157,14 @@ export async function POST(request: Request) {
         personalizations: [{ to: recipients.map((email) => ({ email })) }],
         from: { email: fromEmail, name: siteName },
         reply_to: { email: lead.email, name: lead.name },
-        subject: `New trade show lead: ${lead.name} — ${lead.showLocation}`,
+        subject: `New trade show lead: ${lead.name} - ${lead.showLocation}`,
         content: [{ type: "text/html", value: leadHtml }],
       }),
       sendMail(apiKey, {
         personalizations: [{ to: [{ email: lead.email, name: lead.name }] }],
         from: { email: fromEmail, name: siteName },
         reply_to: { email: fromEmail, name: siteName },
-        subject: `We received your inquiry — ${siteName}`,
+        subject: `We received your inquiry - ${siteName}`,
         content: [{ type: "text/html", value: confirmationHtml }],
       }),
     ]);
