@@ -1,3 +1,10 @@
+import __performanceImageManifest from "../data/site-performance.json";
+
+export function getRecoveredTaxonomyMediaUrl(kind: string, slug: string): string | null {
+  const original = __performanceOriginalTaxonomyMedia(kind, slug);
+  return original ? ((__performanceImageManifest.images as Record<string, string>)[original] ?? original) : null;
+}
+
 import fs from "node:fs";
 import path from "node:path";
 
@@ -162,7 +169,7 @@ function listDirShallow(abs: string): string[] {
   }
 }
 
-export function getRecoveredTaxonomyMediaUrl(kind: string, slug: string): string | null {
+function __performanceOriginalTaxonomyMedia(kind: string, slug: string): string | null {
   const normalizedKind = kebab(kind).replace(/-/g, "");
   const typePrefix = TYPE_PREFIX[normalizedKind];
   const directoryCandidates = TYPE_DIR_CANDIDATES[normalizedKind];

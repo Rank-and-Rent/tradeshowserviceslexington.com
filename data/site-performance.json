@@ -1,0 +1,296 @@
+{
+  "revision": "site-speed-v1",
+  "domain": "tradeshowserviceslexington.com",
+  "images": {
+    "/logo.png": "/performance/site-v1/699aedebc6d464ec4a992e7e.webp",
+    "/media/hero-poster.png": "/performance/site-v1/99ecdd528af7459152f1927f.webp",
+    "/media/planned/locations/locations-chevy-chase-lexington-ky.webp": "/performance/site-v1/cd68e79fafa10515175e87a5.webp",
+    "/media/planned/locations/locations-hamburg-lexington-ky.webp": "/performance/site-v1/c85fd87eb59ff957416767e9.webp",
+    "/media/planned/locations/locations-nicholasville-lexington-ky.webp": "/performance/site-v1/9fe2fa7ad279f1aeac991665.webp",
+    "/media/planned/locations/locations-south-lexington-lexington-ky.webp": "/performance/site-v1/a58ff8fe0d7d86e86f841291.webp",
+    "/media/planned/services/services-conference-and-venue-execution-lexington-ky.webp": "/performance/site-v1/bb46935d90cff1da9db045cc.webp",
+    "/media/planned/services/services-show-site-supervision-lexington-ky.webp": "/performance/site-v1/268b24cafd32d55219216184.webp",
+    "/media/planned/services/services-trade-show-av-production-lexington-ky.webp": "/performance/site-v1/e26735d8d43bdcb867e9c6eb.webp",
+    "/media/planned/services/services-trade-show-booth-design-lexington-ky.webp": "/performance/site-v1/d225e294f132984b41204b4d.webp",
+    "/media/planned/services/services-trade-show-project-management-lexington-ky.webp": "/performance/site-v1/153e9f684bf9b150b6bb5ac3.webp",
+    "/media/planned/venues/venues-marriott-lexington-griffin-gate-golf-resort-and-spa-lexington-ky.webp": "/performance/site-v1/8baf6ca340e9cbcc547b6957.webp"
+  },
+  "assets": [
+    {
+      "from": "/logo.png",
+      "to": "/performance/site-v1/699aedebc6d464ec4a992e7e.webp",
+      "sourceSha256": "f05e77ec63ea51a9253866e66546211f1e123bb59d3d08b0273b9fbe6ecb3352",
+      "sourceWidth": 970,
+      "sourceHeight": 355,
+      "width": 970,
+      "height": 355,
+      "brand": true,
+      "resized": false,
+      "beforeBytes": 240615,
+      "afterBytes": 168258
+    },
+    {
+      "from": "/media/hero-poster.png",
+      "to": "/performance/site-v1/99ecdd528af7459152f1927f.webp",
+      "sourceSha256": "8671212c76737d62de8c44923ece7ed987100e8d3422606b007a1a7a8858bed1",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "width": 1920,
+      "height": 1080,
+      "brand": false,
+      "resized": false,
+      "beforeBytes": 1999165,
+      "afterBytes": 229068
+    },
+    {
+      "from": "/media/planned/locations/locations-chevy-chase-lexington-ky.webp",
+      "to": "/performance/site-v1/cd68e79fafa10515175e87a5.webp",
+      "sourceSha256": "7c06517ad5a8e0ac62850ca269290f54cb0fb9faffe87926d5661cac15a62970",
+      "sourceWidth": 4743,
+      "sourceHeight": 3162,
+      "width": 2560,
+      "height": 1707,
+      "brand": false,
+      "resized": true,
+      "beforeBytes": 537748,
+      "afterBytes": 264170
+    },
+    {
+      "from": "/media/planned/locations/locations-hamburg-lexington-ky.webp",
+      "to": "/performance/site-v1/c85fd87eb59ff957416767e9.webp",
+      "sourceSha256": "82d39f37efa4f63e690df3344e47575f346b729fcfae2fd0a0f406f9e0a604e6",
+      "sourceWidth": 3000,
+      "sourceHeight": 2250,
+      "width": 2560,
+      "height": 1920,
+      "brand": false,
+      "resized": true,
+      "beforeBytes": 403992,
+      "afterBytes": 310606
+    },
+    {
+      "from": "/media/planned/locations/locations-nicholasville-lexington-ky.webp",
+      "to": "/performance/site-v1/9fe2fa7ad279f1aeac991665.webp",
+      "sourceSha256": "5b702703dcba032cff07155e3204c30f30b964a9a6348bc5868ae938492296cb",
+      "sourceWidth": 2816,
+      "sourceHeight": 1584,
+      "width": 2560,
+      "height": 1440,
+      "brand": false,
+      "resized": true,
+      "beforeBytes": 401872,
+      "afterBytes": 307544
+    },
+    {
+      "from": "/media/planned/locations/locations-south-lexington-lexington-ky.webp",
+      "to": "/performance/site-v1/a58ff8fe0d7d86e86f841291.webp",
+      "sourceSha256": "56a2a0bcaf6e2827bebc2ac0b271a21a0d9ff1c9e2650cdcd8c2e4deb03a23a9",
+      "sourceWidth": 3264,
+      "sourceHeight": 2448,
+      "width": 2560,
+      "height": 1920,
+      "brand": false,
+      "resized": true,
+      "beforeBytes": 590792,
+      "afterBytes": 319192
+    },
+    {
+      "from": "/media/planned/services/services-conference-and-venue-execution-lexington-ky.webp",
+      "to": "/performance/site-v1/bb46935d90cff1da9db045cc.webp",
+      "sourceSha256": "a0d4f84705349883d782e7189cf21fa3fcf212d9dc9c3aa16f2941d1f7ceaf71",
+      "sourceWidth": 1000,
+      "sourceHeight": 800,
+      "width": 1000,
+      "height": 800,
+      "brand": false,
+      "resized": false,
+      "beforeBytes": 163250,
+      "afterBytes": 122882
+    },
+    {
+      "from": "/media/planned/services/services-show-site-supervision-lexington-ky.webp",
+      "to": "/performance/site-v1/268b24cafd32d55219216184.webp",
+      "sourceSha256": "f3e721479019126a38508e581b1a2039c94e09256d8bded3133f840e7ceabead",
+      "sourceWidth": 1200,
+      "sourceHeight": 825,
+      "width": 1200,
+      "height": 825,
+      "brand": false,
+      "resized": false,
+      "beforeBytes": 274520,
+      "afterBytes": 233402
+    },
+    {
+      "from": "/media/planned/services/services-trade-show-av-production-lexington-ky.webp",
+      "to": "/performance/site-v1/e26735d8d43bdcb867e9c6eb.webp",
+      "sourceSha256": "1130c646b19078bb167d222feb03193a7eadd4a864eec45591ace0ff893f46d8",
+      "sourceWidth": 3504,
+      "sourceHeight": 2336,
+      "width": 2560,
+      "height": 1707,
+      "brand": false,
+      "resized": true,
+      "beforeBytes": 1237322,
+      "afterBytes": 392900
+    },
+    {
+      "from": "/media/planned/services/services-trade-show-booth-design-lexington-ky.webp",
+      "to": "/performance/site-v1/d225e294f132984b41204b4d.webp",
+      "sourceSha256": "2f3d934ab4923f1c208da79bd2e99423bcd1aa8f64ac0c1796e22ec8b4c0b1dc",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "width": 1920,
+      "height": 1080,
+      "brand": false,
+      "resized": false,
+      "beforeBytes": 126106,
+      "afterBytes": 99706
+    },
+    {
+      "from": "/media/planned/services/services-trade-show-project-management-lexington-ky.webp",
+      "to": "/performance/site-v1/153e9f684bf9b150b6bb5ac3.webp",
+      "sourceSha256": "81236de17989766eb026812c9acfa9f7b27bcd8fa8123d114db387d8488f363e",
+      "sourceWidth": 1150,
+      "sourceHeight": 767,
+      "width": 1150,
+      "height": 767,
+      "brand": false,
+      "resized": false,
+      "beforeBytes": 197060,
+      "afterBytes": 161138
+    },
+    {
+      "from": "/media/planned/venues/venues-marriott-lexington-griffin-gate-golf-resort-and-spa-lexington-ky.webp",
+      "to": "/performance/site-v1/8baf6ca340e9cbcc547b6957.webp",
+      "sourceSha256": "3c400b5bc68aba8d408280a1a0b0e09981b911f8bb5c22ed60c03f3491b1f90c",
+      "sourceWidth": 3000,
+      "sourceHeight": 2000,
+      "width": 2560,
+      "height": 1707,
+      "brand": false,
+      "resized": true,
+      "beforeBytes": 542832,
+      "afterBytes": 381346
+    }
+  ],
+  "createdAt": "2026-11-23T07:13:58.183Z",
+  "deliveryVersion": 4,
+  "maxPhotoDimension": 2560,
+  "fontStylesheetFiles": [],
+  "dynamicTemplateFiles": [],
+  "imageResolverFiles": [
+    "lib/taxonomy-media.ts"
+  ],
+  "heroPreloadPlans": [],
+  "fonts": [
+    {
+      "source": "https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap",
+      "requestUrl": "https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap",
+      "cssPath": "/performance/site-v1/9a4acd84d052e9c0d2666959.css",
+      "assets": [
+        {
+          "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUu8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib14c0qv8oRcTnaIM.woff2",
+          "path": "/performance/site-v1/250cc2966c658fb6d336731d.woff2",
+          "bytes": 11536
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUu8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib14c1qv8oRcTnaIM.woff2",
+          "path": "/performance/site-v1/f1451edd6434085c4f9f3a8b.woff2",
+          "bytes": 33640
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUu8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib14c7qv8oRcTn.woff2",
+          "path": "/performance/site-v1/88e17be075f1be50ab67b057.woff2",
+          "bytes": 36560
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2",
+          "path": "/performance/site-v1/fccca918fea40089dacadc70.woff2",
+          "bytes": 25844
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2",
+          "path": "/performance/site-v1/aebf2ab4a4ce6810d73c1ac7.woff2",
+          "bytes": 18744
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2",
+          "path": "/performance/site-v1/a2e2c783ca6f9c20486e81e7.woff2",
+          "bytes": 11272
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2",
+          "path": "/performance/site-v1/46dd4cdca58c26ae87cc6927.woff2",
+          "bytes": 19044
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2",
+          "path": "/performance/site-v1/8db00ff46c67b22cda8bed86.woff2",
+          "bytes": 10280
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2",
+          "path": "/performance/site-v1/a28eb6d3ccb534ae0c94ca99.woff2",
+          "bytes": 85272
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "path": "/performance/site-v1/c940764593d0fe5d596be327.woff2",
+          "bytes": 48432
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsK8ahuQ2e8Smg.woff2",
+          "path": "/performance/site-v1/4a89b86d992e34430a1674dd.woff2",
+          "bytes": 26644
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsD8ahuQ2e8Smg.woff2",
+          "path": "/performance/site-v1/04e865409d6fd36dd9be4bb4.woff2",
+          "bytes": 17052
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsL8ahuQ2e8Smg.woff2",
+          "path": "/performance/site-v1/0c930dc2267b2e8b7341715b.woff2",
+          "bytes": 11736
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsE8ahuQ2e8Smg.woff2",
+          "path": "/performance/site-v1/67b5c3cea0f66a940a37e39e.woff2",
+          "bytes": 22212
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsI8ahuQ2e8Smg.woff2",
+          "path": "/performance/site-v1/c753c7f9f2dc179be947a2d6.woff2",
+          "bytes": 10508
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsJ8ahuQ2e8Smg.woff2",
+          "path": "/performance/site-v1/3c299662298bcf2cbf119996.woff2",
+          "bytes": 89820
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsH8ahuQ2e8.woff2",
+          "path": "/performance/site-v1/83d548cd73ef2e039167db3a.woff2",
+          "bytes": 44916
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPb54C_k3HqUtEw.woff2",
+          "path": "/performance/site-v1/d699664b145bfeeccc66a4cc.woff2",
+          "bytes": 6772
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPb94C_k3HqUtEw.woff2",
+          "path": "/performance/site-v1/054c266fbb441ee059365dba.woff2",
+          "bytes": 18924
+        },
+        {
+          "source": "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU.woff2",
+          "path": "/performance/site-v1/a0d054c4af557de20afd6ca5.woff2",
+          "bytes": 22320
+        }
+      ],
+      "latin": "/performance/site-v1/88e17be075f1be50ab67b057.woff2"
+    }
+  ],
+  "fontFailures": []
+}

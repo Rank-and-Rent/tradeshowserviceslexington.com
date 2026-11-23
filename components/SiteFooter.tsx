@@ -105,7 +105,7 @@ export function SiteFooter() {
       <div className="site-shell">
         <div className="site-footer__top">
           <Link aria-label={business.name} href="/" className="site-footer__brand">
-            <img alt={business.name} src="/logo.png" />
+            <img alt={business.name} src="/performance/site-v1/699aedebc6d464ec4a992e7e.webp" />
           </Link>
 
           <div className="site-footer__social">

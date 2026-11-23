@@ -9,7 +9,8 @@
     "content:summary": "tsx scripts/generate-content-summary.ts",
     "media:manifest": "tsx scripts/generate-image-manifest.ts",
     "compare:home": "tsx scripts/capture-homepage-compare.ts",
-    "qa:capture": "tsx scripts/capture-qa.ts"
+    "qa:capture": "tsx scripts/capture-qa.ts",
+    "prebuild": "node scripts/install-site-performance.mjs"
   },
   "dependencies": {
     "next": "^15.3.1",

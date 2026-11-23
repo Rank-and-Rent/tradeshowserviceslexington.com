@@ -15,7 +15,7 @@ function BrandMark() {
       <img
         alt={business.name}
         className="site-brand__logo"
-        src="/logo.png"
+        src="/performance/site-v1/699aedebc6d464ec4a992e7e.webp"
       />
     </span>
   );

@@ -15,31 +15,31 @@ const featuredWork: FeaturedWorkCard[] = [
     eyebrow: "Central Bank Center",
     title: "Downtown convention execution with hotel-ring timing",
     href: "/venues/central-bank-center",
-    image: getRecoveredTaxonomyMediaUrl("venues", "central-bank-center") ?? "/media/planned/services/services-conference-and-venue-execution-lexington-ky.webp"
+    image: getRecoveredTaxonomyMediaUrl("venues", "central-bank-center") ?? "/performance/site-v1/bb46935d90cff1da9db045cc.webp"
   },
   {
     eyebrow: "Newtown Pike Corridor",
     title: "Hotel-ring programs that keep arrivals and load-in aligned",
     href: "/locations/newtown-pike-corridor",
-    image: getRecoveredTaxonomyMediaUrl("locations", "newtown-pike-corridor") ?? "/media/planned/services/services-trade-show-project-management-lexington-ky.webp"
+    image: getRecoveredTaxonomyMediaUrl("locations", "newtown-pike-corridor") ?? "/performance/site-v1/153e9f684bf9b150b6bb5ac3.webp"
   },
   {
     eyebrow: "Griffin Gate",
     title: "Resort-scale logistics with a calmer field plan",
     href: "/venues/marriott-lexington-griffin-gate-golf-resort-and-spa",
-    image: getRecoveredTaxonomyMediaUrl("venues", "marriott-lexington-griffin-gate-golf-resort-and-spa") ?? "/media/planned/services/services-show-site-supervision-lexington-ky.webp"
+    image: getRecoveredTaxonomyMediaUrl("venues", "marriott-lexington-griffin-gate-golf-resort-and-spa") ?? "/performance/site-v1/268b24cafd32d55219216184.webp"
   },
   {
     eyebrow: "Hyatt Regency Lexington",
     title: "Connected-tower meetings built for repeat attendance",
     href: "/venues/hyatt-regency-lexington",
-    image: getRecoveredTaxonomyMediaUrl("venues", "hyatt-regency-lexington") ?? "/media/planned/services/services-trade-show-booth-design-lexington-ky.webp"
+    image: getRecoveredTaxonomyMediaUrl("venues", "hyatt-regency-lexington") ?? "/performance/site-v1/d225e294f132984b41204b4d.webp"
   },
   {
     eyebrow: "Hilton Lexington Downtown",
     title: "Activation and AV programs aligned to the room",
     href: "/venues/hilton-lexington-downtown",
-    image: getRecoveredTaxonomyMediaUrl("venues", "hilton-lexington-downtown") ?? "/media/planned/services/services-trade-show-av-production-lexington-ky.webp"
+    image: getRecoveredTaxonomyMediaUrl("venues", "hilton-lexington-downtown") ?? "/performance/site-v1/e26735d8d43bdcb867e9c6eb.webp"
   }
 ];
 
@@ -125,7 +125,7 @@ export default function HomePage() {
               loop
               playsInline
               preload="metadata"
-              poster="/media/hero-poster.png"
+              poster="/performance/site-v1/99ecdd528af7459152f1927f.webp"
             >
               <source src="/media/hero-loop.webm" type="video/webm" />
               <source src="/media/hero-loop.mp4" type="video/mp4" />

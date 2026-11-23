@@ -44,7 +44,7 @@ export default function AboutPage() {
           <div className="lex-about__hero-media" aria-hidden="true">
             <img
               alt=""
-              src="/media/planned/services/services-trade-show-project-management-lexington-ky.webp"
+              src="/performance/site-v1/153e9f684bf9b150b6bb5ac3.webp"
               loading="eager"
             />
           </div>
